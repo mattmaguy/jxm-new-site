@@ -442,6 +442,27 @@ body.dark .works-wrapper-4 .work-box .meta .date {
 }
 
 
+/* ════════════ HOMEPAGE SERVICES — body text always visible ═
+   Redox hides each service-box body text with max-height:0
+   + opacity:0 and reveals on hover — but since we wrote real
+   body copy in there, on hover the opacity becomes 1 while
+   max-height stays 0, causing the text to overflow into the
+   next row. Force it always-visible and let the grid row grow.
+═══════════════════════════════════════════════════ */
+.services-wrapper-5 .service-box .text {
+  opacity: 1 !important;
+  max-height: none !important;
+  margin-top: 0.75rem !important;
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 1rem !important;
+  line-height: 1.55 !important;
+  color: var(--secondary);
+}
+.services-wrapper-5 .service-box:hover .text {
+  height: auto !important;
+}
+
+
 /* ════════════ HOMEPAGE CLOSING CTA — vertical rhythm ═══
    Redox's cta-area-4 stacks H2 + body + button with no
    inherent spacing between them. Add proper breathing room.
