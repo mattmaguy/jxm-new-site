@@ -1,0 +1,19 @@
+# Anything we don't want shipped to production
+
+# Archived / reference files (kept in the repo, but excluded from deploy)
+_archive/
+for reference/
+
+# PHP file that Vercel can't execute (replaced with Formspree)
+mail.php
+
+# Build template artifact
+_stub-template.html
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Source SCSS (we ship the compiled style.css only)
+assets/scss/
+assets/ad-scss/

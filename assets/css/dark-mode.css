@@ -1,0 +1,85 @@
+/* ════════════════════════════════════════
+   DARK MODE — toggle button + logo swap.
+   Ported from the Redox dark-&-light-button
+   reference template, kept isolated so the
+   master style.css stays untouched.
+
+   Position: stacked above .progress-wrap
+   (scroll-to-top), 16px gap, same 46×46 size.
+   Icons are inline SVG (no FA dependency).
+════════════════════════════════════════ */
+
+
+/* ── Toggle button ── */
+.switcher-button {
+  position: fixed;
+  right: 20px;
+  bottom: 82px;            /* 20 (progress-wrap bottom) + 46 (its size) + 16 (gap) */
+  width: 46px;
+  height: 46px;
+  cursor: pointer;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  transition: background 0.4s ease, transform 0.2s ease;
+  z-index: 9999;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+.switcher-button:hover { transform: translateY(-1px); }
+
+.switcher-button.light-mode { background: #fff; }
+.switcher-button.dark-mode  { background: #202020; }
+
+.switcher-button-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+.switcher-button-inner .icon-light,
+.switcher-button-inner .icon-dark {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translate(-50%, -50%);
+  transition: transform 0.4s ease, opacity 0.4s ease;
+}
+.switcher-button-inner .icon-light {
+  color: var(--primary);
+}
+.switcher-button-inner .icon-dark {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+  color: var(--white);
+}
+
+body.dark .switcher-button-inner .icon-light {
+  transform: translate(-50%, 100%);
+  opacity: 0;
+}
+body.dark .switcher-button-inner .icon-dark {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+}
+
+
+/* ── Logo swap — show .logo-light by default, .logo-dark in dark mode ── */
+.logo-dark { display: none; }
+.logo-light { display: inline-block; }
+
+body.dark .logo-light { display: none; }
+body.dark .logo-dark  { display: inline-block; }
+
+
+/* ── Reduced motion: snap, don't slide ── */
+@media (prefers-reduced-motion: reduce) {
+  .switcher-button,
+  .switcher-button-inner .icon-light,
+  .switcher-button-inner .icon-dark {
+    transition: none !important;
+  }
+}

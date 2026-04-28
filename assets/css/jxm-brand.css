@@ -1,0 +1,189 @@
+/* ════════════════════════════════════════
+   JXM BRAND LAYER
+   Sits on top of the Redox style.css and
+   remaps the template's CSS variables onto
+   the JXM design tokens. Master style.css
+   is left untouched.
+
+   Cascade order in <head>:
+     1. style.css            (Redox base)
+     2. jxm-brand.css        (this file — colors, fonts)
+     3. dark-mode.css        (toggle + logo swap)
+════════════════════════════════════════ */
+
+
+/* ════════════ JXM TOKENS ═══════════════════════ */
+:root {
+  /* Brand */
+  --jxm-tusk:     #f3f1ec;
+  --jxm-abyss:    #221F32;
+  --jxm-soylent:  #233935;
+  --jxm-cedar:    #1c2d20;
+
+  /* Accents */
+  --jxm-kermit:   #49e385;
+  --jxm-gator:    #2ec470;
+  --jxm-blurple:  #5e4ff5;
+
+  /* Dark surfaces */
+  --jxm-bg-dark:  #16121f;
+  --jxm-bg-deep:  #0a0a0e;
+
+  /* Text on dark */
+  --jxm-t1: #ffffff;
+  --jxm-t2: rgba(255,255,255,0.85);
+  --jxm-t3: rgba(255,255,255,0.65);
+  --jxm-t4: rgba(255,255,255,0.45);
+  --jxm-t5: rgba(255,255,255,0.30);
+
+  /* Borders on dark */
+  --jxm-bd1: rgba(255,255,255,0.07);
+  --jxm-bd2: rgba(255,255,255,0.10);
+  --jxm-bd3: rgba(255,255,255,0.18);
+
+  /* Text on cream (tusk) */
+  --jxm-c-t2: rgba(34,31,50,0.85);
+  --jxm-c-t3: rgba(34,31,50,0.55);
+  --jxm-c-t4: rgba(34,31,50,0.30);
+  --jxm-c-bd: rgba(34,31,50,0.18);
+}
+
+
+/* ════════════ REDOX VARIABLE REMAP ═════════════
+   Overrides Redox's :root tokens to point at JXM
+   values. Anything in style.css that reads
+   var(--theme), var(--primary), etc. now follows
+   JXM brand without further edits.
+═══════════════════════════════════════════════════ */
+:root {
+  --primary:   var(--jxm-abyss);
+  --secondary: var(--jxm-c-t2);
+  --border:    var(--jxm-c-bd);
+  --bg:        var(--jxm-tusk);
+  --theme:     var(--jxm-kermit);
+  --black:     var(--jxm-abyss);
+  --black-2:   var(--jxm-c-t3);
+  --white:     #ffffff;
+  --white-2:   var(--jxm-t3);
+  --action:    var(--jxm-kermit);
+}
+
+/* Dark-mode overrides (Redox uses :root .dark — we mirror).
+   NOTE: --black stays abyss in both modes. Redox's button rule
+   (.dark .rr-btn .text-one { color: var(--black) }) relies on
+   --black being the dark-on-light value to give abyss text on
+   the tusk button. Don't override it here. */
+:root .dark,
+body.dark {
+  --primary:   var(--jxm-tusk);
+  --secondary: var(--jxm-t2);
+  --border:    var(--jxm-bd2);
+  --bg:        var(--jxm-bg-dark);
+  --theme:     var(--jxm-kermit);
+  --black-2:   var(--jxm-t3);
+  --action:    var(--jxm-kermit);
+}
+
+
+/* ════════════ BODY SURFACE ═════════════════════
+   Cream surface in light mode, JXM bg-dark in dark.
+═══════════════════════════════════════════════════ */
+body.body-wrapper {
+  background: var(--jxm-tusk);
+  color: var(--jxm-abyss);
+}
+body.body-wrapper.dark {
+  background: var(--jxm-bg-dark);
+  color: var(--jxm-tusk);
+}
+
+
+/* ════════════ TYPE FAMILIES ════════════════════
+   Body: DM Sans 400, line-height 1.65–1.75
+   Display H1-H6: Inter 500, tight letter-spacing
+   Mono labels: IBM Plex Mono (used per-section)
+   Quote accent: Libre Baskerville (used per-section)
+═══════════════════════════════════════════════════ */
+
+body.body-wrapper {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* High-specificity headline override — wins over
+   .font-heading-bdogrotesk-regular hN { font-family: ... } */
+body[class*="body-"] h1,
+body[class*="body-"] h2,
+body[class*="body-"] h3,
+body[class*="body-"] h4,
+body[class*="body-"] h5,
+body[class*="body-"] h6 {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.025em;
+  line-height: 1.05;
+  color: var(--primary);
+}
+
+body[class*="body-"] h1 {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+}
+body[class*="body-"] h2 {
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+}
+body[class*="body-"] h3 {
+  font-weight: 600;
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+/* Section subtitle (the small wavy-underline label) — render in mono */
+body[class*="body-"] .section-subtitle {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-weight: 500;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--primary);
+}
+
+
+/* ════════════ BUTTON HOVER FILL ════════════════
+   Redox's .rr-btn slides a ::before pseudo up
+   from the bottom on hover. Default fill is white;
+   JXM wants tusk in light and abyss in dark.
+═══════════════════════════════════════════════════ */
+.rr-btn::before {
+  background-color: var(--jxm-tusk);
+}
+body.dark .rr-btn::before,
+.dark .rr-btn::before {
+  background-color: var(--jxm-abyss);
+}
+
+/* Hover text color on the slid-in fill — kept symmetric */
+.rr-btn:hover .btn-wrap .text-two,
+.rr-btn:focus .btn-wrap .text-two {
+  color: var(--jxm-abyss);
+}
+body.dark .rr-btn:hover .btn-wrap .text-two,
+body.dark .rr-btn:focus .btn-wrap .text-two,
+.dark .rr-btn:hover .btn-wrap .text-two,
+.dark .rr-btn:focus .btn-wrap .text-two {
+  color: var(--jxm-tusk);
+}
+
+
+/* ════════════ ACCENT SELECTION ═════════════════ */
+::selection {
+  background: var(--jxm-abyss);
+  color: var(--jxm-tusk);
+}
+body.dark ::selection {
+  background: var(--jxm-tusk);
+  color: var(--jxm-abyss);
+}
