@@ -178,6 +178,83 @@ body.dark .rr-btn:focus .btn-wrap .text-two,
 }
 
 
+/* ════════════ CASE STUDY — chapter labels + channels ═
+   Used on client-stories-*.html pages.
+═══════════════════════════════════════════════════ */
+.case-chapter-label {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jxm-c-t3);
+  margin-bottom: 0.75rem;
+}
+body.dark .case-chapter-label {
+  color: var(--jxm-t3);
+}
+
+.case-channels {
+  margin-top: 3rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--jxm-c-bd);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem 1.5rem;
+  align-items: baseline;
+}
+body.dark .case-channels { border-top-color: var(--jxm-bd2); }
+
+.case-channels-label {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jxm-c-t3);
+  flex-shrink: 0;
+}
+body.dark .case-channels-label { color: var(--jxm-t3); }
+
+.case-channels-list {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: var(--jxm-abyss);
+}
+body.dark .case-channels-list { color: var(--jxm-tusk); }
+
+.case-dek {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 1.1rem;
+  line-height: 1.55;
+  color: var(--jxm-c-t2);
+  margin: 1rem 0 0;
+  max-width: 36rem;
+}
+body.dark .case-dek { color: var(--jxm-t2); }
+
+.case-eyebrow {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--jxm-c-t3);
+  margin-bottom: 0.5rem;
+}
+body.dark .case-eyebrow { color: var(--jxm-t3); }
+
+.case-client-tag {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--jxm-abyss);
+  margin-bottom: 1.25rem;
+}
+body.dark .case-client-tag { color: var(--jxm-tusk); }
+
+
 /* ════════════ ACCENT SELECTION ═════════════════ */
 ::selection {
   background: var(--jxm-abyss);
