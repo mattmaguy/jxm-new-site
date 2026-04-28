@@ -1,0 +1,96 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — portfolio.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [3w]
+  Work · JXM
+
+META DESCRIPTION  [15w]
+  Selected work from JXM. Campaigns and brand work for mission-driven organizations that move real-world numbers.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[PAGE TITLE H2]  [2w]
+  Client stories
+
+[EYEBROW]  [2w]
+  Client stories
+
+[H2]  [8w]
+  Five stories. Real numbers. More on the way.
+
+[BODY]  [41w]
+  Every JXM engagement starts with a measurement plan and ends with a number we'll point to. These
+  are five of the campaigns we've put our name on most recently — what the brand was facing, what we
+  did, and what happened.
+
+[CASE EYEBROW]  [5w]
+  Home Equity / Brand Awareness
+
+[H3]  [6w]
+  $70.6M in HELOC volume. One month.
+
+[CASE EYEBROW]  [4w]
+  Sports Partnership / Rewards
+
+[H3]  [7w]
+  99.5% of viewers watched the whole thing.
+
+[CASE EYEBROW]  [5w]
+  Omnichannel Lift / Census Targeting
+
+[H3]  [8w]
+  Conversions up 460%. We stopped using SEG lists.
+
+[CASE EYEBROW]  [4w]
+  Sponsorship Activation / Fan-Building
+
+[H3]  [9w]
+  A sponsorship with a heartbeat, not a scoreboard line.
+
+[CASE EYEBROW]  [4w]
+  Deposit Growth / Savings
+
+[H3]  [10w]
+  The deposit campaign that didn't live or die on rate.
+
+[H2]  [6w]
+  Want to be the next story?
+
+[BODY]  [28w]
+  The clients on this page didn't come to us with the campaigns we ended up running. They came with
+  a problem. The first call solved most of it.
+
+[BUTTON]  [3w]
+  Start the conversation
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/case-studies/advia.jpg
+    size:  1920×1080px, 149 KB
+    alt:   "Advia · Real People cover"
+
+• assets/imgs/case-studies/nwfcu.jpg
+    size:  1920×1080px, 143 KB
+    alt:   "Northwest Federal · Brand Bridge cover"
+
+• assets/imgs/case-studies/harvard.jpg
+    size:  1920×1080px, 276 KB
+    alt:   "Harvard FCU cover"
+
+• assets/imgs/case-studies/siena.jpg
+    size:  1920×1080px, 106 KB
+    alt:   "CAP COM · Siena Saints cover"
+
+• assets/imgs/case-studies/process-3.webp
+    size:  600×338px, 57 KB
+    alt:   "Jeanne D'Arc · Savings Journey cover"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

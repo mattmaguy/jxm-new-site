@@ -1,0 +1,100 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — client-stories-harvard.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [8w]
+  Conversions up 460%. · Harvard FCU · JXM
+
+META DESCRIPTION  [14w]
+  Harvard FCU Is Here. The campaign that retired SEG-list targeting and lifted conversions 460%.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[CASE EYEBROW]  [5w]
+  Omnichannel Lift / Census Targeting
+
+[CASE CLIENT TAG]  [4w]
+  Harvard FCU × JXM
+
+[H2]  [4w]
+  Harvard FCU Is Here
+
+[DEK]  [30w]
+  Conversions up 460%. We stopped using SEG lists. — After the 2024 rebrand and charter expansion,
+  the old SEG lists couldn't reach the new footprint. So we stopped using them.
+
+[META ITEM]  [2w]
+  Sessions: 1.1M
+
+[META ITEM]  [2w]
+  Conversions: 79K
+
+[META ITEM]  [2w]
+  CTR: 0.47%
+
+[META ITEM]  [2w]
+  Pageviews: +50%
+
+[CASE CHAPTER LABEL]  [1w]
+  Context
+
+[H2 (block)]  [2w]
+  The setup.
+
+[BODY]  [35w]
+  Harvard FCU had just blown up its field of membership. Legacy SEG lists weren't going to reach the
+  new prospects. The rebrand needed the media to catch up to the scale of the charter change.
+
+[CASE CHAPTER LABEL]  [1w]
+  Move
+
+[H3]  [3w]
+  What we did.
+
+[BODY]  [31w]
+  We activated census-tract–based targeting and built the HERE and Alumni Card campaigns around the
+  new footprint. Scale and precision at the same time — instead of trading one for the other.
+
+[CASE CHAPTER LABEL]  [1w]
+  Result
+
+[H3]  [3w]
+  What it moved.
+
+[BODY]  [25w]
+  Site traffic surged 34% YoY to more than 1.1M sessions. Pageviews climbed 50%. Key Events jumped
+  over 460% — from 14,000 to nearly 79,000 conversions.
+
+[BODY]  [19w]
+  Campaigns delivered 10.2M impressions, 48,000+ clicks, and a combined 0.47% CTR — more than four
+  times the industry benchmark.
+
+[COUNTER]  [5w]
+  34% — Site traffic YoY
+
+[COUNTER]  [4w]
+  460% — Conversion lift
+
+[COUNTER]  [3w]
+  10.2M — Impressions
+
+[COUNTER]  [5w]
+  4× — CTR vs. industry
+
+[CHANNELS]  [16w]
+  Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · Census Targeting
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/case-studies/harvard.jpg
+    size:  1920×1080px, 276 KB
+    alt:   "Harvard FCU × JXM cover"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

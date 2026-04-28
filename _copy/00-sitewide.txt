@@ -1,0 +1,52 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — 00 SITEWIDE
+Shared elements — appear on every page
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+TOP NAV (header)
+──────────────────────────────────────────────────────────────────────
+• Home  [1w]
+• About Us  [2w]
+• Services  [1w]
+• Blog  [1w]
+• Contact  [1w]
+• Works  [1w]
+• Services  [1w]
+• Studio  [1w]
+• Get in Touch  [3w]
+
+SIDE DRAWER (mobile menu / Let's Talk slide-out)
+──────────────────────────────────────────────────────────────────────
+[BUTTON]  [2w]
+  Let's Talk
+
+[H2 (block)]  [1w]
+  Contact
+
+FOOTER NAV
+──────────────────────────────────────────────────────────────────────
+• Home  [1w]
+• About  [1w]
+• Services  [1w]
+• Blog  [1w]
+• Contact  [1w]
+
+FOOTER COPYRIGHT
+──────────────────────────────────────────────────────────────────────
+[BODY]  [12w]
+  © MMXXVI JXM · James and Matthew, LTD · All rights reserved.
+
+SHARED IMAGES (logo, favicon, mobile nav icon)
+──────────────────────────────────────────────────────────────────────
+• assets/ad-imgs/logo/JXM.svg
+    size:  105×42px, 1 KB
+    alt:   "JXM"
+
+• assets/ad-imgs/logo/JXM-light.svg
+    size:  105×42px, 1 KB
+    alt:   "JXM"
+
+• assets/imgs/icon/icon-2.webp
+    size:  19×9px, 1 KB
+    alt:   "image"

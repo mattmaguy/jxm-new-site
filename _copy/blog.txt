@@ -1,0 +1,91 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — blog.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [3w]
+  Ideas · JXM
+
+META DESCRIPTION  [18w]
+  Essays, briefs, and the occasional rant from JXM. Founder-written, practitioner-tested, on the work and the thinking behind it.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[PAGE TITLE H2]  [1w]
+  Ideas
+
+[EYEBROW]  [1w]
+  Ideas
+
+[H2]  [6w]
+  Essays, briefs, and the occasional rant.
+
+[BODY]  [21w]
+  Founder-written, practitioner-tested. On the work, the thinking behind it, and the parts of the
+  marketing industry that need a second look.
+
+[H2 (block)]  [11w]
+  Beyond the basics, how to take marketing to the next level
+
+[H2 (block)]  [14w]
+  Allow us to be the cool part of your days are open for now
+
+[H2 (block)]  [9w]
+  Various ideas and creative concepts based on market research
+
+[H2 (block)]  [11w]
+  Beyond the basics, how to take marketing to the next level
+
+[H2 (block)]  [11w]
+  Beyond the basics, how to take marketing to the next level
+
+[H2 (block)]  [11w]
+  Beyond the basics, how to take marketing to the next level
+
+[H2 (block)]  [14w]
+  Allow us to be the cool part of your days are open for now
+
+[H2 (block)]  [9w]
+  Various ideas and creative concepts based on market research
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/blog/blog-5.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-6.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-7.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-8.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-9.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-10.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-11.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-12.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

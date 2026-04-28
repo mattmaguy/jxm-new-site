@@ -1,0 +1,99 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — client-stories-capcom.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [9w]
+  A Slam Dunk Partnership · CAP COM · JXM
+
+META DESCRIPTION  [17w]
+  A sponsorship with a heartbeat, not a scoreboard line. CAP COM and the Siena Saints, by JXM.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[CASE EYEBROW]  [4w]
+  Sponsorship Activation / Fan-Building
+
+[CASE CLIENT TAG]  [4w]
+  CAP COM × JXM
+
+[H2]  [4w]
+  A Slam Dunk Partnership
+
+[DEK]  [33w]
+  A sponsorship with a heartbeat, not a scoreboard line. — The Siena Saints sponsorship was supposed
+  to show up in the community — not just on a scoreboard. We gave it a heartbeat.
+
+[META ITEM]  [4w]
+  All-Access: Team & Venue
+
+[META ITEM]  [3w]
+  Engine: Video Content
+
+[META ITEM]  [3w]
+  Targeting: Arena Geofence
+
+[META ITEM]  [2w]
+  Storyline: Season-long
+
+[CASE CHAPTER LABEL]  [1w]
+  Context
+
+[H2 (block)]  [2w]
+  The setup.
+
+[BODY]  [48w]
+  Sponsorship dollars only matter if they show up in the community. CAP COM had committed to
+  sponsoring the Siena Saints — a Division I basketball team in Albany — and the real challenge was
+  making every dollar translate into brand value instead of a line on the jumbotron.
+
+[CASE CHAPTER LABEL]  [1w]
+  Move
+
+[H3]  [3w]
+  What we did.
+
+[BODY]  [41w]
+  We secured an all-access pass to the team. We captured the raw energy of the games and the
+  behind-the-scenes moments fans never see. And we built a dynamic video content engine that folded
+  CAP COM into every storyline of the season.
+
+[CASE CHAPTER LABEL]  [1w]
+  Result
+
+[H3]  [3w]
+  What it moved.
+
+[BODY]  [40w]
+  The sponsorship became the community's story, not a line item in the budget. Arena-targeted
+  retargeting kept the brand present from tipoff through the final buzzer. The creative gave the
+  partnership a heartbeat that a logo on a scoreboard never could.
+
+[COUNTER]  [5w]
+  All-access — Team & venue
+
+[COUNTER]  [4w]
+  Video — Content engine
+
+[COUNTER]  [3w]
+  Arena — Geofencing
+
+[COUNTER]  [4w]
+  Fans — Engagement focus
+
+[CHANNELS]  [17w]
+  Hulu · Meta · Display · Retargeting · OTT · YouTube · Mobile Tracking · Arena Targeting
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/case-studies/siena.jpg
+    size:  1920×1080px, 106 KB
+    alt:   "CAP COM × JXM cover"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

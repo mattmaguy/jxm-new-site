@@ -1,0 +1,179 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — index.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [8w]
+  JXM — A Growth Partner for Mission-Driven Brands
+
+META DESCRIPTION  [18w]
+  JXM is a growth partner for mission-driven brands. Strategy and creative that moves real-world numbers. Founder-led since 2007.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H1 (HERO)]  [6w]
+  A growth partner for mission-driven brands.
+
+[BODY]  [10w]
+  Strategy and creative that moves real-world numbers. Founder-led since 2007.
+
+[BUTTON]  [3w]
+  Start the conversation
+
+[EYEBROW]  [2w]
+  Selected work
+
+[H2]  [7w]
+  Work we love for brands we love.
+
+[LINK]  [4w]
+  See all client stories
+
+[H3]  [6w]
+  $70.6M in HELOC volume. One month.
+
+[H3]  [7w]
+  99.5% of viewers watched the whole thing.
+
+[H3]  [8w]
+  Conversions up 460%. We stopped using SEG lists.
+
+[H3]  [9w]
+  A sponsorship with a heartbeat, not a scoreboard line.
+
+[H3]  [10w]
+  The deposit campaign that didn't live or die on rate.
+
+[H2]  [4w]
+  Effective. Intentional. Beautiful. Bold.
+
+[EYEBROW]  [2w]
+  The studio
+
+[H2]  [10w]
+  Founder-led since 2007. We make work that earns its place.
+
+[BUTTON]  [4w]
+  Learn more about us
+
+[LINK]  [4w]
+  Browse all client stories
+
+[EYEBROW]  [1w]
+  Services
+
+[H2]  [11w]
+  What we do — and the order we do it in.
+
+[INTRO]  [63w]
+  Five disciplines, run in order. Strategy first — because every dollar after it depends on getting
+  that one right. Brand and creative next, because the thinking has to be visible before it can move
+  anyone. Then media and measurement, because the work doesn't matter until it earns a number. All
+  five live under one roof. None of them gets handed to a vendor.
+
+[H3]  [2w]
+  Growth Strategy
+
+[BODY]  [24w]
+  Where to spend. What to build. What's worth it, what isn't. The decisions that determine whether
+  the rest of the work has a chance.
+
+[H3]  [3w]
+  Brand & Positioning
+
+[BODY]  [37w]
+  The story the brand tells about itself, and the story the market believes back. We work on both —
+  because if either one drifts, the work that comes after it is harder than it has to be.
+
+[H3]  [3w]
+  Creative & Campaign
+
+[BODY]  [31w]
+  Concept, copy, art direction, production. The point isn't to be clever. The point is to be seen —
+  and to earn a second look from people who weren't looking for you.
+
+[H3]  [4w]
+  Media Planning & Buying
+
+[BODY]  [36w]
+  Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in
+  hand and buy with the creative in mind. The two should never live on different floors.
+
+[H3]  [3w]
+  Performance & Analytics
+
+[BODY]  [21w]
+  The number the campaign was supposed to move, and the proof that it did. Custom dashboards,
+  plain-language reporting, no vanity metrics.
+
+[H2]  [5w]
+  Let's build something worth choosing.
+
+[BODY]  [14w]
+  A short note to hi@getjxm.com gets you Jim or Matt. Usually within the day.
+
+[BUTTON]  [3w]
+  Start the conversation
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/shape/shape-19.webp
+    size:  1620×376px, 19 KB
+    alt:   "image"
+
+• assets/imgs/icon/icon-5.webp
+    size:  18×18px, 1 KB
+    alt:   "image"
+
+• assets/imgs/case-studies/advia.jpg
+    size:  1920×1080px, 149 KB
+    alt:   "Advia Credit Union — HELOC campaign"
+
+• assets/imgs/case-studies/nwfcu.jpg
+    size:  1920×1080px, 143 KB
+    alt:   "Northwest Federal — Brand Bridge campaign"
+
+• assets/imgs/case-studies/harvard.jpg
+    size:  1920×1080px, 276 KB
+    alt:   "Harvard FCU — Harvard FCU Is Here campaign"
+
+• assets/imgs/case-studies/siena.jpg
+    size:  1920×1080px, 106 KB
+    alt:   "CAP COM — Siena Saints partnership"
+
+• assets/imgs/case-studies/process-3.webp
+    size:  600×338px, 57 KB
+    alt:   "Jeanne D'Arc — The Savings Journey campaign"
+    note:  DRAFT cover — replace process-3.webp with the real Jeanne D'Arc Savings Journey hero when ready
+
+• assets/imgs/gallery/image-51.webp
+    size:  1620×850px, 14 KB
+    alt:   "image"
+
+• assets/imgs/project/image-47.webp
+    size:  295×165px, 2 KB
+    alt:   "image"
+
+• assets/imgs/project/image-48.webp
+    size:  295×165px, 2 KB
+    alt:   "image"
+
+• assets/imgs/project/image-49.webp
+    size:  295×165px, 2 KB
+    alt:   "image"
+
+• assets/imgs/project/image-50.webp
+    size:  295×165px, 2 KB
+    alt:   "image"
+
+• assets/imgs/project/image-51.webp
+    size:  295×165px, 2 KB
+    alt:   "image"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT cover — replace process-3.webp with the real Jeanne D'Arc Savings Journey hero when ready

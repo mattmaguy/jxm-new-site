@@ -1,0 +1,52 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — team-details-jim.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [4w]
+  Jim Pond · JXM
+
+META DESCRIPTION  [27w]
+  Jim Pond co-founded JXM in 2007. Creative authority across two decades of brand work. The partner clients lean on when the work has to take a position.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [2w]
+  Jim Pond
+
+[EYEBROW]  [1w]
+  Co-Founder
+
+[BODY]  [43w]
+  Jim co-founded JXM in 2007 with a single rule he hasn't broken since: nothing leaves the studio
+  that all four of us wouldn't put our name on. Two decades in, that rule is the reason JXM looks
+  and reads the way it does.
+
+[BODY]  [54w]
+  Jim is the creative authority across the practice. Brand work, campaign concept, art direction,
+  copy — every piece of work that leaves JXM has Jim's eye on it before it ships. He's spent his
+  career building brands that mission-driven clients actually want to be associated with — not the
+  wallpaper most agencies hand back.
+
+[BODY]  [50w]
+  He's the partner clients lean on when the work has to take a position — when the safe version of
+  an idea is going to disappear in the feed and the bold version is going to make somebody nervous.
+  The work that's mattered most has always been the second one.
+
+[PULL QUOTE]  [15w]
+  "Beauty earns the second look. The second look earns the response. The math isn't complicated."
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/team/team-2.webp
+    size:  440×600px, 3 KB
+    alt:   "Jim Pond"
+    note:  DRAFT: replace placeholder team-N.webp with real partner headshot
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT: replace placeholder team-N.webp with real partner headshot

@@ -1,0 +1,42 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — contact.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [3w]
+  Contact · JXM
+
+META DESCRIPTION  [17w]
+  Tell us what you want to grow. JXM is a founder-led growth partner for mission-driven brands. hi@getjxm.com.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[PAGE TITLE H2]  [1w]
+  Contact
+
+[EYEBROW]  [1w]
+  Contact
+
+[H2]  [7w]
+  Tell us what you want to grow.
+
+[BODY]  [14w]
+  The fastest way in is hi@getjxm.com. We read every note. We answer every one.
+
+[BODY]  [19w]
+  Or fill out the form and we'll route it to Jim or Matt directly. Most replies go out same-day.
+
+[BUTTON]  [2w]
+  Send Message
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+  (no images on this page)
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

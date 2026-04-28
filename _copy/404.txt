@@ -1,0 +1,37 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — 404.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [5w]
+  Page Not Found · JXM
+
+META DESCRIPTION  [16w]
+  That page doesn't exist. Head back home or jump into the work, services, or contact pages.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[EYEBROW]  [1w]
+  404
+
+[H2]  [4w]
+  Wrong turn. Easy fix.
+
+[BODY]  [20w]
+  We can't find that page. Head back home, or jump to the work, services, or contact pages from the
+  nav.
+
+[BUTTON]  [3w]
+  Back to home
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+  (no images on this page)
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

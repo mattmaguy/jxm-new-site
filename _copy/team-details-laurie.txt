@@ -1,0 +1,52 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — team-details-laurie.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [4w]
+  Laurie Busby · JXM
+
+META DESCRIPTION  [18w]
+  Laurie Busby is JXM's Managing Partner. She runs the operating system behind the practice and keeps it scalable.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [2w]
+  Laurie Busby
+
+[EYEBROW]  [2w]
+  Managing Partner
+
+[BODY]  [47w]
+  Laurie runs the operating system behind the practice. The planning, the people, the rhythm of how
+  the work moves. She's the reason JXM scales without compromising the thinking at the top — and the
+  reason a small studio can deliver across as many disciplines as it does.
+
+[BODY]  [75w]
+  Laurie is the partner clients meet first when an engagement formally starts and the one who keeps
+  the engine running all the way through. She owns the operating model — how we staff, how we plan,
+  how we hold ourselves accountable to a measurement plan — and she's the partner most directly
+  responsible for the part of the work that isn't the work but absolutely determines whether the
+  work happens on time and on standard.
+
+[BODY]  [14w]
+  [Two sentences of Laurie's specific background / track record go here. Pending Matt's input.]
+
+[PULL QUOTE]  [13w]
+  "A founder-led firm scales by amplifying the founders' thinking. That's the entire job."
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/team/team-4.webp
+    size:  440×600px, 3 KB
+    alt:   "Laurie Busby"
+    note:  DRAFT: replace placeholder team-N.webp with real partner headshot
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT: replace placeholder team-N.webp with real partner headshot
+• DRAFT — Matt to provide Laurie's specific background / track record / domain expertise

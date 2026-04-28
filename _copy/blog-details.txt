@@ -1,0 +1,152 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — blog-details.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [9w]
+  Sonar? So What. · Cheat Codes 0x13 · JXM
+
+META DESCRIPTION  [23w]
+  Cheat Codes 0x13. Attention is the ocean. Intention is the ping back. What Ecco the Dolphin can teach marketers about signal vs. noise.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [3w]
+  Sonar? So What.
+
+[DEK]  [9w]
+  Attention is the ocean. Intention is the ping back.
+
+[BODY]  [11w]
+  Level 0x13 — Ecco the Dolphin · Sega Genesis · 1992
+
+[BODY]  [82w]
+  You remember the moment. Saturday morning, controller in hand, watching a dolphin breach into a
+  perfect blue sky, and then the entire pod vanishes. Sucked into a vortex. Gone. Just Ecco, alone
+  in a suddenly very hostile ocean. You swam toward the first thing that moved. It ate you. You
+  tried again. Drowned. Again. Got eaten again. The ocean in Ecco the Dolphin is enormous, and it is
+  patient, and it will absolutely outlast you if you keep chasing everything in it.
+
+[H3]  [5w]
+  Just Press A and Listen.
+
+[BODY]  [65w]
+  At some point, you figured out the A button. Tap it, and Ecco sings — a sonar pulse that ripples
+  outward through the water in every direction. Hold it, and the song comes back with information: a
+  map of the surrounding passages, a picture of what's ahead, a signal from the creatures willing to
+  help you versus the ones just waiting to end your run.
+
+[H3]  [5w]
+  The ocean didn't get smaller.
+
+[BODY]  [43w]
+  You just stopped reacting to all of it. That one button changed everything. Not because it made
+  the game easier — Ecco never got easy — but because it gave you a way to separate noise from
+  signal before you committed to moving.
+
+[H3]  [9w]
+  Attention Is the Ocean. Intention Is the Ping Back.
+
+[BODY]  [35w]
+  Your campaigns are generating attention. The reach numbers look good. Leadership is nodding. And
+  then the sales team asks what happened to the pipeline, and everyone goes quiet. Attention is
+  noise. Intention is a signal.
+
+[BODY]  [50w]
+  Most marketing teams we've worked with spend the better part of their budget broadcasting into the
+  ocean — impressions, reach, share of voice — and call it strategy. What they're missing is the
+  pause after the pulse. The moment where you hold A and actually listen to what comes back.
+
+[BODY]  [53w]
+  1992. A lone dolphin. An ocean full of things that wanted to eat you. Somewhere along the way, you
+  learned to stop chasing and start listening. One sonar pulse, and suddenly the noise had a shape.
+  Reflecting on it nearly twenty-five years later, we find a marketing lesson inside this simple
+  game mechanic.
+
+[H3]  [8w]
+  Most Teams Never Hold the Button Long Enough.
+
+[BODY]  [65w]
+  Here's the discipline that separates good marketing from expensive noise: emit something specific
+  enough that only the right people respond, then measure the response — not the emission. Not who
+  saw the ad. Who came back to pricing after seeing it? Not who followed. Who downloaded the thing
+  only someone close to a decision would bother with? Not who opened the email. Who hit reply?
+
+[PULL QUOTE]  [14w]
+  "Those are the creatures worth swimming toward. Everything else is still just open water."
+
+[CASE CHAPTER LABEL]  [3w]
+  Your Cheat Code
+
+[H3]  [5w]
+  The signal is always there.
+
+[BODY]  [33w]
+  Ecco's sonar didn't create new information. The passages were always hidden. The allies were
+  already in the water. The map existed. He just had to stop charging forward long enough to hear
+  it.
+
+[BODY]  [26w]
+  Your market is the same. The buyers with real intentions are already in your ocean. They're
+  pinging back. Most brands are too busy broadcasting to notice.
+
+[H3]  [2w]
+  About JXM
+
+[BODY]  [19w]
+  JXM is a founder-led growth partner for mission-driven brands. Strategy and creative that moves
+  real-world numbers — since 2007.
+
+[BODY]  [8w]
+  Get in touch · Subscribe to Cheat Codes
+
+[TAGS]  [8w]
+  Cheat Codes · Strategy · Signal vs. Noise
+
+[EYEBROW]  [2w]
+  Recent blog
+
+[H2]  [3w]
+  More from JXM
+
+[H2 (block)]  [11w]
+  Beyond the basics, how to take marketing to the next level
+
+[H2 (block)]  [14w]
+  Allow us to be the cool part of your days are open for now
+
+[H2 (block)]  [9w]
+  Various ideas and creative concepts based on market research
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/gallery/image-35.webp
+    size:  1920×950px, 16 KB
+    alt:   "Ecco the Dolphin"
+    note:  DRAFT: replace placeholder with Ecco the Dolphin hero image when ready
+
+• assets/imgs/gallery/image-36.webp
+    size:  630×370px, 5 KB
+    alt:   "Ecco gameplay"
+    note:  DRAFT: replace with Ecco gameplay still
+
+• assets/imgs/blog/blog-5.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-6.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+• assets/imgs/blog/blog-7.webp
+    size:  780×550px, 7 KB
+    alt:   "blog image"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT: replace placeholder with Ecco the Dolphin hero image when ready
+• DRAFT: replace with Ecco gameplay still

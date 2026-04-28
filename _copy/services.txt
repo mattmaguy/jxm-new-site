@@ -1,0 +1,264 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — services.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [3w]
+  Services · JXM
+
+META DESCRIPTION  [22w]
+  Brand strategy, creative and campaign, media planning and buying, performance and analytics, digital experience. The thinking and the work, under one roof.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[PAGE TITLE H2]  [1w]
+  Services
+
+[EYEBROW]  [1w]
+  Services
+
+[H2]  [9w]
+  Five disciplines. Run in order. All under one roof.
+
+[BODY]  [43w]
+  JXM is a growth partner for mission-driven brands — which means we work upstream before we work
+  downstream. Strategy decides what's worth building. Brand and creative make it visible. Media and
+  analytics prove it moved. Five disciplines, one studio, no vendors in between.
+
+[H3]  [2w]
+  Growth Strategy
+
+[BODY]  [46w]
+  The decisions before the campaign. Where the budget goes. What's worth building. What to fix, what
+  to kill, what to keep. We get hired to make the calls a marketing team shouldn't have to make
+  alone — and to put a real number behind every recommendation.
+
+[SERVICE BULLETS]  [4w]
+  • Marketing investment review
+
+[SERVICE BULLETS]  [3w]
+  • Channel architecture
+
+[SERVICE BULLETS]  [3w]
+  • Vendor assessment
+
+[SERVICE BULLETS]  [5w]
+  • In-house vs. outsource framework
+
+[SERVICE BULLETS]  [3w]
+  • Annual planning
+
+[SERVICE BULLETS]  [5w]
+  • Audit and gap analysis
+
+[H3]  [3w]
+  Brand & Positioning
+
+[BODY]  [42w]
+  The story the brand tells about itself, and the story the market believes back. We work on both.
+  Most brands don't have a positioning problem — they have a visibility problem. The position is
+  fine. Nobody can find it. We fix that.
+
+[SERVICE BULLETS]  [4w]
+  • Positioning and messaging
+
+[SERVICE BULLETS]  [2w]
+  • Naming
+
+[SERVICE BULLETS]  [3w]
+  • Visual identity
+
+[SERVICE BULLETS]  [3w]
+  • Brand voice
+
+[SERVICE BULLETS]  [5w]
+  • Architecture and sub-brand strategy
+
+[SERVICE BULLETS]  [4w]
+  • Internal brand activation
+
+[H3]  [3w]
+  Creative & Campaign
+
+[BODY]  [53w]
+  Concept, copy, art direction, production. The point isn't to be clever. The point is to be seen —
+  and to earn a second look from people who weren't looking for you. Every campaign that leaves the
+  studio has to clear all four pillars: effective, intentional, beautiful, bold. We don't ship
+  anything that doesn't.
+
+[SERVICE BULLETS]  [5w]
+  • Campaign concept and platform
+
+[SERVICE BULLETS]  [2w]
+  • Copywriting
+
+[SERVICE BULLETS]  [3w]
+  • Art direction
+
+[SERVICE BULLETS]  [4w]
+  • Video and motion
+
+[SERVICE BULLETS]  [2w]
+  • Photography
+
+[SERVICE BULLETS]  [2w]
+  • Production
+
+[H3]  [4w]
+  Media Planning & Buying
+
+[BODY]  [57w]
+  Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in
+  hand and buy with the creative in mind. Media and creative live on the same floor here — because
+  the work doesn't matter until somebody sees it, and what they see is shaped by where it ran.
+
+[SERVICE BULLETS]  [3w]
+  • Channel planning
+
+[SERVICE BULLETS]  [7w]
+  • Paid media (search, social, display, OTT/CTV)
+
+[SERVICE BULLETS]  [2w]
+  • Programmatic
+
+[SERVICE BULLETS]  [4w]
+  • Sponsorships and partnerships
+
+[SERVICE BULLETS]  [2w]
+  • Out-of-home
+
+[SERVICE BULLETS]  [4w]
+  • Audio and podcast
+
+[H3]  [3w]
+  Performance & Analytics
+
+[BODY]  [47w]
+  The number the campaign was supposed to move, and the proof that it did. Every JXM engagement
+  starts with a measurement plan and ends with a custom dashboard. No vanity metrics. No reporting
+  theater. The dashboard tells you what worked, what didn't, and what to do next.
+
+[SERVICE BULLETS]  [3w]
+  • Measurement strategy
+
+[SERVICE BULLETS]  [5w]
+  • GA4 and tag governance
+
+[SERVICE BULLETS]  [3w]
+  • Custom dashboards
+
+[SERVICE BULLETS]  [3w]
+  • Attribution modeling
+
+[SERVICE BULLETS]  [3w]
+  • Conversion analysis
+
+[SERVICE BULLETS]  [4w]
+  • Quarterly business reviews
+
+[BODY]  [26w]
+  Strategy upstream. Creative downstream. All five disciplines under one roof — so the thinking that
+  wins isn't the thinking that gets handed to a vendor mid-flight.
+
+[BODY]  [14w]
+  Most engagements start with a conversation, not a brief. Read on, or skip ahead.
+
+[H2]  [8w]
+  Not sure where you fit in the five?
+
+[BODY]  [28w]
+  Most engagements start with a conversation, not a brief. A short note to hi@getjxm.com gets you
+  Jim or Matt — and a real answer about where we'd start.
+
+[BUTTON]  [3w]
+  Start the conversation
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/gallery/image-3.webp
+    size:  545×265px, 4 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-4.webp
+    size:  545×265px, 4 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-5.webp
+    size:  545×265px, 4 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-6.webp
+    size:  545×265px, 4 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-10.webp
+    size:  250×320px, 2 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-11.webp
+    size:  740×930px, 6 KB
+    alt:   "image"
+
+• assets/imgs/client/client-9.webp
+    size:  141×29px, 2 KB
+    alt:   "image"
+
+• assets/imgs/client/client-10.webp
+    size:  140×23px, 2 KB
+    alt:   "image"
+
+• assets/imgs/client/client-11.webp
+    size:  88×21px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-12.webp
+    size:  123×24px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-13.webp
+    size:  121×28px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-14.webp
+    size:  83×27px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-15.webp
+    size:  105×27px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-16.webp
+    size:  97×23px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-17.webp
+    size:  101×20px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-18.webp
+    size:  95×27px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-19.webp
+    size:  108×27px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-20.webp
+    size:  92×24px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-21.webp
+    size:  125×25px, 1 KB
+    alt:   "image"
+
+• assets/imgs/client/client-22.webp
+    size:  110×29px, 2 KB
+    alt:   "image"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

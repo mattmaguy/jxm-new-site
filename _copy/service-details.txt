@@ -1,0 +1,203 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — service-details.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [3w]
+  Service · JXM
+
+META DESCRIPTION  [15w]
+  How we run an individual JXM engagement — process, deliverables, and what good looks like.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [2w]
+  Brand Guideline
+
+[BODY]  [32w]
+  You'll need to provide your brand information, and starting history to visualize identity. We
+  speak fluent branding, as we apply a solid base understanding to everything we do in thought and
+  action.
+
+[EYEBROW]  [4w]
+  Our comprehensive design process
+
+[H2]  [21w]
+  Whether you’re a startup or industry star, we’re here to promote your brand by creative research
+  and real human centred design.
+
+[H3]  [3w]
+  Discovery & Research
+
+[BODY]  [20w]
+  Our mission is to empower the brands we believe in with tailor-made approaches that ignite
+  creativity and growth without limits.
+
+[H3]  [3w]
+  Wireframing & Prototyping
+
+[BODY]  [20w]
+  Our mission is to empower the brands we believe in with tailor-made approaches that ignite
+  creativity and growth without limits.
+
+[H3]  [2w]
+  Design System
+
+[BODY]  [20w]
+  Our mission is to empower the brands we believe in with tailor-made approaches that ignite
+  creativity and growth without limits.
+
+[H3]  [2w]
+  Design Validation
+
+[BODY]  [20w]
+  Our mission is to empower the brands we believe in with tailor-made approaches that ignite
+  creativity and growth without limits.
+
+[H3]  [3w]
+  Skilled design team
+
+[BODY]  [20w]
+  We work closely with your team to understand your mission, values, and goals, forming the
+  foundation of your brand identity.
+
+[H3]  [2w]
+  User-centric design
+
+[BODY]  [16w]
+  We bring extensive experience across various industries, delivering tailored design solutions that
+  meet specific sector needs.
+
+[H3]  [2w]
+  Data-driven approach
+
+[BODY]  [16w]
+  Our designs are guided by data and user insights, ensuring optimal usability and impactful user
+  experiences.
+
+[H3]  [2w]
+  Collaborative process
+
+[BODY]  [20w]
+  We work closely with you throughout the design journey, incorporating your feedback to create
+  designs that align with your vision.
+
+[H2]  [13w]
+  We sharpen your brands and businesses create exceptional experiences where people live work
+
+[BODY]  [24w]
+  A website refresh or redesign is a comprehensive overhaul that includes substantial changes to the
+  content, structure, visuals, and code of your current website.
+
+[BODY]  [32w]
+  High-quality custom logo design for Melbourne businesses. We are here to support you. Description
+  - Our logo design package uniquely blends creative skills and strategic thinking. We don't just
+  create brand identities.
+
+[BODY]  [31w]
+  Every creative design begins with a clear objective. Whether it's branding, advertising, product
+  design and user experience, the design must align with the intended purpose to effectively
+  communicate its beyond beauty.
+
+[EYEBROW]  [1w]
+  FAQ
+
+[H2]  [7w]
+  Learn some common answers about newly projects
+
+[FAQ Q]  [6w]
+  Bring their individual experience and creative?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [5w]
+  Design should enrich our day?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [7w]
+  Human centered design to challenges design theory?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [7w]
+  Align with your brand look and feel?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [7w]
+  How to become an Agile productive manager?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [9w]
+  Why we create the best Webflow websites in Figma?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+[FAQ Q]  [6w]
+  How to manage Agile project teams?
+
+[FAQ A]  [52w]
+  People know what an FAQ is, so make that your page title. Don’t overcomplicate things by calling
+  it “Good to Know” or “More Info”. Sometimes people put the frequently asked questions section on
+  their Contact page, but you can create your own page and put it right in your website navigation
+  menu
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/gallery/image-24.webp
+    size:  1045×640px, 8 KB
+    alt:   "image"
+
+• assets/imgs/shape/shape-15.webp
+    size:  80×80px, 1 KB
+    alt:   "image"
+
+• assets/imgs/shape/shape-16.webp
+    size:  80×80px, 1 KB
+    alt:   "image"
+
+• assets/imgs/shape/shape-17.webp
+    size:  80×80px, 2 KB
+    alt:   "image"
+
+• assets/imgs/shape/shape-18.webp
+    size:  85×80px, 1 KB
+    alt:   "image"
+
+• assets/imgs/gallery/image-25.webp
+    size:  605×770px, 4 KB
+    alt:   "image"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

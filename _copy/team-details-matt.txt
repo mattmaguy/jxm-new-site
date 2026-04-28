@@ -1,0 +1,54 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — team-details-matt.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [4w]
+  Matt Maguy · JXM
+
+META DESCRIPTION  [21w]
+  Matt Maguy co-founded JXM in 2007. Runs the strategy practice. Writes Cheat Codes. Twenty years building work that earned its place.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [2w]
+  Matt Maguy
+
+[EYEBROW]  [1w]
+  Co-Founder
+
+[BODY]  [41w]
+  Matt co-founded JXM in 2007 because he cared too much about the work to take it anywhere else.
+  Twenty years into the practice, he's the partner clients lean on when the call before the campaign
+  matters more than the campaign itself.
+
+[BODY]  [62w]
+  Matt runs the strategy practice at JXM. Where the budget goes. What's worth building. What to fix,
+  what to kill, what to keep. He's spent two decades inside parity markets — financial services in
+  particular — and he's built a way of working that helps mission-driven brands win on more than
+  rate, more than reach, and more than the next clever idea.
+
+[BODY]  [53w]
+  He writes Cheat Codes, JXM's newsletter on what video games can teach marketers (and what most
+  marketing teams are quietly getting wrong). He's the partner most likely to push back in a kickoff
+  meeting, and the one most likely to tell a client when they don't actually need what they think
+  they need.
+
+[PULL QUOTE]  [20w]
+  "We didn't set out to build an agency. We set out to do work worth doing. That's still the
+  standard."
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/team/team-1.webp
+    size:  440×600px, 3 KB
+    alt:   "Matt Maguy"
+    note:  DRAFT: replace placeholder team-N.webp with real partner headshot
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT: replace placeholder team-N.webp with real partner headshot

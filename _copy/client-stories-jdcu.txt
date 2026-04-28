@@ -1,0 +1,99 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — client-stories-jdcu.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [8w]
+  The Savings Journey · Jeanne D'Arc · JXM
+
+META DESCRIPTION  [16w]
+  The deposit campaign that didn't live or die on rate. Jeanne D'Arc Credit Union, by JXM.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[CASE EYEBROW]  [4w]
+  Deposit Growth / Savings
+
+[CASE CLIENT TAG]  [4w]
+  Jeanne D'Arc × JXM
+
+[H2]  [3w]
+  The Savings Journey
+
+[DEK]  [24w]
+  The deposit campaign that didn't live or die on rate. — Most deposit campaigns try to win on rate.
+  We went somewhere more durable.
+
+[META ITEM]  [2w]
+  Impressions: 15M
+
+[META ITEM]  [4w]
+  New Page Users: 99%
+
+[META ITEM]  [2w]
+  KPAs: 7,000
+
+[META ITEM]  [3w]
+  Landing Visitors: 150K
+
+[CASE CHAPTER LABEL]  [1w]
+  Context
+
+[H2 (block)]  [2w]
+  The setup.
+
+[BODY]  [35w]
+  Deposit campaigns tend to cluster around rate. Rate is a moving target, and when it moves, the
+  growth evaporates with it. Jeanne D'Arc needed a story that would keep compounding after the
+  promotional window closed.
+
+[CASE CHAPTER LABEL]  [1w]
+  Move
+
+[H3]  [3w]
+  What we did.
+
+[BODY]  [43w]
+  We built The Savings Journey as a cornerstone performance story — a landing experience that worked
+  harder than the media buying it. Display, social, OTT, and streaming audio all pointed at the same
+  place, and the place was built to pay it off.
+
+[CASE CHAPTER LABEL]  [1w]
+  Result
+
+[H3]  [3w]
+  What it moved.
+
+[BODY]  [42w]
+  The work generated more than 15M impressions, captured nearly 7,000 KPAs, and drew 150,000
+  visitors to a single landing page — 99% of them new users. That momentum translated directly into
+  measurable lifts in total membership, new deposit accounts, and total deposits.
+
+[COUNTER]  [3w]
+  15M — Impressions
+
+[COUNTER]  [3w]
+  7K — KPAs
+
+[COUNTER]  [4w]
+  150K — Landing visitors
+
+[COUNTER]  [4w]
+  99% — New users
+
+[CHANNELS]  [20w]
+  Amazon Prime · YouTube · Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · TikTok
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/case-studies/process-3.webp
+    size:  600×338px, 57 KB
+    alt:   "Jeanne D'Arc × JXM cover"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)

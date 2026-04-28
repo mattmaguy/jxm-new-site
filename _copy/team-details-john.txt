@@ -1,0 +1,51 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — team-details-john.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [4w]
+  John Cain · JXM
+
+META DESCRIPTION  [19w]
+  John Cain runs JXM engagements end-to-end. The reason the work feels the same in month one and month thirty.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[H2]  [2w]
+  John Cain
+
+[EYEBROW]  [1w]
+  Partner
+
+[BODY]  [43w]
+  John runs engagements at JXM end-to-end. He's the reason the work feels the same in month one and
+  month thirty — the partner who keeps the standard intact when the brief expands, the timeline
+  shifts, or a client adds five new stakeholders mid-flight.
+
+[BODY]  [51w]
+  John is the partner clients work with most directly across the life of an engagement. He's the
+  connective tissue between the strategy in the room, the creative in development, the media in
+  market, and the analytics on the back end. When the founders set direction, John makes sure the
+  direction lands.
+
+[BODY]  [14w]
+  [Two sentences of John's specific track record / background go here. Pending Matt's input.]
+
+[PULL QUOTE]  [15w]
+  "The standard is a filter. If it doesn't clear all four pillars, it doesn't ship."
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/team/team-3.webp
+    size:  440×600px, 3 KB
+    alt:   "John Cain"
+    note:  DRAFT: replace placeholder team-N.webp with real partner headshot
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+• DRAFT: replace placeholder team-N.webp with real partner headshot
+• DRAFT — Matt to provide John's specific track record / domain expertise / notable engagements

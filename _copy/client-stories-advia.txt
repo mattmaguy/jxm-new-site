@@ -1,0 +1,103 @@
+══════════════════════════════════════════════════════════════════════
+JXM SITE — COPY EXPORT — client-stories-advia.html
+Generated 2026-04-28
+══════════════════════════════════════════════════════════════════════
+
+PAGE META
+──────────────────────────────────────────────────────────────────────
+TITLE  [10w]
+  $70.6M in HELOC volume. One month. · Advia · JXM
+
+META DESCRIPTION  [21w]
+  How Advia Credit Union drove $70.6M in HELOC volume in a single month — strategy, creative, and the calls in between.
+
+COPY (in document order)
+──────────────────────────────────────────────────────────────────────
+[CASE EYEBROW]  [5w]
+  Home Equity / Brand Awareness
+
+[CASE CLIENT TAG]  [5w]
+  Advia Credit Union × JXM
+
+[H2]  [4w]
+  HELOC / Real People
+
+[DEK]  [23w]
+  $70.6M in HELOC volume. One month. — In March 2026, the campaign drove 1,763 new members and reset
+  what growth could look like.
+
+[META ITEM]  [2w]
+  Applications: +16.6%
+
+[META ITEM]  [3w]
+  Loan Requests: +23%
+
+[META ITEM]  [3w]
+  Key Actions: +478%
+
+[META ITEM]  [6w]
+  Deposit Mo. Rank: #1 of 2026
+
+[CASE CHAPTER LABEL]  [1w]
+  Context
+
+[H2 (block)]  [2w]
+  The setup.
+
+[BODY]  [39w]
+  Twelve years into the partnership, the HELOC category had gone quiet. Rates looked the same across
+  every competitor. Creative had flattened into category wallpaper. Advia needed to be the brand
+  members actually chose — not the one they compared.
+
+[CASE CHAPTER LABEL]  [1w]
+  Move
+
+[H3]  [3w]
+  What we did.
+
+[BODY]  [45w]
+  We cast real members instead of talent. We wrote the story around their lives instead of the
+  product. And we pushed the campaign across a media mix built for attention: connected TV, social
+  video, and a landing experience engineered to convert the moment intent arrived.
+
+[CASE CHAPTER LABEL]  [1w]
+  Result
+
+[H3]  [3w]
+  What it moved.
+
+[BODY]  [33w]
+  March 2026 became Advia's strongest deposit month of the year. CD balances nearly doubled to
+  $174.5M. HELOC scaled from near-zero to 666 applications and $70.6M in requested loan volume in a
+  single month.
+
+[BODY]  [29w]
+  The landing page delivered a 478% surge in key events — proof that the right media mix, reaching
+  the right audience at the right moment, still outperforms rate alone.
+
+[COUNTER]  [6w]
+  1,763 — New members in March
+
+[COUNTER]  [5w]
+  23% — Loan volume increase
+
+[COUNTER]  [3w]
+  360,500 — Sessions
+
+[COUNTER]  [4w]
+  1,145 — In-branch visits
+
+[CHANNELS]  [20w]
+  Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · TikTok · YouTube · Amazon Prime
+
+
+IMAGES
+──────────────────────────────────────────────────────────────────────
+• assets/imgs/case-studies/advia.jpg
+    size:  1920×1080px, 149 KB
+    alt:   "Advia Credit Union × JXM cover"
+
+
+LOOSE ENDS / DRAFT NOTES
+──────────────────────────────────────────────────────────────────────
+  (none flagged)
