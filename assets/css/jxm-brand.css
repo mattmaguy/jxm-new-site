@@ -370,6 +370,90 @@ body.dark .team-details-area .pagination {
 }
 
 
+/* ════════════ SELECTED WORK CARDS — typographic hierarchy ═
+   Redox's default styles all three meta lines at the same
+   20px / 400 weight, which collapses the visual hierarchy.
+   This block establishes a clear three-step stack:
+     1. metric headline   — Inter 600, larger, abyss
+     2. client + campaign — DM Sans 500, mid size, secondary
+     3. year              — IBM Plex Mono, small, uppercase, muted
+═══════════════════════════════════════════════════ */
+.works-wrapper-4 .work-box .content {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.works-wrapper-4 .work-box .title {
+  font-family: 'Inter', sans-serif !important;
+  font-size: clamp(1.125rem, 1.5vw, 1.375rem) !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
+  line-height: 1.25 !important;
+  color: var(--primary);
+  margin: 0;
+}
+.works-wrapper-4 .work-box .title a {
+  color: inherit;
+  transition: color 200ms ease-out;
+}
+.works-wrapper-4 .work-box .title a:hover {
+  color: var(--jxm-gator);
+}
+
+.works-wrapper-4 .work-box .meta {
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.875rem;
+  margin: 0;
+}
+
+.works-wrapper-4 .work-box .meta .tag {
+  font-family: 'DM Sans', sans-serif !important;
+  font-size: 0.8125rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0 !important;
+  line-height: 1.4 !important;
+  color: var(--secondary);
+  display: inline;
+}
+
+.works-wrapper-4 .work-box .meta .date {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace !important;
+  font-size: 0.6875rem !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.14em !important;
+  line-height: 1.4 !important;
+  text-transform: uppercase;
+  color: var(--jxm-c-t3);
+  white-space: nowrap;
+  display: inline;
+}
+body.dark .works-wrapper-4 .work-box .meta .date {
+  color: var(--jxm-t4);
+}
+
+/* Kill Redox's bullet-separator pseudo-element — visual
+   differentiation between tag and date already separates them. */
+.works-wrapper-4 .work-box .meta span:not(:first-child):before {
+  display: none !important;
+}
+
+
+/* ════════════ HOMEPAGE CLOSING CTA — vertical rhythm ═══
+   Redox's cta-area-4 stacks H2 + body + button with no
+   inherent spacing between them. Add proper breathing room.
+═══════════════════════════════════════════════════ */
+.cta-area-4 .section-header .text-wrapper {
+  margin-top: 2rem;
+}
+.cta-area-4 .section-header .btn-wrapper {
+  margin-top: 2rem;
+}
+
+
 /* ════════════ ACCENT SELECTION ═════════════════ */
 ::selection {
   background: var(--jxm-abyss);
