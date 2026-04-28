@@ -335,14 +335,13 @@
                   </div>
                 </div>
               </div>
-              <div class="thumb go_full">
+              <div class="thumb go_full jxm-video-stage" id="jxmStage" role="button" tabindex="0" aria-label="Open full video">
                 <iframe
                   src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
                   frameborder="0"
                   allow="autoplay; fullscreen; picture-in-picture"
                   loading="lazy"
                   title="JXM Creative Reel — silent background loop"
-                  style="width: 100%; aspect-ratio: 16/9; display: block; border: 0;"
                 ></iframe>
               </div>
             </div>
@@ -547,6 +546,23 @@
     </div>
   </div>
 
+  <!-- Custom "Play Video" cursor — appears when hovering the stage -->
+  <div class="jxm-cursor" id="jxmCursor" aria-hidden="true">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+    Play Video
+  </div>
+
+  <!-- Video modal — opens on click of the stage -->
+  <div class="jxm-modal" id="jxmModal" role="dialog" aria-modal="true" aria-label="Creative reel video" hidden>
+    <div class="jxm-modal-backdrop" data-close></div>
+    <div class="jxm-modal-panel">
+      <button class="jxm-modal-close" type="button" data-close aria-label="Close video">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <div class="jxm-modal-video" id="jxmModalVideo"></div>
+    </div>
+  </div>
+
   <!-- Vendor JS Files -->
   <script src="assets/vendor/jquery-3.7.1.min.js"></script>
   <script src="assets/vendor/bootstrap.bundle.min.js"></script>
@@ -568,6 +584,56 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <!-- "Play Video" cursor + click-to-modal over the studio teaser video stage -->
+  <script>
+    (function() {
+      var stage    = document.getElementById('jxmStage');
+      var cursor   = document.getElementById('jxmCursor');
+      var modal    = document.getElementById('jxmModal');
+      var modalVid = document.getElementById('jxmModalVideo');
+      if (!stage || !cursor || !modal || !modalVid) return;
+
+      function showCursor() { cursor.classList.add('is-visible'); }
+      function hideCursor() { cursor.classList.remove('is-visible'); }
+      function moveCursor(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      }
+      stage.addEventListener('mouseenter', showCursor);
+      stage.addEventListener('mouseleave', hideCursor);
+      stage.addEventListener('mousemove',  moveCursor);
+      stage.addEventListener('click', openModal);
+      stage.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modalVid.innerHTML = '<iframe src="https://player.vimeo.com/video/1183815657?autoplay=1&dnt=1&app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        modal.hidden = false;
+        requestAnimationFrame(function() { modal.classList.add('is-open'); });
+        document.documentElement.style.overflow = 'hidden';
+        hideCursor();
+      }
+      function closeModal() {
+        modal.classList.remove('is-open');
+        setTimeout(function() {
+          modal.hidden = true;
+          modalVid.innerHTML = '';
+          document.documentElement.style.overflow = '';
+        }, 240);
+      }
+      modal.addEventListener('click', function(e) {
+        if (e.target.dataset.close !== undefined) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    })();
+  </script>
 
 </body>
 

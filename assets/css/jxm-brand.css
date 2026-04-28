@@ -475,6 +475,155 @@ body.dark .works-wrapper-4 .work-box .meta .date {
 }
 
 
+/* ════════════ STUDIO VIDEO STAGE — V4 PARITY ═══════════
+   Inline silent-loop iframe with the V4 600px stage height,
+   custom "Play Video" cursor, and click-to-modal pattern.
+═══════════════════════════════════════════════════ */
+
+/* Stage = 600px tall (matches V4), iframe scales to cover it */
+.jxm-video-stage {
+  position: relative;
+  height: 600px;
+  background: #000;
+  overflow: hidden;
+  cursor: none;
+  z-index: 0;
+}
+.jxm-video-stage iframe {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* aspect-fill: 16:9 cover regardless of container ratio */
+  width: max(100%, 177.78vh);
+  height: max(56.25vw, 100%);
+  min-width: 100%;
+  min-height: 100%;
+  border: 0;
+  pointer-events: none;
+  display: block;
+}
+.jxm-video-stage:focus-visible {
+  outline: 2px solid var(--jxm-kermit);
+  outline-offset: -8px;
+}
+
+@media (max-width: 1199px) {
+  .jxm-video-stage { height: 480px; }
+}
+@media (max-width: 720px) {
+  .jxm-video-stage { height: 320px; }
+}
+
+/* Custom "Play Video" pill cursor — follows the pointer over the stage */
+.jxm-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1100;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.1rem;
+  background: #fff;
+  color: #09090b;
+  border-radius: 999px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  box-shadow: 0 8px 28px rgba(0,0,0,0.35);
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.7);
+  transition: opacity 160ms ease-out,
+              transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.jxm-cursor.is-visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+}
+@media (max-width: 720px) {
+  .jxm-cursor { display: none; }
+}
+
+/* Video modal — fades in, scales up, with backdrop blur */
+.jxm-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1.5rem;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 240ms ease-out;
+}
+.jxm-modal.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+.jxm-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.jxm-modal-panel {
+  position: relative;
+  width: 100%;
+  max-width: 64rem;
+  aspect-ratio: 16 / 9;
+  transform: scale(0.96);
+  transition: transform 320ms ease-out;
+}
+.jxm-modal.is-open .jxm-modal-panel { transform: scale(1); }
+
+.jxm-modal-video {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  border-radius: 0.5rem;
+  overflow: hidden;
+  box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+}
+.jxm-modal-video iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.jxm-modal-close {
+  position: absolute;
+  top: -3rem;
+  right: 0;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.15);
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 160ms ease-out;
+}
+.jxm-modal-close:hover { background: rgba(255,255,255,0.16); }
+
+@media (max-width: 720px) {
+  .jxm-modal-close { top: -2.5rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jxm-modal,
+  .jxm-modal-panel { transition: none !important; }
+}
+
+
 /* ════════════ ACCENT SELECTION ═════════════════ */
 ::selection {
   background: var(--jxm-abyss);
