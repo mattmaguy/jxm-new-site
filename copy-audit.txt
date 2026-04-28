@@ -1,0 +1,534 @@
+═══════════════════════════════════════════════════════════════════════════════
+JXM SITE — COPY AUDIT
+Generated 2026-04-28 | Production: https://jxm-new-site-1mxi.vercel.app/
+═══════════════════════════════════════════════════════════════════════════════
+
+LEGEND
+  [REDOX]   = Stock Redox demo copy. Replace.
+  [DRAFT]   = JXM placeholder I wrote. Refine to taste.
+  [OK]      = Approved or factually correct as-is.
+  [TYPO]    = Demonstrable error in stock copy.
+  [DUMMY]   = Fake address/phone/email — must replace.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+1.  SITEWIDE / SHARED ELEMENTS
+    These appear on every page. Update once → update everywhere.
+═══════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+1.1  PAGE TITLE (browser tab) — appears on ALL 13 pages
+────────────────────────────────────────────────────────────────────────────────
+Current:        "Redox - Creative Agency and Portfolio HTML Template"   [REDOX]
+Needs:          A unique title per page, e.g.
+                  index.html        →  "JXM — Growth Partners for Mission-Driven Brands"
+                  about.html        →  "Studio · JXM"
+                  services.html     →  "Services · JXM"
+                  contact.html      →  "Contact · JXM"
+                  blog.html         →  "Ideas · JXM"
+                  client-stories-*  →  "{Case Study Name} · Client Stories · JXM"
+
+────────────────────────────────────────────────────────────────────────────────
+1.2  META DESCRIPTION — appears on ALL 13 pages
+────────────────────────────────────────────────────────────────────────────────
+Current:        "Redox HTML Template"   [REDOX]
+Needs:          One per page (155 chars max, used by Google + LinkedIn previews).
+                Default suggestion:
+                  "JXM is a growth partner for mission-driven brands —
+                   strategy and creative that moves real-world numbers."
+
+────────────────────────────────────────────────────────────────────────────────
+1.3  TOP NAV (header)
+────────────────────────────────────────────────────────────────────────────────
+Home · About Us · Services · Blog · Contact          [OK]
+Floating CTA: "Let's Talk"                            [OK]
+
+────────────────────────────────────────────────────────────────────────────────
+1.4  SIDE DRAWER (the "Let's Talk" slide-out, mobile menu trigger)
+     Opens via the burger icon on mobile and the side-toggle button.
+────────────────────────────────────────────────────────────────────────────────
+CTA button:           "Let's Talk"                                       [OK]
+Section heading:      "Contact US"                                       [REDOX — restyle to "Contact"]
+Address line:         "3891 Ranchview Dr. Richardson"                    [DUMMY]
+Email:                "hello@redoxagency.com"                            [DUMMY → hi@getjxm.com]
+Phone:                "(505) 555-0125"                                   [DUMMY — provide real or remove]
+
+────────────────────────────────────────────────────────────────────────────────
+1.5  FOOTER (sitewide unified)
+────────────────────────────────────────────────────────────────────────────────
+Logo                                                                     [OK]
+Nav: Home · About · Services · Blog · Contact                            [OK]
+Copyright: "© MMXXVI JXM · James and Matthew, LTD · All rights reserved." [OK]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+2.  INDEX.HTML — HOMEPAGE
+═══════════════════════════════════════════════════════════════════════════════
+
+────────────────────────────────────────────────────────────────────────────────
+2.1  HERO
+────────────────────────────────────────────────────────────────────────────────
+Inline video (top-left of hero):
+  External src "https://rrdevs.net/project-video/xfire.webm"            [REDOX — will break;
+                                                                         self-host or replace]
+
+H1:   "Where visionary concepts come to life"                            [REDOX]
+Body: "We're a leading digital product agency focused on branding,
+       UI/UX design, mobile, and web development."                       [REDOX]
+CTA:  "Send massage"                                                     [REDOX + TYPO — should
+                                                                         become "Get in touch" or
+                                                                         "Start the conversation"]
+
+────────────────────────────────────────────────────────────────────────────────
+2.2  WORK / SELECTED CASE STUDIES
+────────────────────────────────────────────────────────────────────────────────
+Eyebrow:        "Products"                                               [REDOX → e.g.
+                                                                         "Selected work" or
+                                                                         "Client stories"]
+H2:             "The work we do, and our favorite ones"                  [REDOX → e.g.
+                                                                         "Work we love, for
+                                                                         people we love."]
+Browse-all link:"Browse all products"                                    [REDOX → "Browse all
+                                                                         client stories"]
+
+5 Case-study cards (already JXM-populated):
+  1. "$70.6M in HELOC volume. One month."                                [JXM — OK]
+     Tag: Advia Credit Union · Real People (2026)
+  2. "99.5% of viewers watched the whole thing."                         [JXM — OK]
+     Tag: Northwest Federal · Brand Bridge × Washington Commanders (2025)
+  3. "Conversions up 460%. We stopped using SEG lists."                  [JXM — OK]
+     Tag: Harvard FCU · Harvard FCU Is Here (2026)
+  4. "A sponsorship with a heartbeat, not a scoreboard line."            [JXM — OK]
+     Tag: CAP COM · A Slam Dunk Partnership · Siena Saints (2023)
+  5. "The deposit campaign that didn't live or die on rate."             [JXM — OK,
+                                                                         placeholder cover]
+     Tag: Jeanne D'Arc · The Savings Journey (2024)
+
+────────────────────────────────────────────────────────────────────────────────
+2.3  MARQUEE
+────────────────────────────────────────────────────────────────────────────────
+Single phrase: "Crafting digital products"                               [REDOX → e.g.
+                                                                         "Strategy + creative
+                                                                         that moves real-world
+                                                                         numbers"]
+
+────────────────────────────────────────────────────────────────────────────────
+2.4  STUDIO / ABOUT TEASER
+────────────────────────────────────────────────────────────────────────────────
+Eyebrow:        "The studio"                                             [OK — keep]
+H2:             "We're a design and development studio since 2017
+                 who craft digital masterpiece products."                [REDOX — also wrong
+                                                                         year for JXM (est.
+                                                                         2007)]
+Button (primary):    "Learn more us"                                     [REDOX + TYPO →
+                                                                         "Learn more about us"]
+Underline link:      "Browse all products"                               [REDOX → "Browse all
+                                                                         client stories"]
+
+────────────────────────────────────────────────────────────────────────────────
+2.5  SERVICES
+────────────────────────────────────────────────────────────────────────────────
+Eyebrow:  "Services"                                                     [OK]
+H2:       "Services we provide"                                          [REDOX → e.g.
+                                                                         "Services" or
+                                                                         "What we do."]
+Intro:    "We are here to build solid and courageous brands that can
+           leave a strong mark on the world."                            [REDOX — OK-ish but
+                                                                         broaden past brands]
+
+5 numbered service rows — all share the same Redox stub body:
+  001  UI/UX Design          / "We help you build successful products
+                                by understanding your market and users." [REDOX]
+  002  Web Development       / (same body)                               [REDOX]
+  003  Web Design            / (same body)                               [REDOX]
+  004  Branding Design       / (same body)                               [REDOX]
+  005  Webflow Development   / (same body)                               [REDOX]
+
+  Suggested JXM service set:
+    001  Brand Strategy
+    002  Creative & Campaign
+    003  Media Planning & Buying
+    004  Performance & Analytics
+    005  Digital Experience
+
+────────────────────────────────────────────────────────────────────────────────
+2.6  CTA SECTION
+────────────────────────────────────────────────────────────────────────────────
+H2: "Let's build a brand now"                                            [REDOX → e.g.
+                                                                         "Let's build a brand
+                                                                         worth choosing." or
+                                                                         "Reach out. Say hi."]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+3.  ABOUT.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+H2 hero:    "Crafting digital products with a unique — vision of
+             making user experience better."                             [REDOX]
+Eyebrow:    "About studio"                                               [REDOX → "Studio"]
+Year tag:   "Since 2012"                                                 [REDOX — actually 2007]
+Body:       "As a global creative agency, we understand the importance
+             of staying ahead of the game. That's why we partner with
+             some of the world's best talent to bring fresh ideas…"      [REDOX]
+
+H2 (approach):  "Method of making better result"                         [REDOX]
+Eyebrow:        "Approach"                                               [OK]
+Process steps:
+  - Problem discovery                                                    [REDOX]
+  - Design system ready                                                  [REDOX]
+  - Design implementation                                                [REDOX]
+
+H2 (who):   "We deliver creative ideas to a crowded world."              [REDOX]
+Eyebrow:    "Who are we?"                                                [REDOX]
+Stats: 4.9 / 170+ / 1.7k / 95%                                           [REDOX — replace with
+                                                                         real JXM numbers]
+Stat labels:
+  - "35+ Google reviews"                                                 [REDOX]
+  - "Clients world-wide"                                                 [REDOX]
+  - "Completed projects"                                                 [REDOX]
+  - "Client satisfaction"                                                [REDOX]
+
+H2 (collab): "Collaborate with a super down-to-earth, mad-talented team" [REDOX]
+H2 (quality):"We believe in quality, not quantity, that's why we're
+              great ever."                                               [REDOX + grammar]
+Eyebrow:     "Awards"                                                    [REDOX — JXM has
+                                                                         "Featured In" instead]
+Body:        "Help to brands growing up and show their success
+              stories to the world"                                      [REDOX]
+
+H2 (team):   "Meet the talented squad, behind the creativity"            [REDOX]
+Eyebrow:     "Team"                                                      [OK]
+Body:        "A collective bunch working on incredible projects and
+              building enduring partnerships that extend well beyond
+              the deliverable."                                          [REDOX]
+
+10 fake team member names (James David / Brenda C. Janet / Martin
+Carlos / Garry J. Coburn / Ana Dina Belić / Giuseppe Carbonara /
+Vedran Starčić / Izquierdo Bayà / Jared Silverman / Samuel Bertain) [REDOX — replace with
+                                                                         Jim, Matt + any
+                                                                         additional senior
+                                                                         partners; or keep
+                                                                         small "Two founders"
+                                                                         frame from V4]
+
+CTA buttons: "Explore Services", "Learn More"                            [OK / refine]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+4.  SERVICES.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+H2 hero:    "Expertise"                                                  [REDOX → "Services"]
+Eyebrow:    "Capabilities"                                               [OK / refine]
+H2:         "We think out of the box when it comes to creative"          [REDOX]
+
+4 service blocks with sub-categories:
+  (01) Branding         → Creative Direction, Brand Identity, Brand…    [REDOX]
+  (02) UI-UX Design                                                     [REDOX]
+  (03) Development                                                      [REDOX]
+  (04) Digital Marketing                                                [REDOX]
+
+Body: "If you already understand ask to continue scrolling; otherwise,
+       click the link below to explore more."                            [REDOX + grammar]
+
+H2 closing: "Client: Helping brands to grow and say their success
+             stories to the world."                                      [REDOX]
+Body:       "We're a great team of creatives with a strongest
+             capabilities to helping progressive fields…"                [REDOX + grammar]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+5.  SERVICE-DETAILS.HTML  (template for individual service pages)
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero:       "Brand Guideline"                                            [REDOX]
+Sub:        "[SL: 005] [Brand Guideline] [Next]"                         [REDOX dev markers]
+Body:       "You'll need to provide your brand information, and starting
+             history to…"                                                [REDOX]
+
+H2:         "Whether you're a startup or industry star, we're here to
+             promote your brand by creative research and real human
+             centred design."                                            [REDOX — actually
+                                                                         on-message; refine]
+
+Eyebrow:    "Our comprehensive design process"                           [REDOX]
+4 process steps (Discovery & Research / Wireframing & Prototyping /
+Design System / Design Validation), each with body:
+  "Our mission is to empower the brands we believe in with tailor-made
+   approaches that ignite creativity and growth without limits."         [REDOX × 4]
+
+4 "why us" cards (Skilled design team / User-centric design /
+Data-driven approach / Collaborative process)                            [REDOX]
+
+Stats: 2750 / 92% / 75%                                                  [REDOX]
+
+H2:         "We sharpen your brands and businesses create exceptional
+             experiences where people live work"                         [REDOX + grammar]
+
+Eyebrow:    "FAQ"                                                        [OK]
+H2:         "Learn some common answers about newly projects"             [REDOX]
+7 fake FAQ questions (verbatim copy from faq.html)                       [REDOX]
+
+NOTE: This file is the TEMPLATE for our 5 case-study pages
+      (client-stories-advia/-nwfcu/-harvard/-capcom/-jdcu).
+      They currently mirror this content unchanged.
+
+
+═══════════════════════════════════════════════════════════════════════════════
+6.  PORTFOLIO.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Portfolio"                                                  [REDOX]
+Eyebrow:    "Recent work"                                                [REDOX]
+H2:         "Creative works with our incredible people."                 [REDOX]
+Filter tabs:  design / Development / Marketing / Writing                 [REDOX]
+Body:       "We take a comprehens…"                                      [REDOX truncated]
+
+10 fake project tiles:
+  Harash Denmark, Saudi Lime Green, Saudi Venture Capital, Nilachal
+  Network, Royal Cash App, Mashup Gradient, House of Shapes, Ocean
+  Harmony, Wave Coxsheet, Padro Alex Garoat                              [REDOX — these will be
+                                                                         replaced if portfolio
+                                                                         becomes our /work
+                                                                         page]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+7.  PORTFOLIO-DETAILS.HTML
+    + the 5 CLIENT-STORIES-*.HTML duplicates
+    (advia / nwfcu / harvard / capcom / jdcu — currently identical)
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero:       "Saudi Venture Capital"                                      [REDOX → real client
+                                                                         per file]
+Service tag:    "Visual Identity, Branding"                              [REDOX]
+Client tag:     "Softakey Digital Agency"                                [REDOX]
+Date tag:       "January 2025"                                           [REDOX]
+Tools tag:      "Figma, WordPress"                                       [REDOX]
+
+Body block 1 (intro):
+  "Myriam was first trained as a sculptor in Montreal and then in
+   Helsinki, Finland. She is now based in Quebec but works for clients
+   all around the globe…"                                                [REDOX]
+
+H2:         "Build streamline and evolve together with solution"         [REDOX + grammar]
+
+H3 (visual hierarchy):   "Visual Hierarchy"                              [REDOX]
+Body:       "Visual hierarchy is the principle of arranging elements to
+             show their order of importance…"                            [REDOX]
+
+H3 (components):        "Components"                                     [REDOX]
+Body:       "From textile design to murals, editorial illustrations
+             and book covers, her style is recognized by her simple…"    [REDOX]
+
+Prev / Next pagination links                                             [REDOX]
+
+WHEN WE BUILD THE 5 CASE STUDIES, each gets a unique replacement of
+ALL the above. Per the V4 design system, the structure should be:
+  - Eyebrow / Client name / Headline (the metric card already on home)
+  - Metadata row: "ROLE +Strategy", "CHANNEL +OTT/Social/Search", etc.
+  - Three narrative chapters:
+      Context · Move · Result (each = mono label + 1-2 paras)
+  - Metrics (4-col grid with hairline rule, no cards)
+  - Channels line: "CHANNELS  Hulu, Disney+, Meta, …"
+
+
+═══════════════════════════════════════════════════════════════════════════════
+8.  BLOG.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Journals"                                                   [REDOX → "Ideas"]
+Eyebrow:    "Recent blog"                                                [REDOX → "Recent
+                                                                         essays" / "Ideas"]
+H2:         "Learn our recent journal"                                   [REDOX + grammar →
+                                                                         "Essays, briefs, and
+                                                                         the occasional rant."]
+
+7 fake blog cards, all with one of three repeating titles:
+  - "Beyond the basics, how to take marketing to the next level"
+  - "Allow us to be the cool part of your days are open for now"
+  - "Various ideas and creative concepts based on market research"      [REDOX — replace
+                                                                         with real JXM essays.
+                                                                         V4 had: On Standards,
+                                                                         Open Account Get
+                                                                         Toaster, Sonar So
+                                                                         What, Engineering
+                                                                         Preference in
+                                                                         Uncertain Times,
+                                                                         Conquering the
+                                                                         Competition, Better
+                                                                         Options & Menus.]
+Author tag:  "By Jerry / 2023"                                           [REDOX]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+9.  BLOG-DETAILS.HTML  (article reading view)
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Various ideas and creative concepts based on market
+             research"                                                   [REDOX]
+Author:     "By Jerry · Business · 2023"                                 [REDOX]
+
+3 article body paragraphs:
+  - "Always ready to push the boundaries…"                               [REDOX]
+  - "Beckoning a diverse audience of food lovers who may have never
+     considered trying dumplings…"                                       [REDOX]
+  - "Structured gripped tape invisible molded cups for support firm
+     hold strong power mesh…"                                            [REDOX — fashion
+                                                                         lorem]
+
+H3 sections: Typography Hierarchy / Visual Hierarchy / UX Principal     [REDOX]
+Pull-quote 1: "We had observers go into the workplace…"                  [REDOX]
+Pull-quote 2: "Achieving deep work should be our goal…"                  [REDOX]
+
+H3:         "Leave a reply"                                              [OK / could remove]
+CTA:        "Send Us Now"                                                [REDOX → "Post comment"
+                                                                         or remove]
+
+Related posts (3 cards, same as blog.html)                               [REDOX]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+10. TEAM.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Our Team"                                                   [OK / "The Team"]
+Body:       "A team of 80+ skilled employees is working behind your
+             creative works"                                             [REDOX — JXM is
+                                                                         small/senior, not
+                                                                         80 people]
+H2:         "Our talented squad"                                         [REDOX]
+Body:       "We're a diverse team that works as fancies attention to
+             details, enjoys beers on Friday nights and aspires to
+             design the dent in the universe."                           [REDOX]
+
+10 fake team members (same as about.html — see §3)                       [REDOX]
+
+Closing H2: "We think out of the box when it comes to strategy, design
+             and creative. Want to join the talented team?"              [REDOX]
+CTA:        "Send Us Now"                                                [REDOX]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+11. TEAM-DETAILS.HTML  (individual team member page)
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Jared Silverman"                                            [REDOX → real name]
+Eyebrow:    "Java Developer"                                             [REDOX]
+Body:       "I'm leading experts in disciplines ranging from data
+             science and neural networks to low-lev…"                    [REDOX]
+Body:       "By combining our strong experience in AI-enriched
+             technology areas and product development mindset…"          [REDOX]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+12. CONTACT.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Page title H2: "Contact"                                                 [OK]
+Eyebrow:       "Contact"                                                 [OK]
+H2:            "Let's drop us a line and get the project started."       [REDOX — refine to
+                                                                         "Reach out. Say hi."
+                                                                         or "Tell us what you
+                                                                         want to grow."]
+"Get in touch" header                                                    [OK]
+Body:          "We're excited to hear from you and let's start
+                something special together — hello@redoxagency.com"     [REDOX — change email
+                                                                         to hi@getjxm.com]
+
+Form (wired to Formspree at /f/xwvagvwo):
+  Field placeholders: Name* / Email* / Phone* / Company / Budget* /
+                      Solution* / Message*                               [OK / refine —
+                                                                         "Solution" is jargon;
+                                                                         try "What do you want
+                                                                         to grow?" or "Project
+                                                                         brief"]
+  Budget options: 5,000-10,000 / 10-15k / 15-20k / 20-25k / 25k+         [OK — confirm tiers
+                                                                         match real JXM
+                                                                         engagements]
+  Submit:        "Send Message"                                          [OK]
+
+
+═══════════════════════════════════════════════════════════════════════════════
+13. FAQ.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Hero H2:    "Question"                                                   [REDOX → "FAQ" or
+                                                                         "Common questions."]
+Eyebrow:    "FAQ"                                                        [OK]
+H2:         "Learn some common answers about newly projects"             [REDOX]
+
+7 fake FAQ questions — all rhetorical, none answered for JXM:
+  - "Bring their individual experience and creative?"                    [REDOX]
+  - "Design should enrich our day?"                                      [REDOX]
+  - "Human centered design to challenges design theory?"                 [REDOX]
+  - "Align with your brand look and feel?"                               [REDOX]
+  - "How to become an Agile productive manager?"                         [REDOX]
+  - "Why we create the best Webflow websites in Figma?"                  [REDOX]
+  - "How to manage Agile project teams?"                                 [REDOX]
+
+  Suggested real JXM questions:
+    - How do you engage? (retainer vs. project, scope of services)
+    - How do you price?
+    - How do you measure success?
+    - Do you work with non–credit-union brands?
+    - How big is your team?
+    - What won't you do? (the JXM "no" list)
+
+
+═══════════════════════════════════════════════════════════════════════════════
+14. 404.HTML
+═══════════════════════════════════════════════════════════════════════════════
+
+Eyebrow:    "404"                                                        [OK]
+H2:         "Oops sorry! page didn't found"                              [REDOX + GRAMMAR]
+CTA:        "Back - To - Home"                                           [REDOX — "Back to home"]
+
+Suggested JXM rewrite:
+  H2: "Wrong turn. Easy fix."
+  Body: "We can't find that page. Head back home or jump to the work,
+         services, or contact pages from the nav above."
+
+
+═══════════════════════════════════════════════════════════════════════════════
+15. PRIORITY ORDER (RECOMMENDED)
+═══════════════════════════════════════════════════════════════════════════════
+
+P0 — must fix before public launch
+  □ Side drawer: replace dummy address / phone / email   (§1.4)
+  □ All page <title> + meta description                  (§1.1, 1.2)
+  □ Hero copy + button text + replace external video     (§2.1)
+  □ Hero studio teaser year (2012 → 2007/2008?)          (§2.4)
+  □ Contact page email                                   (§12)
+  □ 404 page wording + grammar                           (§14)
+  □ "Send massage" typo                                  (§2.1)
+  □ "Learn more us" typo                                 (§2.4)
+
+P1 — content the home page leans on
+  □ Marquee phrase                                       (§2.3)
+  □ Selected work eyebrow + headline + browse-all link   (§2.2)
+  □ 5 services blocks (titles + bodies)                  (§2.5)
+  □ CTA closing line                                     (§2.6)
+
+P2 — page-level rewrites (in this order)
+  □ contact.html  (smallest, most visible)               (§12)
+  □ about.html    (replace fake team, real story)        (§3)
+  □ services.html (services overview)                    (§4)
+  □ blog.html     (real JXM articles)                    (§8)
+  □ faq.html      (real JXM questions/answers)           (§13)
+
+P3 — case-study deep dives
+  □ Customize each client-stories-*.html with real
+    Context / Move / Result narrative + metrics + channels  (§7)
+
+P4 — supporting pages
+  □ team.html, team-details.html
+  □ portfolio.html (decide if it's used or archive it)
+  □ service-details.html (one canonical or per-service?)
+  □ blog-details.html article template
+
+
+═══════════════════════════════════════════════════════════════════════════════
+END OF AUDIT
+═══════════════════════════════════════════════════════════════════════════════
