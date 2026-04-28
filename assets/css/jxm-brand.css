@@ -255,6 +255,121 @@ body.dark .case-eyebrow { color: var(--jxm-t3); }
 body.dark .case-client-tag { color: var(--jxm-tusk); }
 
 
+/* ════════════ REDOX CONTRAST FIXES ═════════════════
+   Sections where Redox's hardcoded colors don't follow
+   JXM tokens — overridden so dark text reads on light
+   backgrounds and vice versa.
+═══════════════════════════════════════════════════ */
+
+/* Services page — parallax callout block was a dark callout in
+   Redox; we want it to read like a normal page section. */
+.service-area-service-page .service-content-wrapper {
+  background-color: transparent !important;
+}
+.service-area-service-page .service-content-wrapper .text {
+  color: var(--primary) !important;
+}
+
+/* Client-area-service-page bottom CTA — make sure title + body
+   follow the primary token in both modes (Redox version had
+   light-mode-specific styling that broke in dark). */
+.client-area-service-page .section-title,
+.client-area-service-page .section-content .text {
+  color: var(--primary);
+}
+
+/* The throwable client-logo capsules use light backgrounds — invert
+   their tone in dark mode so they don't look like glaring blocks. */
+body.dark .client-area-service-page .client-box img {
+  filter: invert(1) brightness(0.95);
+  opacity: 0.7;
+}
+
+
+/* ════════════ SAFE SPACING FOUNDATION ══════════════
+   General rules so editorial copy breathes. Gentle —
+   does not override per-section spacing where it's
+   already correct.
+═══════════════════════════════════════════════════ */
+
+/* Heading → paragraph rhythm */
+body[class*="body-"] h2 + .text-wrapper,
+body[class*="body-"] h2 + p,
+body[class*="body-"] h3 + .text-wrapper,
+body[class*="body-"] h3 + p {
+  margin-top: 1.25rem;
+}
+
+/* Paragraph spacing inside text-wrappers */
+body[class*="body-"] .text-wrapper p + p {
+  margin-top: 0.75rem;
+}
+
+/* Section header → following content */
+body[class*="body-"] .section-header + .section-content-wrapper,
+body[class*="body-"] .section-header + .services-wrapper-box,
+body[class*="body-"] .section-header + .meta-wrapper,
+body[class*="body-"] .section-header + .accordion-wrapper {
+  margin-top: 2.5rem;
+}
+
+/* Case study chapter blocks — breathing room between Context, Move,
+   Result, and the metrics grid. */
+.work-details-area .section-info + .section-details {
+  margin-top: 3rem;
+}
+.work-details-area .section-details .details-info + .details-info {
+  margin-top: 2.5rem;
+}
+.work-details-area .case-channels {
+  margin-top: 3rem;
+}
+
+/* Team-details — pagination needs air above it */
+.team-details-area .pagination {
+  margin-top: 4rem;
+  padding-top: 2rem;
+  border-top: 1px solid var(--jxm-c-bd);
+}
+body.dark .team-details-area .pagination {
+  border-top-color: var(--jxm-bd2);
+}
+
+/* Footer breathing room above */
+.footer-area-4 {
+  margin-top: 3rem;
+}
+
+/* About page — extra space between four-pillar boxes on smaller screens */
+.approach-area-about-page .approach-box {
+  padding-bottom: 1rem;
+}
+
+/* Approach list spacing — give bullets a little vertical room */
+.approach-list ul li {
+  margin-bottom: 0.5rem;
+}
+
+/* Service-list bullets on services page — more breathing room */
+.service-list li {
+  margin-bottom: 0.4rem;
+}
+
+/* Case-study cover image margin — sits closer to header text in
+   small viewports without this. */
+.work-details-area .image-wrapper {
+  margin-top: 2.5rem;
+}
+
+/* Subscribe form / contact form fields — keep generous padding so
+   the new Formspree placeholder text doesn't crowd the field edges. */
+.contact-formfield input,
+.contact-formfield select,
+.contact-formfield textarea {
+  padding: 1rem 1.25rem;
+}
+
+
 /* ════════════ ACCENT SELECTION ═════════════════ */
 ::selection {
   background: var(--jxm-abyss);
