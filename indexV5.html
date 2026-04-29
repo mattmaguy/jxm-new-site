@@ -1168,7 +1168,7 @@
 
 
   <!-- ═══════ MARQUEE — scrolling salient points ═══════ -->
-  <section class="v4-marquee" aria-label="What we help credit unions achieve">
+  <section class="v4-marquee fade-anim" aria-label="What we help credit unions achieve">
     <div class="v4-marquee-track">
       <span class="v4-marquee-item">Build Brand Awareness</span>
       <span class="v4-marquee-star" aria-hidden="true">✱</span>
@@ -1224,7 +1224,7 @@
 
 
   <!-- ═══════ VISIBILITY STATEMENT — editorial pattern ═══════ -->
-  <section class="v4-visibility" id="truth">
+  <section class="v4-visibility fade-anim" id="truth">
     <div class="v4-edit-row">
       <div class="v4-edit-label">
         <span class="v4-pill">The Truth</span>
@@ -2066,7 +2066,7 @@
   <!-- ═══════════════════════════════════════
        QUALIFICATIONS — pill eyebrow + display headline + numbered table
   ═══════════════════════════════════════ -->
-  <section class="v4-quals" id="services" aria-label="Qualifications">
+  <section class="v4-quals fade-anim" id="services" aria-label="Qualifications">
     <header class="v4-quals-head">
       <span class="v4-pill">Qualifications</span>
       <h2 class="v4-quals-title">How we grow<br>credit unions.</h2>
@@ -2434,7 +2434,7 @@
   <!-- ════════════════════════════════════════
        FOUNDERS — classic layout (restored from index.html)
   ════════════════════════════════════════ -->
-  <section class="founders-section" id="team">
+  <section class="founders-section fade-anim" id="team">
 
     <div class="founders-container">
 
@@ -2633,7 +2633,7 @@
   <!-- ═══════════════════════════════════════
        FEATURED IN STRIP
   ═══════════════════════════════════════ -->
-  <section class="featured-section">
+  <section class="featured-section fade-anim">
     <p class="featured-label">Featured In</p>
     <div class="featured-logos">
       <img src="assets/svgs/cu-leadership.svg"           alt="CU Leadership"              class="featured-logo" width="160" height="40" loading="lazy">
@@ -2647,7 +2647,7 @@
   <!-- ════════════════════════════════════════
        PRAISE — single editorial pull-quote
   ════════════════════════════════════════ -->
-  <section class="v4-quote" id="praise" aria-label="What clients say">
+  <section class="v4-quote fade-anim" id="praise" aria-label="What clients say">
     <div class="v4-quote-inner">
       <span class="v4-pill">Praise</span>
       <blockquote class="v4-quote-body">
@@ -2734,7 +2734,7 @@
   <!-- ════════════════════════════════════════
        PLATFORMS STRIP
   ════════════════════════════════════════ -->
-  <section class="platforms-section">
+  <section class="platforms-section fade-anim">
     <p class="platforms-label">Platforms<br>+ Partners</p>
     <div class="platforms-mask">
       <div class="platforms-track">
@@ -3169,7 +3169,7 @@
   <!-- ═══════════════════════════════════════
        SELECTED WORK — list with cursor-following thumbnail
   ═══════════════════════════════════════ -->
-  <section class="show-section" id="results" aria-label="Selected work">
+  <section class="show-section fade-anim" id="results" aria-label="Selected work">
     <div class="show-inner">
       <div class="show-head">
         <span class="v4-pill show-eyebrow">Selected Work</span>
@@ -3258,7 +3258,7 @@
   <!-- ═══════════════════════════════════════
        TRUSTED BRANDS — static logo grid
   ═══════════════════════════════════════ -->
-  <section class="v4-trusted" aria-label="Partners">
+  <section class="v4-trusted fade-anim" aria-label="Partners">
     <div class="v4-trusted-head">
       <span class="v4-pill">Partners</span>
     </div>
@@ -4399,7 +4399,7 @@
   <!-- ═══════════════════════════════════════
        CTA — minimal, editorial
   ═══════════════════════════════════════ -->
-  <section class="v4-cta" id="contact" aria-label="Get in touch">
+  <section class="v4-cta fade-anim" id="contact" aria-label="Get in touch">
     <div class="v4-cta-inner">
       <span class="v4-pill">Get in Touch</span>
       <p class="v4-cta-line">Reach out. Say hi.</p>
@@ -4834,7 +4834,7 @@
   <!-- ═══════════════════════════════════════
        BLOG — editorial list
   ═══════════════════════════════════════ -->
-  <section class="v4-blog" id="blog" aria-label="Ideas">
+  <section class="v4-blog fade-anim" id="blog" aria-label="Ideas">
     <div class="v4-blog-head">
       <span class="v4-pill">Ideas</span>
       <h2 class="v4-blog-title">Essays, briefs, and the occasional rant.</h2>
@@ -5729,6 +5729,46 @@
           el.classList.add('v4-reveal');
           io.observe(el);
         });
+      });
+    })();
+  </script>
+
+  <!-- Redox animation stack: GSAP + ScrollTrigger drive section fade-anim reveals -->
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script>
+    (function() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      // Reduced-motion users: skip animation, reveal immediately
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      gsap.registerPlugin(ScrollTrigger);
+
+      // Hide all .fade-anim sections initially, then reveal as they enter view
+      gsap.set('.fade-anim', { opacity: 0, y: 60 });
+      ScrollTrigger.batch('.fade-anim', {
+        start: 'top 85%',
+        onEnter: function(batch) {
+          gsap.to(batch, {
+            opacity: 1,
+            y: 0,
+            duration: 1,
+            ease: 'power3.out',
+            stagger: 0.12,
+            overwrite: 'auto',
+          });
+        },
+      });
+
+      // Hero pin: marquee + sections below slide up over the V4 editorial hero
+      ScrollTrigger.create({
+        trigger: '.v4-hero',
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1,
+        pinType: 'transform',
       });
     })();
   </script>
