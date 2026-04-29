@@ -2193,34 +2193,40 @@
 
 
   <!-- ═══════════════════════════════════════
-       QUALIFICATIONS — pill eyebrow + display headline + numbered table
+       SERVICES — pill eyebrow + display headline + numbered table
   ═══════════════════════════════════════ -->
-  <section class="v4-quals fade-anim" id="services" aria-label="Qualifications">
+  <section class="v4-quals fade-anim" id="services" aria-label="Services">
     <header class="v4-quals-head">
-      <span class="v4-pill">Qualifications</span>
-      <h2 class="v4-quals-title">How we grow<br>credit unions.</h2>
+      <span class="v4-pill">Services</span>
+      <h2 class="v4-quals-title">How we help your<br>brand grow.</h2>
     </header>
+    <p class="v4-quals-intro">Five disciplines, run in sequence. Strategy first, because every dollar after it depends on getting that one right. Brand and creative next, because the thinking has to be visible before it can move anyone. Then media and measurement, because the work doesn't matter until it earns a number. All five live under one roof.</p>
     <div class="v4-quals-table">
-      <div class="v4-quals-row">
+      <a href="service-details.html" class="v4-quals-row">
         <span class="v4-quals-num">01</span>
-        <span class="v4-quals-rowtitle">Assessment &amp; Insights</span>
-        <p class="v4-quals-rowdesc">We embed with your team — operations, members, market, all of it — to find where your real strengths aren't landing.</p>
-      </div>
-      <div class="v4-quals-row">
+        <span class="v4-quals-rowtitle">Growth Strategy</span>
+        <p class="v4-quals-rowdesc">Where to spend. What to build. What's worth it, what isn't. The decisions that determine whether the rest of the work has a chance.</p>
+      </a>
+      <a href="service-details.html" class="v4-quals-row">
         <span class="v4-quals-num">02</span>
-        <span class="v4-quals-rowtitle">Perception Gap</span>
-        <p class="v4-quals-rowdesc">The gap between what makes you different and what your market sees — that's where growth leaks out. We find it, name it, and close it.</p>
-      </div>
-      <div class="v4-quals-row">
+        <span class="v4-quals-rowtitle">Brand &amp; Positioning</span>
+        <p class="v4-quals-rowdesc">The story the brand tells about itself, and the story the market believes back. We work on both, because if either one drifts, results drift too.</p>
+      </a>
+      <a href="service-details.html" class="v4-quals-row">
         <span class="v4-quals-num">03</span>
-        <span class="v4-quals-rowtitle">Differentiation Strategy</span>
-        <p class="v4-quals-rowdesc">We identify the moments your credit union actually proves fairness, reliability, and control — then build the strategy around those moments, not a slogan.</p>
-      </div>
-      <div class="v4-quals-row">
+        <span class="v4-quals-rowtitle">Creative &amp; Campaign</span>
+        <p class="v4-quals-rowdesc">Concept, copy, art direction, production. The point isn't to be clever and win awards. The point is to earn a second look from people who weren't aware.</p>
+      </a>
+      <a href="service-details.html" class="v4-quals-row">
         <span class="v4-quals-num">04</span>
-        <span class="v4-quals-rowtitle">Campaigns That Convert</span>
-        <p class="v4-quals-rowdesc">Targeted campaigns across streaming, social, search, and audio — built to drive switching behavior, not impressions. 99.5% OTT completion. 4.6M impressions. 144% traffic lift.</p>
-      </div>
+        <span class="v4-quals-rowtitle">Media Planning &amp; Buying</span>
+        <p class="v4-quals-rowdesc">Where the work runs, who sees it, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. The two will never live on different floors here.</p>
+      </a>
+      <a href="service-details.html" class="v4-quals-row">
+        <span class="v4-quals-num">05</span>
+        <span class="v4-quals-rowtitle">Performance &amp; Analytics</span>
+        <p class="v4-quals-rowdesc">The number the campaign was supposed to move, and the proof that it did. Custom dashboards, plain-language reporting, no vanity metrics.</p>
+      </a>
     </div>
   </section>
 
@@ -2267,6 +2273,16 @@
     /* Qualifications sits on tusk — text/borders must stay abyss-toned
        regardless of the body theme (don't read --t2/--t3/--t4 since those
        flip to greys/whites in dark mode and become illegible on cream). */
+    .v4-quals-intro {
+      max-width: 90rem;
+      margin: 0 auto 3rem;
+      padding: 0 2.5rem 0 4rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(34, 31, 50, 0.78);
+      max-width: 56rem;
+    }
     .v4-quals-table {
       max-width: 90rem;
       margin: 0 auto;
@@ -2280,7 +2296,16 @@
       padding: 2rem 0;
       align-items: start;
       border-bottom: 1px solid rgba(34, 31, 50, 0.18);
+      text-decoration: none;
+      color: inherit;
+      transition: background 220ms ease, padding 220ms ease;
     }
+    a.v4-quals-row { cursor: pointer; }
+    a.v4-quals-row:hover .v4-quals-rowtitle,
+    a.v4-quals-row:focus-visible .v4-quals-rowtitle { color: var(--jxm-kermit); }
+    a.v4-quals-row:hover .v4-quals-num,
+    a.v4-quals-row:focus-visible .v4-quals-num { color: var(--jxm-kermit); }
+    a.v4-quals-row:focus-visible { outline: 2px solid var(--jxm-kermit); outline-offset: 4px; }
     .v4-quals-num {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
@@ -2309,6 +2334,7 @@
       .v4-quals-head { grid-template-columns: 1fr; padding: 0 1.25rem; row-gap: 1.25rem; }
       .v4-quals-pill { margin-top: 0; }
       .v4-quals-title { font-size: clamp(1.75rem, 8vw, 2.25rem); }
+      .v4-quals-intro { padding: 0 1.25rem; margin-bottom: 2rem; }
       .v4-quals-table { padding: 0 1.25rem; }
       .v4-quals-row { grid-template-columns: 3rem 1fr; row-gap: 0.75rem; padding: 1.5rem 0; }
       .v4-quals-rowdesc { grid-column: 1 / -1; }
