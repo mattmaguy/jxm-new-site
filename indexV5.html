@@ -2249,11 +2249,14 @@
       color: var(--jxm-abyss);
       margin: 0;
     }
+    /* Qualifications sits on tusk — text/borders must stay abyss-toned
+       regardless of the body theme (don't read --t2/--t3/--t4 since those
+       flip to greys/whites in dark mode and become illegible on cream). */
     .v4-quals-table {
       max-width: 90rem;
       margin: 0 auto;
       padding: 0 2.5rem 0 4rem;
-      border-top: 1px solid var(--t4);
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
     }
     .v4-quals-row {
       display: grid;
@@ -2261,12 +2264,12 @@
       gap: 2rem;
       padding: 2rem 0;
       align-items: start;
-      border-bottom: 1px solid var(--t4);
+      border-bottom: 1px solid rgba(34, 31, 50, 0.18);
     }
     .v4-quals-num {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
       padding-top: 0.35rem;
     }
     .v4-quals-rowtitle {
@@ -2282,7 +2285,7 @@
       font-family: 'DM Sans', sans-serif;
       font-size: 0.9375rem;
       line-height: 1.55;
-      color: var(--t2);
+      color: rgba(34, 31, 50, 0.85);
       margin: 0;
       max-width: 32rem;
     }
@@ -3399,7 +3402,7 @@
       background: var(--jxm-tusk);
       color: var(--jxm-abyss);
       padding: 5rem 0 5rem;
-      border-top: 1px solid var(--bd3);
+      border-top: 1px solid rgba(34, 31, 50, 0.14);
     }
     .v4-trusted-head {
       max-width: 90rem;
@@ -3417,7 +3420,7 @@
       font-size: 0.75rem;
       font-weight: 400;
       letter-spacing: 0.04em;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
     }
     .v4-trusted-num { color: var(--jxm-kermit); }
     .v4-trusted-title {
@@ -3536,7 +3539,7 @@
       position: relative;
       transition: background 300ms ease-out;
     }
-    .show-link:hover { background: var(--sf2); }
+    .show-link:hover { background: rgba(34, 31, 50, 0.04); }
     .show-link:focus-visible { outline: 2px solid #5a8a6e; outline-offset: -4px; }
 
     .show-row {
@@ -3574,7 +3577,7 @@
     .show-link:hover .show-title-text::after { width: 100%; }
 
     .show-arrow {
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
       opacity: 0;
       transform: translate(-6px, 6px);
       transition: opacity 300ms ease-out, transform 300ms ease-out;
@@ -3586,12 +3589,12 @@
 
     .show-desc {
       font-size: 0.875rem;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.65);
       margin: 0.25rem 0 0;
       line-height: 1.55;
       transition: color 300ms ease-out;
     }
-    .show-link:hover .show-desc { color: var(--t2); }
+    .show-link:hover .show-desc { color: rgba(34, 31, 50, 0.85); }
 
     .show-year {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
@@ -5428,7 +5431,7 @@
       grid-area: 1 / 1;
       font-family: 'DM Sans', sans-serif;
       font-size: 0.9375rem;
-      color: var(--t2);
+      color: rgba(34, 31, 50, 0.85);
       margin: 0;
       opacity: 0;
       visibility: hidden;
@@ -5464,7 +5467,7 @@
       position: relative;
       width: 48px; height: 48px;
       padding: 0;
-      border: 2px solid var(--bd4);
+      border: 2px solid rgba(34, 31, 50, 0.18);
       border-radius: 999px;
       background: var(--jxm-tusk);
       overflow: hidden;
@@ -5659,7 +5662,7 @@
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
       letter-spacing: 0.04em;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
     }
     .v4-blog-num { color: var(--jxm-kermit); }
     .v4-blog-title {
@@ -5677,21 +5680,21 @@
       column-gap: 2rem;
       align-items: baseline;
       padding: 1.5rem 0;
-      border-top: 1px solid var(--bd4);
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
       text-decoration: none;
       color: var(--jxm-abyss);
       transition: background 240ms ease-out, padding 240ms ease-out;
     }
-    .v4-blog-list .v4-blog-row:last-child { border-bottom: 1px solid var(--bd4); }
+    .v4-blog-list .v4-blog-row:last-child { border-bottom: 1px solid rgba(34, 31, 50, 0.18); }
     .v4-blog-row:hover {
-      background: var(--sf2);
+      background: rgba(34, 31, 50, 0.04);
       padding-left: 0.75rem;
       padding-right: 0.75rem;
     }
     .v4-blog-date {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
       font-variant-numeric: tabular-nums;
     }
     .v4-blog-headline {
@@ -5704,7 +5707,7 @@
     .v4-blog-read {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
-      color: var(--t3);
+      color: rgba(34, 31, 50, 0.55);
       transition: color 200ms ease-out;
     }
     .v4-blog-row:hover .v4-blog-read { color: var(--jxm-kermit); }
