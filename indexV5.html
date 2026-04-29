@@ -1340,7 +1340,11 @@
 
 
   <!-- ═══════ VISIBILITY STATEMENT — editorial pattern ═══════ -->
-  <section class="v4-visibility fade-anim" id="truth">
+  <!-- Not fade-anim: this section also enters during the hero pin range,
+       so an opacity fade lets the pinned "growth" wordmark show through.
+       Section stays opaque from frame 1; entrance animation lives on
+       its inner rows if/when needed. -->
+  <section class="v4-visibility" id="truth">
     <div class="v4-edit-row">
       <div class="v4-edit-label">
         <span class="v4-pill">The Truth</span>
