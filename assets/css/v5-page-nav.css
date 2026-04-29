@@ -1,0 +1,193 @@
+/* ════════════════════════════════════════
+   V5 PAGE NAV
+   The editorial top nav from V5 (logo + nav items
+   with hand-drawn strikethrough hover + Book a Consult
+   CTA with hand-drawn circle), adapted for inner pages:
+   always visible, abyss surface, tusk text.
+════════════════════════════════════════ */
+
+.v5-page-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 950;
+  background: rgba(34, 31, 50, 0.92);
+  backdrop-filter: blur(18px) saturate(140%);
+  -webkit-backdrop-filter: blur(18px) saturate(140%);
+  border-bottom: 1px solid rgba(243, 241, 236, 0.10);
+}
+
+.v5-page-nav-inner {
+  max-width: 90rem;
+  margin: 0 auto;
+  padding: 0.875rem 2.5rem;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 2rem;
+}
+
+/* ── Logo ── */
+.v5-page-nav-logo {
+  display: inline-flex;
+  text-decoration: none;
+  line-height: 0;
+}
+.v5-page-nav-logo svg {
+  width: 43px;
+  height: auto;
+  fill: var(--jxm-tusk);
+  display: block;
+}
+
+/* ── Center nav links ── */
+.v5-page-nav-menu {
+  display: flex;
+  justify-content: center;
+}
+.v5-page-nav-menu ul {
+  list-style: none;
+  display: flex;
+  gap: 2.25rem;
+  margin: 0;
+  padding: 0;
+  align-items: center;
+}
+
+.v5-page-nav-link {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--jxm-tusk);
+  text-decoration: none;
+  transition: color 160ms ease-out;
+  white-space: nowrap;
+  padding: 0.25rem 0;
+}
+
+.v5-page-nav-link-num {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: rgba(243, 241, 236, 0.5);
+  letter-spacing: 0.05em;
+}
+
+.v5-page-nav-link-text { position: relative; z-index: 2; }
+
+/* Hand-drawn strikethrough — the V5 hover signature */
+.v5-page-nav-link-strike {
+  position: absolute;
+  top: 50%;
+  left: -8%;
+  width: 116%;
+  height: 0.65em;
+  transform: translateY(-40%);
+  pointer-events: none;
+  stroke: var(--jxm-tusk);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 1.6;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+  z-index: 1;
+}
+.v5-page-nav-link-strike path {
+  stroke-dasharray: 220;
+  stroke-dashoffset: 220;
+  transition: stroke-dashoffset 480ms ease-out;
+}
+.v5-page-nav-link:hover .v5-page-nav-link-strike,
+.v5-page-nav-link:focus-visible .v5-page-nav-link-strike {
+  opacity: 1;
+}
+.v5-page-nav-link:hover .v5-page-nav-link-strike path,
+.v5-page-nav-link:focus-visible .v5-page-nav-link-strike path {
+  stroke-dashoffset: 0;
+}
+
+/* Active state (current page) — show strike permanently */
+.v5-page-nav-link.is-active .v5-page-nav-link-strike { opacity: 1; }
+.v5-page-nav-link.is-active .v5-page-nav-link-strike path { stroke-dashoffset: 0; }
+
+/* ── Book a Consult CTA ── */
+.v5-page-nav-cta {
+  position: relative;
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--jxm-tusk);
+  text-decoration: none;
+  padding: 0.25rem 0.4rem;
+  white-space: nowrap;
+}
+.v5-page-nav-cta-num {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.625rem;
+  font-weight: 400;
+  color: rgba(243, 241, 236, 0.5);
+  letter-spacing: 0.05em;
+}
+.v5-page-nav-cta-arrow {
+  display: inline-block;
+  margin-left: 0.15rem;
+  color: rgba(243, 241, 236, 0.65);
+  transition: color 160ms ease-out;
+}
+.v5-page-nav-cta:hover .v5-page-nav-cta-arrow,
+.v5-page-nav-cta:focus-visible .v5-page-nav-cta-arrow {
+  color: var(--jxm-tusk);
+}
+
+.v5-page-nav-cta-circle {
+  position: absolute;
+  top: -45%;
+  left: -12%;
+  width: 124%;
+  height: 195%;
+  pointer-events: none;
+  stroke: var(--jxm-kermit);
+  fill: none;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 2;
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+.v5-page-nav-cta-circle path {
+  stroke-dasharray: 520;
+  stroke-dashoffset: 520;
+  transition: stroke-dashoffset 720ms cubic-bezier(0.5, 0.05, 0.3, 1);
+}
+.v5-page-nav-cta:hover .v5-page-nav-cta-circle,
+.v5-page-nav-cta:focus-visible .v5-page-nav-cta-circle {
+  opacity: 1;
+}
+.v5-page-nav-cta:hover .v5-page-nav-cta-circle path,
+.v5-page-nav-cta:focus-visible .v5-page-nav-cta-circle path {
+  stroke-dashoffset: 0;
+}
+
+/* ── Mobile (≤ 720px): collapse the center nav, keep logo + CTA ── */
+@media (max-width: 1023px) {
+  .v5-page-nav-menu { display: none; }
+  .v5-page-nav-inner {
+    grid-template-columns: auto 1fr auto;
+    padding: 0.75rem 1.25rem;
+  }
+  .v5-page-nav-cta { font-size: 0.8125rem; }
+}
+
+/* ── Page-level adjustments for pages using this nav ── */
+body.has-v5-page-nav {
+  padding-top: 70px;  /* clear the fixed nav so first content isn't hidden */
+}
