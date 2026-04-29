@@ -30,11 +30,159 @@
   <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
   <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
 
+  <style>
+    /* ════════════════════════════════════════
+       SERVICES PAGE — locked light, abyss-on-tusk, V5 list layout.
+    ════════════════════════════════════════ */
+    body.services-light,
+    body.services-light .body-wrapper,
+    body.services-light main {
+      background: var(--jxm-tusk) !important;
+      color: var(--jxm-abyss) !important;
+    }
+    body.services-light .page-title { color: var(--jxm-abyss) !important; }
+
+    /* ── V5-style services list ── */
+    .svc-list-section {
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      padding: 2rem 0 6rem;
+    }
+    .svc-list-section .container { padding-left: 4rem; padding-right: 2.5rem; }
+    .svc-head {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem 4rem;
+      align-items: start;
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
+      padding-top: 2.25rem;
+      margin-bottom: 2rem;
+    }
+    .svc-pill {
+      justify-self: start;
+      align-self: start;
+      width: fit-content;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--jxm-abyss);
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--jxm-abyss);
+      white-space: nowrap;
+      margin-top: 0.5rem;
+      line-height: 1;
+    }
+    .svc-headline {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      background: none !important;
+      margin: 0;
+    }
+    .svc-intro {
+      max-width: 56rem;
+      margin: 0 0 3rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(34, 31, 50, 0.78);
+    }
+    .svc-list { border-top: 1px solid rgba(34, 31, 50, 0.18); }
+    .svc-row {
+      display: grid;
+      grid-template-columns: 5rem 1fr 6rem;
+      column-gap: 2rem;
+      row-gap: 0.5rem;
+      align-items: center;
+      padding: 1.75rem 0 2rem;
+      border-bottom: 1px solid rgba(34, 31, 50, 0.18);
+      text-decoration: none;
+      color: inherit;
+    }
+    .svc-num {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+      color: rgba(34, 31, 50, 0.55);
+      align-self: start;
+      padding-top: 0.5rem;
+    }
+    .svc-content { max-width: 42rem; }
+    .svc-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--jxm-abyss);
+      margin: 0;
+    }
+    .svc-desc {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(34, 31, 50, 0.78);
+      margin: 0.75rem 0 0;
+    }
+    .svc-arrow {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 4.5rem;
+      height: 4.5rem;
+      border-radius: 50%;
+      background: var(--jxm-abyss);
+      color: var(--jxm-tusk);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .svc-arrow svg { width: 1.75rem; height: 1.75rem; display: block; }
+    .svc-row:hover .svc-arrow,
+    .svc-row:focus-visible .svc-arrow { transform: translate(3px, -3px); }
+    .svc-row:focus-visible { outline: 2px solid var(--jxm-abyss); outline-offset: 4px; }
+
+    @media (max-width: 991px) {
+      .svc-head { grid-template-columns: 1fr; }
+      .svc-list-section .container { padding-left: 1.25rem; padding-right: 1.25rem; }
+    }
+    @media (max-width: 720px) {
+      .svc-row {
+        grid-template-columns: 3rem 1fr;
+        column-gap: 1rem;
+      }
+      .svc-arrow { grid-column: 1 / -1; justify-self: start; margin-top: 0.75rem; width: 3.5rem; height: 3.5rem; }
+      .svc-arrow svg { width: 1.4rem; height: 1.4rem; }
+    }
+
+    /* ── "Not sure where you fit" — left-align headline + paragraph + button ── */
+    body.services-light .client-area-service-page .section-content,
+    body.services-light .client-area-service-page .section-title-wrapper,
+    body.services-light .client-area-service-page .text-wrapper,
+    body.services-light .client-area-service-page .btn-wrapper {
+      text-align: left !important;
+      align-items: flex-start !important;
+      justify-items: start !important;
+    }
+    body.services-light .client-area-service-page .section-title {
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+    body.services-light .client-area-service-page .section-content .text {
+      color: rgba(34, 31, 50, 0.85) !important;
+      max-width: 42rem;
+    }
+    body.services-light .client-area-service-page .section-content {
+      max-width: 42rem;
+    }
+  </style>
 </head>
 
-<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody">
-  <!-- Apply persisted theme before render (prevents flash of wrong theme) -->
-  <script>(function(){try{var t=localStorage.getItem('jxm-theme');if(t==='dark')document.body.classList.add('dark');}catch(e){}})();</script>
+<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody services-light">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -160,154 +308,84 @@
         </section>
         <!-- page title area end  -->
 
-        <!-- service area start  -->
-        <section class="service-area-service-page">
+        <!-- service list — V5-style numbered rows with abyss arrow circles -->
+        <section class="svc-list-section">
           <div class="container large">
-            <div class="service-area-service-page-inner">
-              <div class="section-header fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle">Services</span>
-                  </div>
-                  <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">Five disciplines. Run in order. All under one roof.</h2>
-                  </div>
+            <header class="svc-head">
+              <span class="svc-pill">Services</span>
+              <h2 class="svc-headline">Five disciplines. Run in order. All under one roof.</h2>
+            </header>
+            <p class="svc-intro">JXM is a growth partner for mission-driven brands — which means we work upstream before we work downstream. Strategy decides what's worth building. Brand and creative make it visible. Media and analytics prove it moved. Five disciplines, one studio, no vendors in between.</p>
+            <div class="svc-list">
+              <a href="service-details.html" class="svc-row">
+                <span class="svc-num">01</span>
+                <div class="svc-content">
+                  <h3 class="svc-title">Growth Strategy</h3>
+                  <p class="svc-desc">The decisions before the campaign. Where the budget goes. What's worth building. What to fix, what to kill, what to keep. We get hired to make the calls a marketing team shouldn't have to make alone — and to put a real number behind every recommendation.</p>
                 </div>
-                <div class="text-wrapper" style="margin-top: 2rem; max-width: 48rem;">
-                  <p class="text">JXM is a growth partner for mission-driven brands — which means we work upstream before we work downstream. Strategy decides what's worth building. Brand and creative make it visible. Media and analytics prove it moved. Five disciplines, one studio, no vendors in between.</p>
+                <span class="svc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="9 7 17 7 17 15"></polyline>
+                  </svg>
+                </span>
+              </a>
+              <a href="service-details.html" class="svc-row">
+                <span class="svc-num">02</span>
+                <div class="svc-content">
+                  <h3 class="svc-title">Brand &amp; Positioning</h3>
+                  <p class="svc-desc">The story the brand tells about itself, and the story the market believes back. We work on both. Most brands don't have a positioning problem — they have a <em>visibility</em> problem. The position is fine. Nobody can find it. We fix that.</p>
                 </div>
-              </div>
-              <div class="services-wrapper-box fade-anim">
-                <div class="services-wrapper-1">
-                  <div class="service-box fade-anim">
-                    <div class="count">
-                      <span class="number">(01)</span>
-                    </div>
-
-                    <div class="content">
-                      <h3 class="title"><a href="service-details.html">Growth Strategy</a></h3>
-                      <p class="text">The decisions before the campaign. Where the budget goes. What's worth building. What to fix, what to kill, what to keep. We get hired to make the calls a marketing team shouldn't have to make alone — and to put a real number behind every recommendation.</p>
-                      <ul class="service-list">
-                        <li><a href="service-details.html">Marketing investment review</a></li>
-                        <li><a href="service-details.html">Channel architecture</a></li>
-                        <li><a href="service-details.html">Vendor assessment</a></li>
-                        <li><a href="service-details.html">In-house vs. outsource framework</a></li>
-                        <li><a href="service-details.html">Annual planning</a></li>
-                        <li><a href="service-details.html">Audit and gap analysis</a></li>
-                      </ul>
-                    </div>
-                    <div class="thumb">
-                      <img class="grow" src="assets/imgs/gallery/image-3.webp" alt="image">
-                    </div>
-                  </div>
-                  <div class="service-box fade-anim">
-                    <div class="count">
-                      <span class="number">(02)</span>
-                    </div>
-
-                    <div class="content">
-                      <h3 class="title"><a href="service-details.html">Brand &amp; Positioning</a></h3>
-                      <p class="text">The story the brand tells about itself, and the story the market believes back. We work on both. Most brands don't have a positioning problem — they have a <em>visibility</em> problem. The position is fine. Nobody can find it. We fix that.</p>
-                      <ul class="service-list">
-                        <li><a href="service-details.html">Positioning and messaging</a></li>
-                        <li><a href="service-details.html">Naming</a></li>
-                        <li><a href="service-details.html">Visual identity</a></li>
-                        <li><a href="service-details.html">Brand voice</a></li>
-                        <li><a href="service-details.html">Architecture and sub-brand strategy</a></li>
-                        <li><a href="service-details.html">Internal brand activation</a></li>
-                      </ul>
-                    </div>
-                    <div class="thumb">
-                      <img class="grow" src="assets/imgs/gallery/image-4.webp" alt="image">
-                    </div>
-                  </div>
-                  <div class="service-box fade-anim">
-                    <div class="count">
-                      <span class="number">(03)</span>
-                    </div>
-
-                    <div class="content">
-                      <h3 class="title"><a href="service-details.html">Creative &amp; Campaign</a></h3>
-                      <p class="text">Concept, copy, art direction, production. The point isn't to be clever. The point is to be <em>seen</em> — and to earn a second look from people who weren't looking for you. Every campaign that leaves the studio has to clear all four pillars: effective, intentional, beautiful, bold. We don't ship anything that doesn't.</p>
-                      <ul class="service-list">
-                        <li><a href="service-details.html">Campaign concept and platform</a></li>
-                        <li><a href="service-details.html">Copywriting</a></li>
-                        <li><a href="service-details.html">Art direction</a></li>
-                        <li><a href="service-details.html">Video and motion</a></li>
-                        <li><a href="service-details.html">Photography</a></li>
-                        <li><a href="service-details.html">Production</a></li>
-                      </ul>
-                    </div>
-                    <div class="thumb">
-                      <img class="grow" src="assets/imgs/gallery/image-5.webp" alt="image">
-                    </div>
-                  </div>
-                  <div class="service-box fade-anim">
-                    <div class="count">
-                      <span class="number">(04)</span>
-                    </div>
-
-                    <div class="content">
-                      <h3 class="title"><a href="service-details.html">Media Planning &amp; Buying</a></h3>
-                      <p class="text">Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. Media and creative live on the same floor here — because the work doesn't matter until somebody sees it, and what they see is shaped by where it ran.</p>
-                      <ul class="service-list">
-                        <li><a href="service-details.html">Channel planning</a></li>
-                        <li><a href="service-details.html">Paid media (search, social, display, OTT/CTV)</a></li>
-                        <li><a href="service-details.html">Programmatic</a></li>
-                        <li><a href="service-details.html">Sponsorships and partnerships</a></li>
-                        <li><a href="service-details.html">Out-of-home</a></li>
-                        <li><a href="service-details.html">Audio and podcast</a></li>
-                      </ul>
-                    </div>
-                    <div class="thumb">
-                      <img class="grow" src="assets/imgs/gallery/image-6.webp" alt="image">
-                    </div>
-                  </div>
-                  <div class="service-box fade-anim">
-                    <div class="count">
-                      <span class="number">(05)</span>
-                    </div>
-
-                    <div class="content">
-                      <h3 class="title"><a href="service-details.html">Performance &amp; Analytics</a></h3>
-                      <p class="text">The number the campaign was supposed to move, and the proof that it did. Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics. No reporting theater. The dashboard tells you what worked, what didn't, and what to do next.</p>
-                      <ul class="service-list">
-                        <li><a href="service-details.html">Measurement strategy</a></li>
-                        <li><a href="service-details.html">GA4 and tag governance</a></li>
-                        <li><a href="service-details.html">Custom dashboards</a></li>
-                        <li><a href="service-details.html">Attribution modeling</a></li>
-                        <li><a href="service-details.html">Conversion analysis</a></li>
-                        <li><a href="service-details.html">Quarterly business reviews</a></li>
-                      </ul>
-                    </div>
-                    <div class="thumb">
-                      <img class="grow" src="assets/imgs/gallery/image-3.webp" alt="image">
-                    </div>
-                  </div>
+                <span class="svc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="9 7 17 7 17 15"></polyline>
+                  </svg>
+                </span>
+              </a>
+              <a href="service-details.html" class="svc-row">
+                <span class="svc-num">03</span>
+                <div class="svc-content">
+                  <h3 class="svc-title">Creative &amp; Campaign</h3>
+                  <p class="svc-desc">Concept, copy, art direction, production. The point isn't to be clever. The point is to be <em>seen</em> — and to earn a second look from people who weren't looking for you. Every campaign that leaves the studio has to clear all four pillars: effective, intentional, beautiful, bold. We don't ship anything that doesn't.</p>
                 </div>
-              </div>
-              <div class="service-content-wrapper section-spacing-top">
-                <div class="service-content">
-                  <div class="section-info-wrapper fade-anim" data-direction="left">
-                    <div class="thumb parallax-view">
-                      <img src="assets/imgs/gallery/image-10.webp" alt="image" data-speed="0.9">
-                    </div>
-                    <div class="text-wrapper">
-                      <p class="text">Strategy upstream. Creative downstream. All five disciplines under one roof — so the thinking that wins isn't the thinking that gets handed to a vendor mid-flight.</p>
-                      <p class="text">Most engagements start with a conversation, not a brief. Read on, or skip ahead.</p>
-                    </div>
-                  </div>
-                  <div class="section-thumb-wrapper fade-anim" data-delay="0.45" data-direction="right">
-                    <div class="thumb parallax-view">
-                      <img src="assets/imgs/gallery/image-11.webp" alt="image" data-speed="0.8">
-                    </div>
-                  </div>
+                <span class="svc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="9 7 17 7 17 15"></polyline>
+                  </svg>
+                </span>
+              </a>
+              <a href="service-details.html" class="svc-row">
+                <span class="svc-num">04</span>
+                <div class="svc-content">
+                  <h3 class="svc-title">Media Planning &amp; Buying</h3>
+                  <p class="svc-desc">Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. Media and creative live on the same floor here — because the work doesn't matter until somebody sees it, and what they see is shaped by where it ran.</p>
                 </div>
-              </div>
+                <span class="svc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="9 7 17 7 17 15"></polyline>
+                  </svg>
+                </span>
+              </a>
+              <a href="service-details.html" class="svc-row">
+                <span class="svc-num">05</span>
+                <div class="svc-content">
+                  <h3 class="svc-title">Performance &amp; Analytics</h3>
+                  <p class="svc-desc">The number the campaign was supposed to move, and the proof that it did. Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics. No reporting theater. The dashboard tells you what worked, what didn't, and what to do next.</p>
+                </div>
+                <span class="svc-arrow" aria-hidden="true">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="7" y1="17" x2="17" y2="7"></line>
+                    <polyline points="9 7 17 7 17 15"></polyline>
+                  </svg>
+                </span>
+              </a>
             </div>
           </div>
         </section>
-        <!-- service area end  -->
+        <!-- service list end -->
 
         <!-- client area start  -->
         <section class="client-area-service-page">
@@ -459,26 +537,6 @@
       </footer>
       <!-- footer area end  -->
 
-    </div>
-  </div>
-
-    <!-- Theme toggle (sun / moon) -->
-  <div id="theme-toggle" class="switcher-button" title="Toggle Dark/Light Mode">
-    <div class="switcher-button-inner">
-      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2" x2="12" y2="4"/>
-        <line x1="12" y1="20" x2="12" y2="22"/>
-        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
-        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
-        <line x1="2" y1="12" x2="4" y2="12"/>
-        <line x1="20" y1="12" x2="22" y2="12"/>
-        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
-        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
-      </svg>
-      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-      </svg>
     </div>
   </div>
 
