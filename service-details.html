@@ -33,8 +33,19 @@
 
   <style>
     /* ════════════════════════════════════════
-       SERVICE DETAILS — locked dark, V5 nav clearance.
+       SERVICE DETAILS — locked dark, V5 nav clearance, abyss bg.
     ════════════════════════════════════════ */
+    /* Force every dark surface to var(--jxm-abyss) regardless of
+       what Redox's --bg / dark-mode.css resolves to. */
+    body.service-details-dark,
+    body.service-details-dark .body-wrapper,
+    body.service-details-dark #smooth-wrapper,
+    body.service-details-dark #smooth-content,
+    body.service-details-dark main,
+    body.service-details-dark .footer-area-4,
+    body.service-details-dark .copyright-area {
+      background-color: var(--jxm-abyss) !important;
+    }
     /* Push the giant page-title down so it doesn't slide up under
        the V5 fixed nav (~110px tall when stacked across 3 columns). */
     .service-details-dark .hero-area-service-details-inner { padding-top: 8rem; }
