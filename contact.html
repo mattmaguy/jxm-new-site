@@ -28,7 +28,6 @@
   <!-- Template Main CSS File -->
   <link rel="stylesheet" href="assets/css/style.css?v=1.0">
   <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
-  <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
   <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
 
   <!-- Contact page locks dark theme + abyss surface (per JXM design system) -->
@@ -68,13 +67,19 @@
     .contact-abyss .footer-area-4 .copyright-area {
       border-top-color: rgba(243,241,236,0.10);
     }
+    /* Push the giant page-title down so it doesn't slide up under
+       the V5 fixed nav (~110px tall when stacked across 3 columns). */
+    .contact-abyss .page-title-area-inner {
+      padding-top: 8rem;
+    }
+    @media (max-width: 1023px) {
+      .contact-abyss .page-title-area-inner { padding-top: 5rem; }
+    }
   </style>
 
 </head>
 
 <body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody contact-abyss has-v5-page-nav">
-  <!-- Apply persisted theme before render (prevents flash of wrong theme) -->
-  <script>(function(){try{var t=localStorage.getItem('jxm-theme');if(t==='dark')document.body.classList.add('dark');}catch(e){}})();</script>
 
   <!-- Preloader -->
   <div id="preloader">
@@ -206,7 +211,7 @@
           <div class="container large">
             <div class="page-title-area-inner section-spacing-top">
               <div class="page-title-wrapper">
-                <h2 class="page-title fade-anim">Contact</h2>
+                <h2 class="page-title fade-anim">Reach Out</h2>
               </div>
             </div>
           </div>
@@ -233,19 +238,14 @@
                     <p class="title">Get in touch</p>
                     <p class="text">The fastest way in is
                       <a href="mailto:hi@getjxm.com">hi@getjxm.com</a>.<br>
-                      We read every note. We answer every one.
+                      We read every note.
                     </p>
                     <p class="text">Or fill out the form and we'll route it to Jim or Matt directly. Most replies go out same-day.</p>
                   </div>
                   <div class="contact-social">
-                    <p class="title">Follow</p>
+                    <p class="title">Connect</p>
                     <div class="social-links">
-                      <a href="#">Facebook</a>
-                      <a href="#">Twitter</a>
-                      <a href="#">LinkedIn</a>
-                      <a href="#">Instagram</a>
-                      <a href="#">Dribbble</a>
-                      <a href="#">Behance</a>
+                      <a href="https://www.linkedin.com/company/tunetojxm" target="_blank" rel="noopener">LinkedIn</a>
                     </div>
                   </div>
                 </div>
@@ -327,26 +327,6 @@
       </footer>
       <!-- footer area end  -->
 
-    </div>
-  </div>
-
-    <!-- Theme toggle (sun / moon) -->
-  <div id="theme-toggle" class="switcher-button" title="Toggle Dark/Light Mode">
-    <div class="switcher-button-inner">
-      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2" x2="12" y2="4"/>
-        <line x1="12" y1="20" x2="12" y2="22"/>
-        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
-        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
-        <line x1="2" y1="12" x2="4" y2="12"/>
-        <line x1="20" y1="12" x2="22" y2="12"/>
-        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
-        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
-      </svg>
-      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-      </svg>
     </div>
   </div>
 
