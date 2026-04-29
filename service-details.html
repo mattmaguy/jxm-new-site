@@ -71,6 +71,34 @@
     .service-details-dark .feature-area .feature-box {
       border-color: rgba(34, 31, 50, 0.18) !important;
     }
+    /* SVG feature icon — shape from the file's --icon var, color from CSS.
+       Paints abyss on tusk; for future cedar/dark service-details panels
+       just override .feature-icon background-color. */
+    .service-details-dark .feature-area .feature-box .thumb {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .service-details-dark .feature-area .feature-box .feature-icon {
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: var(--jxm-abyss);
+      -webkit-mask-image: var(--icon);
+              mask-image: var(--icon);
+      -webkit-mask-size: contain;
+              mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-position: left center;
+              mask-position: left center;
+    }
+    @media (max-width: 1919px) {
+      .service-details-dark .feature-area .feature-box .feature-icon {
+        width: 60px;
+        height: 60px;
+      }
+    }
 
     /* ── Value section: cedar surface, tusk ink ── */
     .service-details-dark .value-area {
@@ -324,7 +352,7 @@
                 <div class="features-wrapper">
                   <div class="feature-box">
                     <div class="thumb">
-                      <img src="assets/imgs/shape/shape-15.webp" alt="image">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-01.svg')" aria-hidden="true"></span>
                     </div>
                     <div class="content">
                       <h3 class="title">Skilled <br>
@@ -335,7 +363,7 @@
                   </div>
                   <div class="feature-box">
                     <div class="thumb">
-                      <img src="assets/imgs/shape/shape-16.webp" alt="image">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-02.svg')" aria-hidden="true"></span>
                     </div>
                     <div class="content">
                       <h3 class="title">User-centric <br>
@@ -346,7 +374,7 @@
                   </div>
                   <div class="feature-box">
                     <div class="thumb">
-                      <img src="assets/imgs/shape/shape-17.webp" alt="image">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-03.svg')" aria-hidden="true"></span>
                     </div>
                     <div class="content">
                       <h3 class="title">Data-driven <br>
@@ -357,7 +385,7 @@
                   </div>
                   <div class="feature-box">
                     <div class="thumb">
-                      <img src="assets/imgs/shape/shape-18.webp" alt="image">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-04.svg')" aria-hidden="true"></span>
                     </div>
                     <div class="content">
                       <h3 class="title">Collaborative <br>
