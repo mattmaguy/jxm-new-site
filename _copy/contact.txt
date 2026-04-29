@@ -14,7 +14,7 @@ META DESCRIPTION  [17w]
 COPY (in document order)
 ──────────────────────────────────────────────────────────────────────
 [PAGE TITLE H2]  [1w]
-  Contact
+REACH OUT 
 
 [EYEBROW]  [1w]
   Contact
@@ -23,7 +23,7 @@ COPY (in document order)
   Tell us what you want to grow.
 
 [BODY]  [14w]
-  The fastest way in is hi@getjxm.com. We read every note. We answer every one.
+  The fastest way in is hi@getjxm.com. We read every note.
 
 [BODY]  [19w]
   Or fill out the form and we'll route it to Jim or Matt directly. Most replies go out same-day.
