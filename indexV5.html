@@ -853,49 +853,46 @@
     ════════════════════════════════════════ */
     :root {
       /* ── Brand accents — theme-stable across light + dark ── */
-      --jxm-tusk:     var(--jxm-tusk);   /* primary light surface */
-      --jxm-abyss:    var(--jxm-abyss);   /* primary dark text / dark UI */
-      --jxm-soylent:  var(--jxm-soylent);   /* forest — Truth + Founders sections */
-      --jxm-cedar:    var(--jxm-cedar);   /* deep forest — mobile menu trigger */
-      --jxm-kermit:   var(--jxm-kermit);   /* primary green accent */
-      --jxm-gator:    var(--jxm-gator);   /* darker green for gradients */
-      --jxm-blurple:  var(--jxm-blurple);   /* purple — rare CTA / auth states */
-      --jxm-bg-dark:  var(--jxm-bg-dark);   /* alternate dark bg */
-      --jxm-bg-deep:  var(--jxm-bg-deep);   /* deepest dark — marquee, overlays */
+      --jxm-tusk:     #f3f1ec;   /* primary light surface */
+      --jxm-abyss:    #221F32;   /* primary dark text / dark UI */
+      --jxm-soylent:  #233935;   /* forest — Truth + Founders sections */
+      --jxm-cedar:    #1c2d20;   /* deep forest — mobile menu trigger */
+      --jxm-kermit:   #49e385;   /* primary green accent */
+      --jxm-gator:    #2ec470;   /* darker green for gradients */
+      --jxm-blurple:  #5e4ff5;   /* purple — rare CTA / auth states */
+      --jxm-bg-dark:  #16121f;   /* alternate dark bg */
+      --jxm-bg-deep:  #0a0a0e;   /* deepest dark — marquee, overlays */
 
-      /* ── Surface ── */
-      --bg:   var(--jxm-tusk);        /* tusk — page bg */
-
-      /* ── Subtle surfaces (cards, hover, glass) ── */
-      --sf1:  var(--sf1);
-      --sf2:  var(--sf2);
-      --sf3:  var(--sf3);
-
-      /* ── Borders ── */
-      --bd1:  var(--bd1);
-      --bd2:  var(--bd2);
-      --bd3:  var(--bd3);
-      --bd4:  var(--bd4);
-
-      /* ── Text ── */
-      --t1:   var(--jxm-abyss);          /* primary — abyss */
-      --t2:   var(--t2);
-      --t3:   var(--t3);
-      --t4:   var(--t4);
-      --t5:   var(--t5);
+      /* ── Theme tokens — LIGHT defaults ── */
+      --bg:   #f3f1ec;
+      --sf1:  rgba(34,31,50,0.03);
+      --sf2:  rgba(34,31,50,0.04);
+      --sf3:  rgba(34,31,50,0.06);
+      --bd1:  rgba(34,31,50,0.07);
+      --bd2:  rgba(34,31,50,0.10);
+      --bd3:  rgba(34,31,50,0.14);
+      --bd4:  rgba(34,31,50,0.18);
+      --t1:   #221F32;
+      --t2:   rgba(34,31,50,0.85);
+      --t3:   rgba(34,31,50,0.55);
+      --t4:   rgba(34,31,50,0.30);
+      --t5:   rgba(34,31,50,0.65);
     }
 
     /* ── DARK MODE OVERRIDES ──
-       Activated by adding 'dark' class to <body> (theme toggle JS). */
+       Activated by adding 'dark' class to <body>. V5 currently has
+       <body class="dark"> set permanently so V4's original editorial
+       dark palette renders by default. Toggle was removed; this block
+       remains so a toggle can be re-added cleanly later. */
     body.dark {
-      --bg:   var(--jxm-bg-dark);
-      --sf1:  var(--sf1);
-      --sf2:  var(--sf2);
-      --sf3:  var(--sf3);
-      --bd1:  var(--bd1);
-      --bd2:  var(--bd2);
-      --bd3:  var(--bd3);
-      --bd4:  var(--bd4);
+      --bg:   #16121f;
+      --sf1:  rgba(255,255,255,0.03);
+      --sf2:  rgba(255,255,255,0.04);
+      --sf3:  rgba(255,255,255,0.06);
+      --bd1:  rgba(255,255,255,0.07);
+      --bd2:  rgba(255,255,255,0.08);
+      --bd3:  rgba(255,255,255,0.10);
+      --bd4:  rgba(255,255,255,0.12);
       --t1:   #fff;
       --t2:   #d4d4d8;
       --t3:   #71717a;
