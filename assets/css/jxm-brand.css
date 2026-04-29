@@ -659,6 +659,16 @@ body.dark .work-area-4 {
 }
 
 
+/* ════════════ FLOATING UI — clear Chrome extension icons ═
+   Bumps the scroll-to-top button up 64px so it (and the
+   dark-mode toggle stacked above it) don't get covered by
+   browser extension floaters in the bottom-right corner.
+═══════════════════════════════════════════════════ */
+.progress-wrap {
+  bottom: 84px !important;  /* was 20px — +64 to clear PDF/extension icons */
+}
+
+
 /* ════════════ TOP NAV — 20% smaller menu items ═════════
    Redox's .header-area-2 .main-menu li a is 16px / 21px x 17px
    padding. Reducing to 13px (≈ 20% smaller) and tightening pad. */

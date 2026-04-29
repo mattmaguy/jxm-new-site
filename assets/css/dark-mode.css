@@ -14,7 +14,7 @@
 .switcher-button {
   position: fixed;
   right: 20px;
-  bottom: 82px;            /* 20 (progress-wrap bottom) + 46 (its size) + 16 (gap) */
+  bottom: 146px;           /* 84 (progress-wrap bottom) + 46 (its size) + 16 (gap) — clears Chrome PDF/extension floaters */
   width: 46px;
   height: 46px;
   cursor: pointer;
