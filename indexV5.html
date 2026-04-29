@@ -18,7 +18,7 @@
 
     html, body {
       background: var(--bg);
-      color: white;
+      color: var(--t1);
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       min-height: 100%;
@@ -859,9 +859,48 @@
 </head>
   <style>
     /* ════════════════════════════════════════
-       THEME TOKENS
+       THEME TOKENS — LIGHT MODE DEFAULT
+       :root holds light values + theme-stable brand accents.
+       body.dark below overrides the surface/text/border tokens
+       to flip to V4's editorial dark palette.
     ════════════════════════════════════════ */
     :root {
+      /* ── Brand accents — theme-stable across light + dark ── */
+      --jxm-tusk:     #f3f1ec;   /* primary light surface */
+      --jxm-abyss:    #221F32;   /* primary dark text / dark UI */
+      --jxm-soylent:  #233935;   /* forest — Truth + Founders sections */
+      --jxm-cedar:    #1c2d20;   /* deep forest — mobile menu trigger */
+      --jxm-kermit:   #49e385;   /* primary green accent */
+      --jxm-gator:    #2ec470;   /* darker green for gradients */
+      --jxm-blurple:  #5e4ff5;   /* purple — rare CTA / auth states */
+      --jxm-bg-dark:  #16121f;   /* alternate dark bg */
+      --jxm-bg-deep:  #0a0a0e;   /* deepest dark — marquee, overlays */
+
+      /* ── Surface ── */
+      --bg:   #f3f1ec;        /* tusk — page bg */
+
+      /* ── Subtle surfaces (cards, hover, glass) ── */
+      --sf1:  rgba(34,31,50,0.03);
+      --sf2:  rgba(34,31,50,0.04);
+      --sf3:  rgba(34,31,50,0.06);
+
+      /* ── Borders ── */
+      --bd1:  rgba(34,31,50,0.07);
+      --bd2:  rgba(34,31,50,0.10);
+      --bd3:  rgba(34,31,50,0.14);
+      --bd4:  rgba(34,31,50,0.18);
+
+      /* ── Text ── */
+      --t1:   #221F32;          /* primary — abyss */
+      --t2:   rgba(34,31,50,0.85);
+      --t3:   rgba(34,31,50,0.55);
+      --t4:   rgba(34,31,50,0.30);
+      --t5:   rgba(34,31,50,0.65);
+    }
+
+    /* ── DARK MODE OVERRIDES ──
+       Activated by adding 'dark' class to <body> (theme toggle JS). */
+    body.dark {
       --bg:   #16121f;
       --sf1:  rgba(255,255,255,0.03);
       --sf2:  rgba(255,255,255,0.04);
