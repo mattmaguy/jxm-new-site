@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How we run creative and campaign work — process, deliverables, and what good looks like.">
+
+  <title>Creative · JXM</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/ad-imgs/logo/favicon.svg">
+
+  <!-- Vendor CSS Files -->
+    <!-- JXM Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,500;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/vendor/animate.min.css">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
+  <link rel="stylesheet" href="assets/css/v5-footer.css">
+
+  <style>
+    /* ════════════════════════════════════════
+       SERVICE DETAILS — locked dark, V5 nav clearance, abyss bg.
+    ════════════════════════════════════════ */
+    /* Force every dark surface to var(--jxm-abyss) regardless of
+       what Redox's --bg / dark-mode.css resolves to. */
+    body.service-details-dark,
+    body.service-details-dark .body-wrapper,
+    body.service-details-dark #smooth-wrapper,
+    body.service-details-dark #smooth-content,
+    body.service-details-dark main,
+    body.service-details-dark .footer-area-4,
+    body.service-details-dark .copyright-area {
+      background-color: var(--jxm-abyss) !important;
+    }
+    /* Push the meta line + giant page-title down so they don't sit
+       right under the V5 fixed nav (~110px tall when stacked across
+       3 columns). Bumped past the standard 8rem so [SL:005] has real
+       breathing room. */
+    .service-details-dark .hero-area-service-details-inner { padding-top: 11rem; }
+    @media (max-width: 1023px) {
+      .service-details-dark .hero-area-service-details-inner { padding-top: 7rem; }
+    }
+
+    /* ── Feature section: tusk surface, abyss ink ── */
+    .service-details-dark .feature-area {
+      background-color: var(--jxm-tusk) !important;
+      color: var(--jxm-abyss) !important;
+      padding-bottom: 6.25rem; /* matches Redox section-spacing rhythm */
+    }
+    @media (max-width: 1399px) {
+      .service-details-dark .feature-area { padding-bottom: 5rem; }
+    }
+    @media (max-width: 1199px) {
+      .service-details-dark .feature-area { padding-bottom: 3.75rem; }
+    }
+    .service-details-dark .feature-area .feature-box .title,
+    .service-details-dark .feature-area .feature-box .text,
+    .service-details-dark .feature-area .feature-box h3,
+    .service-details-dark .feature-area .feature-box p {
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+    .service-details-dark .feature-area .feature-box .text {
+      color: rgba(34, 31, 50, 0.78) !important;
+    }
+    .service-details-dark .feature-area .feature-box {
+      border-color: rgba(34, 31, 50, 0.18) !important;
+    }
+    /* SVG feature icon — shape from the file's --icon var, color from CSS.
+       Paints abyss on tusk; for future cedar/dark service-details panels
+       just override .feature-icon background-color. */
+    .service-details-dark .feature-area .feature-box .thumb {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .service-details-dark .feature-area .feature-box .feature-icon {
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: var(--jxm-abyss);
+      -webkit-mask-image: var(--icon);
+              mask-image: var(--icon);
+      -webkit-mask-size: contain;
+              mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-position: left center;
+              mask-position: left center;
+    }
+    @media (max-width: 1919px) {
+      .service-details-dark .feature-area .feature-box .feature-icon {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    /* ── Value section: cedar surface, tusk ink ── */
+    .service-details-dark .value-area {
+      background-color: var(--jxm-cedar) !important;
+      color: var(--jxm-tusk) !important;
+    }
+    .service-details-dark .value-area .section-title,
+    .service-details-dark .value-area .value-box .number,
+    .service-details-dark .value-area .value-box .text,
+    .service-details-dark .value-area h2,
+    .service-details-dark .value-area h3,
+    .service-details-dark .value-area p {
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
+    }
+    .service-details-dark .value-area .value-box .text {
+      color: rgba(243, 241, 236, 0.78) !important;
+    }
+    .service-details-dark .value-area .value-box {
+      border-color: rgba(243, 241, 236, 0.18) !important;
+    }
+  </style>
+</head>
+
+
+<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody dark service-details-dark has-v5-page-nav">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+
+      </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  </div>
+
+  <!-- Sroll to top -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <!-- side toggle start -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <img src="assets/ad-imgs/logo/JXM.svg" class="logo-light" alt="JXM">
+              <img src="assets/ad-imgs/logo/JXM-light.svg" class="logo-dark" alt="JXM">
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="contact.html" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Let's Talk</span>
+              <span class="text-two">Let's Talk</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">1274 Osgood St, Suite 200<br>North Andover, MA 01845</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:hi@getjxm.com">hi@getjxm.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+19784244500">(978) 424-4500</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+  <!-- side toggle end -->
+
+  <!-- V5 page nav — 3-column stacked editorial nav -->
+  <header class="v5-page-nav" aria-label="Site nav">
+    <div class="v5-page-nav-inner">
+      <a href="index.html" class="v5-page-nav-logo" aria-label="JXM, home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+      </a>
+      <nav class="v5-page-nav-menu" aria-label="Primary">
+        <!-- Column 1 -->
+        <ul>
+          <li><a href="index.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">01</span>
+            <span class="v5-page-nav-link-text">Home</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+          <li><a href="portfolio.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">02</span>
+            <span class="v5-page-nav-link-text">Work</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 22 8, 44 3, 60 6 S 84 4, 98 6"/></svg>
+          </a></li>
+          <li><a href="about.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">03</span>
+            <span class="v5-page-nav-link-text">About</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 4, 38 7, 55 5 S 80 7, 98 5"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 2 -->
+        <ul>
+          <li><a href="services.html" class="v5-page-nav-link is-active" aria-current="page">
+            <span class="v5-page-nav-link-num">04</span>
+            <span class="v5-page-nav-link-text">Services</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 18 7, 38 4, 56 6 S 84 5, 98 6"/></svg>
+          </a></li>
+          <li><a href="blog.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">05</span>
+            <span class="v5-page-nav-link-text">Ideas</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 3 — Book a Consult CTA -->
+        <ul>
+          <li><a href="contact.html" class="v5-page-nav-link v5-page-nav-link--cta">
+            <span class="v5-page-nav-link-num">06</span>
+            <span class="v5-page-nav-link-text">Book a Consult <svg class="v5-page-nav-link-uparrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            <svg class="v5-page-nav-link-circle" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M 100 4 C 160 2, 195 12, 196 28 C 198 48, 140 56, 70 54 C 22 52, 4 38, 6 26 C 8 14, 32 4, 100 4"/></svg>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /V5 page nav -->
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <main>
+
+        <!-- hero area start  -->
+        <section class="hero-area-service-details">
+          <div class="container large">
+            <div class="hero-area-service-details-inner section-spacing-top">
+              <div class="service-meta fade-anim">
+                <span class="serial">[SL: 003]</span>
+                <span class="tag">[Creative &amp; Campaign]</span>
+                <span class="next-item"><a href="service-details-media.html">[Next]</a></span>
+              </div>
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">Earn <br>
+                      Attention</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="section-content-wrapper fade-anim">
+                <div class="section-content">
+                  <div class="text-wrapper">
+                    <p class="text">The point isn't to be clever. The point is to be seen — and to earn a second look from people who weren't looking for you. Every campaign clears all four pillars.</p>
+                  </div>
+                  <div class="feature-list">
+                    <ul>
+                      <li>Concept</li>
+                      <li>Copy</li>
+                      <li>Art Direction</li>
+                      <li>Production</li>
+                      <li>Launch</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="section-thumb parallax-view">
+                  <img src="assets/imgs/gallery/image-24.webp" alt="image" data-speed="0.8">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- hero area end  -->
+
+        <!-- approach area start  -->
+        <section class="approach-area-service-details-page">
+          <div class="container large">
+            <div class="approach-area-service-details-page-inner section-spacing">
+              <div class="section-header">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper fade-anim" data-direction="left">
+                    <span class="section-subtitle">Our creative <br>
+                      campaign process</span>
+                  </div>
+                  <div class="title-wrapper fade-anim" data-direction="right">
+                    <h2 class="section-title font-sequelsans-romanbody">Concept, copy, art direction, production. We don't ship anything that isn't effective, intentional, beautiful, and bold. All four pillars. No shortcuts.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="approach-wrapper-box">
+                <span class="steps fade-anim">04</span>
+                <div class="approach-wrapper fade-anim" data-direction="right">
+                  <div class="approach-box">
+                    <span class="number">01</span>
+                    <h3 class="title">Brief &amp; Insight</h3>
+                    <p class="text">A real brief is a sharpened question. We rewrite yours until the answer is obvious to anyone who reads it.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">02</span>
+                    <h3 class="title">Concept &amp; Direction</h3>
+                    <p class="text">We bring three concepts, not thirty. Each has a reason to exist, a target, and a defensible point of view.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">03</span>
+                    <h3 class="title">Copy Craft</h3>
+                    <p class="text">Words that survive the focus group, the legal review, and the room. Nothing in our copy is there by accident.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">04</span>
+                    <h3 class="title">Art Direction</h3>
+                    <p class="text">Visual decisions made in service of the idea, not in service of the trend. Distinctive, repeatable, and built to scale.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- approach area end  -->
+
+        <!-- feature area start  -->
+        <section class="feature-area">
+          <div class="container large">
+            <div class="feature-area-inner section-spacing-top">
+              <div class="features-wrapper-box fade-anim">
+                <div class="features-wrapper">
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-09.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Production &amp; Craft</h3>
+                      <p class="text">We hire the right director, photographer, illustrator, or composer for the job. Production is where great ideas die. Not here.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-10.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Pillar Check</h3>
+                      <p class="text">Effective, intentional, beautiful, bold. Every piece gets graded against all four before it leaves the studio.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-11.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Asset System</h3>
+                      <p class="text">Every campaign ships with a system — variants, formats, templates — so work scales without dilution.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-12.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Launch Plan</h3>
+                      <p class="text">We sequence the rollout — hero piece first, supporting waves next, optimizations after. The campaign builds momentum instead of fading.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- feature area end  -->
+
+        <!-- value area start  -->
+        <section class="value-area">
+          <div class="container large">
+            <div class="value-area-inner section-spacing">
+              <div class="section-content-wrapper fade-anim">
+                <div class="section-thumb parallax-view">
+                  <img src="assets/imgs/gallery/image-25.webp" alt="image" data-speed="0.8">
+                </div>
+                <div class="section-content">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-sequelsans-romanbody">We don't ship anything that doesn't clear all four creative pillars. Full stop.</h2>
+                    </div>
+                  </div>
+                  <div class="values-wrapper">
+                    <div class="value-box">
+                      <h3 class="number">01</h3>
+                      <p class="text">Effective gets the result. Intentional means every choice is defensible. Beautiful makes people stop. Bold makes them remember it. The four are not negotiable.</p>
+                    </div>
+                    <div class="value-box">
+                      <h3 class="number">02</h3>
+                      <p class="text">Most agency creative passes one pillar, maybe two. The rest gets waved through because deadlines. We hold the line. A concept that's effective and beautiful but isn't bold goes back. Every time.</p>
+                    </div>
+                    <div class="value-box">
+                      <h3 class="number">03</h3>
+                      <p class="text">We earn the second look. The first is bought with media; the second is earned with the work. If your campaign doesn't earn it, the spend was wasted on the impression.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- value area end  -->
+
+        <!-- faq area start  -->
+        <section class="faq-area">
+          <div class="container large">
+            <div class="faq-area-inner section-spacing-top">
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper">
+                    <span class="section-subtitle">FAQ</span>
+                  </div>
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">Common questions about creative and campaign work</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-wrapper fade-anim">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative1" aria-expanded="false" aria-controls="collapseCreative1">
+                        How many concepts will we see?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Three. Sometimes two. Never thirty. More options doesn't mean better thinking — it usually means we haven't done the work to know which one is right. We bring fewer concepts, with more conviction behind each. You'll see why each one exists, who it's for, and what we're betting on. Then you pick.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative2" aria-expanded="true" aria-controls="collapseCreative2">
+                        What if we hate it?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative2" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Tell us why, specifically. "I don't like it" isn't useful. "It feels off-brand," "doesn't speak to our buyer," "wrong problem" — those we can work with. We don't fall in love with our own concepts. We do fall in love with finding the answer that works. Strong feedback gets us there faster.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative3" aria-expanded="false" aria-controls="collapseCreative3">
+                        How do you handle production and crew?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        We hire to the idea. The director, photographer, illustrator, or composer is chosen because their voice fits the work — not because they're cheap or who we used last time. We manage production end to end, the crew does their best work, and you get one point of contact through the process.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative4" aria-expanded="false" aria-controls="collapseCreative4">
+                        Who owns the work after we deliver?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        You do. Full ownership of the final assets, the source files, and the rights to use, modify, and re-cut. We retain the right to show the work in our own portfolio — that's it. No license fees, usage windows, or surprise invoices later. The work is yours when we hand it over.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative5" aria-expanded="false" aria-controls="collapseCreative5">
+                        Do you do both digital and print?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Yes. Film, OOH, social, web, print, packaging, experiential. We don't specialize by format — we specialize by idea. The format is a downstream decision based on where the audience is and what the campaign needs to do. Sometimes that's a thirty-second spot. Sometimes it's a billboard. Sometimes it's a piece of mail.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative6" aria-expanded="false" aria-controls="collapseCreative6">
+                        How do you measure whether a campaign actually worked?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        We define success in the brief, not after launch. Awareness lift, engagement quality, attributed conversions, brand search — whatever the campaign is actually meant to move. The dashboard goes live when the campaign does. We don't wait until the end to discover whether it worked. We watch in real time and adjust.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseCreative7" aria-expanded="false" aria-controls="collapseCreative7">
+                        How long does a campaign take?
+                      </button>
+                    </h2>
+                    <div id="collapseCreative7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        From signed brief to launch, six to fourteen weeks depending on production. A film campaign with custom shooting takes longer than a print campaign with existing photography. We give you a real timeline at scoping, not a hopeful one. If something is going to slip, you hear about it before, not after.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- faq area end  -->
+
+      </main>
+
+      <!-- V5 site footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <a href="index.html" class="footer-brand" aria-label="JXM, home">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" style="width:72px;height:auto;display:block;" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+            </a>
+          </div>
+          <div class="footer-bottom">
+            <nav class="footer-main-links" aria-label="Footer navigation">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Ideas</a></li>
+                <li><a href="contact.html" class="footer-cta-link">Let's Talk →</a></li>
+              </ul>
+            </nav>
+            <div class="footer-copy">
+              <div style="white-space: nowrap;">© MMXXVI JXM | James and Matthew, LTD | All rights reserved.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- /V5 site footer -->
+
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/ScrollToPlugin.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/TextPlugin.js"></script>
+  <script src="assets/vendor/customEase.js"></script>
+  <script src="assets/vendor/Flip.min.js"></script>
+  <script src="assets/vendor/jquery.meanmenu.min.js"></script>
+  <script src="assets/vendor/backToTop.js"></script>
+  <script src="assets/vendor/matter.js"></script>
+  <script src="assets/vendor/throwable.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js?v=1.0"></script>
+
+</body>
+
+</html>

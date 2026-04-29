@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="How we run a growth strategy engagement — process, deliverables, and what good looks like.">
+
+  <title>Strategy · JXM</title>
+
+  <!-- Fav Icon -->
+  <link rel="icon" type="image/svg+xml" href="assets/ad-imgs/logo/favicon.svg">
+
+  <!-- Vendor CSS Files -->
+    <!-- JXM Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Inter:ital,wght@0,400;0,500;0,600;0,700;0,900;1,500;1,700;1,900&family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap">
+
+  <link rel="stylesheet" href="assets/vendor/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/vendor/fontawesome.min.css">
+  <link rel="stylesheet" href="assets/vendor/swiper-bundle.min.css">
+  <link rel="stylesheet" href="assets/vendor/meanmenu.min.css">
+  <link rel="stylesheet" href="assets/vendor/magnific-popup.css">
+  <link rel="stylesheet" href="assets/vendor/animate.min.css">
+
+  <!-- Template Main CSS File -->
+  <link rel="stylesheet" href="assets/css/style.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
+  <link rel="stylesheet" href="assets/css/v5-footer.css">
+
+  <style>
+    /* ════════════════════════════════════════
+       SERVICE DETAILS — locked dark, V5 nav clearance, abyss bg.
+    ════════════════════════════════════════ */
+    /* Force every dark surface to var(--jxm-abyss) regardless of
+       what Redox's --bg / dark-mode.css resolves to. */
+    body.service-details-dark,
+    body.service-details-dark .body-wrapper,
+    body.service-details-dark #smooth-wrapper,
+    body.service-details-dark #smooth-content,
+    body.service-details-dark main,
+    body.service-details-dark .footer-area-4,
+    body.service-details-dark .copyright-area {
+      background-color: var(--jxm-abyss) !important;
+    }
+    /* Push the meta line + giant page-title down so they don't sit
+       right under the V5 fixed nav (~110px tall when stacked across
+       3 columns). Bumped past the standard 8rem so [SL:005] has real
+       breathing room. */
+    .service-details-dark .hero-area-service-details-inner { padding-top: 11rem; }
+    @media (max-width: 1023px) {
+      .service-details-dark .hero-area-service-details-inner { padding-top: 7rem; }
+    }
+
+    /* ── Feature section: tusk surface, abyss ink ── */
+    .service-details-dark .feature-area {
+      background-color: var(--jxm-tusk) !important;
+      color: var(--jxm-abyss) !important;
+      padding-bottom: 6.25rem; /* matches Redox section-spacing rhythm */
+    }
+    @media (max-width: 1399px) {
+      .service-details-dark .feature-area { padding-bottom: 5rem; }
+    }
+    @media (max-width: 1199px) {
+      .service-details-dark .feature-area { padding-bottom: 3.75rem; }
+    }
+    .service-details-dark .feature-area .feature-box .title,
+    .service-details-dark .feature-area .feature-box .text,
+    .service-details-dark .feature-area .feature-box h3,
+    .service-details-dark .feature-area .feature-box p {
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+    .service-details-dark .feature-area .feature-box .text {
+      color: rgba(34, 31, 50, 0.78) !important;
+    }
+    .service-details-dark .feature-area .feature-box {
+      border-color: rgba(34, 31, 50, 0.18) !important;
+    }
+    /* SVG feature icon — shape from the file's --icon var, color from CSS.
+       Paints abyss on tusk; for future cedar/dark service-details panels
+       just override .feature-icon background-color. */
+    .service-details-dark .feature-area .feature-box .thumb {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .service-details-dark .feature-area .feature-box .feature-icon {
+      display: block;
+      width: 80px;
+      height: 80px;
+      background-color: var(--jxm-abyss);
+      -webkit-mask-image: var(--icon);
+              mask-image: var(--icon);
+      -webkit-mask-size: contain;
+              mask-size: contain;
+      -webkit-mask-repeat: no-repeat;
+              mask-repeat: no-repeat;
+      -webkit-mask-position: left center;
+              mask-position: left center;
+    }
+    @media (max-width: 1919px) {
+      .service-details-dark .feature-area .feature-box .feature-icon {
+        width: 60px;
+        height: 60px;
+      }
+    }
+
+    /* ── Value section: cedar surface, tusk ink ── */
+    .service-details-dark .value-area {
+      background-color: var(--jxm-cedar) !important;
+      color: var(--jxm-tusk) !important;
+    }
+    .service-details-dark .value-area .section-title,
+    .service-details-dark .value-area .value-box .number,
+    .service-details-dark .value-area .value-box .text,
+    .service-details-dark .value-area h2,
+    .service-details-dark .value-area h3,
+    .service-details-dark .value-area p {
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
+    }
+    .service-details-dark .value-area .value-box .text {
+      color: rgba(243, 241, 236, 0.78) !important;
+    }
+    .service-details-dark .value-area .value-box {
+      border-color: rgba(243, 241, 236, 0.18) !important;
+    }
+  </style>
+</head>
+
+
+<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody dark service-details-dark has-v5-page-nav">
+
+  <!-- Preloader -->
+  <div id="preloader">
+    <div id="container" class="container-preloader">
+      <div class="animation-preloader">
+        <div class="spinner"></div>
+
+      </div>
+      <div class="loader-section section-left"></div>
+      <div class="loader-section section-right"></div>
+    </div>
+  </div>
+
+  <!-- Sroll to top -->
+  <div class="progress-wrap">
+    <svg class="progress-circle svg-content" width="100%" height="100%" viewBox="-1 -1 102 102">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </div>
+
+  <!-- side toggle start -->
+  <aside class="fix">
+    <div class="side-info">
+      <div class="side-info-content">
+        <div class="offset-widget offset-header">
+          <div class="offset-logo">
+            <a href="index.html">
+              <img src="assets/ad-imgs/logo/JXM.svg" class="logo-light" alt="JXM">
+              <img src="assets/ad-imgs/logo/JXM-light.svg" class="logo-dark" alt="JXM">
+            </a>
+          </div>
+          <button id="side-info-close" class="side-info-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="mobile-menu d-xl-none fix"></div>
+        <div class="offset-button">
+          <a href="contact.html" class="rr-btn">
+            <span class="btn-wrap">
+              <span class="text-one">Let's Talk</span>
+              <span class="text-two">Let's Talk</span>
+            </span>
+          </a>
+        </div>
+        <div class="offset-widget-box">
+          <h2 class="title">Contact</h2>
+          <div class="contact-meta">
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-location-dot"></i></span>
+              <span class="text">1274 Osgood St, Suite 200<br>North Andover, MA 01845</span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-envelope"></i></span>
+              <span class="text"><a href="mailto:hi@getjxm.com">hi@getjxm.com</a></span>
+            </div>
+            <div class="contact-item">
+              <span class="icon"><i class="fa-solid fa-phone"></i></span>
+              <span class="text"><a href="tel:+19784244500">(978) 424-4500</a></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+  <div class="offcanvas-overlay"></div>
+  <!-- side toggle end -->
+
+  <!-- V5 page nav — 3-column stacked editorial nav -->
+  <header class="v5-page-nav" aria-label="Site nav">
+    <div class="v5-page-nav-inner">
+      <a href="index.html" class="v5-page-nav-logo" aria-label="JXM, home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+      </a>
+      <nav class="v5-page-nav-menu" aria-label="Primary">
+        <!-- Column 1 -->
+        <ul>
+          <li><a href="index.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">01</span>
+            <span class="v5-page-nav-link-text">Home</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+          <li><a href="portfolio.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">02</span>
+            <span class="v5-page-nav-link-text">Work</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 22 8, 44 3, 60 6 S 84 4, 98 6"/></svg>
+          </a></li>
+          <li><a href="about.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">03</span>
+            <span class="v5-page-nav-link-text">About</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 4, 38 7, 55 5 S 80 7, 98 5"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 2 -->
+        <ul>
+          <li><a href="services.html" class="v5-page-nav-link is-active" aria-current="page">
+            <span class="v5-page-nav-link-num">04</span>
+            <span class="v5-page-nav-link-text">Services</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 18 7, 38 4, 56 6 S 84 5, 98 6"/></svg>
+          </a></li>
+          <li><a href="blog.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">05</span>
+            <span class="v5-page-nav-link-text">Ideas</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 3 — Book a Consult CTA -->
+        <ul>
+          <li><a href="contact.html" class="v5-page-nav-link v5-page-nav-link--cta">
+            <span class="v5-page-nav-link-num">06</span>
+            <span class="v5-page-nav-link-text">Book a Consult <svg class="v5-page-nav-link-uparrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            <svg class="v5-page-nav-link-circle" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M 100 4 C 160 2, 195 12, 196 28 C 198 48, 140 56, 70 54 C 22 52, 4 38, 6 26 C 8 14, 32 4, 100 4"/></svg>
+          </a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+  <!-- /V5 page nav -->
+
+  <div class="has-smooth" id="has_smooth"></div>
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
+
+      <main>
+
+        <!-- hero area start  -->
+        <section class="hero-area-service-details">
+          <div class="container large">
+            <div class="hero-area-service-details-inner section-spacing-top">
+              <div class="service-meta fade-anim">
+                <span class="serial">[SL: 001]</span>
+                <span class="tag">[Growth Strategy]</span>
+                <span class="next-item"><a href="service-details-brand.html">[Next]</a></span>
+              </div>
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">Strategy <br>
+                      First</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="section-content-wrapper fade-anim">
+                <div class="section-content">
+                  <div class="text-wrapper">
+                    <p class="text">We get hired to make the calls a marketing team shouldn't have to make alone. Audit, sizing, sequencing, and a number behind every recommendation. We don't guess. We model, then we move.</p>
+                  </div>
+                  <div class="feature-list">
+                    <ul>
+                      <li>Audit</li>
+                      <li>Modeling</li>
+                      <li>Channel Strategy</li>
+                      <li>Roadmap</li>
+                      <li>Decisions</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="section-thumb parallax-view">
+                  <img src="assets/imgs/gallery/image-24.webp" alt="image" data-speed="0.8">
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- hero area end  -->
+
+        <!-- approach area start  -->
+        <section class="approach-area-service-details-page">
+          <div class="container large">
+            <div class="approach-area-service-details-page-inner section-spacing">
+              <div class="section-header">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper fade-anim" data-direction="left">
+                    <span class="section-subtitle">Our growth <br>
+                      strategy process</span>
+                  </div>
+                  <div class="title-wrapper fade-anim" data-direction="right">
+                    <h2 class="section-title font-sequelsans-romanbody">Whether you're early, scaling, or stuck, we work out where budget goes and what the next twelve months should look like.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="approach-wrapper-box">
+                <span class="steps fade-anim">04</span>
+                <div class="approach-wrapper fade-anim" data-direction="right">
+                  <div class="approach-box">
+                    <span class="number">01</span>
+                    <h3 class="title">Audit &amp; Diagnostic</h3>
+                    <p class="text">We pull every number that matters — funnel, cost, retention, channel mix — and tell you which ones are lying.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">02</span>
+                    <h3 class="title">Sizing &amp; Modeling</h3>
+                    <p class="text">We model the market, the spend, and the realistic ceiling so the plan you sign rests on math, not hope.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">03</span>
+                    <h3 class="title">Channel Strategy</h3>
+                    <p class="text">Where the dollars work hardest and where they quietly burn. We rank, weight, and sequence every channel against actual return.</p>
+                  </div>
+                  <div class="approach-box">
+                    <span class="number">04</span>
+                    <h3 class="title">Roadmap Build</h3>
+                    <p class="text">A twelve-month plan with quarterly milestones, named owners, and a clear definition of done. No vague phases. No optimistic timelines.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- approach area end  -->
+
+        <!-- feature area start  -->
+        <section class="feature-area">
+          <div class="container large">
+            <div class="feature-area-inner section-spacing-top">
+              <div class="features-wrapper-box fade-anim">
+                <div class="features-wrapper">
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-01.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Decisions &amp; Tradeoffs</h3>
+                      <p class="text">What to fix, what to kill, what to keep. Every recommendation comes with a number, a rationale, and real cost.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-02.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Stakeholder Alignment</h3>
+                      <p class="text">We get the room nodding in the same direction. Strategy dies in the gap between teams.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-03.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Measurement Framework</h3>
+                      <p class="text">We define the numbers that matter before the work starts, so success isn't argued about later.</p>
+                    </div>
+                  </div>
+                  <div class="feature-box">
+                    <div class="thumb">
+                      <span class="feature-icon" style="--icon: url('assets/svgs/feature-icons/icon-04.svg')" aria-hidden="true"></span>
+                    </div>
+                    <div class="content">
+                      <h3 class="title">Working Sessions</h3>
+                      <p class="text">We run weekly working sessions with your team — not status updates, but real decisions, made together, in the open.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- feature area end  -->
+
+        <!-- value area start  -->
+        <section class="value-area">
+          <div class="container large">
+            <div class="value-area-inner section-spacing">
+              <div class="section-content-wrapper fade-anim">
+                <div class="section-thumb parallax-view">
+                  <img src="assets/imgs/gallery/image-25.webp" alt="image" data-speed="0.8">
+                </div>
+                <div class="section-content">
+                  <div class="section-title-wrapper">
+                    <div class="title-wrapper">
+                      <h2 class="section-title font-sequelsans-romanbody">We replace marketing instinct with a number, a deadline, and a next move.</h2>
+                    </div>
+                  </div>
+                  <div class="values-wrapper">
+                    <div class="value-box">
+                      <h3 class="number">01</h3>
+                      <p class="text">Strategy isn't a deck. It's the set of decisions that determine where every dollar lands and what the team chases for the next year.</p>
+                    </div>
+                    <div class="value-box">
+                      <h3 class="number">02</h3>
+                      <p class="text">Most growth problems aren't strategy problems. They're decision problems. Teams know what to do, they just don't know which one to do first, or which one to cut. We force the order.</p>
+                    </div>
+                    <div class="value-box">
+                      <h3 class="number">03</h3>
+                      <p class="text">Every engagement starts with a question: what would you do if this were your money? We answer like it is. Then we hand you the model, the math, and the call.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- value area end  -->
+
+        <!-- faq area start  -->
+        <section class="faq-area">
+          <div class="container large">
+            <div class="faq-area-inner section-spacing-top">
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper">
+                    <span class="section-subtitle">FAQ</span>
+                  </div>
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">Common questions about how growth strategy works</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="accordion-wrapper fade-anim">
+                <div class="accordion" id="accordionExample">
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy1" aria-expanded="false" aria-controls="collapseStrategy1">
+                        How long does strategy work take?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy1" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Most engagements run six to ten weeks, depending on data quality and stakeholder availability. The first two weeks are diagnostic. The middle is modeling, channel strategy, and roadmap. The last stretch is alignment — getting leadership, finance, and the marketing team to all agree on the plan and the definition of success.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy2" aria-expanded="true" aria-controls="collapseStrategy2">
+                        Do you do retainer work?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy2" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Strategy is project-based. Implementation can run on retainer if you want us in the trenches with your team. Most clients start with a strategy engagement, then decide whether to keep us on for execution. We don't push retainers. They only make sense when there's enough real complexity to actually need outside operators.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy3" aria-expanded="false" aria-controls="collapseStrategy3">
+                        What deliverables do we walk away with?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy3" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        A diagnostic memo, a market and spend model you can edit, a channel strategy with weighted recommendations, a twelve-month roadmap with quarters and owners, and a measurement framework wired to your reporting. Plus a final session walking leadership through every recommendation so your team owns the plan, not just passively receives it.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy4" aria-expanded="false" aria-controls="collapseStrategy4">
+                        Do you work with our existing agencies?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy4" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Yes, often. Strategy doesn't replace your existing partners — it tells them what to chase. We brief your creative agency, your media partner, and your internal team on the same plan with the same numbers. The whole point is to get everyone you're already paying to actually pull in the same direction.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy5" aria-expanded="false" aria-controls="collapseStrategy5">
+                        What if we already have a strategy?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy5" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Then we pressure-test it. We model the assumptions, stress the channel mix, and tell you where it breaks. Sometimes the strategy is right and the execution is the problem. Sometimes it's the opposite. Either way, you walk out knowing what holds up under real numbers and what was a story nobody questioned.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy6" aria-expanded="false" aria-controls="collapseStrategy6">
+                        Can you tell us if we should fire someone?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy6" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        We can tell you what's underperforming and why. People decisions are yours to make, not ours. But we'll show the work — the channel that's quietly losing money, the role that's structurally misaligned, the partner whose deliverables don't match the invoice. You'll have the math. The conversation that follows is fully yours.
+                      </div>
+                    </div>
+                  </div>
+                  <div class="accordion-item">
+                    <h2 class="accordion-header">
+                      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                        data-bs-target="#collapseStrategy7" aria-expanded="false" aria-controls="collapseStrategy7">
+                        How do you charge for strategy?
+                      </button>
+                    </h2>
+                    <div id="collapseStrategy7" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                      <div class="accordion-body">
+                        Fixed fee tied to scope. We scope the engagement up front — audit, modeling, roadmap, working sessions — and quote a single number. No hourly billing, surprise invoices, or retainer creep. If scope changes, we tell you what it costs before we touch it. The number on the SOW is the number.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- faq area end  -->
+
+      </main>
+
+      <!-- V5 site footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <a href="index.html" class="footer-brand" aria-label="JXM, home">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" style="width:72px;height:auto;display:block;" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+            </a>
+          </div>
+          <div class="footer-bottom">
+            <nav class="footer-main-links" aria-label="Footer navigation">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Ideas</a></li>
+                <li><a href="contact.html" class="footer-cta-link">Let's Talk →</a></li>
+              </ul>
+            </nav>
+            <div class="footer-copy">
+              <div style="white-space: nowrap;">© MMXXVI JXM | James and Matthew, LTD | All rights reserved.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+      <!-- /V5 site footer -->
+
+    </div>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery-3.7.1.min.js"></script>
+  <script src="assets/vendor/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.magnific-popup.min.js"></script>
+  <script src="assets/vendor/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/gsap.min.js"></script>
+  <script src="assets/vendor/ScrollTrigger.min.js"></script>
+  <script src="assets/vendor/ScrollSmoother.min.js"></script>
+  <script src="assets/vendor/ScrollToPlugin.min.js"></script>
+  <script src="assets/vendor/SplitText.min.js"></script>
+  <script src="assets/vendor/TextPlugin.js"></script>
+  <script src="assets/vendor/customEase.js"></script>
+  <script src="assets/vendor/Flip.min.js"></script>
+  <script src="assets/vendor/jquery.meanmenu.min.js"></script>
+  <script src="assets/vendor/backToTop.js"></script>
+  <script src="assets/vendor/matter.js"></script>
+  <script src="assets/vendor/throwable.js"></script>
+  <script src="assets/js/magiccursor.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js?v=1.0"></script>
+
+</body>
+
+</html>
