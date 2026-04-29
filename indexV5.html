@@ -787,6 +787,75 @@
     }
   </style>
 
+  <!-- Dark/light theme toggle styles (shared with index.html) -->
+  <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
+
+  <!-- Scroll-to-top button -->
+  <style>
+    .progress-wrap {
+      position: fixed;
+      right: 20px;
+      bottom: 84px;
+      width: 46px;
+      height: 46px;
+      cursor: pointer;
+      border-radius: 50%;
+      background: var(--bg);
+      border: 1px solid var(--bd2);
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+      z-index: 90;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(8px);
+      transition: opacity 240ms ease-out, transform 240ms ease-out, visibility 0s linear 240ms;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .progress-wrap.active-progress {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+      transition: opacity 240ms ease-out, transform 240ms ease-out, visibility 0s linear 0s;
+    }
+    .progress-wrap .progress-circle {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      transform: rotate(-90deg);
+      pointer-events: none;
+    }
+    .progress-wrap .progress-circle path {
+      fill: none;
+      stroke: #49e385;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-dasharray: 307.92;
+      stroke-dashoffset: 307.92;
+      transition: stroke-dashoffset 80ms linear;
+    }
+    .progress-wrap::after {
+      content: '↑';
+      font-family: 'Inter', -apple-system, sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--t1);
+      position: relative;
+      z-index: 1;
+    }
+    .progress-wrap:hover { transform: translateY(-1px); }
+
+    /* When toggle is in light mode, the toggle CSS uses var(--primary)
+       and var(--white). V5's tokens don't define these — provide
+       reasonable defaults so the sun/moon icons render correctly
+       regardless of theme state. */
+    :root {
+      --primary: #221F32;   /* used by .switcher-button-inner i.icon-light color */
+      --white:   #ffffff;   /* used by .switcher-button-inner i.icon-dark color */
+      --border:  rgba(255, 255, 255, 0.18);
+    }
+  </style>
 </head>
   <style>
     /* ════════════════════════════════════════
@@ -858,6 +927,36 @@
 
   </style>
 <body>
+  <!-- Apply persisted theme before render (prevents flash of wrong theme) -->
+  <script>(function(){try{var t=localStorage.getItem('jxm-theme');if(t==='dark')document.body.classList.add('dark');}catch(e){}})();</script>
+
+  <!-- Scroll-to-top button -->
+  <button class="progress-wrap" type="button" aria-label="Scroll to top">
+    <svg class="progress-circle" viewBox="-1 -1 102 102" aria-hidden="true">
+      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
+    </svg>
+  </button>
+
+  <!-- Theme toggle (sun / moon) -->
+  <div id="theme-toggle" class="switcher-button" title="Toggle Dark/Light Mode">
+    <div class="switcher-button-inner">
+      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <circle cx="12" cy="12" r="4"/>
+        <line x1="12" y1="2" x2="12" y2="4"/>
+        <line x1="12" y1="20" x2="12" y2="22"/>
+        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
+        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
+        <line x1="2" y1="12" x2="4" y2="12"/>
+        <line x1="20" y1="12" x2="22" y2="12"/>
+        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
+        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
+      </svg>
+      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
+      </svg>
+    </div>
+  </div>
+
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZDNSZW"
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -5783,6 +5882,74 @@
         pinSpacing: false,
         anticipatePin: 1,
         pinType: 'transform',
+      });
+    })();
+  </script>
+
+  <!-- Theme toggle handler — toggles body.dark + persists in localStorage -->
+  <script>
+    (function(){
+      document.addEventListener('DOMContentLoaded', function(){
+        var btn = document.getElementById('theme-toggle');
+        if (!btn) return;
+        var body = document.body;
+
+        function syncBtn(){
+          if (body.classList.contains('dark')) {
+            btn.classList.remove('light-mode');
+            btn.classList.add('dark-mode');
+          } else {
+            btn.classList.remove('dark-mode');
+            btn.classList.add('light-mode');
+          }
+        }
+        syncBtn();
+
+        btn.addEventListener('click', function(){
+          body.classList.toggle('dark');
+          var mode = body.classList.contains('dark') ? 'dark' : 'light';
+          try { localStorage.setItem('jxm-theme', mode); } catch(e){}
+          syncBtn();
+        });
+      });
+    })();
+  </script>
+
+  <!-- Scroll-to-top: animates progress ring + show/hide based on scroll -->
+  <script>
+    (function(){
+      document.addEventListener('DOMContentLoaded', function(){
+        var btn = document.querySelector('.progress-wrap');
+        if (!btn) return;
+        var path = btn.querySelector('path');
+        var len = path ? path.getTotalLength() : 0;
+        if (path) {
+          path.style.strokeDasharray = len;
+          path.style.strokeDashoffset = len;
+        }
+
+        var ticking = false;
+        function onScroll(){
+          var sc = window.scrollY;
+          var max = document.documentElement.scrollHeight - window.innerHeight;
+          var pct = max > 0 ? sc / max : 0;
+          if (path) path.style.strokeDashoffset = (len - len * pct).toFixed(2);
+          if (sc > 480) btn.classList.add('active-progress');
+          else btn.classList.remove('active-progress');
+          ticking = false;
+        }
+        window.addEventListener('scroll', function(){
+          if (!ticking) {
+            requestAnimationFrame(onScroll);
+            ticking = true;
+          }
+        }, { passive: true });
+
+        btn.addEventListener('click', function(){
+          window.scrollTo({ top: 0, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth' });
+        });
+
+        onScroll();
       });
     })();
   </script>
