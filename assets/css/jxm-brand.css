@@ -638,12 +638,21 @@ body.dark .works-wrapper-4 .work-box .meta .date {
   min-height: 100vh;   /* fallback */
   display: flex;
   align-items: center;
+  background: var(--jxm-tusk);
+}
+body.dark .hero-area-5 {
+  background: var(--jxm-bg-dark);
 }
 
+/* Selected Works must paint above the pinned hero with a fully opaque
+   background so the hero text doesn't bleed through. Isolation creates
+   its own stacking context so z-index conflicts inside .hero-area-5
+   can't elevate hero children above this layer. */
 .work-area-4 {
   position: relative;
-  z-index: 2;
+  z-index: 100;
   background: var(--jxm-tusk);
+  isolation: isolate;
 }
 body.dark .work-area-4 {
   background: var(--jxm-bg-dark);
