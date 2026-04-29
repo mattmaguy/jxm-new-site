@@ -636,8 +636,6 @@ body.dark .works-wrapper-4 .work-box .meta .date {
   z-index: 1;
   min-height: 100svh;  /* small-viewport-height — avoids mobile address-bar jump */
   min-height: 100vh;   /* fallback */
-  display: flex;
-  align-items: center;
   background: var(--jxm-tusk);
 }
 body.dark .hero-area-5 {
