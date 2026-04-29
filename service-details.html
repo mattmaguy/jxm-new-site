@@ -47,11 +47,13 @@
     body.service-details-dark .copyright-area {
       background-color: var(--jxm-abyss) !important;
     }
-    /* Push the giant page-title down so it doesn't slide up under
-       the V5 fixed nav (~110px tall when stacked across 3 columns). */
-    .service-details-dark .hero-area-service-details-inner { padding-top: 8rem; }
+    /* Push the meta line + giant page-title down so they don't sit
+       right under the V5 fixed nav (~110px tall when stacked across
+       3 columns). Bumped past the standard 8rem so [SL:005] has real
+       breathing room. */
+    .service-details-dark .hero-area-service-details-inner { padding-top: 11rem; }
     @media (max-width: 1023px) {
-      .service-details-dark .hero-area-service-details-inner { padding-top: 5rem; }
+      .service-details-dark .hero-area-service-details-inner { padding-top: 7rem; }
     }
 
     /* ── Feature section: tusk surface, abyss ink ── */
@@ -602,9 +604,11 @@
           <div class="footer-bottom">
             <nav class="footer-main-links" aria-label="Footer navigation">
               <ul>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="about.html">About</a></li>
+                <li><a href="index.html">Home</a></li>
                 <li><a href="portfolio.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Ideas</a></li>
                 <li><a href="contact.html" class="footer-cta-link">Let's Talk →</a></li>
               </ul>
             </nav>
