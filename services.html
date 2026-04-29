@@ -159,14 +159,24 @@
       .svc-arrow svg { width: 1.4rem; height: 1.4rem; }
     }
 
-    /* ── "Not sure where you fit" — left-align headline + paragraph + button ── */
+    /* ── "Not sure where you fit" — share the same left edge across
+       headline, paragraph, and button so they read as one column ── */
     body.services-light .client-area-service-page .section-content,
     body.services-light .client-area-service-page .section-title-wrapper,
+    body.services-light .client-area-service-page .title-wrapper,
     body.services-light .client-area-service-page .text-wrapper,
     body.services-light .client-area-service-page .btn-wrapper {
       text-align: left !important;
       align-items: flex-start !important;
       justify-items: start !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      max-width: 42rem;
+    }
+    body.services-light .client-area-service-page .section-title,
+    body.services-light .client-area-service-page .section-content .text {
+      margin-left: 0 !important;
+      padding-left: 0 !important;
     }
     body.services-light .client-area-service-page .section-title {
       color: var(--jxm-abyss) !important;
@@ -174,9 +184,6 @@
     }
     body.services-light .client-area-service-page .section-content .text {
       color: rgba(34, 31, 50, 0.85) !important;
-      max-width: 42rem;
-    }
-    body.services-light .client-area-service-page .section-content {
       max-width: 42rem;
     }
   </style>
