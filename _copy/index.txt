@@ -9,36 +9,37 @@ TITLE  [8w]
   JXM — A Growth Partner for Mission-Driven Brands
 
 META DESCRIPTION  [18w]
-  JXM is a growth partner for mission-driven brands. Strategy and creative that moves real-world numbers. Founder-led since 2007.
+  JXM is a growth partner for mission-driven brands. Campaigns that move real-world numbers. Founder-led and independent since 2007.
 
 COPY (in document order)
 ──────────────────────────────────────────────────────────────────────
 [H1 (HERO)]  [6w]
-  A growth partner for mission-driven brands.
+  A partner for mission-driven brands.
 
 [BODY]  [10w]
-  Strategy and creative that moves real-world numbers. Founder-led since 2007.
+ 
+Where growth means something measurable. Not just impressions, views, and clicks.
 
 [BUTTON]  [3w]
-  Start the conversation
+  Let's Grow
 
 [EYEBROW]  [2w]
   Selected work
 
 [H2]  [7w]
-  Work we love for brands we love.
+  We're proud of our clients
 
 [LINK]  [4w]
-  See all client stories
+  See all the stories
 
 [H3]  [6w]
-  $70.6M in HELOC volume. One month.
+  $70.6M in HELOC volume. Thirty days.
 
 [H3]  [7w]
   99.5% of viewers watched the whole thing.
 
 [H3]  [8w]
-  Conversions up 460%. We stopped using SEG lists.
+  Conversions up 460%. We stopped using basic lists.
 
 [H3]  [9w]
   A sponsorship with a heartbeat, not a scoreboard line.
@@ -50,10 +51,10 @@ COPY (in document order)
   Effective. Intentional. Beautiful. Bold.
 
 [EYEBROW]  [2w]
-  The studio
+  About JXM
 
 [H2]  [10w]
-  Founder-led since 2007. We make work that earns its place.
+  We aim to build campaigns that earns their keep. We don't rest until they do. 
 
 [BUTTON]  [4w]
   Learn more about us
@@ -65,13 +66,13 @@ COPY (in document order)
   Services
 
 [H2]  [11w]
-  What we do — and the order we do it in.
+  How we help your brand grow, 
 
 [INTRO]  [63w]
-  Five disciplines, run in order. Strategy first — because every dollar after it depends on getting
+  Five disciplines, run in sequence. Strategy first, because every dollar after it depends on getting
   that one right. Brand and creative next, because the thinking has to be visible before it can move
   anyone. Then media and measurement, because the work doesn't matter until it earns a number. All
-  five live under one roof. None of them gets handed to a vendor.
+  five live under one roof. 
 
 [H3]  [2w]
   Growth Strategy
@@ -84,22 +85,22 @@ COPY (in document order)
   Brand & Positioning
 
 [BODY]  [37w]
-  The story the brand tells about itself, and the story the market believes back. We work on both —
-  because if either one drifts, the work that comes after it is harder than it has to be.
+  The story the brand tells about itself, and the story the market believes back. We work on both, 
+  because if either one drifts, results drift to. 
 
 [H3]  [3w]
   Creative & Campaign
 
 [BODY]  [31w]
-  Concept, copy, art direction, production. The point isn't to be clever. The point is to be seen —
-  and to earn a second look from people who weren't looking for you.
+  Concept, copy, art direction, production. The point isn't to be clever and win awards. The point is to 
+earn a second look from people who weren't aware. 
 
 [H3]  [4w]
   Media Planning & Buying
 
 [BODY]  [36w]
-  Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in
-  hand and buy with the creative in mind. The two should never live on different floors.
+  Where the work runs, who sees it, how much we spend, and how we know it's working. We plan with the strategy in
+  hand and buy with the creative in mind. The two will never live on different floors here. 
 
 [H3]  [3w]
   Performance & Analytics
@@ -109,13 +110,13 @@ COPY (in document order)
   plain-language reporting, no vanity metrics.
 
 [H2]  [5w]
-  Let's build something worth choosing.
+  Let's get growing. 
 
 [BODY]  [14w]
   A short note to hi@getjxm.com gets you Jim or Matt. Usually within the day.
 
 [BUTTON]  [3w]
-  Start the conversation
+  Say Hello
 
 
 IMAGES
