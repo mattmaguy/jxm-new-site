@@ -2347,13 +2347,16 @@
       align-items: start;
     }
     .v5-services .subtitle-wrapper { margin-top: 0.5rem; }
+    /* Override the global Inter-Heavy/white .section-title rule */
     .v5-services .section-title {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
       font-size: clamp(2rem, 4.4vw, 3.5rem);
       line-height: 1.05;
       letter-spacing: -0.025em;
-      color: var(--jxm-abyss);
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      background: none !important;
       margin: 0;
     }
 
@@ -2436,19 +2439,16 @@
       border-radius: 50%;
       background: var(--jxm-abyss);
       color: var(--jxm-tusk);
-      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1),
-                  background 220ms ease;
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
     }
     .v5-services .v5-svc-arrow svg {
       width: 1.75rem;
       height: 1.75rem;
       display: block;
     }
-    .v5-services a:hover .service-box .title { color: var(--jxm-kermit); }
-    .v5-services a:hover .v5-svc-arrow {
-      transform: translate(2px, -2px);
-      background: var(--jxm-kermit);
-      color: var(--jxm-abyss);
+    .v5-services a:hover .v5-svc-arrow,
+    .v5-services a:focus-visible .v5-svc-arrow {
+      transform: translate(3px, -3px);
     }
     .v5-services a:focus-visible {
       outline: 2px solid var(--jxm-kermit);
