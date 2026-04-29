@@ -58,14 +58,37 @@
       -webkit-text-fill-color: var(--jxm-abyss) !important;
     }
 
-    /* ── Custom blog grid ── */
+    /* ── Blog grid — 6-column Redox-style; items 4 and 5 span wider
+       (2-across), every other item spans 2 columns (3-across). ── */
+    .blog-area-2 .blogs-wrapper-box { margin-top: 3.5rem; }
     .blog-area-2 .blogs-wrapper {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem 2.5rem;
-      margin-top: 3.5rem;
+      grid-template-columns: repeat(6, 1fr);
+      gap: 4.75rem 3.75rem;
+      overflow: hidden;
+    }
+    .blog-area-2 .blogs-wrapper > * { grid-column: span 2; }
+    .blog-area-2 .blogs-wrapper > *:nth-child(4),
+    .blog-area-2 .blogs-wrapper > *:nth-child(5) { grid-column: span 3; }
+    .blog-area-2 .blogs-wrapper > *:nth-child(4) .content,
+    .blog-area-2 .blogs-wrapper > *:nth-child(5) .content {
+      padding-right: 6rem;
+    }
+    .blog-area-2 .blogs-wrapper > * .content { padding-right: 4rem; }
+    @media (max-width: 1199px) {
+      .blog-area-2 .blogs-wrapper > * .content,
+      .blog-area-2 .blogs-wrapper > *:nth-child(4) .content,
+      .blog-area-2 .blogs-wrapper > *:nth-child(5) .content {
+        padding-right: 0;
+      }
     }
     @media (max-width: 991px) {
+      .blog-area-2 .blogs-wrapper { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
+      .blog-area-2 .blogs-wrapper > *,
+      .blog-area-2 .blogs-wrapper > *:nth-child(4),
+      .blog-area-2 .blogs-wrapper > *:nth-child(5) { grid-column: auto; }
+    }
+    @media (max-width: 575px) {
       .blog-area-2 .blogs-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
     }
 
