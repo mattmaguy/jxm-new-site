@@ -585,6 +585,24 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
 
+  <!-- Hero pin: Selected Works slides up over the hero on scroll -->
+  <script>
+    window.addEventListener('load', function() {
+      if (typeof gsap === 'undefined' || typeof ScrollTrigger === 'undefined') return;
+      // Skip the pin for users who prefer reduced motion
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+      gsap.registerPlugin(ScrollTrigger);
+      ScrollTrigger.create({
+        trigger: '.hero-area-5',
+        start: 'top top',
+        end: 'bottom top',
+        pin: true,
+        pinSpacing: false,
+        anticipatePin: 1,
+      });
+    });
+  </script>
+
   <!-- "Play Video" cursor + click-to-modal over the studio teaser video stage -->
   <script>
     (function() {

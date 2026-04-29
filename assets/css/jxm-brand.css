@@ -624,6 +624,32 @@ body.dark .works-wrapper-4 .work-box .meta .date {
 }
 
 
+/* ════════════ HERO PIN — Selected Works slides up over hero ═
+   The hero is pinned via GSAP ScrollTrigger (see inline script
+   on index.html). These styles support the effect:
+   - Hero fills the viewport so the pin reads as a full screen
+   - Selected Works has an opaque background + higher z-index so
+     it occludes the hero as it slides up
+═══════════════════════════════════════════════════ */
+.hero-area-5 {
+  position: relative;
+  z-index: 1;
+  min-height: 100svh;  /* small-viewport-height — avoids mobile address-bar jump */
+  min-height: 100vh;   /* fallback */
+  display: flex;
+  align-items: center;
+}
+
+.work-area-4 {
+  position: relative;
+  z-index: 2;
+  background: var(--jxm-tusk);
+}
+body.dark .work-area-4 {
+  background: var(--jxm-bg-dark);
+}
+
+
 /* ════════════ ACCENT SELECTION ═════════════════ */
 ::selection {
   background: var(--jxm-abyss);
