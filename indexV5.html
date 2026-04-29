@@ -1283,7 +1283,10 @@
 
 
   <!-- ═══════ MARQUEE — scrolling salient points ═══════ -->
-  <section class="v4-marquee fade-anim" aria-label="What we help credit unions achieve">
+  <!-- Not fade-anim: this section sits directly above the pinned hero on
+       scroll and must be opaque from frame 1 so the "growth" wordmark
+       below it is covered immediately rather than fading out slowly. -->
+  <section class="v4-marquee" aria-label="What we help credit unions achieve">
     <div class="v4-marquee-track">
       <span class="v4-marquee-item">Build Brand Awareness</span>
       <span class="v4-marquee-star" aria-hidden="true">✱</span>
