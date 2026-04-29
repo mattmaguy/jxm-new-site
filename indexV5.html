@@ -887,7 +887,7 @@
        dark palette renders by default. Toggle was removed; this block
        remains so a toggle can be re-added cleanly later. */
     body.dark {
-      --bg:   #16121f;
+      --bg:   #221F32;
       --sf1:  rgba(255,255,255,0.03);
       --sf2:  rgba(255,255,255,0.04);
       --sf3:  rgba(255,255,255,0.06);
@@ -1673,7 +1673,7 @@
       z-index: -1;
       pointer-events: none;
       overflow: hidden;
-      background: #000;
+      background: var(--jxm-abyss);
     }
     .v4-bg-video iframe {
       position: absolute;
@@ -1693,7 +1693,7 @@
     .v4-video-stage {
       position: relative;
       height: 600px;
-      background: #000;
+      background: var(--jxm-abyss);
       cursor: none;
       overflow: hidden;
       z-index: 1;
@@ -1775,7 +1775,7 @@
        MARQUEE — abyss band, seamless infinite slide
     ════════════════════════════════════════ */
     .v4-marquee {
-      background: var(--jxm-bg-deep);
+      background: var(--jxm-abyss);
       color: var(--jxm-tusk);
       border-top: 1px solid rgba(243,241,236,0.18);
       border-bottom: 1px solid rgba(243,241,236,0.18);
@@ -1887,7 +1887,7 @@
 
     /* Stacked rows (Qualifications, Bento) — share top borders */
     .v4-edit-stack {
-      background: var(--jxm-bg-deep);
+      background: var(--jxm-abyss);
       color: #fff;
       padding: 4rem 0;
       font-family: 'Inter', sans-serif;
@@ -1935,7 +1935,7 @@
     .v4-modal-backdrop {
       position: fixed;
       inset: 0;
-      background: rgba(0,0,0,0.92);
+      background: rgba(34, 31, 50, 0.92);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
     }
@@ -1951,7 +1951,7 @@
     .v4-modal-video {
       width: 100%;
       height: 100%;
-      background: #000;
+      background: var(--jxm-abyss);
       border-radius: 0.5rem;
       overflow: hidden;
       box-shadow: 0 32px 80px rgba(0,0,0,0.55);
@@ -3633,12 +3633,12 @@
     @media (min-width: 820px)  { .v4-trusted-grid { grid-template-columns: repeat(4, 1fr); } }
     @media (min-width: 1100px) { .v4-trusted-grid { grid-template-columns: repeat(6, 1fr); } }
 
-    /* Mask-based logo tile — shape from the SVG, color in abyss (var(--jxm-bg-deep)). */
+    /* Mask-based logo tile — shape from the SVG, color in abyss. */
     .v4-trusted-logo {
       width: 100%;
       max-width: 140px;
       height: 3rem;
-      background-color: var(--jxm-bg-deep);
+      background-color: var(--jxm-abyss);
       opacity: 0.65;
       transition: opacity 200ms ease-out;
       mask-image: var(--logo);
@@ -3998,7 +3998,7 @@
     .case-modal-media {
       position: relative;
       aspect-ratio: 16 / 9;
-      background: var(--jxm-bg-deep);
+      background: var(--jxm-abyss);
       cursor: pointer;
     }
     .case-modal-media-img {
@@ -5508,7 +5508,7 @@
       width: 100%;
       aspect-ratio: 16 / 7;
       overflow: hidden;
-      background: var(--jxm-bg-deep);
+      background: var(--jxm-abyss);
     }
     .v4-founders-figure img {
       position: absolute;
@@ -5691,7 +5691,7 @@
 
     /* ── CTA — minimal editorial close ── */
     .v4-cta {
-      background: var(--jxm-bg-deep);
+      background: var(--jxm-abyss);
       color: #fff;
       padding: 8rem 0;
     }
