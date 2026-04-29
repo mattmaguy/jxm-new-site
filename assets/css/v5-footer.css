@@ -1,0 +1,122 @@
+/* ════════════════════════════════════════
+   V5 SITE FOOTER — shared across V5-style pages.
+
+   Surfaces adapt by body class:
+   - Default            → tusk surface, abyss text  (light pages)
+   - body.dark
+     | body.contact-abyss
+     | body.service-details-dark → abyss surface, tusk text  (dark pages)
+
+   Brand SVG uses currentColor so it inherits the right contrast.
+════════════════════════════════════════ */
+
+.site-footer {
+  background: var(--jxm-tusk);
+  color: var(--jxm-abyss);
+  border-top: 1px solid rgba(34, 31, 50, 0.10);
+  padding: 3.5rem 1.25rem 2rem;
+}
+body.dark .site-footer,
+body.contact-abyss .site-footer,
+body.service-details-dark .site-footer {
+  background: var(--jxm-abyss);
+  color: var(--jxm-tusk);
+  border-top-color: rgba(243, 241, 236, 0.10);
+}
+
+.site-footer .footer-inner {
+  max-width: 72rem;
+  margin: 0 auto;
+}
+
+/* Top row: brand */
+.site-footer .footer-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.site-footer .footer-brand {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+.site-footer .footer-brand svg { fill: currentColor; }
+
+/* Bottom grid: nav + copyright */
+.site-footer .footer-bottom {
+  border-top: 1px solid rgba(34, 31, 50, 0.10);
+  margin-top: 2rem;
+  padding-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.25rem;
+}
+body.dark .site-footer .footer-bottom,
+body.contact-abyss .site-footer .footer-bottom,
+body.service-details-dark .site-footer .footer-bottom {
+  border-top-color: rgba(243, 241, 236, 0.10);
+}
+
+.site-footer .footer-main-links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.75rem;
+}
+.site-footer .footer-main-links a {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: rgba(34, 31, 50, 0.75);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.site-footer .footer-main-links a:hover { color: var(--jxm-abyss); }
+body.dark .site-footer .footer-main-links a,
+body.contact-abyss .site-footer .footer-main-links a,
+body.service-details-dark .site-footer .footer-main-links a {
+  color: rgba(243, 241, 236, 0.75);
+}
+body.dark .site-footer .footer-main-links a:hover,
+body.contact-abyss .site-footer .footer-main-links a:hover,
+body.service-details-dark .site-footer .footer-main-links a:hover {
+  color: var(--jxm-tusk);
+}
+
+.site-footer .footer-cta-link { color: var(--jxm-kermit) !important; }
+.site-footer .footer-cta-link:hover { color: #ffe4a0 !important; }
+
+.site-footer .footer-copy {
+  font-size: 0.8125rem;
+  color: rgba(34, 31, 50, 0.55);
+  line-height: 1.6;
+}
+body.dark .site-footer .footer-copy,
+body.contact-abyss .site-footer .footer-copy,
+body.service-details-dark .site-footer .footer-copy {
+  color: rgba(243, 241, 236, 0.55);
+}
+
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .site-footer { padding: 4.5rem 2.5rem 2.5rem; }
+  .site-footer .footer-bottom {
+    grid-template-columns: 3fr 7fr;
+    grid-template-rows: auto auto;
+    row-gap: 0.75rem;
+  }
+  .site-footer .footer-main-links {
+    grid-column: 2 / 3;
+    grid-row: 1;
+  }
+  .site-footer .footer-main-links ul { justify-content: flex-end; }
+  .site-footer .footer-copy {
+    grid-column: 1 / 2;
+    grid-row: 1 / 3;
+    align-self: center;
+  }
+}
