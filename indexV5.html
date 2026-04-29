@@ -2291,31 +2291,153 @@
 
   <style>
     /* ════════════════════════════════════════
-       V5 SERVICES — index service-grid on cream surface
-       V5 body is locked dark, but this section needs to read
-       exactly like the index light-mode services block: cream
-       surface, abyss text, abyss-toned borders. We force the
-       palette here so it doesn't flip with the body theme.
+       V5 SERVICES — index service-grid, cream surface, V5 fonts.
+       V5 doesn't load Redox's style.css or Bootstrap, so every
+       Redox class used inside this section is styled from scratch
+       here, scoped to .v5-services so it can't bleed.
     ════════════════════════════════════════ */
     .v5-services {
       background: var(--jxm-tusk);
       color: var(--jxm-abyss);
+      padding: 5rem 0 6rem;
+      font-family: 'Inter', sans-serif;
     }
-    .v5-services .section-subtitle,
-    .v5-services .section-title,
-    .v5-services .info-text,
-    .v5-services .service-box .title,
-    .v5-services .service-box .text,
-    .v5-services .service-box .number {
+    .v5-services .container {
+      max-width: 1480px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    .v5-services .service-area-5-inner { padding-top: 0; }
+
+    /* Header — pill (left) + display title (right) */
+    .v5-services .section-header {
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
+      padding-top: 2.25rem;
+      margin-bottom: 4.5rem;
+    }
+    .v5-services .section-title-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem 4rem;
+      align-items: start;
+    }
+    .v5-services .subtitle-wrapper { margin-top: 0.5rem; }
+    .v5-services .section-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
       color: var(--jxm-abyss);
+      margin: 0;
     }
-    .v5-services .info-text { color: rgba(34, 31, 50, 0.78); }
-    .v5-services .service-box .number { color: rgba(34, 31, 50, 0.55); }
-    .v5-services .service-box .text { color: rgba(34, 31, 50, 0.85) !important; }
+
+    /* Body grid — left intro paragraph, right service list */
+    .v5-services .services-wrapper-box {
+      display: grid;
+      grid-template-columns: 1fr 2fr;
+      gap: 1rem 4rem;
+      align-items: start;
+    }
+    .v5-services .info-text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: rgba(34, 31, 50, 0.78);
+      max-width: 22rem;
+      margin: 0;
+    }
+
+    /* Service list */
+    .v5-services .services-wrapper-5 {
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
+    }
+    .v5-services .services-wrapper-5 a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
     .v5-services .service-box {
-      border-color: rgba(34, 31, 50, 0.18) !important;
+      border-bottom: 1px solid rgba(34, 31, 50, 0.18);
+      padding: 1.75rem 0 2rem;
+      display: grid;
+      grid-template-columns: 5rem 1fr 12rem;
+      column-gap: 2rem;
+      row-gap: 0.5rem;
+      align-items: start;
     }
-    .v5-services .subtitle-wrapper { margin-bottom: 1rem; }
+    .v5-services .service-box .count {
+      grid-column: 1;
+      padding-top: 0.35rem;
+    }
+    .v5-services .service-box .number {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.02em;
+      color: rgba(34, 31, 50, 0.55);
+    }
+    .v5-services .service-box .content {
+      grid-column: 2;
+      max-width: 38rem;
+    }
+    .v5-services .service-box .title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.1;
+      letter-spacing: -0.025em;
+      color: var(--jxm-abyss);
+      margin: 0;
+      transition: color 200ms ease;
+    }
+    .v5-services .service-box .text {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(34, 31, 50, 0.78);
+      margin: 0.75rem 0 0;
+    }
+    .v5-services .service-box .thumb {
+      grid-column: 3;
+      justify-self: end;
+    }
+    .v5-services .service-box .thumb img {
+      width: 100%;
+      max-width: 11rem;
+      height: auto;
+      border-radius: 0.75rem;
+      display: block;
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .v5-services a:hover .service-box .title { color: var(--jxm-kermit); }
+    .v5-services a:hover .service-box .thumb img { transform: translateY(-2px); }
+    .v5-services a:focus-visible {
+      outline: 2px solid var(--jxm-kermit);
+      outline-offset: 4px;
+    }
+
+    @media (max-width: 991px) {
+      .v5-services .section-title-wrapper,
+      .v5-services .services-wrapper-box {
+        grid-template-columns: 1fr;
+      }
+      .v5-services .info-text { max-width: 32rem; }
+    }
+    @media (max-width: 720px) {
+      .v5-services { padding: 3.5rem 0 4rem; }
+      .v5-services .container { padding: 0 1.25rem; }
+      .v5-services .section-header { margin-bottom: 2.5rem; }
+      .v5-services .service-box {
+        grid-template-columns: 3rem 1fr;
+        row-gap: 0.5rem;
+      }
+      .v5-services .service-box .thumb {
+        grid-column: 1 / -1;
+        justify-self: start;
+        margin-top: 0.75rem;
+      }
+      .v5-services .service-box .thumb img { max-width: 9rem; }
+    }
   </style>
 
 
