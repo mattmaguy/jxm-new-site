@@ -29,12 +29,120 @@
   <link rel="stylesheet" href="assets/css/style.css?v=1.0">
   <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
   <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
+  <link rel="stylesheet" href="assets/css/v5-footer.css">
 
+  <style>
+    /* ════════════════════════════════════════
+       BLOG — locked light, V5 nav clearance, abyss ink on tusk.
+    ════════════════════════════════════════ */
+    body.blog-light,
+    body.blog-light .body-wrapper,
+    body.blog-light main {
+      background: var(--jxm-tusk) !important;
+      color: var(--jxm-abyss) !important;
+    }
+    body.blog-light .page-title { color: var(--jxm-abyss) !important; }
+
+    /* Push the page-title down so it doesn't slide under the V5 nav */
+    body.blog-light .page-title-area-inner { padding-top: 8rem; }
+    @media (max-width: 1023px) {
+      body.blog-light .page-title-area-inner { padding-top: 5rem; }
+    }
+
+    /* Section header copy — abyss on tusk */
+    body.blog-light .blog-area-2 .section-title,
+    body.blog-light .blog-area-2 .section-subtitle,
+    body.blog-light .blog-area-2 .text-wrapper .text {
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+
+    /* ── Custom blog grid ── */
+    .blog-area-2 .blogs-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem 2.5rem;
+      margin-top: 3.5rem;
+    }
+    @media (max-width: 991px) {
+      .blog-area-2 .blogs-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .blog-area-2 .blogs-wrapper > a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+    .blog-area-2 .blog {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    .blog-area-2 .blog .thumb {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: rgba(34, 31, 50, 0.06);
+    }
+    .blog-area-2 .blog .thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .blog-area-2 .blogs-wrapper > a:hover .blog .thumb img {
+      transform: scale(1.04);
+    }
+    .blog-area-2 .blog .title {
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 500 !important;
+      font-size: clamp(1.25rem, 2vw, 1.625rem);
+      line-height: 1.2;
+      letter-spacing: -0.02em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+      transition: color 200ms ease;
+    }
+    .blog-area-2 .blog .title .arrow {
+      flex-shrink: 0;
+      display: inline-flex;
+      align-items: center;
+      margin-top: 0.45rem;
+      color: var(--jxm-abyss);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .blog-area-2 .blog .title .arrow svg { width: 13px; height: 14px; }
+    .blog-area-2 .blogs-wrapper > a:hover .blog .title .arrow {
+      transform: translate(2px, -2px);
+    }
+    .blog-area-2 .blog .meta {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.04em;
+      color: rgba(34, 31, 50, 0.55) !important;
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+    }
+    .blog-area-2 .blog .meta .name span { color: var(--jxm-abyss); }
+    .blog-area-2 .blog .meta .date { white-space: nowrap; }
+    .blog-area-2 .blog .meta .has-left-line {
+      padding-left: 0.75rem;
+      border-left: 1px solid rgba(34, 31, 50, 0.18);
+    }
+
+    /* Section header layout: pill-style eyebrow + headline */
+    .blog-area-2 .section-header { padding-top: 2rem; }
+  </style>
 </head>
 
-<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody">
-  <!-- Apply persisted theme before render (prevents flash of wrong theme) -->
-  <script>(function(){try{var t=localStorage.getItem('jxm-theme');if(t==='dark')document.body.classList.add('dark');}catch(e){}})();</script>
+<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody blog-light has-v5-page-nav">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -102,45 +210,56 @@
   <div class="offcanvas-overlay"></div>
   <!-- side toggle end -->
 
-  <!-- Header area start -->
-  <header class="header-area-2">
-    <div class="header-main">
-      <div class="container large">
-        <div class="header-area-2__inner">
-          <div class="header__logo">
-            <a href="index.html">
-              <img src="assets/ad-imgs/logo/JXM.svg" class="normal-logo logo-light" alt="JXM">
-              <img src="assets/ad-imgs/logo/JXM-light.svg" class="normal-logo logo-dark" alt="JXM">
-            </a>
-          </div>
-          <div class="header__nav pos-center">
-            <nav class="main-menu">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Work</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="header__button">
-            <a href="contact.html" class="rr-btn">
-              <span class="btn-wrap">
-                <span class="text-one">Let's Talk</span>
-                <span class="text-two">Let's Talk</span>
-              </span>
-            </a>
-          </div>
-          <div class="header__navicon">
-            <button class="side-toggle"><img src="assets/imgs/icon/icon-2.webp" alt="image"></button>
-          </div>
-        </div>
-      </div>
+  <!-- V5 page nav — 3-column stacked editorial nav -->
+  <header class="v5-page-nav" aria-label="Site nav">
+    <div class="v5-page-nav-inner">
+      <a href="index.html" class="v5-page-nav-logo" aria-label="JXM, home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+      </a>
+      <nav class="v5-page-nav-menu" aria-label="Primary">
+        <!-- Column 1 -->
+        <ul>
+          <li><a href="index.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">01</span>
+            <span class="v5-page-nav-link-text">Home</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+          <li><a href="portfolio.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">02</span>
+            <span class="v5-page-nav-link-text">Work</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 22 8, 44 3, 60 6 S 84 4, 98 6"/></svg>
+          </a></li>
+          <li><a href="about.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">03</span>
+            <span class="v5-page-nav-link-text">About</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 4, 38 7, 55 5 S 80 7, 98 5"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 2 -->
+        <ul>
+          <li><a href="services.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">04</span>
+            <span class="v5-page-nav-link-text">Services</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 18 7, 38 4, 56 6 S 84 5, 98 6"/></svg>
+          </a></li>
+          <li><a href="blog.html" class="v5-page-nav-link is-active" aria-current="page">
+            <span class="v5-page-nav-link-num">05</span>
+            <span class="v5-page-nav-link-text">Ideas</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 3 — Book a Consult CTA -->
+        <ul>
+          <li><a href="contact.html" class="v5-page-nav-link v5-page-nav-link--cta">
+            <span class="v5-page-nav-link-num">06</span>
+            <span class="v5-page-nav-link-text">Book a Consult <svg class="v5-page-nav-link-uparrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            <svg class="v5-page-nav-link-circle" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M 100 4 C 160 2, 195 12, 196 28 C 198 48, 140 56, 70 54 C 22 52, 4 38, 6 26 C 8 14, 32 4, 100 4"/></svg>
+          </a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-  <!-- Header area end -->
+  <!-- /V5 page nav -->
 
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
@@ -179,192 +298,288 @@
               </div>
               <div class="blogs-wrapper-box">
                 <div class="blogs-wrapper">
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.45">
+                  <a href="https://getjxm.com/thoughts/on-standards" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-5.webp" alt="blog image">
-                      </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Beyond the basics, how to take marketing to the next level
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.60">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/blog-6.webp" alt="blog image">
-                      </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Allow us to be the cool part of your days are open for now
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.75">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/blog-7.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/on-standards.jpg" alt="On Standards" loading="lazy">
                       </div>
                       <div class="content">
-                        <h2 class="title">Various ideas and creative concepts based on market research
+                        <h2 class="title">On Standards
                           <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
                               <path fill-rule="evenodd" clip-rule="evenodd"
                                 d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="#111111" />
+                                fill="currentColor" />
                             </svg>
                           </span>
                         </h2>
                         <div class="meta">
-                          <span class="name">By <span>Jerry</span></span>
-                          <span class="date has-left-line">2023</span>
+                          <span class="name">By <span>Matthew Maguy</span></span>
+                          <span class="date has-left-line">Apr 9, 2026</span>
                         </div>
                       </div>
                     </article>
                   </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.45">
+                  <a href="https://getjxm.com/thoughts/cheat-codes-0-x-13-sonar-so-what" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-8.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/sonar-so-what.jpg" alt="Sonar? So What." loading="lazy">
                       </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Beyond the basics, how to take marketing to the next level
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
+                      <div class="content">
+                        <h2 class="title">Sonar? So What.
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>Cheat Codes</span></span>
+                          <span class="date has-left-line">Apr 6, 2026</span>
                         </div>
                       </div>
                     </article>
                   </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.60">
+                  <a href="https://getjxm.com/thoughts/engineering-preference-in-uncertain-times" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-9.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/engineering-preference.jpg" alt="Engineering Consumer Preference in Uncertain Times" loading="lazy">
                       </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Beyond the basics, how to take marketing to the next level
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
+                      <div class="content">
+                        <h2 class="title">Engineering Consumer Preference in Uncertain Times
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Mar 24, 2026</span>
                         </div>
                       </div>
                     </article>
                   </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.45">
+                  <a href="https://getjxm.com/thoughts/cheat-codes-0-x-12-does-marketing-feel-like-walking-on-glass" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-10.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/walking-on-glass.jpg" alt="Walking on Glass? Ouch." loading="lazy">
                       </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Beyond the basics, how to take marketing to the next level
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
+                      <div class="content">
+                        <h2 class="title">Walking on Glass? Ouch.
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>Cheat Codes</span></span>
+                          <span class="date has-left-line">Feb 19, 2026</span>
                         </div>
                       </div>
                     </article>
                   </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.60">
+                  <a href="https://getjxm.com/thoughts/cheat-codes-0-x-11-parallel-worlds-shared-purpose" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-11.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/parallel-worlds.jpg" alt="Parallel Worlds, Shared Purpose" loading="lazy">
                       </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Allow us to be the cool part of your days are open for now
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
+                      <div class="content">
+                        <h2 class="title">Parallel Worlds, Shared Purpose
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>Cheat Codes</span></span>
+                          <span class="date has-left-line">Jan 20, 2026</span>
                         </div>
                       </div>
                     </article>
                   </a>
-                  <a href="blog-details.html">
-                    <article class="blog fade-anim" data-delay="0.75">
+                  <a href="https://getjxm.com/thoughts/anti-persona" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
                       <div class="thumb">
-                        <img src="assets/imgs/blog/blog-12.webp" alt="blog image">
+                        <img src="assets/imgs/blog/thoughts/anti-persona.png" alt="We're anti-persona." loading="lazy">
                       </div>
-                      <div class="content-wrapper">
-                        <div class="content">
-                          <h2 class="title">Various ideas and creative concepts based on market research
-                            <span class="arrow">
-                              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none">
-                                <path fill-rule="evenodd" clip-rule="evenodd"
-                                  d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                  fill="#111111" />
-                              </svg>
-                            </span>
-                          </h2>
-                          <div class="meta">
-                            <span class="name">By <span>Jerry</span></span>
-                            <span class="date has-left-line">2023</span>
-                          </div>
+                      <div class="content">
+                        <h2 class="title">We're anti-persona.
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Jun 11, 2025</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/here-we-are-now-entertain-us" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/here-we-are-now.jpg" alt="Here We Are Now, Entertain Us" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Here We Are Now, Entertain Us
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Nov 13, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty-j6gte" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/outsourced-marketing.jpg" alt="Overcoming Misconceptions About Outsourced Marketing" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Overcoming Misconceptions About Outsourced Marketing
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Oct 2, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/forecast-unknown.jpg" alt="Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Sep 16, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/better-options-menus-our-approach-to-media-planning" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/better-options-menus.jpg" alt="Better Options &amp; Menus: Our Approach to Media Planning" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Better Options &amp; Menus: Our Approach to Media Planning
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Sep 3, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/guide-your-brand-to-treasure" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/kpis-x-kpas.png" alt="Guide Your Brand to Treasure with KPIs &times; KPAs" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Guide Your Brand to Treasure with KPIs &times; KPAs
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Aug 20, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/financial-brand-2024" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/financial-brand-2024.gif" alt="Conquering the Competition with Advanced Targeting Tactics." loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">Conquering the Competition with Advanced Targeting Tactics.
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM · News</span></span>
+                          <span class="date has-left-line">Jul 26, 2024</span>
+                        </div>
+                      </div>
+                    </article>
+                  </a>
+                  <a href="https://getjxm.com/thoughts/cookies-update-2024" target="_blank" rel="noopener">
+                    <article class="blog fade-anim">
+                      <div class="thumb">
+                        <img src="assets/imgs/blog/thoughts/cookies-update.jpg" alt="A Balanced Approach to Cookies and User Privacy?" loading="lazy">
+                      </div>
+                      <div class="content">
+                        <h2 class="title">A Balanced Approach to Cookies and User Privacy?
+                          <span class="arrow">
+                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
+                              <path fill-rule="evenodd" clip-rule="evenodd"
+                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
+                                fill="currentColor" />
+                            </svg>
+                          </span>
+                        </h2>
+                        <div class="meta">
+                          <span class="name">By <span>JXM</span></span>
+                          <span class="date has-left-line">Jul 24, 2024</span>
                         </div>
                       </div>
                     </article>
@@ -378,63 +593,33 @@
 
       </main>
 
-      <!-- footer area start  -->
-      <footer class="footer-area-4 section-spacing-top">
-        <div class="container large">
-          <div class="footer-widget-wrapper-box">
-            <div class="footer-widget-wrapper">
-              <div class="footer-widget-box">
-                <div class="footer-logo">
-                  <a href="index.html">
-                    <img src="assets/ad-imgs/logo/JXM.svg" class="logo-light" alt="JXM">
-                    <img src="assets/ad-imgs/logo/JXM-light.svg" class="logo-dark" alt="JXM">
-                  </a>
-                </div>
-              </div>
-              <div class="footer-widget-box">
-                <ul class="footer-nav-list">
-                  <li><a href="index.html">Home</a></li>
-                  <li><a href="about.html">About</a></li>
-                  <li><a href="services.html">Services</a></li>
-                  <li><a href="blog.html">Blog</a></li>
-                  <li><a href="contact.html">Contact</a></li>
-                </ul>
-              </div>
-            </div>
+      <!-- V5 site footer -->
+      <footer class="site-footer">
+        <div class="footer-inner">
+          <div class="footer-top">
+            <a href="index.html" class="footer-brand" aria-label="JXM, home">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" style="width:72px;height:auto;display:block;" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+            </a>
           </div>
-        </div>
-        <div class="copyright-area">
-          <div class="container large">
-            <div class="copyright-area-inner">
-              <div class="copyright-text">
-                <p class="text">© MMXXVI JXM · James and Matthew, LTD · All rights reserved.</p>
-              </div>
+          <div class="footer-bottom">
+            <nav class="footer-main-links" aria-label="Footer navigation">
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Ideas</a></li>
+                <li><a href="contact.html" class="footer-cta-link">Let's Talk →</a></li>
+              </ul>
+            </nav>
+            <div class="footer-copy">
+              <div style="white-space: nowrap;">© MMXXVI JXM | James and Matthew, LTD | All rights reserved.</div>
             </div>
           </div>
         </div>
       </footer>
-      <!-- footer area end  -->
+      <!-- /V5 site footer -->
 
-    </div>
-  </div>
-
-    <!-- Theme toggle (sun / moon) -->
-  <div id="theme-toggle" class="switcher-button" title="Toggle Dark/Light Mode">
-    <div class="switcher-button-inner">
-      <svg class="icon-light" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <circle cx="12" cy="12" r="4"/>
-        <line x1="12" y1="2" x2="12" y2="4"/>
-        <line x1="12" y1="20" x2="12" y2="22"/>
-        <line x1="4.93" y1="4.93" x2="6.34" y2="6.34"/>
-        <line x1="17.66" y1="17.66" x2="19.07" y2="19.07"/>
-        <line x1="2" y1="12" x2="4" y2="12"/>
-        <line x1="20" y1="12" x2="22" y2="12"/>
-        <line x1="4.93" y1="19.07" x2="6.34" y2="17.66"/>
-        <line x1="17.66" y1="6.34" x2="19.07" y2="4.93"/>
-      </svg>
-      <svg class="icon-dark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79Z"/>
-      </svg>
     </div>
   </div>
 
