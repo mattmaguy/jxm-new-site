@@ -16,21 +16,13 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    /* html holds the page background so the z-index: -1 fixed bg
-       video can paint above it; body is transparent so the video
-       shows through wherever there's no opaque section. */
-    html {
-      background: var(--bg);
-    }
     html, body {
+      background: var(--bg);
       color: white;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       min-height: 100%;
       overflow-x: hidden;
-    }
-    body {
-      background: transparent;
     }
 
     /* ── Animations ── */
@@ -1212,7 +1204,8 @@
 
 
   <!-- ═══════ FIXED BACKGROUND VIDEO — sits behind hero + visibility ═══════ -->
-  <div class="v4-bg-video" id="v4Video" aria-hidden="true">
+  <!-- Video stage: iframe lives in-flow, scrolls with the page. Click to open modal. -->
+  <div class="v4-video-stage" id="v4Stage" role="button" tabindex="0" aria-label="Open full video">
     <iframe
       src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
       frameborder="0"
@@ -1221,9 +1214,6 @@
       title="JXM Creative Reel — silent background loop"
     ></iframe>
   </div>
-
-  <!-- Stage = transparent scroll area where the fixed video is visible. Click to open modal. -->
-  <div class="v4-video-stage" id="v4Stage" role="button" tabindex="0" aria-label="Open full video"></div>
 
   <div class="v4-cursor" id="v4Cursor" aria-hidden="true">
     <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
@@ -1576,19 +1566,35 @@
       display: block;
     }
 
-    /* Stage = transparent in-flow area where the fixed video shows through.
-       Sandwiched between hero and visibility section. */
+    /* Stage = in-flow video area, scrolls with the page.
+       Iframe scales to cover so it never letterboxes. */
     .v4-video-stage {
       position: relative;
       height: 600px;
-      background: transparent;
+      background: #000;
       cursor: none;
-      z-index: 0;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .v4-video-stage iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: max(100%, 177.78vh);
+      height: max(56.25vw, 100%);
+      min-width: 100%;
+      min-height: 100%;
+      border: 0;
+      pointer-events: none;
+      display: block;
     }
     .v4-video-stage:focus-visible {
       outline: 2px solid #49e385;
       outline-offset: -8px;
     }
+    @media (max-width: 1199px) { .v4-video-stage { height: 480px; } }
+    @media (max-width: 720px)  { .v4-video-stage { height: 320px; } }
 
     /* Hero and visibility need explicit z-index so they paint above the fixed video. */
     .v4-hero { position: relative; z-index: 1; }
