@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="assets/css/style.css?v=1.0">
   <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
   <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
+  <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
 
   <style>
     /* ════════════════════════════════════════
@@ -41,6 +42,13 @@
       color: var(--jxm-abyss) !important;
     }
     body.services-light .page-title { color: var(--jxm-abyss) !important; }
+
+    /* Push the giant page-title down so it doesn't slide up under
+       the V5 fixed nav (~110px tall when stacked across 3 columns). */
+    body.services-light .page-title-area-inner { padding-top: 8rem; }
+    @media (max-width: 1023px) {
+      body.services-light .page-title-area-inner { padding-top: 5rem; }
+    }
 
     /* ── V5-style services list ── */
     .svc-list-section {
@@ -205,7 +213,7 @@
   </style>
 </head>
 
-<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody services-light">
+<body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody services-light has-v5-page-nav">
 
   <!-- Preloader -->
   <div id="preloader">
@@ -273,45 +281,56 @@
   <div class="offcanvas-overlay"></div>
   <!-- side toggle end -->
 
-  <!-- Header area start -->
-  <header class="header-area-2">
-    <div class="header-main">
-      <div class="container large">
-        <div class="header-area-2__inner">
-          <div class="header__logo">
-            <a href="index.html">
-              <img src="assets/ad-imgs/logo/JXM.svg" class="normal-logo logo-light" alt="JXM">
-              <img src="assets/ad-imgs/logo/JXM-light.svg" class="normal-logo logo-dark" alt="JXM">
-            </a>
-          </div>
-          <div class="header__nav pos-center">
-            <nav class="main-menu">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Work</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Blog</a></li>
-                <li><a href="contact.html">Contact</a></li>
-              </ul>
-            </nav>
-          </div>
-          <div class="header__button">
-            <a href="contact.html" class="rr-btn">
-              <span class="btn-wrap">
-                <span class="text-one">Let's Talk</span>
-                <span class="text-two">Let's Talk</span>
-              </span>
-            </a>
-          </div>
-          <div class="header__navicon">
-            <button class="side-toggle"><img src="assets/imgs/icon/icon-2.webp" alt="image"></button>
-          </div>
-        </div>
-      </div>
+  <!-- V5 page nav — 3-column stacked editorial nav -->
+  <header class="v5-page-nav" aria-label="Site nav">
+    <div class="v5-page-nav-inner">
+      <a href="index.html" class="v5-page-nav-logo" aria-label="JXM, home">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+      </a>
+      <nav class="v5-page-nav-menu" aria-label="Primary">
+        <!-- Column 1 -->
+        <ul>
+          <li><a href="index.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">01</span>
+            <span class="v5-page-nav-link-text">Home</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+          <li><a href="portfolio.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">02</span>
+            <span class="v5-page-nav-link-text">Work</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 22 8, 44 3, 60 6 S 84 4, 98 6"/></svg>
+          </a></li>
+          <li><a href="about.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">03</span>
+            <span class="v5-page-nav-link-text">About</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 20 4, 38 7, 55 5 S 80 7, 98 5"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 2 -->
+        <ul>
+          <li><a href="services.html" class="v5-page-nav-link is-active" aria-current="page">
+            <span class="v5-page-nav-link-num">04</span>
+            <span class="v5-page-nav-link-text">Services</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 5 C 18 7, 38 4, 56 6 S 84 5, 98 6"/></svg>
+          </a></li>
+          <li><a href="blog.html" class="v5-page-nav-link">
+            <span class="v5-page-nav-link-num">05</span>
+            <span class="v5-page-nav-link-text">Ideas</span>
+            <svg class="v5-page-nav-link-strike" viewBox="0 0 100 10" preserveAspectRatio="none" aria-hidden="true"><path d="M2 6 C 18 4, 35 7, 52 5 S 82 7, 98 4"/></svg>
+          </a></li>
+        </ul>
+        <!-- Column 3 — Book a Consult CTA -->
+        <ul>
+          <li><a href="contact.html" class="v5-page-nav-link v5-page-nav-link--cta">
+            <span class="v5-page-nav-link-num">06</span>
+            <span class="v5-page-nav-link-text">Book a Consult <svg class="v5-page-nav-link-uparrow" width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg></span>
+            <svg class="v5-page-nav-link-circle" viewBox="0 0 200 60" preserveAspectRatio="none" aria-hidden="true"><path d="M 100 4 C 160 2, 195 12, 196 28 C 198 48, 140 56, 70 54 C 22 52, 4 38, 6 26 C 8 14, 32 4, 100 4"/></svg>
+          </a></li>
+        </ul>
+      </nav>
     </div>
   </header>
-  <!-- Header area end -->
+  <!-- /V5 page nav -->
 
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
@@ -448,7 +467,6 @@
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/hulu.svg" alt="Hulu"></span></p>
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/instagram.svg" alt="Instagram"></span></p>
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/marketo.svg" alt="Marketo"></span></p>
-                  <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/meta.svg" alt="Meta"></span></p>
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/netflix.svg" alt="Netflix"></span></p>
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/openai.svg" alt="OpenAI"></span></p>
                   <p data-t-throwable-el=""><span class="client-box"><img src="assets/svgs/pills/pandora.svg" alt="Pandora"></span></p>
