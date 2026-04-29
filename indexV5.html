@@ -16,13 +16,21 @@
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-    html, body {
+    /* html holds the page background so the z-index: -1 fixed bg
+       video can paint above it; body is transparent so the video
+       shows through wherever there's no opaque section. */
+    html {
       background: var(--bg);
+    }
+    html, body {
       color: white;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
       -webkit-font-smoothing: antialiased;
       min-height: 100%;
       overflow-x: hidden;
+    }
+    body {
+      background: transparent;
     }
 
     /* ── Animations ── */
@@ -1209,7 +1217,7 @@
       src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
-      loading="lazy"
+      loading="eager"
       title="JXM Creative Reel — silent background loop"
     ></iframe>
   </div>
