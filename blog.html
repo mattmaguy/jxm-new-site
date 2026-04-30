@@ -58,108 +58,123 @@
       -webkit-text-fill-color: var(--jxm-abyss) !important;
     }
 
-    /* ── Blog grid — 6-column Redox-style; items 4 and 5 span wider
-       (2-across), every other item spans 2 columns (3-across). ── */
-    .blog-area-2 .blogs-wrapper-box { margin-top: 3.5rem; }
-    .blog-area-2 .blogs-wrapper {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 4.75rem 3.75rem;
-      overflow: hidden;
-    }
-    .blog-area-2 .blogs-wrapper > * { grid-column: span 2; }
-    .blog-area-2 .blogs-wrapper > *:nth-child(4),
-    .blog-area-2 .blogs-wrapper > *:nth-child(5),
-    .blog-area-2 .blogs-wrapper > *:nth-child(9),
-    .blog-area-2 .blogs-wrapper > *:nth-child(10) { grid-column: span 3; }
-    .blog-area-2 .blogs-wrapper > *:nth-child(4) .content,
-    .blog-area-2 .blogs-wrapper > *:nth-child(5) .content,
-    .blog-area-2 .blogs-wrapper > *:nth-child(9) .content,
-    .blog-area-2 .blogs-wrapper > *:nth-child(10) .content {
-      padding-right: 6rem;
-    }
-    .blog-area-2 .blogs-wrapper > * .content { padding-right: 4rem; }
-    @media (max-width: 1199px) {
-      .blog-area-2 .blogs-wrapper > * .content,
-      .blog-area-2 .blogs-wrapper > *:nth-child(4) .content,
-      .blog-area-2 .blogs-wrapper > *:nth-child(5) .content {
-        padding-right: 0;
-      }
-    }
-    @media (max-width: 991px) {
-      .blog-area-2 .blogs-wrapper { grid-template-columns: repeat(2, 1fr); gap: 3rem 2rem; }
-      .blog-area-2 .blogs-wrapper > *,
-      .blog-area-2 .blogs-wrapper > *:nth-child(4),
-      .blog-area-2 .blogs-wrapper > *:nth-child(5) { grid-column: auto; }
-    }
-    @media (max-width: 575px) {
-      .blog-area-2 .blogs-wrapper { grid-template-columns: 1fr; gap: 2.5rem; }
-    }
+    /* ── Essays content — 2 featured cards + typographic index ── */
+    .blog-area-2 .essays-content { margin-top: 3.5rem; }
 
-    .blog-area-2 .blogs-wrapper > a {
+    /* Featured (top of section) — two cards with thumbs */
+    .blog-area-2 .essay-feature {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem 4rem;
+      margin-bottom: 4.5rem;
+    }
+    @media (max-width: 767px) {
+      .blog-area-2 .essay-feature { grid-template-columns: 1fr; gap: 2.75rem; margin-bottom: 3rem; }
+    }
+    .blog-area-2 .essay-feature .feat-card {
       text-decoration: none;
       color: inherit;
-      display: block;
-    }
-    .blog-area-2 .blog {
       display: flex;
       flex-direction: column;
       gap: 1.25rem;
     }
-    .blog-area-2 .blog .thumb {
+    .blog-area-2 .essay-feature .feat-thumb {
       aspect-ratio: 16 / 10;
       overflow: hidden;
       border-radius: 0.75rem;
       background: rgba(34, 31, 50, 0.06);
     }
-    .blog-area-2 .blog .thumb img {
+    .blog-area-2 .essay-feature .feat-thumb img {
       width: 100%;
       height: 100%;
       object-fit: cover;
       display: block;
       transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .blog-area-2 .blogs-wrapper > a:hover .blog .thumb img {
-      transform: scale(1.04);
-    }
-    .blog-area-2 .blog .title {
-      font-family: 'Inter', sans-serif !important;
-      font-weight: 500 !important;
-      font-size: clamp(1.25rem, 2vw, 1.625rem);
+    .blog-area-2 .essay-feature .feat-card:hover .feat-thumb img { transform: scale(1.04); }
+    .blog-area-2 .essay-feature .feat-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.4vw, 1.875rem);
       line-height: 1.2;
       letter-spacing: -0.02em;
-      color: var(--jxm-abyss) !important;
-      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      color: var(--jxm-abyss);
       margin: 0;
       display: flex;
       align-items: flex-start;
       gap: 0.5rem;
-      transition: color 200ms ease;
     }
-    .blog-area-2 .blog .title .arrow {
+    .blog-area-2 .essay-feature .feat-arrow {
       flex-shrink: 0;
-      display: inline-flex;
-      align-items: center;
-      margin-top: 0.45rem;
+      margin-top: 0.5rem;
       color: var(--jxm-abyss);
       transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
     }
-    .blog-area-2 .blog .title .arrow svg { width: 13px; height: 14px; }
-    .blog-area-2 .blogs-wrapper > a:hover .blog .title .arrow {
-      transform: translate(2px, -2px);
-    }
-    .blog-area-2 .blog .meta {
+    .blog-area-2 .essay-feature .feat-card:hover .feat-arrow { transform: translate(2px, -2px); }
+    .blog-area-2 .essay-feature .feat-arrow svg { width: 13px; height: 14px; }
+    .blog-area-2 .essay-feature .feat-meta {
       font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
       font-size: 0.75rem;
       letter-spacing: 0.04em;
-      color: rgba(34, 31, 50, 0.55) !important;
-      display: flex;
-      flex-direction: column;
-      gap: 0.25rem;
-      align-items: flex-start;
+      color: rgba(34, 31, 50, 0.6);
     }
-    .blog-area-2 .blog .meta .date { color: var(--jxm-abyss); white-space: nowrap; }
-    .blog-area-2 .blog .meta .name span { color: var(--jxm-abyss); }
+
+    /* Typographic index — year-grouped, minimal, scrubbing-arrow hover */
+    .blog-area-2 .essay-index { border-top: 1px solid rgba(34, 31, 50, 0.18); }
+    .blog-area-2 .essay-index-year {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(34, 31, 50, 0.5);
+      padding: 1.75rem 0 0.75rem;
+    }
+    .blog-area-2 .essay-index-row {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: baseline;
+      gap: 1.5rem;
+      padding: 1.25rem 0;
+      border-bottom: 1px solid rgba(34, 31, 50, 0.12);
+      text-decoration: none;
+      color: inherit;
+    }
+    .blog-area-2 .essay-index-row .index-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.125rem, 1.9vw, 1.375rem);
+      line-height: 1.3;
+      color: var(--jxm-abyss);
+      letter-spacing: -0.015em;
+      margin: 0;
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+    }
+    .blog-area-2 .essay-index-row .index-arrow {
+      display: inline-block;
+      opacity: 0;
+      transform: translateX(-0.5rem);
+      transition: opacity 240ms ease, transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+      color: var(--jxm-abyss);
+    }
+    .blog-area-2 .essay-index-row:hover .index-arrow {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    .blog-area-2 .essay-index-row .index-arrow svg { width: 12px; height: 13px; }
+    .blog-area-2 .essay-index-row .index-meta {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.72rem;
+      letter-spacing: 0.04em;
+      color: rgba(34, 31, 50, 0.55);
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+    @media (max-width: 575px) {
+      .blog-area-2 .essay-index-row { grid-template-columns: 1fr; gap: 0.4rem; padding: 1.1rem 0; }
+      .blog-area-2 .essay-index-row .index-meta { order: -1; }
+    }
 
     /* Section header layout: pill-style eyebrow + headline */
     .blog-area-2 .section-header { padding-top: 2rem; }
@@ -679,214 +694,80 @@
                     <span class="section-subtitle">Essays &amp; Briefs</span>
                   </div>
                   <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">On the work, and what shapes it.</h2>
+                    <h2 class="section-title font-sequelsans-romanbody">Essays, briefs, and the occasional rant.</h2>
                   </div>
                 </div>
                 <div class="text-wrapper" style="margin-top: 2rem; max-width: 44rem;">
                   <p class="text">Founder-written, practitioner-tested. On the work, the thinking behind it, and the parts of the marketing industry that need a second look.</p>
                 </div>
               </div>
-              <div class="blogs-wrapper-box">
-                <div class="blogs-wrapper">
-                  <a href="https://getjxm.com/thoughts/on-standards" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/on-standards.jpg" alt="On Standards" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">On Standards
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Apr 9, 2026</span>
-                          <span class="name">By <span>Matthew Maguy</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/engineering-preference-in-uncertain-times" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/engineering-preference.jpg" alt="Engineering Consumer Preference in Uncertain Times" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Engineering Consumer Preference in Uncertain Times
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Mar 24, 2026</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/anti-persona" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/anti-persona.png" alt="We're anti-persona." loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">We're anti-persona.
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Jun 11, 2025</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/here-we-are-now-entertain-us" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/here-we-are-now.jpg" alt="Here We Are Now, Entertain Us" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Here We Are Now, Entertain Us
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Nov 13, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty-j6gte" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/outsourced-marketing.jpg" alt="Overcoming Misconceptions About Outsourced Marketing" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Overcoming Misconceptions About Outsourced Marketing
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Oct 2, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/forecast-unknown.jpg" alt="Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Sep 16, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/better-options-menus-our-approach-to-media-planning" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/better-options-menus.jpg" alt="Better Options &amp; Menus: Our Approach to Media Planning" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Better Options &amp; Menus: Our Approach to Media Planning
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Sep 3, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/guide-your-brand-to-treasure" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/kpis-x-kpas.png" alt="Guide Your Brand to Treasure with KPIs &times; KPAs" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Guide Your Brand to Treasure with KPIs &times; KPAs
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Aug 20, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
-                  <a href="https://getjxm.com/thoughts/cookies-update-2024" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/cookies-update.jpg" alt="A Balanced Approach to Cookies and User Privacy?" loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">A Balanced Approach to Cookies and User Privacy?
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Jul 24, 2024</span>
-                          <span class="name">By <span>JXM</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
+              <div class="essays-content">
+                <!-- Featured: 2 most recent essays with thumbs -->
+                <div class="essay-feature">
+                <a href="https://getjxm.com/thoughts/on-standards" target="_blank" rel="noopener" class="feat-card fade-anim">
+                  <div class="feat-thumb"><img src="assets/imgs/blog/thoughts/on-standards.jpg" alt="On Standards" loading="lazy"></div>
+                  <h3 class="feat-title">On Standards
+                    <span class="feat-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h3>
+                  <span class="feat-meta">Apr 9, 2026 · By Matthew Maguy</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/engineering-preference-in-uncertain-times" target="_blank" rel="noopener" class="feat-card fade-anim">
+                  <div class="feat-thumb"><img src="assets/imgs/blog/thoughts/engineering-preference.jpg" alt="Engineering Consumer Preference in Uncertain Times" loading="lazy"></div>
+                  <h3 class="feat-title">Engineering Consumer Preference in Uncertain Times
+                    <span class="feat-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h3>
+                  <span class="feat-meta">Mar 24, 2026 · By JXM</span>
+                </a>
                 </div>
+
+                <!-- Typographic index: remaining essays, year-grouped -->
+                <div class="essay-index">
+                  <div class="essay-index-year">2025</div>
+                <a href="https://getjxm.com/thoughts/anti-persona" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">We're anti-persona.
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Jun 11 · JXM</span>
+                </a>
+                  <div class="essay-index-year">2024</div>
+                <a href="https://getjxm.com/thoughts/here-we-are-now-entertain-us" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">Here We Are Now, Entertain Us
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Nov 13 · JXM</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty-j6gte" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">Overcoming Misconceptions About Outsourced Marketing
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Oct 2 · JXM</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/forecast-unknown-how-financial-brands-can-find-opportunity-in-uncertainty" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Sep 16 · JXM</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/better-options-menus-our-approach-to-media-planning" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">Better Options &amp; Menus: Our Approach to Media Planning
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Sep 3 · JXM</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/guide-your-brand-to-treasure" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">Guide Your Brand to Treasure with KPIs &times; KPAs
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Aug 20 · JXM</span>
+                </a>
+                <a href="https://getjxm.com/thoughts/cookies-update-2024" target="_blank" rel="noopener" class="essay-index-row fade-anim">
+                  <h4 class="index-title">A Balanced Approach to Cookies and User Privacy?
+                    <span class="index-arrow"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg></span>
+                  </h4>
+                  <span class="index-meta">Jul 24 · JXM</span>
+                </a>
+                </div>
+              </div>
               </div>
             </div>
           </div>
