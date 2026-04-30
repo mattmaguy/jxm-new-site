@@ -46,9 +46,9 @@
       color: var(--jxm-abyss) !important;
     }
 
-    /* V5 nav clearance */
-    body.blogpost-light .post-area { padding-top: 8rem; }
-    @media (max-width: 1023px) { body.blogpost-light .post-area { padding-top: 5rem; } }
+    /* V5 nav clearance — fixed nav is ~7.5rem tall, leave breathing room */
+    body.blogpost-light .post-area { padding-top: 11rem; }
+    @media (max-width: 1023px) { body.blogpost-light .post-area { padding-top: 7rem; } }
 
     /* ── Article header ──────────────────────────── */
     .post-header {
@@ -125,7 +125,7 @@
     /* ── Hero figure ──────────────────────────── */
     .post-hero {
       margin: 3.5rem auto 0;
-      max-width: 1200px;
+      max-width: 880px;
       padding: 0 1.5rem;
     }
     .post-hero img {

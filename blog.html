@@ -353,6 +353,180 @@
       color: rgba(243, 241, 236, 0.55);
     }
 
+    /* ════════════════════════════════════════
+       NEWS — cedar band, parallel to Cheat Codes structure but
+       a distinct editorial tone (wire-service "//" eyebrow,
+       no level pills, minimal "JXM · News" tag).
+    ════════════════════════════════════════ */
+    .news-area {
+      background: var(--jxm-cedar);
+      color: var(--jxm-tusk);
+      padding: 6rem 0 6.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (max-width: 767px) { .news-area { padding: 4rem 0 4.5rem; } }
+
+    .news-area .nw-header {
+      display: flex;
+      align-items: flex-end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: 3rem;
+    }
+    @media (max-width: 767px) {
+      .news-area .nw-header { flex-direction: column; align-items: flex-start; gap: 1.5rem; }
+    }
+
+    .news-area .nw-eyebrow {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: rgba(243, 241, 236, 0.85);
+      display: inline-flex;
+      align-items: baseline;
+      gap: 0.55rem;
+      margin-bottom: 1.25rem;
+    }
+    .news-area .nw-eyebrow::before {
+      content: "//";
+      font-weight: 600;
+      letter-spacing: -0.05em;
+      color: var(--jxm-kermit);
+    }
+
+    .news-area .nw-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 4.5vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.025em;
+      color: var(--jxm-tusk);
+      margin: 0;
+      max-width: 38rem;
+    }
+    .news-area .nw-lede {
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: rgba(243, 241, 236, 0.65);
+      max-width: 24rem;
+      margin: 0;
+    }
+
+    .news-area .nw-controls {
+      display: flex;
+      gap: 0.5rem;
+      flex-shrink: 0;
+    }
+    .news-area .nw-btn {
+      width: 2.75rem;
+      height: 2.75rem;
+      border-radius: 50%;
+      border: 1px solid rgba(243, 241, 236, 0.25);
+      background: transparent;
+      color: var(--jxm-tusk);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: background 200ms ease, border-color 200ms ease;
+    }
+    .news-area .nw-btn:hover {
+      background: var(--jxm-kermit);
+      border-color: var(--jxm-kermit);
+      color: var(--jxm-cedar);
+    }
+    .news-area .nw-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+    .news-area .nw-btn svg { width: 16px; height: 16px; }
+    @media (max-width: 767px) { .news-area .nw-controls { display: none; } }
+
+    .news-area .nw-rail {
+      display: flex;
+      gap: 1.75rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      scroll-behavior: smooth;
+      padding: 0.5rem 0 1.5rem;
+      margin: 0 -1rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      scrollbar-width: none;
+    }
+    .news-area .nw-rail::-webkit-scrollbar { display: none; }
+
+    .news-area .nw-card {
+      flex: 0 0 auto;
+      width: clamp(280px, 32vw, 400px);
+      scroll-snap-align: start;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+    }
+    @media (max-width: 575px) { .news-area .nw-card { width: 78vw; } }
+
+    .news-area .nw-card .nw-thumb {
+      aspect-ratio: 4 / 3;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: rgba(243, 241, 236, 0.06);
+      position: relative;
+    }
+    .news-area .nw-card .nw-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .news-area .nw-card:hover .nw-thumb img { transform: scale(1.04); }
+
+    .news-area .nw-card .nw-tag {
+      position: absolute;
+      top: 0.875rem;
+      left: 0.875rem;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      background: rgba(243, 241, 236, 0.92);
+      color: var(--jxm-cedar);
+      padding: 0.35rem 0.65rem;
+      border-radius: 999px;
+      font-weight: 500;
+    }
+
+    .news-area .nw-card .nw-title-row {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1.375rem;
+      line-height: 1.2;
+      letter-spacing: -0.015em;
+      color: var(--jxm-tusk);
+      margin: 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .news-area .nw-card .nw-arrow {
+      flex-shrink: 0;
+      margin-top: 0.45rem;
+      color: var(--jxm-tusk);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .news-area .nw-card:hover .nw-arrow { transform: translate(2px, -2px); }
+    .news-area .nw-card .nw-arrow svg { width: 13px; height: 14px; }
+
+    .news-area .nw-card .nw-meta {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: rgba(243, 241, 236, 0.55);
+    }
+
     /* Section title for the essays grid below — give it space */
     body.blog-light .blog-area-2 { padding-top: 6rem; }
     @media (max-width: 767px) { body.blog-light .blog-area-2 { padding-top: 4rem; } }
@@ -497,7 +671,7 @@
         <!-- page title area end  -->
 
         <!-- Cheat Codes carousel — separate content category -->
-        <section class="cheatcodes-area" aria-label="Cheat Codes series">
+        <section class="cheatcodes-area" aria-label="Cheat Codes series" data-carousel>
           <div class="container large">
             <div class="cc-header fade-anim">
               <div>
@@ -506,15 +680,15 @@
               </div>
               <p class="cc-lede">A recurring series. Old game mechanics, modern marketing patterns. One sonar pulse at a time.</p>
               <div class="cc-controls">
-                <button class="cc-btn" data-cc-prev aria-label="Previous">
+                <button class="cc-btn" data-prev aria-label="Previous">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
                 </button>
-                <button class="cc-btn" data-cc-next aria-label="Next">
+                <button class="cc-btn" data-next aria-label="Next">
                   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
                 </button>
               </div>
             </div>
-            <div class="cc-rail" data-cc-rail>
+            <div class="cc-rail" data-rail>
               <a href="blog-details.html" class="cc-card fade-anim">
                 <div class="cc-thumb">
                   <span class="cc-level">0x13</span>
@@ -555,6 +729,42 @@
           </div>
         </section>
         <!-- /Cheat Codes carousel -->
+
+        <!-- News carousel — press, announcements, industry signal -->
+        <section class="news-area" aria-label="News and notes" data-carousel>
+          <div class="container large">
+            <div class="nw-header fade-anim">
+              <div>
+                <span class="nw-eyebrow">News &amp; Notes</span>
+                <h2 class="nw-title">From the practice.</h2>
+              </div>
+              <p class="nw-lede">Press, announcements, and signals worth flagging from the work.</p>
+              <div class="nw-controls">
+                <button class="nw-btn" data-prev aria-label="Previous">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 18l-6-6 6-6"/></svg>
+                </button>
+                <button class="nw-btn" data-next aria-label="Next">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 18l6-6-6-6"/></svg>
+                </button>
+              </div>
+            </div>
+            <div class="nw-rail" data-rail>
+              <a href="https://getjxm.com/thoughts/financial-brand-2024" target="_blank" rel="noopener" class="nw-card fade-anim">
+                <div class="nw-thumb">
+                  <span class="nw-tag">JXM · News</span>
+                  <img src="assets/imgs/blog/thoughts/financial-brand-2024.gif" alt="Conquering the Competition with Advanced Targeting Tactics.">
+                </div>
+                <h3 class="nw-title-row">Conquering the Competition with Advanced Targeting Tactics.
+                  <span class="nw-arrow">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg>
+                  </span>
+                </h3>
+                <span class="nw-meta">Jul 26, 2024 · Industry brief</span>
+              </a>
+            </div>
+          </div>
+        </section>
+        <!-- /News carousel -->
 
         <!-- blog area start  -->
         <section class="blog-area-2">
@@ -751,28 +961,6 @@
                       </div>
                     </article>
                   </a>
-                  <a href="https://getjxm.com/thoughts/financial-brand-2024" target="_blank" rel="noopener">
-                    <article class="blog fade-anim">
-                      <div class="thumb">
-                        <img src="assets/imgs/blog/thoughts/financial-brand-2024.gif" alt="Conquering the Competition with Advanced Targeting Tactics." loading="lazy">
-                      </div>
-                      <div class="content">
-                        <h2 class="title">Conquering the Competition with Advanced Targeting Tactics.
-                          <span class="arrow">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none" aria-hidden="true">
-                              <path fill-rule="evenodd" clip-rule="evenodd"
-                                d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z"
-                                fill="currentColor" />
-                            </svg>
-                          </span>
-                        </h2>
-                        <div class="meta">
-                          <span class="date">Jul 26, 2024</span>
-                          <span class="name">By <span>JXM · News</span></span>
-                        </div>
-                      </div>
-                    </article>
-                  </a>
                   <a href="https://getjxm.com/thoughts/cookies-update-2024" target="_blank" rel="noopener">
                     <article class="blog fade-anim">
                       <div class="thumb">
@@ -856,29 +1044,31 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
 
-  <!-- Cheat Codes carousel — arrow scroll + edge-aware disable -->
+  <!-- Carousel — arrow scroll + edge-aware disable. Generic for any [data-carousel]. -->
   <script>
     (function () {
-      var rail = document.querySelector('[data-cc-rail]');
-      if (!rail) return;
-      var prev = document.querySelector('[data-cc-prev]');
-      var next = document.querySelector('[data-cc-next]');
-      var step = function () {
-        var card = rail.querySelector('.cc-card');
-        var gap = parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || 28);
-        return (card ? card.getBoundingClientRect().width : 320) + gap;
-      };
-      var sync = function () {
-        var atStart = rail.scrollLeft <= 1;
-        var atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 1;
-        if (prev) prev.disabled = atStart;
-        if (next) next.disabled = atEnd;
-      };
-      if (prev) prev.addEventListener('click', function () { rail.scrollBy({ left: -step(), behavior: 'smooth' }); });
-      if (next) next.addEventListener('click', function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); });
-      rail.addEventListener('scroll', sync, { passive: true });
-      window.addEventListener('resize', sync);
-      sync();
+      document.querySelectorAll('[data-carousel]').forEach(function (root) {
+        var rail = root.querySelector('[data-rail]');
+        if (!rail) return;
+        var prev = root.querySelector('[data-prev]');
+        var next = root.querySelector('[data-next]');
+        var step = function () {
+          var card = rail.firstElementChild;
+          var gap = parseFloat(getComputedStyle(rail).columnGap || getComputedStyle(rail).gap || 28);
+          return (card ? card.getBoundingClientRect().width : 320) + gap;
+        };
+        var sync = function () {
+          var atStart = rail.scrollLeft <= 1;
+          var atEnd = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 1;
+          if (prev) prev.disabled = atStart;
+          if (next) next.disabled = atEnd;
+        };
+        if (prev) prev.addEventListener('click', function () { rail.scrollBy({ left: -step(), behavior: 'smooth' }); });
+        if (next) next.addEventListener('click', function () { rail.scrollBy({ left: step(), behavior: 'smooth' }); });
+        rail.addEventListener('scroll', sync, { passive: true });
+        window.addEventListener('resize', sync);
+        sync();
+      });
     })();
   </script>
 
