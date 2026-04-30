@@ -251,10 +251,12 @@
       font-size: clamp(1.625rem, 3vw, 2.25rem);
       line-height: 1.15;
       letter-spacing: -0.02em;
-      color: var(--jxm-tusk);
+      /* !important needed: body.blogpost-light sets color: abyss !important and would cascade through */
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
       margin: 0 0 1.25rem;
     }
-    .post-payoff p { color: rgba(243, 241, 236, 0.85); margin: 0 0 1rem; }
+    .post-payoff p { color: rgba(243, 241, 236, 0.85) !important; margin: 0 0 1rem; }
     .post-payoff p:last-child { margin-bottom: 0; }
     .post-payoff a { color: var(--jxm-kermit); border-color: rgba(73, 227, 133, 0.4); }
     .post-payoff a:hover { color: var(--jxm-tusk); border-color: var(--jxm-tusk); }
