@@ -5,12 +5,15 @@ renders each through the locked template, writes thoughts/{slug}.html.
 
 Run from project root: python3 _build_posts.py
 """
-import re, html
+import re, html, sys
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent
 THOUGHTS = ROOT / "thoughts"
 CSS_PATH = ROOT / "assets/css/blog-post.css"
+
+sys.path.insert(0, str(ROOT))
+from _new_cc_posts_data import NEW_CC_POSTS
 
 
 # ════════════════════════════════════════════════════════════════════
@@ -681,16 +684,16 @@ P:: When you're ready to do the best work of your marketing career, <a href="mai
 """,
     },
 
-    # ─── 2. Sonar? So What. (Cheat Codes 0x13, Apr 6, 2026) ───
+    # ─── 14. Sonar? So What. (Cheat Codes 0x14, Apr 6, 2026) ───
     {
         "slug": "sonar-so-what",
         "title": "Sonar? So What.",
         "dek": "Attention is the ocean. Intention is the ping back.",
-        "meta_description": "Cheat Codes 0x13. Attention is the ocean. Intention is the ping back. What Ecco the Dolphin can teach marketers about signal vs. noise.",
+        "meta_description": "Cheat Codes 0x14. Attention is the ocean. Intention is the ping back. What Ecco the Dolphin can teach marketers about signal vs. noise.",
         "date": "Apr 6, 2026", "date_iso": "2026-04-06",
         "byline": "JXM",
         "category": "cheat-codes",
-        "eyebrow": '<a href="../blog.html">Cheat Codes 0x13</a> · Ecco the Dolphin · Sega Genesis · 1992',
+        "eyebrow": '<a href="../blog.html">Cheat Codes 0x14</a> · Ecco the Dolphin · Sega Genesis · 1992',
         "hero": "hero.webp", "hero_alt": "Ecco the Dolphin, Sega Genesis, 1992",
         "card_thumb": "../assets/imgs/blog/thoughts/sonar-so-what.jpg",
         "tags": ["Cheat Codes", "Strategy", "Signal vs. Noise"],
@@ -796,16 +799,16 @@ P:: At JXM, we are committed to helping financial brands navigate today's market
 """,
     },
 
-    # ─── 4. Walking on Glass? Ouch. (Cheat Codes 0x12, Feb 19, 2026) ───
+    # ─── 13. Walking on Glass? Ouch. (Cheat Codes 0x13, Feb 19, 2026) ───
     {
         "slug": "walking-on-glass",
         "title": "Walking on Glass? Ouch.",
         "dek": "Marketing rarely starts on full health. Neither did John McClane.",
-        "meta_description": "Cheat Codes 0x12. What Die Hard for the NES taught us about marketing under pressure — focus, triage, and finishing the level you didn't choose.",
+        "meta_description": "Cheat Codes 0x13. What Die Hard for the NES taught us about marketing under pressure — focus, triage, and finishing the level you didn't choose.",
         "date": "Feb 19, 2026", "date_iso": "2026-02-19",
         "byline": "JXM",
         "category": "cheat-codes",
-        "eyebrow": '<a href="../blog.html">Cheat Codes 0x12</a> · Die Hard · NES · 1991',
+        "eyebrow": '<a href="../blog.html">Cheat Codes 0x13</a> · Die Hard · NES · 1991',
         "hero": "hero.jpg", "hero_alt": "Die Hard for the NES — title screen",
         "card_thumb": "../assets/imgs/blog/thoughts/walking-on-glass.jpg",
         "tags": ["Cheat Codes", "Strategy", "Campaign Execution"],
@@ -843,16 +846,16 @@ P:: <strong>Remember:</strong> winning teams aren't the ones with perfect plans.
 """,
     },
 
-    # ─── 5. Parallel Worlds, Shared Purpose (Cheat Codes 0x11, Jan 20, 2026) ───
+    # ─── 12. Parallel Worlds, Shared Purpose (Cheat Codes 0x12, Jan 20, 2026) ───
     {
         "slug": "parallel-worlds",
         "title": "Parallel Worlds, Shared Purpose",
         "dek": "How credit unions can transform member engagement by connecting brand to experience — inspired by The Legend of Zelda: A Link to the Past.",
-        "meta_description": "Cheat Codes 0x11. The Legend of Zelda: A Link to the Past as a guide to building seamless brand-to-experience flow for credit union members.",
+        "meta_description": "Cheat Codes 0x12. The Legend of Zelda: A Link to the Past as a guide to building seamless brand-to-experience flow for credit union members.",
         "date": "Jan 20, 2026", "date_iso": "2026-01-20",
         "byline": "JXM",
         "category": "cheat-codes",
-        "eyebrow": '<a href="../blog.html">Cheat Codes 0x11</a> · The Legend of Zelda: A Link to the Past · SNES · 1991',
+        "eyebrow": '<a href="../blog.html">Cheat Codes 0x12</a> · The Legend of Zelda: A Link to the Past · SNES · 1991',
         "hero": "hero.jpg", "hero_alt": "The Legend of Zelda: A Link to the Past — Link fights a Geldman",
         "card_thumb": "../assets/imgs/blog/thoughts/parallel-worlds.jpg",
         "tags": ["Cheat Codes", "Member Experience", "Credit Union Strategy"],
@@ -1227,6 +1230,9 @@ P:: For more detailed information, read the full announcement <a href="https://p
 """,
     },
 ]
+
+# Append the 10 new Cheat Codes posts (0x01–0x05, 0x07–0x11; 0x06 skipped)
+POSTS.extend(NEW_CC_POSTS)
 
 
 # ════════════════════════════════════════════════════════════════════
