@@ -96,25 +96,17 @@ body.case-dark .work-details-area-inner {
 .case-nav-link .arrow svg { width: 100%; height: 100%; display: block; }
 
 /* ── Client logo (replaces .title-thumb cover image) ─────────────
-   SVG mask-fill in tusk so any monochrome client logo reads on abyss. */
+   Inline SVG element with currentColor fills — picks up tusk via `color`. */
 body.case-dark .case-client-logo {
   width: 100%;
   max-width: 240px;
-  height: 5rem;
-  background-color: var(--jxm-tusk);
-  mask-image: var(--logo);
-  mask-repeat: no-repeat;
-  mask-position: left center;
-  mask-size: contain;
-  -webkit-mask-image: var(--logo);
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: left center;
-  -webkit-mask-size: contain;
-  margin-top: 0.75rem;
+  height: auto;
+  color: var(--jxm-tusk);
   display: block;
+  margin-top: 0.75rem;
 }
 @media (max-width: 767px) {
-  body.case-dark .case-client-logo { height: 3.5rem; max-width: 180px; }
+  body.case-dark .case-client-logo { max-width: 180px; }
 }
 
 /* ── Work-details surface adjustments for abyss ──────────────── */
