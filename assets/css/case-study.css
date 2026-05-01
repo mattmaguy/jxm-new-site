@@ -97,7 +97,7 @@ body.case-dark .work-details-area-inner {
 
 /* ── Client logo (replaces .title-thumb cover image) ─────────────
    Inline SVG element with currentColor fills — picks up tusk via `color`. */
-body.case-dark .case-client-logo {
+body.case-dark .cs-logo {
   width: 100%;
   max-width: 240px;
   height: auto;
@@ -106,7 +106,7 @@ body.case-dark .case-client-logo {
   margin-top: 0.75rem;
 }
 @media (max-width: 767px) {
-  body.case-dark .case-client-logo { max-width: 180px; }
+  body.case-dark .cs-logo { max-width: 180px; }
 }
 
 /* ── Work-details surface adjustments for abyss ──────────────── */
