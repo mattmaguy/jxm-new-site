@@ -142,7 +142,12 @@
               </div>
             </div>
             <div class="image-wrapper parallax-view fade-anim">
-              <img class="w-100" src="assets/imgs/case-studies/advia.jpg" alt="Advia Credit Union × JXM" data-speed="0.8">
+              <a class="case-video-poster" href="https://vimeo.com/1092842591" aria-label="Play the Advia case film">
+                <img class="w-100" src="assets/imgs/case-studies/advia.jpg" alt="Advia Credit Union × JXM" data-speed="0.8">
+                <span class="case-video-play" aria-hidden="true">
+                  <svg viewBox="0 0 32 32"><polygon points="11,8 25,16 11,24"/></svg>
+                </span>
+              </a>
             </div>
             <div class="container large">
               <div class="section-info fade-anim">
@@ -269,6 +274,26 @@
   <script src="assets/vendor/throwable.js"></script>
   <script src="assets/js/magiccursor.js"></script>
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <!-- Vimeo lightbox for case-video-poster (Magnific Popup is already loaded above) -->
+  <script>
+    jQuery(function ($) {
+      $('.case-video-poster').magnificPopup({
+        type: 'iframe',
+        iframe: {
+          patterns: {
+            vimeo: {
+              index: 'vimeo.com/',
+              id: '/',
+              src: '//player.vimeo.com/video/%id%?autoplay=1&app_id=58479&dnt=1'
+            }
+          }
+        },
+        mainClass: 'mfp-fade',
+        removalDelay: 200
+      });
+    });
+  </script>
 
 </body>
 
