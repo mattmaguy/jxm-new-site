@@ -1,0 +1,114 @@
+/* ════════════════════════════════════════
+   CASE STUDY — locked abyss surface, V5 nav clearance,
+   redesigned pagination pills.
+   Used by /client-stories-* pages.
+════════════════════════════════════════ */
+
+/* ── Body lock to abyss ──────────────────────────── */
+body.case-dark,
+body.case-dark .body-wrapper,
+body.case-dark main {
+  background: var(--jxm-abyss) !important;
+  color: var(--jxm-tusk) !important;
+}
+
+/* V5 nav clearance — fixed nav is ~7.5rem tall */
+body.case-dark .work-details-area-inner.section-spacing,
+body.case-dark .work-details-area-inner {
+  padding-top: 11rem;
+}
+@media (max-width: 1023px) {
+  body.case-dark .work-details-area-inner.section-spacing,
+  body.case-dark .work-details-area-inner { padding-top: 7rem; }
+}
+
+/* ── Pagination pills — V5 redesign ──────────────────────────── */
+/* Replaces the legacy .pagination layout. Two large rounded panels
+   with a stacked label + title and a translating arrow on hover. */
+.case-pagination {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  margin: 5rem 0 6rem;
+}
+@media (max-width: 767px) {
+  .case-pagination { grid-template-columns: 1fr; gap: 1rem; margin: 3.5rem 0 4rem; }
+}
+
+.case-nav-link {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 1.5rem 1.75rem;
+  border: 1px solid rgba(243, 241, 236, 0.18);
+  border-radius: 1rem;
+  text-decoration: none;
+  color: var(--jxm-tusk);
+  background: transparent;
+  transition: border-color 240ms ease, background 240ms ease;
+  min-height: 5.5rem;
+}
+.case-nav-link:hover {
+  border-color: rgba(243, 241, 236, 0.5);
+  background: rgba(243, 241, 236, 0.03);
+}
+
+.case-nav-link--next {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+.case-nav-link .dir-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 0; /* allow text wrap inside flex */
+}
+
+.case-nav-link .dir-label {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.7rem;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(243, 241, 236, 0.55);
+  display: block;
+}
+
+.case-nav-link .dir-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: 1.35;
+  letter-spacing: -0.01em;
+  color: var(--jxm-tusk);
+  display: block;
+}
+
+.case-nav-link .arrow {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  color: var(--jxm-tusk);
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.case-nav-link:hover .arrow { transform: translateX(-4px); }
+.case-nav-link--next:hover .arrow { transform: translateX(4px); }
+.case-nav-link .arrow svg { width: 100%; height: 100%; display: block; }
+
+/* ── Work-details surface adjustments for abyss ──────────────── */
+/* Section meta/eyebrow chips read on dark surface */
+body.case-dark .case-eyebrow,
+body.case-dark .case-client-tag,
+body.case-dark .case-chapter-label,
+body.case-dark .case-channels-label {
+  color: rgba(243, 241, 236, 0.65) !important;
+}
+body.case-dark .case-channels-list {
+  color: var(--jxm-tusk) !important;
+}
+
+/* Funfact / counter numbers — kermit accent on abyss */
+body.case-dark .funfact-item .number {
+  color: var(--jxm-kermit) !important;
+  -webkit-text-fill-color: var(--jxm-kermit) !important;
+}
