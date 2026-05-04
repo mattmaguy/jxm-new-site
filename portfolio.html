@@ -80,6 +80,8 @@
       background: var(--jxm-tusk);
       padding: 9rem 0 4.5rem;
       overflow: hidden;
+      display: flex;
+      justify-content: center;
     }
     @media (max-width: 1023px) {
       .pf-reel-hero { padding: 6.5rem 0 3.5rem; }
@@ -88,12 +90,19 @@
     .pf-reel-hero-row {
       display: flex;
       align-items: center;
-      justify-content: center;
       gap: clamp(1.25rem, 2.5vw, 2.75rem);
       width: max-content;
-      margin: 0 auto;
+      flex-shrink: 0;
       white-space: nowrap;
-      padding: 0 clamp(1rem, 4vw, 4rem);
+    }
+
+    /* Tiles flanking the reel — JS clones enough <span> pairs at runtime
+       to overflow the viewport in both directions. */
+    .pf-reel-hero-tile {
+      display: flex;
+      align-items: center;
+      gap: clamp(1.25rem, 2.5vw, 2.75rem);
+      flex-shrink: 0;
     }
 
     .pf-reel-hero-word {
@@ -108,9 +117,9 @@
     .pf-reel-hero-stage {
       position: relative;
       flex-shrink: 0;
-      width: clamp(180px, 22vw, 320px);
+      width: clamp(220px, 26vw, 380px);
       aspect-ratio: 16 / 10;
-      border-radius: 999px;
+      border-radius: 1.25rem;
       overflow: hidden;
       background: var(--jxm-abyss);
       cursor: none;
@@ -129,21 +138,6 @@
       transform: scale(1.35);
       transform-origin: center;
       pointer-events: none;
-    }
-    .pf-reel-hero-label {
-      position: relative;
-      z-index: 1;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.7rem;
-      font-weight: 700;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--jxm-tusk);
-      padding: 0.45rem 1rem;
-      background: rgba(34, 31, 50, 0.55);
-      border-radius: 999px;
-      backdrop-filter: blur(6px);
-      -webkit-backdrop-filter: blur(6px);
     }
     .pf-reel-hero-stage:focus-visible {
       outline: 2px solid var(--jxm-abyss);
@@ -244,19 +238,14 @@
     }
     .pf-modal-close:hover { background: rgba(243, 241, 236, 0.2); }
 
-    /* Mobile: stack vertically, restore native cursor */
+    /* Mobile: keep horizontal tile/overflow but cap word size, restore native cursor.
+       The tiles overflow naturally — user sees a partial 'Recent Work' on each
+       side flanking the reel, with more visible if they scroll horizontally. */
     @media (max-width: 720px) {
-      .pf-reel-hero { padding: 5.5rem 1.25rem 3rem; }
-      .pf-reel-hero-row {
-        flex-direction: column;
-        gap: 1.25rem;
-        width: auto;
-        white-space: normal;
-        text-align: center;
-      }
-      .pf-reel-hero-word { font-size: clamp(3.5rem, 14vw, 6rem); }
+      .pf-reel-hero { padding: 5.5rem 0 3rem; }
+      .pf-reel-hero-word { font-size: clamp(3.5rem, 18vw, 6rem); }
       .pf-reel-hero-stage {
-        width: min(72vw, 280px);
+        width: min(60vw, 260px);
         cursor: pointer;
       }
       .pf-cursor { display: none; }
@@ -391,22 +380,31 @@
 
       <main>
 
-        <!-- reel-hero — replaces the legacy "Client stories" page-title -->
+        <!-- reel-hero — replaces the legacy "Client stories" page-title.
+             "Recent Work" tiles horizontally; the reel pill is dropped in
+             at center. JS clones enough word-pairs at runtime to overflow
+             the viewport in both directions. -->
         <section class="pf-reel-hero" aria-label="Recent work, featuring our reel">
           <h1 class="pf-reel-hero-srtitle">Recent Work</h1>
-          <div class="pf-reel-hero-row" aria-hidden="true">
-            <span class="pf-reel-hero-word">Work</span>
+          <div class="pf-reel-hero-row" id="pfReelRow" aria-hidden="true">
+            <div class="pf-reel-hero-tile pf-reel-hero-tile--left" id="pfReelTileLeft">
+              <span class="pf-reel-hero-word">Recent</span>
+              <span class="pf-reel-hero-word">Work</span>
+            </div>
             <button class="pf-reel-hero-stage" id="pfReelStage" type="button" aria-label="Play creative reel">
               <iframe
+                id="pfReelIframe"
                 src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
                 frameborder="0"
                 allow="autoplay; fullscreen; picture-in-picture"
                 loading="eager"
                 title="JXM Creative Reel — silent background loop"
               ></iframe>
-              <span class="pf-reel-hero-label">Reel</span>
             </button>
-            <span class="pf-reel-hero-word">Recent</span>
+            <div class="pf-reel-hero-tile pf-reel-hero-tile--right" id="pfReelTileRight">
+              <span class="pf-reel-hero-word">Recent</span>
+              <span class="pf-reel-hero-word">Work</span>
+            </div>
           </div>
         </section>
         <!-- /reel-hero -->
@@ -602,8 +600,62 @@
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
 
-  <!-- Reel-hero: cursor-follow + click-to-modal (mirrors index.html v4Stage pattern) -->
+  <!-- Vimeo Player API — used by the reel-hero to trim the loop to 6s -->
+  <script src="https://player.vimeo.com/api/player.js"></script>
+
+  <!-- Reel-hero: tile cloning, cursor-follow, click-to-modal, 6s loop trim -->
   <script>
+    /* Clone "Recent Work" word-pairs into the left/right tiles until each
+       tile is wider than the viewport. Re-runs on resize. Keeps the layout
+       overflowing past both edges no matter how wide the window gets. */
+    (function() {
+      var row   = document.getElementById('pfReelRow');
+      var left  = document.getElementById('pfReelTileLeft');
+      var right = document.getElementById('pfReelTileRight');
+      if (!row || !left || !right) return;
+
+      function fillTile(tile) {
+        // Snapshot the original two <span>s; clone these as the unit.
+        var unit = Array.prototype.slice.call(tile.children).slice(0, 2);
+        if (unit.length < 2) return;
+        // Reset to the unit (in case of resize re-run)
+        while (tile.children.length > 2) tile.removeChild(tile.lastChild);
+        // Add pairs until tile width >= 1.5x viewport (keeps overflow on
+        // either side even after horizontal centering)
+        var target = window.innerWidth * 1.5;
+        var safety = 40; // guard against runaway loop
+        while (tile.scrollWidth < target && safety-- > 0) {
+          tile.appendChild(unit[0].cloneNode(true));
+          tile.appendChild(unit[1].cloneNode(true));
+        }
+      }
+
+      function fill() { fillTile(left); fillTile(right); }
+      fill();
+
+      // Re-fill on resize (debounced)
+      var resizeTimer;
+      window.addEventListener('resize', function() {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(fill, 120);
+      });
+    })();
+
+    /* Trim the autoplay loop to the first 6 seconds via the Vimeo Player
+       API. Background-mode iframes still respect timeupdate + setCurrentTime. */
+    (function() {
+      var iframe = document.getElementById('pfReelIframe');
+      if (!iframe || typeof Vimeo === 'undefined') return;
+      var player = new Vimeo.Player(iframe);
+      var LOOP_END = 6;
+      player.on('timeupdate', function(data) {
+        if (data.seconds >= LOOP_END) {
+          player.setCurrentTime(0);
+        }
+      });
+    })();
+
+    /* Cursor-follow + click-to-modal — mirrors the v4Stage pattern on index.html */
     (function() {
       var stage    = document.getElementById('pfReelStage');
       var cursor   = document.getElementById('pfCursor');
