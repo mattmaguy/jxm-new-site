@@ -113,8 +113,13 @@ body.case-dark .cs-logo--inverted {
      close to tusk; the slight color drift is acceptable for a logo mark. */
   filter: invert(1) brightness(1.05);
 }
+body.case-dark .cs-logo--compact {
+  /* square / heavy-border marks (capcom) overpower wide wordmarks at 240px */
+  max-width: 144px;
+}
 @media (max-width: 767px) {
   body.case-dark .cs-logo { max-width: 180px; }
+  body.case-dark .cs-logo--compact { max-width: 108px; }
 }
 
 /* ── Work-details surface adjustments for abyss ──────────────── */
