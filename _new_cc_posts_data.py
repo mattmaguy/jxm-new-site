@@ -16,8 +16,8 @@ NEW_CC_POSTS = [
         "byline": "JXM",
         "category": "cheat-codes",
         "eyebrow": '<a href="../blog.html">Cheat Codes 0x01</a> · River City Ransom · NES · 1989',
-        "hero": "hero.gif", "hero_alt": "Cheat Codes — JXM",
-        "card_thumb": "../assets/imgs/blog/thoughts/details/brawlers-guide/hero.gif",
+        "hero": "../cheatcodes-hero.webm", "hero_alt": "Cheat Codes — JXM",
+        "card_thumb": "../assets/imgs/blog/thoughts/details/cheatcodes-hero.webm",
         "tags": ["Cheat Codes", "Strategy", "Competitive"],
         "payoff_title": "Want us to take a swing at maxed stats and lots of money for your business?",
         "payoff_body": [
@@ -51,8 +51,8 @@ P:: <strong>Password for maxed stats and lots of money:</strong> <em>Y6G8 QVVZ K
         "byline": "JXM",
         "category": "cheat-codes",
         "eyebrow": '<a href="../blog.html">Cheat Codes 0x02</a> · Tetris · c. 1984',
-        "hero": "hero.gif", "hero_alt": "Cheat Codes — JXM",
-        "card_thumb": "../assets/imgs/blog/thoughts/details/clear-the-lines/hero.gif",
+        "hero": "../cheatcodes-hero.webm", "hero_alt": "Cheat Codes — JXM",
+        "card_thumb": "../assets/imgs/blog/thoughts/details/cheatcodes-hero.webm",
         "tags": ["Cheat Codes", "Strategy", "Planning"],
         "payoff_title": "Start on level 10.",
         "payoff_body": [
@@ -82,8 +82,8 @@ P:: Like in Tetris, the key to marketing is preparation, adaptability, and preci
         "byline": "JXM",
         "category": "cheat-codes",
         "eyebrow": '<a href="../blog.html">Cheat Codes 0x03</a> · Mega Man 3 · NES · 1990',
-        "hero": "hero.gif", "hero_alt": "Cheat Codes — JXM",
-        "card_thumb": "../assets/imgs/blog/thoughts/details/no-power-ups/hero.gif",
+        "hero": "../cheatcodes-hero.webm", "hero_alt": "Cheat Codes — JXM",
+        "card_thumb": "../assets/imgs/blog/thoughts/details/cheatcodes-hero.webm",
         "tags": ["Cheat Codes", "Resourcefulness", "Iteration"],
         "payoff_title": "Ready to build your marketing arsenal?",
         "payoff_body": [
@@ -117,8 +117,8 @@ P:: <strong>Extra Lives:</strong> on the title screen, hold <strong>Up</strong> 
         "byline": "JXM",
         "category": "cheat-codes",
         "eyebrow": '<a href="../blog.html">Cheat Codes 0x04</a> · X-Men · Arcade · 1992',
-        "hero": "hero.gif", "hero_alt": "Cheat Codes — JXM",
-        "card_thumb": "../assets/imgs/blog/thoughts/details/mutant-power-of-teamwork/hero.gif",
+        "hero": "../cheatcodes-hero.webm", "hero_alt": "Cheat Codes — JXM",
+        "card_thumb": "../assets/imgs/blog/thoughts/details/cheatcodes-hero.webm",
         "tags": ["Cheat Codes", "Teamwork", "Targeting"],
         "payoff_title": "Victory is a team effort.",
         "payoff_body": [
