@@ -69,10 +69,39 @@
       color: rgba(34, 31, 50, 0.65) !important;
     }
 
-    /* Section header beneath the reel-hero — Redox layout wraps the
-       intro paragraph in a narrow left column (legacy two-col grid).
-       Pull the text-wrapper out to a comfortable reading measure and
-       align everything to the left edge. */
+    /* Section header beneath the reel-hero — Redox layout puts the
+       eyebrow + headline side-by-side in a 2-col grid and orphans the
+       intro paragraph in a narrow left column. Stack everything left-
+       aligned, with breathing room between the reel hero, the header,
+       the intro, and the works grid. */
+    body.portfolio-light .work-area-work-page .section-header {
+      padding: 4.5rem 0 2.75rem;
+    }
+    @media (max-width: 1023px) {
+      body.portfolio-light .work-area-work-page .section-header {
+        padding: 3rem 0 2rem;
+      }
+    }
+    body.portfolio-light .work-area-work-page .section-title-wrapper,
+    body.portfolio-light .work-area-work-page .subtitle-wrapper,
+    body.portfolio-light .work-area-work-page .title-wrapper {
+      display: block !important;
+      grid-template-columns: none !important;
+      flex-direction: column !important;
+      align-items: flex-start !important;
+      text-align: left !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      max-width: none !important;
+      width: auto !important;
+    }
+    body.portfolio-light .work-area-work-page .subtitle-wrapper {
+      margin-bottom: 1.25rem !important;
+    }
+    body.portfolio-light .work-area-work-page .section-title {
+      max-width: 32ch;
+      margin: 0 !important;
+    }
     body.portfolio-light .work-area-work-page .section-content-wrapper,
     body.portfolio-light .work-area-work-page .section-content,
     body.portfolio-light .work-area-work-page .text-wrapper {
@@ -84,12 +113,18 @@
       padding-left: 0 !important;
       max-width: none !important;
     }
+    body.portfolio-light .work-area-work-page .section-content-wrapper {
+      margin-top: 2rem !important;
+    }
     body.portfolio-light .work-area-work-page .text-wrapper .text {
       max-width: 44rem;
       font-size: 1.0625rem;
-      line-height: 1.55;
-      margin-left: 0 !important;
-      padding-left: 0 !important;
+      line-height: 1.6;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    body.portfolio-light .work-area-work-page .works-wrapper-box {
+      margin-top: 4rem;
     }
 
     /* ════════════════════════════════════════
