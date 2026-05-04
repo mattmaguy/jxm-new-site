@@ -190,8 +190,10 @@
 
     /* Headline: Inter Black Italic. The homepage 'growth' wordmark uses
        weight 700 but at clamp(7–22rem) — at the CTA's smaller scale that
-       reads thin, so we go heavier (900) for visual parity. */
-    .pf-cta-headline {
+       reads thin, so we go heavier (900) for visual parity. Selector is
+       raised to body.portfolio-light h2.pf-cta-headline to outrank the
+       jxm-brand.css 'body[class*=body-] h2 { font-weight: 500 }' rule. */
+    body.portfolio-light h2.pf-cta-headline {
       font-family: 'Inter', sans-serif;
       font-weight: 900;
       font-style: italic;
@@ -224,7 +226,7 @@
       outline-offset: 4px;
     }
     @media (max-width: 720px) {
-      .pf-cta-headline { font-size: clamp(2.5rem, 14vw, 5rem); max-width: none; }
+      body.portfolio-light h2.pf-cta-headline { font-size: clamp(2.5rem, 14vw, 5rem); max-width: none; }
     }
 
     /* ════════════════════════════════════════
