@@ -69,6 +69,29 @@
       color: rgba(34, 31, 50, 0.65) !important;
     }
 
+    /* Section header beneath the reel-hero — Redox layout wraps the
+       intro paragraph in a narrow left column (legacy two-col grid).
+       Pull the text-wrapper out to a comfortable reading measure and
+       align everything to the left edge. */
+    body.portfolio-light .work-area-work-page .section-content-wrapper,
+    body.portfolio-light .work-area-work-page .section-content,
+    body.portfolio-light .work-area-work-page .text-wrapper {
+      display: block !important;
+      text-align: left !important;
+      align-items: flex-start !important;
+      justify-items: start !important;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+      max-width: none !important;
+    }
+    body.portfolio-light .work-area-work-page .text-wrapper .text {
+      max-width: 44rem;
+      font-size: 1.0625rem;
+      line-height: 1.55;
+      margin-left: 0 !important;
+      padding-left: 0 !important;
+    }
+
     /* ════════════════════════════════════════
        REEL-HERO — replaces the "Client stories" page-title.
        "Work" + reel-pill + "Recent" at oversized scale, words bleed
@@ -443,7 +466,7 @@
                     <span class="section-subtitle">Client stories</span>
                   </div>
                   <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">Five stories. Real numbers. More on the way.</h2>
+                    <h2 class="section-title font-sequelsans-romanbody">Client Stories. Real Results.</h2>
                   </div>
                 </div>
               </div>
