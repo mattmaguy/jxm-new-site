@@ -216,6 +216,43 @@
       white-space: nowrap; border: 0;
     }
 
+    /* Investigate cursor — follows the pointer when hovering one of the
+       4 client-story work-boxes. SVG image is treated like the v4-cursor
+       chip (scale-spring on enter, fade-out on leave). */
+    .pf-investigate-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1100;
+      pointer-events: none;
+      width: clamp(96px, 11vw, 140px);
+      height: clamp(96px, 11vw, 140px);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      transition: opacity 160ms ease-out, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+      filter: drop-shadow(0 12px 28px rgba(34, 31, 50, 0.32));
+    }
+    .pf-investigate-cursor img {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .pf-investigate-cursor.is-visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Hide native cursor over the work-boxes so the investigate SVG
+       reads as the cursor itself. Mobile keeps the native pointer. */
+    @media (hover: hover) and (pointer: fine) {
+      body.portfolio-light .work-area-work-page .work-box,
+      body.portfolio-light .work-area-work-page .work-box * {
+        cursor: none;
+      }
+    }
+    @media (max-width: 720px) {
+      .pf-investigate-cursor { display: none; }
+    }
+
     /* Custom cursor following the pointer over the reel pill */
     .pf-cursor {
       position: fixed;
@@ -480,6 +517,11 @@
           Play Reel
         </div>
 
+        <!-- Investigate cursor — follows the pointer over the 4 work-boxes -->
+        <div class="pf-investigate-cursor" id="pfInvestigateCursor" aria-hidden="true">
+          <img src="assets/svgs/investigate.svg" alt="">
+        </div>
+
         <!-- Reel modal -->
         <div class="pf-modal" id="pfModal" role="dialog" aria-modal="true" aria-label="Creative reel video" hidden>
           <div class="pf-modal-backdrop" data-close></div>
@@ -519,7 +561,7 @@
                 <div class="works-wrapper-8">
                   <div class="work-box">
                     <div class="thumb">
-                      <div class="image scale" data-cursor-text="View Story" data-cursor-text-red>
+                      <div class="image scale">
                         <a href="client-stories-advia.html"><img src="assets/imgs/case-studies/advia.jpg" alt="Advia · Real People cover"></a>
                       </div>
                     </div>
@@ -534,7 +576,7 @@
                   </div>
                   <div class="work-box">
                     <div class="thumb">
-                      <div class="image scale" data-cursor-text="View Story" data-cursor-text-red>
+                      <div class="image scale">
                         <a href="client-stories-nwfcu.html"><img src="assets/imgs/case-studies/nwfcu.jpg" alt="Northwest Federal · Brand Bridge cover"></a>
                       </div>
                     </div>
@@ -549,7 +591,7 @@
                   </div>
                   <div class="work-box">
                     <div class="thumb">
-                      <div class="image scale" data-cursor-text="View Story" data-cursor-text-red>
+                      <div class="image scale">
                         <a href="client-stories-harvard.html"><img src="assets/imgs/case-studies/harvard.jpg" alt="Harvard FCU cover"></a>
                       </div>
                     </div>
@@ -564,7 +606,7 @@
                   </div>
                   <div class="work-box">
                     <div class="thumb">
-                      <div class="image scale" data-cursor-text="View Story" data-cursor-text-red>
+                      <div class="image scale">
                         <a href="client-stories-capcom.html"><img src="assets/imgs/case-studies/siena.jpg" alt="CAP COM · Siena Saints cover"></a>
                       </div>
                     </div>
@@ -717,6 +759,26 @@
         if (data.seconds >= LOOP_END) {
           player.setCurrentTime(0);
         }
+      });
+    })();
+
+    /* Investigate cursor — follow pointer when hovering any of the 4
+       work-boxes. Same show/hide/move pattern as the reel pill cursor. */
+    (function() {
+      var cursor = document.getElementById('pfInvestigateCursor');
+      var boxes  = document.querySelectorAll('.work-area-work-page .work-box');
+      if (!cursor || !boxes.length) return;
+
+      function show() { cursor.classList.add('is-visible'); }
+      function hide() { cursor.classList.remove('is-visible'); }
+      function move(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      }
+      Array.prototype.forEach.call(boxes, function(box) {
+        box.addEventListener('mouseenter', show);
+        box.addEventListener('mouseleave', hide);
+        box.addEventListener('mousemove', move);
       });
     })();
 
