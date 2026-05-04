@@ -1022,6 +1022,9 @@
       width: clamp(220px, 28vw, 360px);
       height: auto;
       display: block;
+      /* SVG ships with abyss fills; invert flips it to near-tusk so
+         it reads on the dark knit-tie photo. */
+      filter: invert(1) brightness(1.05);
     }
 
     /* Hero rows start hidden; reveal when body gets .is-loaded */
