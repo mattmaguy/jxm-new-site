@@ -75,11 +75,11 @@
        aligned, with breathing room between the reel hero, the header,
        the intro, and the works grid. */
     body.portfolio-light .work-area-work-page .section-header {
-      padding: 4.5rem 0 2.75rem;
+      padding: 4.5rem 0 0.75rem;
     }
     @media (max-width: 1023px) {
       body.portfolio-light .work-area-work-page .section-header {
-        padding: 3rem 0 2rem;
+        padding: 3rem 0 0.5rem;
       }
     }
     body.portfolio-light .work-area-work-page .section-title-wrapper,
@@ -114,7 +114,7 @@
       max-width: none !important;
     }
     body.portfolio-light .work-area-work-page .section-content-wrapper {
-      margin-top: 2rem !important;
+      margin-top: 0.5rem !important;
     }
     body.portfolio-light .work-area-work-page .text-wrapper .text {
       max-width: 44rem;
@@ -125,6 +125,26 @@
     }
     body.portfolio-light .work-area-work-page .works-wrapper-box {
       margin-top: 4rem;
+    }
+
+    /* Faint logoart pattern behind the 4 client-stories grid.
+       Mirrors the index.html .founders-section::before treatment, but
+       keeps the pattern dark on tusk (no invert) and slightly more
+       visible than the homepage's 0.04 since tusk has more luminance. */
+    body.portfolio-light .work-area-work-page {
+      position: relative;
+      isolation: isolate;
+    }
+    body.portfolio-light .work-area-work-page::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/imgs/v4/logoart.webp');
+      background-repeat: repeat;
+      background-size: 480px;
+      opacity: 0.05;
+      pointer-events: none;
+      z-index: -1;
     }
 
     /* ════════════════════════════════════════
