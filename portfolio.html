@@ -130,10 +130,13 @@
     /* Faint logoart pattern behind the 4 client-stories grid.
        Mirrors the index.html .founders-section::before treatment, but
        keeps the pattern dark on tusk (no invert) and slightly more
-       visible than the homepage's 0.04 since tusk has more luminance. */
+       visible than the homepage's 0.04 since tusk has more luminance.
+       Adds 4rem (~64px) padding-bottom so the pattern extends below
+       the last row of work cards. */
     body.portfolio-light .work-area-work-page {
       position: relative;
       isolation: isolate;
+      padding-bottom: 4rem;
     }
     body.portfolio-light .work-area-work-page::before {
       content: '';
@@ -258,13 +261,14 @@
     .pf-reel-hero {
       position: relative;
       background: var(--jxm-tusk);
-      padding: 9rem 0 4.5rem;
+      padding: 9rem 0;
       overflow: hidden;
       display: flex;
+      align-items: center;
       justify-content: center;
     }
     @media (max-width: 1023px) {
-      .pf-reel-hero { padding: 6.5rem 0 3.5rem; }
+      .pf-reel-hero { padding: 6.5rem 0; }
     }
 
     .pf-reel-hero-row {

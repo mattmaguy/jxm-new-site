@@ -76,6 +76,18 @@
   padding: 0.15rem 0;
 }
 
+/* Hover override — style.css global 'a:hover { color: var(--primary) }'
+   beats .v5-page-nav-link on specificity, pulling text to near-black
+   on hover and making it vanish against the abyss nav surface.
+   Force a lifted-abyss tone so the link still reads as 'hover state'
+   without disappearing. */
+.v5-page-nav .v5-page-nav-link:hover,
+.v5-page-nav .v5-page-nav-link:focus-visible,
+.v5-page-nav .v5-page-nav-link--cta:hover,
+.v5-page-nav .v5-page-nav-link--cta:focus-visible {
+  color: #807d92;
+}
+
 .v5-page-nav-link-num {
   font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
   font-size: 0.65rem;
