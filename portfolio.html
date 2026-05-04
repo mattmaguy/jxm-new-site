@@ -42,14 +42,6 @@
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
     }
-    body.portfolio-light .page-title { color: var(--jxm-abyss) !important; }
-
-    /* Push the giant page-title down so it doesn't slide under the V5 nav */
-    body.portfolio-light .page-title-area-inner { padding-top: 8rem; }
-    @media (max-width: 1023px) {
-      body.portfolio-light .page-title-area-inner { padding-top: 5rem; }
-    }
-
     /* Lock typography colors — kill any dark-mode gradient text */
     body.portfolio-light .section-title,
     body.portfolio-light .section-subtitle,
@@ -75,6 +67,200 @@
     body.portfolio-light .work-box .meta .tag,
     body.portfolio-light .work-box .meta .date {
       color: rgba(34, 31, 50, 0.65) !important;
+    }
+
+    /* ════════════════════════════════════════
+       REEL-HERO — replaces the "Client stories" page-title.
+       "Work" + reel-pill + "Recent" at oversized scale, words bleed
+       past the viewport. Reel autoplays muted/loop in the pill;
+       click = full reel modal. Cursor follows like the homepage stage.
+    ════════════════════════════════════════ */
+    .pf-reel-hero {
+      position: relative;
+      background: var(--jxm-tusk);
+      padding: 9rem 0 4.5rem;
+      overflow: hidden;
+    }
+    @media (max-width: 1023px) {
+      .pf-reel-hero { padding: 6.5rem 0 3.5rem; }
+    }
+
+    .pf-reel-hero-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(1.25rem, 2.5vw, 2.75rem);
+      width: max-content;
+      margin: 0 auto;
+      white-space: nowrap;
+      padding: 0 clamp(1rem, 4vw, 4rem);
+    }
+
+    .pf-reel-hero-word {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(5rem, 17vw, 13rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      color: var(--jxm-abyss);
+    }
+
+    .pf-reel-hero-stage {
+      position: relative;
+      flex-shrink: 0;
+      width: clamp(180px, 22vw, 320px);
+      aspect-ratio: 16 / 10;
+      border-radius: 999px;
+      overflow: hidden;
+      background: var(--jxm-abyss);
+      cursor: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      padding: 0;
+    }
+    .pf-reel-hero-stage iframe {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      border: 0;
+      transform: scale(1.35);
+      transform-origin: center;
+      pointer-events: none;
+    }
+    .pf-reel-hero-label {
+      position: relative;
+      z-index: 1;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--jxm-tusk);
+      padding: 0.45rem 1rem;
+      background: rgba(34, 31, 50, 0.55);
+      border-radius: 999px;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+    .pf-reel-hero-stage:focus-visible {
+      outline: 2px solid var(--jxm-abyss);
+      outline-offset: 4px;
+    }
+
+    /* SR-only h1 for the page title (replaces the visual giant) */
+    .pf-reel-hero-srtitle {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0);
+      white-space: nowrap; border: 0;
+    }
+
+    /* Custom cursor following the pointer over the reel pill */
+    .pf-cursor {
+      position: fixed;
+      top: 0; left: 0;
+      z-index: 1100;
+      pointer-events: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 28px rgba(34, 31, 50, 0.35);
+      opacity: 0;
+      transform: translate(-50%, -50%) scale(0.7);
+      transition: opacity 160ms ease-out, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    .pf-cursor.is-visible {
+      opacity: 1;
+      transform: translate(-50%, -50%) scale(1);
+    }
+
+    /* Reel modal — same shape as v4-modal */
+    .pf-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.5rem;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 240ms ease-out;
+    }
+    .pf-modal.is-open { opacity: 1; pointer-events: auto; }
+    .pf-modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(34, 31, 50, 0.92);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+    }
+    .pf-modal-panel {
+      position: relative;
+      width: 100%;
+      max-width: 64rem;
+      aspect-ratio: 16 / 9;
+      transform: scale(0.96);
+      transition: transform 320ms ease-out;
+    }
+    .pf-modal.is-open .pf-modal-panel { transform: scale(1); }
+    .pf-modal-video {
+      width: 100%;
+      height: 100%;
+      background: var(--jxm-abyss);
+      border-radius: 0.5rem;
+      overflow: hidden;
+      box-shadow: 0 32px 80px rgba(0,0,0,0.55);
+    }
+    .pf-modal-video iframe { width: 100%; height: 100%; border: 0; }
+    .pf-modal-close {
+      position: absolute;
+      top: -3rem;
+      right: 0;
+      width: 2.5rem;
+      height: 2.5rem;
+      border-radius: 999px;
+      background: rgba(243, 241, 236, 0.12);
+      border: 1px solid rgba(243, 241, 236, 0.22);
+      color: var(--jxm-tusk);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 160ms ease-out;
+    }
+    .pf-modal-close:hover { background: rgba(243, 241, 236, 0.2); }
+
+    /* Mobile: stack vertically, restore native cursor */
+    @media (max-width: 720px) {
+      .pf-reel-hero { padding: 5.5rem 1.25rem 3rem; }
+      .pf-reel-hero-row {
+        flex-direction: column;
+        gap: 1.25rem;
+        width: auto;
+        white-space: normal;
+        text-align: center;
+      }
+      .pf-reel-hero-word { font-size: clamp(3.5rem, 14vw, 6rem); }
+      .pf-reel-hero-stage {
+        width: min(72vw, 280px);
+        cursor: pointer;
+      }
+      .pf-cursor { display: none; }
+      .pf-modal-close { top: -2.5rem; }
     }
   </style>
 
@@ -205,17 +391,42 @@
 
       <main>
 
-        <!-- page title area start  -->
-        <section class="page-title-area">
-          <div class="container large">
-            <div class="page-title-area-inner section-spacing-top">
-              <div class="page-title-wrapper">
-                <h2 class="page-title fade-anim">Client stories</h2>
-              </div>
-            </div>
+        <!-- reel-hero — replaces the legacy "Client stories" page-title -->
+        <section class="pf-reel-hero" aria-label="Recent work, featuring our reel">
+          <h1 class="pf-reel-hero-srtitle">Recent Work</h1>
+          <div class="pf-reel-hero-row" aria-hidden="true">
+            <span class="pf-reel-hero-word">Work</span>
+            <button class="pf-reel-hero-stage" id="pfReelStage" type="button" aria-label="Play creative reel">
+              <iframe
+                src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
+                frameborder="0"
+                allow="autoplay; fullscreen; picture-in-picture"
+                loading="eager"
+                title="JXM Creative Reel — silent background loop"
+              ></iframe>
+              <span class="pf-reel-hero-label">Reel</span>
+            </button>
+            <span class="pf-reel-hero-word">Recent</span>
           </div>
         </section>
-        <!-- page title area end  -->
+        <!-- /reel-hero -->
+
+        <!-- Custom cursor following the pointer over the reel pill -->
+        <div class="pf-cursor" id="pfCursor" aria-hidden="true">
+          <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+          Play Reel
+        </div>
+
+        <!-- Reel modal -->
+        <div class="pf-modal" id="pfModal" role="dialog" aria-modal="true" aria-label="Creative reel video" hidden>
+          <div class="pf-modal-backdrop" data-close></div>
+          <div class="pf-modal-panel">
+            <button class="pf-modal-close" type="button" data-close aria-label="Close video">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
+            <div class="pf-modal-video" id="pfModalVideo"></div>
+          </div>
+        </div>
 
         <!-- work area start  -->
         <section class="work-area-work-page">
@@ -390,6 +601,58 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <!-- Reel-hero: cursor-follow + click-to-modal (mirrors index.html v4Stage pattern) -->
+  <script>
+    (function() {
+      var stage    = document.getElementById('pfReelStage');
+      var cursor   = document.getElementById('pfCursor');
+      var modal    = document.getElementById('pfModal');
+      var modalVid = document.getElementById('pfModalVideo');
+      if (!stage || !cursor || !modal || !modalVid) return;
+
+      function showCursor() { cursor.classList.add('is-visible'); }
+      function hideCursor() { cursor.classList.remove('is-visible'); }
+      function moveCursor(e) {
+        cursor.style.left = e.clientX + 'px';
+        cursor.style.top  = e.clientY + 'px';
+      }
+      stage.addEventListener('mouseenter', showCursor);
+      stage.addEventListener('mouseleave', hideCursor);
+      stage.addEventListener('mousemove', moveCursor);
+      stage.addEventListener('click', openModal);
+      stage.addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          openModal();
+        }
+      });
+
+      function openModal() {
+        modalVid.innerHTML = '<iframe src="https://player.vimeo.com/video/1183815657?autoplay=1&dnt=1&app_id=58479" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>';
+        modal.hidden = false;
+        requestAnimationFrame(function() { modal.classList.add('is-open'); });
+        document.documentElement.style.overflow = 'hidden';
+        hideCursor();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        setTimeout(function() {
+          modal.hidden = true;
+          modalVid.innerHTML = '';
+          document.documentElement.style.overflow = '';
+        }, 240);
+      }
+
+      modal.addEventListener('click', function(e) {
+        if (e.target.dataset.close !== undefined) closeModal();
+      });
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+      });
+    })();
+  </script>
 
 </body>
 
