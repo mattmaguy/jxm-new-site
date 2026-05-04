@@ -815,23 +815,6 @@
       transform: translateY(0);
       transition: opacity 240ms ease-out, transform 240ms ease-out, visibility 0s linear 0s;
     }
-    .progress-wrap .progress-circle {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      transform: rotate(-90deg);
-      pointer-events: none;
-    }
-    .progress-wrap .progress-circle path {
-      fill: none;
-      stroke: var(--jxm-kermit);
-      stroke-width: 4;
-      stroke-linecap: round;
-      stroke-dasharray: 307.92;
-      stroke-dashoffset: 307.92;
-      transition: stroke-dashoffset 80ms linear;
-    }
     .progress-wrap::after {
       content: '↑';
       font-family: 'Inter', -apple-system, sans-serif;
@@ -954,11 +937,7 @@
 <body class="dark">
 
   <!-- Scroll-to-top button -->
-  <button class="progress-wrap" type="button" aria-label="Scroll to top">
-    <svg class="progress-circle" viewBox="-1 -1 102 102" aria-hidden="true">
-      <path d="M50,1 a49,49 0 0,1 0,98 a49,49 0 0,1 0,-98"></path>
-    </svg>
-  </button>
+  <button class="progress-wrap" type="button" aria-label="Scroll to top"></button>
 
   <!-- Google Tag Manager (noscript) -->
   <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHZDNSZW"
