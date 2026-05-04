@@ -77,13 +77,24 @@
 }
 
 /* Hover override — style.css global 'a:hover { color: var(--primary) }'
-   was pulling text to near-black on hover. Keep the link tusk on
-   hover; the hand-drawn strikethrough is the hover signal. */
+   plus various per-page 'body.<slug>-light { color: var(--jxm-abyss)
+   !important }' rules conspire to pull this nav's hover text dark.
+   Force tusk with !important so no per-page locked-light rule can
+   bleed through. The hand-drawn strikethrough is the hover signal. */
 .v5-page-nav .v5-page-nav-link:hover,
 .v5-page-nav .v5-page-nav-link:focus-visible,
 .v5-page-nav .v5-page-nav-link--cta:hover,
 .v5-page-nav .v5-page-nav-link--cta:focus-visible {
-  color: var(--jxm-tusk);
+  color: var(--jxm-tusk) !important;
+}
+/* Keep the inner text span tusk too — its parent <a> color is what
+   normally cascades down, but if any rule targets the span directly
+   we force it to follow the link. */
+.v5-page-nav .v5-page-nav-link:hover .v5-page-nav-link-text,
+.v5-page-nav .v5-page-nav-link:focus-visible .v5-page-nav-link-text,
+.v5-page-nav .v5-page-nav-link--cta:hover .v5-page-nav-link-text,
+.v5-page-nav .v5-page-nav-link--cta:focus-visible .v5-page-nav-link-text {
+  color: var(--jxm-tusk) !important;
 }
 
 .v5-page-nav-link-num {
