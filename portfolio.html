@@ -261,14 +261,16 @@
     .pf-reel-hero {
       position: relative;
       background: var(--jxm-tusk);
-      padding: 9rem 0;
+      /* padding-top = nav clearance (~7rem) + visible top space (2rem)
+         padding-bottom = visible bottom space (2rem)
+         → equal visible padding above and below the 'Recent Work' row. */
+      padding: 9rem 0 2rem;
       overflow: hidden;
       display: flex;
-      align-items: center;
       justify-content: center;
     }
     @media (max-width: 1023px) {
-      .pf-reel-hero { padding: 6.5rem 0; }
+      .pf-reel-hero { padding: 6.5rem 0 1.5rem; }
     }
 
     .pf-reel-hero-row {
