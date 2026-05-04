@@ -95,8 +95,12 @@ body.case-dark .work-details-area-inner {
 .case-nav-link--next:hover .arrow { transform: translateX(4px); }
 .case-nav-link .arrow svg { width: 100%; height: 100%; display: block; }
 
-/* ── Client logo (replaces .title-thumb cover image) ─────────────
-   Inline SVG element with currentColor fills — picks up tusk via `color`. */
+/* ── Client logo (replaces .title-thumb cover image) ────────────
+   Three variants used across case studies:
+   • Inline <svg> with currentColor fills (advia) — picks up tusk via `color`
+   • <img> + .cs-logo--inverted (harvard, nwfcu) — invert the dark-fill SVG
+   • <span> + .cs-logo--text (capcom) — typeset wordmark fallback when no SVG
+*/
 body.case-dark .cs-logo {
   width: 100%;
   max-width: 240px;
@@ -104,6 +108,21 @@ body.case-dark .cs-logo {
   color: var(--jxm-tusk);
   display: block;
   margin-top: 0.75rem;
+}
+body.case-dark .cs-logo--inverted {
+  /* squarespace-cdn SVGs ship as #202020 (dark gray) — invert flips them
+     close to tusk; the slight color drift is acceptable for a logo mark. */
+  filter: invert(1) brightness(1.05);
+}
+body.case-dark .cs-logo--text {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: clamp(1.75rem, 3.6vw, 2.5rem);
+  line-height: 1;
+  letter-spacing: 0.04em;
+  color: var(--jxm-tusk);
+  max-width: none;
+  width: auto;
 }
 @media (max-width: 767px) {
   body.case-dark .cs-logo { max-width: 180px; }
