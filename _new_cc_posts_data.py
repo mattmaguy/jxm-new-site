@@ -321,8 +321,8 @@ IMG:: inline-2-wrestler.png|Wrestler|
         "byline": "JXM",
         "category": "cheat-codes",
         "eyebrow": '<a href="../blog.html">Cheat Codes 0x10</a> · Metroid · NES · 1986',
-        "hero": "hero.gif", "hero_alt": "Metroid — Password please",
-        "card_thumb": "../assets/imgs/blog/thoughts/details/destroy-mother-brain/hero.gif",
+        "hero": "hero.webm", "hero_alt": "Metroid — Password please",
+        "card_thumb": "../assets/imgs/blog/thoughts/details/destroy-mother-brain/hero.webm",
         "tags": ["Cheat Codes", "New Markets", "AI"],
         "payoff_title": "Ready to launch with infinite firepower?",
         "payoff_body": [
