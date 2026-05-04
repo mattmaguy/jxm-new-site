@@ -25,7 +25,6 @@ LIVE_PAGES = [
     'services.html',
     'service-details.html',
     'portfolio.html',
-    'portfolio-details.html',
     'client-stories-advia.html',
     'client-stories-nwfcu.html',
     'client-stories-harvard.html',
