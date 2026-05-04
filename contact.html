@@ -30,6 +30,7 @@
   <link rel="stylesheet" href="assets/css/jxm-brand.css?v=1.0">
   <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
   <link rel="stylesheet" href="assets/css/v5-footer.css">
+  <link rel="stylesheet" href="assets/css/v5-marquee-hero.css">
 
   <!-- Contact page locks dark theme + abyss surface (per JXM design system) -->
   <style>
@@ -68,13 +69,11 @@
     .contact-abyss .footer-area-4 .copyright-area {
       border-top-color: rgba(243,241,236,0.10);
     }
-    /* Push the giant page-title down so it doesn't slide up under
-       the V5 fixed nav (~110px tall when stacked across 3 columns). */
-    .contact-abyss .page-title-area-inner {
-      padding-top: 8rem;
-    }
-    @media (max-width: 1023px) {
-      .contact-abyss .page-title-area-inner { padding-top: 5rem; }
+    /* Marquee hero on dark surface — frame bg should NOT match abyss
+       (so the placeholder reads as a distinct shape until an image
+       loads). Use a slightly lifted abyss tone. */
+    .contact-abyss .mq-hero-frame {
+      background: rgba(243, 241, 236, 0.08);
     }
   </style>
 
@@ -208,15 +207,22 @@
       <main>
 
         <!-- page title area start  -->
-        <section class="page-title-area">
-          <div class="container large">
-            <div class="page-title-area-inner section-spacing-top">
-              <div class="page-title-wrapper">
-                <h2 class="page-title fade-anim">Reach Out</h2>
-              </div>
+        <!-- marquee hero -->
+        <section class="mq-hero" aria-label="Reach out to JXM">
+          <h1 class="mq-hero-srtitle">Reach Out</h1>
+          <div class="mq-hero-row" aria-hidden="true">
+            <div class="mq-hero-tile" data-mq-tile-left>
+              <span class="mq-hero-word">Reach&nbsp;Out</span>
+            </div>
+            <span class="mq-hero-frame">
+              <img src="assets/imgs/gallery/image-19.webp" alt="">
+            </span>
+            <div class="mq-hero-tile" data-mq-tile-right>
+              <span class="mq-hero-word">Reach&nbsp;Out</span>
             </div>
           </div>
         </section>
+        <!-- /marquee hero -->
         <!-- page title area end  -->
 
         <!-- contact area start  -->
@@ -342,6 +348,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <script src="assets/js/v5-marquee-hero.js" defer></script>
 
 </body>
 

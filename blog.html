@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
   <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
   <link rel="stylesheet" href="assets/css/v5-footer.css">
+  <link rel="stylesheet" href="assets/css/v5-marquee-hero.css">
 
   <style>
     /* ════════════════════════════════════════
@@ -41,13 +42,6 @@
     body.blog-light main {
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
-    }
-    body.blog-light .page-title { color: var(--jxm-abyss) !important; }
-
-    /* Push the page-title down so it doesn't slide under the V5 nav */
-    body.blog-light .page-title-area-inner { padding-top: 8rem; }
-    @media (max-width: 1023px) {
-      body.blog-light .page-title-area-inner { padding-top: 5rem; }
     }
 
     /* Section header copy — abyss on tusk */
@@ -675,15 +669,22 @@
       <main>
 
         <!-- page title area start  -->
-        <section class="page-title-area">
-          <div class="container large">
-            <div class="page-title-area-inner section-spacing-top">
-              <div class="page-title-wrapper">
-                <h2 class="page-title fade-anim">Ideas</h2>
-              </div>
+        <!-- marquee hero -->
+        <section class="mq-hero" aria-label="Rants and fresh ideas, the JXM blog">
+          <h1 class="mq-hero-srtitle">Rants + Fresh Ideas</h1>
+          <div class="mq-hero-row" aria-hidden="true">
+            <div class="mq-hero-tile" data-mq-tile-left>
+              <span class="mq-hero-word">Rants&nbsp;+&nbsp;Fresh&nbsp;Ideas</span>
+            </div>
+            <span class="mq-hero-frame">
+              <img src="assets/imgs/gallery/image-19.webp" alt="">
+            </span>
+            <div class="mq-hero-tile" data-mq-tile-right>
+              <span class="mq-hero-word">Rants&nbsp;+&nbsp;Fresh&nbsp;Ideas</span>
             </div>
           </div>
         </section>
+        <!-- /marquee hero -->
         <!-- page title area end  -->
 
         <!-- blog area start  -->
@@ -1024,6 +1025,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <script src="assets/js/v5-marquee-hero.js" defer></script>
 
   <!-- Carousel — arrow scroll + edge-aware disable. Generic for any [data-carousel]. -->
   <script>

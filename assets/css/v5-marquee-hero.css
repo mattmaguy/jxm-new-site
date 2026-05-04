@@ -1,0 +1,113 @@
+/* ════════════════════════════════════════
+   V5 MARQUEE HERO
+   Editorial hero for inner pages — oversized words bookending a small
+   16:9 image placeholder, with the "WORD WORD" pair tiled horizontally
+   so the marquee bleeds past both viewport edges no matter how wide
+   the window goes.
+
+   Mirrors the portfolio.html .pf-reel-hero pattern but generic and
+   image-based (no Vimeo iframe / cursor / modal).
+
+   Usage:
+     <section class="mq-hero" aria-label="...">
+       <h1 class="mq-hero-srtitle">…</h1>
+       <div class="mq-hero-row" aria-hidden="true">
+         <div class="mq-hero-tile" data-mq-tile-left>
+           <span class="mq-hero-word">Word</span>
+           <span class="mq-hero-word">Word</span>
+         </div>
+         <span class="mq-hero-frame">
+           <img src="…" alt="">
+         </span>
+         <div class="mq-hero-tile" data-mq-tile-right>
+           <span class="mq-hero-word">Word</span>
+           <span class="mq-hero-word">Word</span>
+         </div>
+       </div>
+     </section>
+
+   Pairs with assets/js/v5-marquee-hero.js for the tile-cloning logic.
+   Color uses currentColor / inherit so it follows the body palette
+   on each page (abyss text on tusk pages, tusk text on abyss pages).
+════════════════════════════════════════ */
+
+.mq-hero {
+  position: relative;
+  /* padding-top = nav clearance (~7rem) + visible top space (2rem)
+     padding-bottom = visible bottom space (2rem)
+     → equal visible padding above and below the row. */
+  padding: 9rem 0 2rem;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+@media (max-width: 1023px) {
+  .mq-hero { padding: 6.5rem 0 1.5rem; }
+}
+
+.mq-hero-row {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  width: max-content;
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+/* Tiles flanking the image — JS clones enough <span> pairs at runtime
+   to overflow the viewport in both directions. */
+.mq-hero-tile {
+  display: flex;
+  align-items: center;
+  gap: clamp(1.25rem, 2.5vw, 2.75rem);
+  flex-shrink: 0;
+}
+
+.mq-hero-word {
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: clamp(5rem, 17vw, 13rem);
+  line-height: 0.92;
+  letter-spacing: -0.045em;
+  color: inherit;
+}
+
+/* 16:9 image placeholder — height bound to the cap-height of the
+   surrounding words (Inter cap-height ≈ 0.72em). Border radius
+   matches the portfolio reel. */
+.mq-hero-frame {
+  position: relative;
+  flex-shrink: 0;
+  font-size: clamp(5rem, 17vw, 13rem);
+  height: 0.72em;
+  width: auto;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.85rem;
+  overflow: hidden;
+  background: var(--jxm-abyss);
+  display: block;
+}
+.mq-hero-frame img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* SR-only h1 — replaces the visible giant page-title for screen readers */
+.mq-hero-srtitle {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0);
+  white-space: nowrap; border: 0;
+}
+
+/* Mobile: same horizontal overflow, smaller words. */
+@media (max-width: 720px) {
+  .mq-hero { padding: 5.5rem 0 1.25rem; }
+  .mq-hero-word { font-size: clamp(3.5rem, 18vw, 6rem); }
+  .mq-hero-frame { font-size: clamp(3.5rem, 18vw, 6rem); }
+}

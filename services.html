@@ -31,6 +31,7 @@
   <link rel="stylesheet" href="assets/css/dark-mode.css?v=1.0">
   <link rel="stylesheet" href="assets/css/v5-nav-stacked.css">
   <link rel="stylesheet" href="assets/css/v5-footer.css">
+  <link rel="stylesheet" href="assets/css/v5-marquee-hero.css">
 
   <style>
     /* ════════════════════════════════════════
@@ -41,14 +42,6 @@
     body.services-light main {
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
-    }
-    body.services-light .page-title { color: var(--jxm-abyss) !important; }
-
-    /* Push the giant page-title down so it doesn't slide up under
-       the V5 fixed nav (~110px tall when stacked across 3 columns). */
-    body.services-light .page-title-area-inner { padding-top: 8rem; }
-    @media (max-width: 1023px) {
-      body.services-light .page-title-area-inner { padding-top: 5rem; }
     }
 
     /* ── V5-style services list ── */
@@ -340,15 +333,22 @@
       <main>
 
         <!-- page title area start  -->
-        <section class="page-title-area">
-          <div class="container large">
-            <div class="page-title-area-inner section-spacing-top">
-              <div class="page-title-wrapper">
-                <h2 class="page-title fade-anim">Services</h2>
-              </div>
+        <!-- marquee hero -->
+        <section class="mq-hero" aria-label="What we do at JXM">
+          <h1 class="mq-hero-srtitle">What We Do</h1>
+          <div class="mq-hero-row" aria-hidden="true">
+            <div class="mq-hero-tile" data-mq-tile-left>
+              <span class="mq-hero-word">What&nbsp;We&nbsp;Do</span>
+            </div>
+            <span class="mq-hero-frame">
+              <img src="assets/imgs/gallery/image-19.webp" alt="">
+            </span>
+            <div class="mq-hero-tile" data-mq-tile-right>
+              <span class="mq-hero-word">What&nbsp;We&nbsp;Do</span>
             </div>
           </div>
         </section>
+        <!-- /marquee hero -->
         <!-- page title area end  -->
 
         <!-- service list — V5-style numbered rows with abyss arrow circles -->
@@ -548,6 +548,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js?v=1.0"></script>
+
+  <script src="assets/js/v5-marquee-hero.js" defer></script>
 
 </body>
 
