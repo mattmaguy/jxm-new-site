@@ -117,9 +117,14 @@
     .pf-reel-hero-stage {
       position: relative;
       flex-shrink: 0;
-      width: clamp(220px, 26vw, 380px);
+      /* Bind stage height to the cap-height of the surrounding "Recent Work"
+         words. Inter's cap-height ≈ 0.72em, so 0.72em on a stage that
+         shares the words' font-size matches the visual height of R / W. */
+      font-size: clamp(5rem, 17vw, 13rem);
+      height: 0.72em;
+      width: auto;
       aspect-ratio: 16 / 10;
-      border-radius: 1.25rem;
+      border-radius: 0.85rem;
       overflow: hidden;
       background: var(--jxm-abyss);
       cursor: none;
@@ -244,8 +249,10 @@
     @media (max-width: 720px) {
       .pf-reel-hero { padding: 5.5rem 0 3rem; }
       .pf-reel-hero-word { font-size: clamp(3.5rem, 18vw, 6rem); }
+      /* Stage shares the mobile word size so the cap-height match scales
+         down too. Width still auto-derives from aspect-ratio. */
       .pf-reel-hero-stage {
-        width: min(60vw, 260px);
+        font-size: clamp(3.5rem, 18vw, 6rem);
         cursor: pointer;
       }
       .pf-cursor { display: none; }
