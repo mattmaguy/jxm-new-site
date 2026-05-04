@@ -128,6 +128,85 @@
     }
 
     /* ════════════════════════════════════════
+       PF-CTA — editorial CTA below the work grid.
+       Mono kicker on the left ('Book a Consult →'), giant nemo
+       headline on the right ('This could be us...'). Mirrors the
+       reference 'OUR SERVICES — WE'RE A CREATIVE DIGITAL STUDIO.'
+    ════════════════════════════════════════ */
+    .pf-cta {
+      background: var(--jxm-tusk);
+      padding: 9rem 0 9rem;
+      overflow: hidden;
+    }
+    @media (max-width: 1023px) { .pf-cta { padding: 5.5rem 0 6rem; } }
+
+    .pf-cta-inner {
+      display: grid;
+      grid-template-columns: minmax(120px, 160px) 1fr;
+      gap: 1.5rem 3rem;
+      align-items: start;
+    }
+    @media (max-width: 720px) {
+      .pf-cta-inner { grid-template-columns: 1fr; gap: 2rem; }
+    }
+
+    /* Kicker link: 2-line label + thin rule + arrow.
+       Top-aligned with the cap of the giant headline. */
+    .pf-cta-kicker {
+      display: inline-grid;
+      grid-template-columns: auto auto auto;
+      align-items: center;
+      gap: 0.85rem;
+      padding-top: 0.85rem;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      line-height: 1.25;
+      text-transform: uppercase;
+      color: var(--jxm-abyss);
+      text-decoration: none;
+      width: fit-content;
+    }
+    .pf-cta-kicker-text { white-space: nowrap; }
+    .pf-cta-kicker-rule {
+      display: block;
+      width: 2.5rem;
+      height: 1px;
+      background: currentColor;
+      transition: width 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pf-cta-kicker-arrow {
+      display: block;
+      transform: translateX(0);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pf-cta-kicker:hover .pf-cta-kicker-rule { width: 3.5rem; }
+    .pf-cta-kicker:hover .pf-cta-kicker-arrow { transform: translateX(4px); }
+    .pf-cta-kicker:focus-visible {
+      outline: 2px solid var(--jxm-abyss);
+      outline-offset: 4px;
+    }
+
+    /* Headline: heavy Inter, oversized, tight tracking, nemo red. */
+    .pf-cta-headline {
+      font-family: 'Inter', sans-serif;
+      font-weight: 900;
+      font-size: clamp(3.25rem, 11vw, 9.5rem);
+      line-height: 0.92;
+      letter-spacing: -0.045em;
+      color: var(--jxm-nemo) !important;
+      -webkit-text-fill-color: var(--jxm-nemo) !important;
+      background: none !important;
+      margin: 0;
+      text-transform: none;
+      max-width: 16ch;
+    }
+    @media (max-width: 720px) {
+      .pf-cta-headline { font-size: clamp(2.5rem, 14vw, 5rem); max-width: none; }
+    }
+
+    /* ════════════════════════════════════════
        REEL-HERO — replaces the "Client stories" page-title.
        "Work" + reel-pill + "Recent" at oversized scale, words bleed
        past the viewport. Reel autoplays muted/loop in the pill;
@@ -603,32 +682,23 @@
           </div>
         </section>
 
-        <!-- cta area start  -->
-        <section class="cta-area-team-page">
+        <!-- cta area — editorial: mono kicker + giant nemo headline -->
+        <section class="pf-cta fade-anim">
           <div class="container large">
-            <div class="cta-area-team-page-inner section-spacing-top">
-              <div class="section-content fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">Want to be the next story?</h2>
-                  </div>
-                </div>
-                <div class="text-wrapper">
-                  <p class="text">The clients on this page didn't come to us with the campaigns we ended up running. They came with a problem. The first call solved most of it.</p>
-                </div>
-                <div class="btn-wrapper">
-                  <a href="contact.html" class="rr-btn">
-                    <span class="btn-wrap">
-                      <span class="text-one">Start the conversation</span>
-                      <span class="text-two">Start the conversation</span>
-                    </span>
-                  </a>
-                </div>
-              </div>
+            <div class="pf-cta-inner">
+              <a href="contact.html" class="pf-cta-kicker" aria-label="Book a Consult">
+                <span class="pf-cta-kicker-text">Book a<br>Consult</span>
+                <span class="pf-cta-kicker-rule" aria-hidden="true"></span>
+                <svg class="pf-cta-kicker-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"/>
+                  <polyline points="13 6 19 12 13 18"/>
+                </svg>
+              </a>
+              <h2 class="pf-cta-headline">This could be us. Let&#39;s start something fresh.</h2>
             </div>
           </div>
         </section>
-        <!-- cta area end  -->
+        <!-- /cta area -->
         <!-- work area end  -->
 
       </main>
