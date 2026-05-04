@@ -965,27 +965,27 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  <!-- ═══════ INTRO OVERLAY — white → kermit → fly → nemo → tusk wash → hero staggers in ═══════ -->
+  <!-- ═══════ INTRO OVERLAY — knit-tie photo + JXM logo, then tusk wash covers ═══════ -->
   <div class="v4-intro" id="v4Intro" aria-hidden="true">
-    <div class="v4-intro-wash v4-intro-wash--kermit"></div>
-    <div class="v4-intro-wash v4-intro-wash--fly"></div>
-    <div class="v4-intro-wash v4-intro-wash--nemo"></div>
     <div class="v4-intro-wash v4-intro-wash--tusk"></div>
     <div class="v4-intro-logo">
-      <img src="assets/svgs/globo.svg" alt="JXM" width="560" height="204">
+      <img src="assets/svgs/jxm-no-border.svg" alt="JXM" width="560" height="204">
     </div>
   </div>
 
   <style>
     /* ════════════════════════════════════════
-       INTRO — white screen → cream wash → hero reveal
-       Orchestrated via body classes set in JS below.
+       INTRO — knit-tie photo with JXM logo overlaid → tusk wash covers
+       → hero reveals. Orchestrated via body classes set in JS below.
     ════════════════════════════════════════ */
     .v4-intro {
       position: fixed;
       inset: 0;
       z-index: 10000;
-      background: #ffffff;
+      background-color: var(--jxm-abyss);
+      background-image: url('assets/imgs/hero/close-up-knit-tie.jpg');
+      background-size: cover;
+      background-position: center;
       overflow: hidden;
       pointer-events: none;
       opacity: 1;
@@ -1004,13 +1004,7 @@
       transition: transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
       will-change: transform;
     }
-    .v4-intro-wash--kermit { background: var(--jxm-kermit); z-index: 1; }
-    .v4-intro-wash--fly    { background: var(--jxm-fly);    z-index: 2; }
-    .v4-intro-wash--nemo   { background: var(--jxm-nemo);   z-index: 3; }
     .v4-intro-wash--tusk   { background: var(--jxm-tusk);   z-index: 4; }
-    body.is-wash-kermit .v4-intro-wash--kermit { transform: translateY(0); }
-    body.is-wash-fly    .v4-intro-wash--fly    { transform: translateY(0); }
-    body.is-wash-nemo   .v4-intro-wash--nemo   { transform: translateY(0); }
     body.is-wash-tusk   .v4-intro-wash--tusk   { transform: translateY(0); }
 
     .v4-intro-logo {
@@ -1072,14 +1066,12 @@
   </style>
 
   <script>
-    /* ── Intro orchestration — runs immediately so body classes apply before render ── */
+    /* ── Intro orchestration — runs immediately so body classes apply before render.
+       Image + logo dwell briefly, then tusk wash slides up to cover, logo fades,
+       intro overlay fades to reveal the hero. ── */
     (function () {
       const body = document.body;
-      // Layered wash: kermit → fly → nemo → tusk, finishing on the brand cream
       requestAnimationFrame(() => {
-        setTimeout(() => body.classList.add('is-wash-kermit'), 180);
-        setTimeout(() => body.classList.add('is-wash-fly'),    380);
-        setTimeout(() => body.classList.add('is-wash-nemo'),   580);
         setTimeout(() => body.classList.add('is-wash-tusk'),   780);
         setTimeout(() => body.classList.add('is-logo-out'),    1620);
         setTimeout(() => {
