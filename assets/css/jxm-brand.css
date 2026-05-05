@@ -733,3 +733,23 @@ body.service-details-dark .section-subtitle {
   border-radius: 0 !important;
   display: inline-block !important;
 }
+
+/* ════════════ SCROLL-TO-TOP — kill legacy blend-mode on V5 pages ═══════
+   style.css:2134 sets `mix-blend-mode: exclusion` on .progress-wrap.
+   active-progress, which makes the button see-through against body
+   copy on light surfaces (text appears to bleed through the dark fill).
+   Force a solid abyss button on every V5 page. */
+body[class*="-light"] .progress-wrap.active-progress,
+body[class*="-abyss"] .progress-wrap.active-progress,
+body.case-dark .progress-wrap.active-progress,
+body.service-details-dark .progress-wrap.active-progress {
+  mix-blend-mode: normal !important;
+  background-color: var(--jxm-abyss) !important;
+  border: 1px solid rgba(243, 241, 236, 0.18);
+}
+body[class*="-light"] .progress-wrap.active-progress::after,
+body[class*="-abyss"] .progress-wrap.active-progress::after,
+body.case-dark .progress-wrap.active-progress::after,
+body.service-details-dark .progress-wrap.active-progress::after {
+  color: var(--jxm-tusk) !important;
+}
