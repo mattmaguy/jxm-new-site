@@ -596,15 +596,34 @@
     ════════════════════════════════════════ */
     body.about-light .about-standard-band {
       background: var(--jxm-soylent);
-      /* Sizes the section so the marquee hero (~400px) + Standard
-         consume 100vh minus ~24px, leaving the partner-pic strip
-         peeking 24-40px above the fold to encourage scroll. */
+      /* Sized so marquee hero (~345px) + Standard fit within ~100vh
+         on typical laptop heights (800-900px), leaving the partner-
+         pic strip peeking ~24px above the fold. */
       min-height: calc(100vh - 420px);
       display: flex;
       align-items: center;
     }
     body.about-light .about-standard-band > .container {
       width: 100%;
+    }
+    /* Tighten the section's inherited .section-spacing 100/100 padding
+       since the body copy is now headline-sized — without this the
+       section pushes the strip below the fold on laptop heights. */
+    body.about-light .about-standard-band .about-standard-band-inner.section-spacing {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media (max-width: 1199px) {
+      body.about-light .about-standard-band .about-standard-band-inner.section-spacing {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+    /* Tighten line-height on both headline and body so the section's
+       natural content height stays within the calc target. */
+    body.about-light .about-standard-band .section-title,
+    body.about-light .about-standard-band .text-wrapper .text {
+      line-height: 1.0;
     }
     @media (max-width: 991px) {
       body.about-light .about-standard-band { min-height: 0; display: block; }
