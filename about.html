@@ -284,6 +284,28 @@
     }
 
     /* ════════════════════════════════════════
+       STUDIO STATEMENT — replaces the legacy 'Studio' eyebrow + bullets
+       block. One centered editorial paragraph in the headline font.
+    ════════════════════════════════════════ */
+    body.about-light .studio-statement {
+      padding: clamp(4rem, 8vw, 7rem) 0;
+      background: var(--jxm-tusk);
+    }
+    body.about-light .studio-statement-text {
+      font-family: var(--font_sequelsansromanbody);
+      font-weight: 310;
+      letter-spacing: -0.04em;
+      line-height: 1.15;
+      font-size: clamp(1.5rem, 3vw, 2.625rem);
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      text-align: center;
+      max-width: 60rem;
+      margin: 0 auto;
+      padding: 0 1.25rem;
+    }
+
+    /* ════════════════════════════════════════
        MEDIA AREA ('Work with the founders') — legacy Redox CSS does
        three things wrong on a tusk page:
          1. .media-area-page-about { background-color: var(--bg) }
@@ -596,48 +618,15 @@
         <!-- /marquee hero -->
         <!-- page title area end  -->
 
-        <!-- about area start  -->
-        <section class="about-area-details">
+        <!-- studio-statement — centered editorial paragraph in headline font -->
+        <section class="studio-statement fade-anim">
           <div class="container large">
-            <div class="about-area-details-inner">
-              <div class="section-header fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle">Studio</span>
-                  </div>
-                  <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">There's a science to our art, and an art to our science.</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="section-content-wrapper fade-anim">
-                <div class="info-list">
-                  <ul>
-                    <li>Strategy</li>
-                    <li>Brand</li>
-                    <li>Creative</li>
-                    <li>Media</li>
-                  </ul>
-                </div>
-                <div class="section-content">
-                  <div class="text-wrapper" data-direction="right">
-                    <p class="text">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, that's still the standard, and it's still the reason clients stay eight, ten, twelve years in.</p>
-                    <p class="text">Today, JXM remains a premium founder-led growth partner for mission-driven brands. Four partners on the masthead. A small, hand-picked powerful team behind them.</p>
-                  </div>
-                  <div class="btn-wrapper" data-direction="right">
-                    <a href="services.html" class="rr-btn">
-                      <span class="btn-wrap">
-                        <span class="text-one">Explore Services</span>
-                        <span class="text-two">Explore Services</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <p class="studio-statement-text font-sequelsans-romanbody">
+              We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands. There&rsquo;s science to our art, and an art to our science.
+            </p>
           </div>
         </section>
-        <!-- about area end  -->
+        <!-- /studio-statement -->
 
         <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
              the viewport widens. 1440x180 source. -->
