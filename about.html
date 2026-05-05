@@ -96,6 +96,28 @@
     }
 
     /* ════════════════════════════════════════
+       THE STANDARD — soylent-green band (matches the Truth section
+       on the homepage). Tusk text on dark surface — overrides the
+       page-level body.about-light abyss-on-tusk lock for this section.
+    ════════════════════════════════════════ */
+    body.about-light .approach-area-about-page {
+      background: var(--jxm-soylent);
+    }
+    body.about-light .approach-area-about-page .section-title,
+    body.about-light .approach-area-about-page .section-subtitle,
+    body.about-light .approach-area-about-page .text {
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
+      background: none !important;
+    }
+    body.about-light .approach-area-about-page .section-subtitle {
+      color: rgba(243, 241, 236, 0.65) !important;
+    }
+    body.about-light .approach-area-about-page .text-wrapper .text {
+      color: rgba(243, 241, 236, 0.85) !important;
+    }
+
+    /* ════════════════════════════════════════
        THESIS — manifest image + editorial headline + body, side-by-side.
     ════════════════════════════════════════ */
     .thesis-area-about-page {
