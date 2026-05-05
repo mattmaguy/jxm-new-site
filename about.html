@@ -649,6 +649,14 @@
       font-size: clamp(2rem, 4.4vw, 3.5rem);
       line-height: 1.05;
       letter-spacing: -0.07em;
+      margin: 0 0 1.25rem;
+    }
+    body.about-light .about-standard-band .text-wrapper .text:last-child { margin-bottom: 0; }
+    /* Closing line — heavier weight, full tusk for emphasis. */
+    body.about-light .about-standard-band .text-wrapper .text--emphasis {
+      font-weight: 500 !important;
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
     }
 
     /* Restore the legacy Redox 2-column flow (lost when the section
@@ -961,7 +969,8 @@
               <div class="section-content-wrapper fade-anim">
                 <div class="section-content">
                   <div class="text-wrapper" data-direction="right">
-                    <p class="text">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands. There&rsquo;s science to our art, and an art to our science.</p>
+                    <p class="text">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands.</p>
+                    <p class="text text--emphasis">There&rsquo;s science to our art, and an art to our science.</p>
                   </div>
                 </div>
               </div>
