@@ -94,6 +94,109 @@
     }
 
     /* ════════════════════════════════════════
+       FOUR PILLARS — 4-col accordion row (native <details>/<summary>).
+       Mobile collapses to a single column.
+    ════════════════════════════════════════ */
+    .pillar-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 1.5rem;
+      margin-top: 2.5rem;
+    }
+    @media (max-width: 900px) {
+      .pillar-grid { grid-template-columns: 1fr; gap: 0; }
+    }
+
+    .pillar {
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
+      padding: 1.25rem 0 1rem;
+    }
+    @media (max-width: 900px) {
+      .pillar:last-child { border-bottom: 1px solid rgba(34, 31, 50, 0.18); }
+    }
+
+    /* The browser default disclosure triangle on <summary> — kill it. */
+    .pillar-summary {
+      list-style: none;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      padding: 0.25rem 0;
+    }
+    .pillar-summary::-webkit-details-marker { display: none; }
+    .pillar-summary::marker { display: none; }
+
+    body.about-light .pillar-name {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+      letter-spacing: -0.02em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+
+    /* Plus / minus toggle — pure CSS via the open state */
+    .pillar-toggle {
+      flex-shrink: 0;
+      width: 1rem;
+      height: 1rem;
+      position: relative;
+      transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pillar-toggle::before,
+    .pillar-toggle::after {
+      content: '';
+      position: absolute;
+      background: var(--jxm-abyss);
+      transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pillar-toggle::before {
+      top: 50%;
+      left: 0;
+      width: 100%;
+      height: 1.5px;
+      transform: translateY(-50%);
+    }
+    .pillar-toggle::after {
+      left: 50%;
+      top: 0;
+      height: 100%;
+      width: 1.5px;
+      transform: translateX(-50%);
+    }
+    .pillar[open] .pillar-toggle::after {
+      transform: translateX(-50%) rotate(90deg);
+      opacity: 0;
+    }
+
+    .pillar-summary:hover .pillar-name { opacity: 0.7; }
+
+    /* Body bullets — show when <details> is open */
+    .pillar-list {
+      list-style: none;
+      margin: 0.85rem 0 0;
+      padding: 0;
+    }
+    body.about-light .pillar-list li {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: rgba(34, 31, 50, 0.85) !important;
+      padding: 0.45rem 0;
+      border-top: 1px solid rgba(34, 31, 50, 0.10);
+    }
+    body.about-light .pillar-list li:first-child { border-top: 0; padding-top: 0; }
+
+    /* Focus state for keyboard nav */
+    .pillar-summary:focus-visible {
+      outline: 2px solid var(--jxm-abyss);
+      outline-offset: 4px;
+      border-radius: 2px;
+    }
+
+    /* ════════════════════════════════════════
        THE STANDARD — soylent-green band (matches the Truth section
        on the homepage). Tusk text on dark surface — overrides the
        page-level body.about-light abyss-on-tusk lock for this section.
@@ -344,7 +447,7 @@
                     <span class="section-subtitle">Studio</span>
                   </div>
                   <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">Founder-led since 2007. The thinking is the product.</h2>
+                    <h2 class="section-title font-sequelsans-romanbody">There's a science to our art, and an art to our science.</h2>
                   </div>
                 </div>
               </div>
@@ -359,8 +462,8 @@
                 </div>
                 <div class="section-content">
                   <div class="text-wrapper" data-direction="right">
-                    <p class="text">Jim Pond and Matt Maguy started JXM because they cared too much about the work. Nearly two decades later, that's still the standard — and it's still the reason clients stay eight, ten, twelve years in.</p>
-                    <p class="text">Today, JXM is a founder-led growth partner for mission-driven brands. Four partners on the masthead. A small, hand-picked team behind them. The thinking comes from the top of the room. The work goes everywhere.</p>
+                    <p class="text">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, that's still the standard, and it's still the reason clients stay eight, ten, twelve years in.</p>
+                    <p class="text">Today, JXM remains a premium founder-led growth partner for mission-driven brands. Four partners on the masthead. A small, hand-picked powerful team behind them.</p>
                   </div>
                   <div class="btn-wrapper" data-direction="right">
                     <a href="services.html" class="rr-btn">
@@ -406,16 +509,16 @@
                     <span class="section-subtitle">The standard</span>
                   </div>
                   <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">We didn't set out to build an agency. We set out to do work worth doing.</h2>
+                    <h2 class="section-title font-sequelsans-romanbody">We aren't like most agencies. We don't really see ourselves as an agency at all.</h2>
                   </div>
                 </div>
               </div>
               <div class="section-content-wrapper fade-anim">
                 <div class="section-content">
                   <div class="text-wrapper" data-direction="right">
-                    <p class="text">Most agencies are built around a pitch. Ours was built around a problem: we cared too much about the work to put our names on anything that didn't deserve them.</p>
+                    <p class="text">Most agencies are built around a pitch. JXM was built around a problem: we cared too much about the results to put our names on anything that didn't deserve them.</p>
                     <p class="text">So we set a standard. Every campaign, every concept, every line of copy has to clear four bars — not three, not two. <strong>Effective. Intentional. Beautiful. Bold.</strong> All four. Every time.</p>
-                    <p class="text">That's the whole rule. It's why clients who came to us in 2009 are still here. It's why we say no to the work we don't believe in. And it's the only thing on the wall that hasn't changed in nineteen years.</p>
+                    <p class="text">That's the whole rule. It's why clients who came to us years ago are still here. It's why we say no to the work we don't believe in. And it will never change.</p>
                   </div>
                 </div>
               </div>
@@ -438,53 +541,55 @@
                   </div>
                 </div>
               </div>
-              <div class="approach-wrapper-box">
-                <div class="approach-wrapper fade-anim">
-                  <div class="approach-box">
-                    <h2 class="title">Effective <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>The work has to move a number.</li>
-                        <li>Drive a real result we can point to.</li>
-                        <li>The moment creative stops being accountable to outcomes, it becomes decoration.</li>
-                        <li>Decoration is expensive and forgettable.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Intentional <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Nothing is accidental.</li>
-                        <li>Not the color, the copy, the channel, the timing.</li>
-                        <li>Every choice is made on purpose.</li>
-                        <li>And we can tell you exactly why.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Beautiful</h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Ugly loses. Every time.</li>
-                        <li>Beauty earns the second look.</li>
-                        <li>The second look earns the response.</li>
-                        <li>The math isn't complicated — it's just inconvenient.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Bold</h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Safe creative is a myth.</li>
-                        <li>Bold means taking a position. Making a choice.</li>
-                        <li>Putting it out in the world under your name.</li>
-                        <li>Every piece of work that mattered made someone nervous first.</li>
-                      </ul>
-                    </div>
-                  </div>
-                </div>
+              <div class="pillar-grid fade-anim">
+                <details class="pillar">
+                  <summary class="pillar-summary">
+                    <span class="pillar-name">Effective</span>
+                    <span class="pillar-toggle" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="pillar-list">
+                    <li>The work has to move a number.</li>
+                    <li>Drive a real result we can point to.</li>
+                    <li>The moment creative stops being accountable to outcomes, it becomes decoration.</li>
+                    <li>Decoration is expensive and forgettable.</li>
+                  </ul>
+                </details>
+                <details class="pillar">
+                  <summary class="pillar-summary">
+                    <span class="pillar-name">Intentional</span>
+                    <span class="pillar-toggle" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="pillar-list">
+                    <li>Nothing is accidental.</li>
+                    <li>Not the color, the copy, the channel, the timing.</li>
+                    <li>Every choice is made on purpose.</li>
+                    <li>And we can tell you exactly why.</li>
+                  </ul>
+                </details>
+                <details class="pillar">
+                  <summary class="pillar-summary">
+                    <span class="pillar-name">Beautiful</span>
+                    <span class="pillar-toggle" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="pillar-list">
+                    <li>Ugly loses. Every time.</li>
+                    <li>Beauty earns the second look.</li>
+                    <li>The second look earns the response.</li>
+                    <li>The math isn't complicated &mdash; it's just inconvenient.</li>
+                  </ul>
+                </details>
+                <details class="pillar">
+                  <summary class="pillar-summary">
+                    <span class="pillar-name">Bold</span>
+                    <span class="pillar-toggle" aria-hidden="true"></span>
+                  </summary>
+                  <ul class="pillar-list">
+                    <li>Safe creative is a myth.</li>
+                    <li>Bold means taking a position. Making a choice.</li>
+                    <li>Putting it out in the world under your name.</li>
+                    <li>Every piece of work that mattered made someone nervous first.</li>
+                  </ul>
+                </details>
               </div>
             </div>
           </div>
