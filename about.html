@@ -596,7 +596,10 @@
     ════════════════════════════════════════ */
     body.about-light .about-standard-band {
       background: var(--jxm-soylent);
-      min-height: 70vh;
+      /* Sized so the partner-pic strip (180px) always pokes into the
+         visible fold below — 110px nav + 180px strip + 30px buffer
+         subtracted from the viewport height. */
+      min-height: calc(100vh - 320px);
       display: flex;
       align-items: center;
     }
