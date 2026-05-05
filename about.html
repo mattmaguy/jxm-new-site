@@ -284,6 +284,171 @@
     }
 
     /* ════════════════════════════════════════
+       HERO 7 — ported from Redox modern-agency-3.html
+       Giant uppercase typographic headline with bottom-aligned small-
+       caps annotations on two specific words; portrait image below
+       flanked by side labels. Kept inside .body.about-light so the
+       headline reads as abyss on tusk.
+    ════════════════════════════════════════ */
+    .hero-7-area {
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+    }
+    .hero-7-area-container {
+      max-width: 1850px;
+      margin: 0 auto;
+      padding: 0 2.5rem;
+    }
+    @media (max-width: 991px) {
+      .hero-7-area-container { padding: 0 1.5rem; }
+    }
+    .hero-7-area-inner {
+      padding-top: 9rem;       /* clears V5 fixed nav */
+      padding-bottom: 7.5rem;
+    }
+    @media (max-width: 991px) { .hero-7-area-inner { padding-top: 6.5rem; padding-bottom: 5rem; } }
+    @media (max-width: 767px) { .hero-7-area-inner { padding-top: 5.5rem; padding-bottom: 3.5rem; } }
+
+    body.about-light .hero-7-area-content .hero-7-area-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 200;
+      font-size: 180px;
+      line-height: 170px;
+      letter-spacing: -0.025em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      text-align: center;
+      text-transform: uppercase;
+      margin: 0;
+    }
+    @media (max-width: 1919px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 160px; line-height: 150px; }
+    }
+    @media (max-width: 1399px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 130px; line-height: 120px; }
+    }
+    @media (max-width: 1199px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 110px; line-height: 110px; }
+    }
+    @media (max-width: 991px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 80px; line-height: 80px; }
+    }
+    @media (max-width: 767px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 60px; line-height: 65px; }
+    }
+    @media (max-width: 575px) {
+      body.about-light .hero-7-area-content .hero-7-area-title { font-size: 40px; line-height: 55px; }
+      body.about-light .hero-7-area-content .hero-7-area-title br { display: none; }
+    }
+
+    .hero-7-area-content .hero-7-area-title .sub-title-holder {
+      position: relative;
+      display: inline-block;
+    }
+    .hero-7-area-content .hero-7-area-title .sub-title {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 131px;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      letter-spacing: 0.04em;
+      color: var(--jxm-abyss);
+      display: inline-block;
+      text-align: left;
+      text-transform: uppercase;
+    }
+    .hero-7-area-content .hero-7-area-title .sub-title.right-position {
+      right: 30px;
+      left: auto;
+      max-width: 160px;
+    }
+    @media (max-width: 991px) {
+      .hero-7-area-content .hero-7-area-title .sub-title.right-position { right: 10px; }
+    }
+    @media (max-width: 767px) {
+      .hero-7-area-content .hero-7-area-title .sub-title { position: static; width: auto; display: block; margin-top: 0.5rem; }
+    }
+    @media (max-width: 575px) {
+      .hero-7-area-content .hero-7-area-title .sub-title { display: none; }
+    }
+
+    /* Mobile fallback annotations (shown only at <= 575px when in-flow
+       sub-titles are hidden). */
+    .hero-7-area-content .mobile-text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-7-area-content .mobile-text span {
+      text-align: center;
+      width: 200px;
+      display: none;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 12px;
+      font-weight: 400;
+      line-height: 16px;
+      margin-top: 0.5rem;
+      color: var(--jxm-abyss);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+    @media (max-width: 575px) {
+      .hero-7-area-content .mobile-text span { display: block; }
+    }
+
+    /* Portrait image section below the headline */
+    .hero-area-7 {
+      background: var(--jxm-tusk);
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 4rem 1.5rem 6rem;
+    }
+    .hero-area-7 .image-wrapper {
+      width: 500px;
+      max-width: 100%;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .hero-area-7 .image-wrapper img {
+      width: 100%;
+      aspect-ratio: 5 / 6.5;
+      object-fit: cover;
+      display: block;
+      border-radius: 0.5rem;
+    }
+    .hero-area-7 .label-left,
+    .hero-area-7 .label-right {
+      top: 50%;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 16px;
+      position: absolute;
+      white-space: nowrap;
+      color: var(--jxm-abyss);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      transform: translateY(-50%);
+    }
+    .hero-area-7 .label-left  { left:  -60px; }
+    .hero-area-7 .label-right { right: -60px; }
+    @media (max-width: 767px) {
+      .hero-area-7 .label-left  { left:  -1rem; }
+      .hero-area-7 .label-right { right: -1rem; }
+    }
+    @media (max-width: 575px) {
+      .hero-area-7 .label-left,
+      .hero-area-7 .label-right { display: none; }
+    }
+
+    /* ════════════════════════════════════════
        UNIVERSAL PILL — section label, inherits section color
     ════════════════════════════════════════ */
     .v4-pill {
@@ -858,22 +1023,34 @@
       <main>
 
         <!-- page title area start  -->
-        <!-- marquee hero -->
-        <section class="mq-hero" aria-label="About JXM">
-          <h1 class="mq-hero-srtitle">About JXM</h1>
-          <div class="mq-hero-row" aria-hidden="true">
-            <div class="mq-hero-tile" data-mq-tile-left>
-              <span class="mq-hero-word">About&nbsp;JXM</span>
-            </div>
-            <span class="mq-hero-frame">
-              <video src="assets/imgs/hero/about-hero.webm" autoplay loop muted playsinline aria-label=""></video>
-            </span>
-            <div class="mq-hero-tile" data-mq-tile-right>
-              <span class="mq-hero-word">About&nbsp;JXM</span>
+        <!-- redox-7 hero pattern: editorial typographic headline + portrait image -->
+        <section class="hero-7-area" aria-label="About JXM">
+          <div class="hero-7-area-container">
+            <div class="hero-7-area-inner">
+              <div class="hero-7-area-content">
+                <h1 class="hero-7-area-title">
+                  Where <span class="sub-title-holder"><span class="sub-title">Founder-led<br>since 2007</span></span><br>
+                  science meets <br>
+                  <span class="sub-title-holder"><span class="sub-title right-position">A premium growth<br>partner for mission-<br>driven brands</span></span> the art <br>
+                  of the second look
+                </h1>
+                <div class="mobile-text">
+                  <span>Founder-led since 2007</span>
+                  <span>A premium growth partner for mission-driven brands</span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
-        <!-- /marquee hero -->
+
+        <div class="hero-area-7">
+          <div class="image-wrapper">
+            <span class="label-left">(EST. 2007)</span>
+            <span class="label-right">(MMXXVI)</span>
+            <img src="assets/imgs/about/team-01.jpg" alt="JXM team" loading="lazy">
+          </div>
+        </div>
+        <!-- /redox-7 hero -->
         <!-- page title area end  -->
 
         <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
