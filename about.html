@@ -50,8 +50,6 @@
     body.about-light .text,
     body.about-light .approach-box .title,
     body.about-light .info-list ul li,
-    body.about-light .funfact-item .number,
-    body.about-light .funfact-item .text,
     body.about-light .award-box .category,
     body.about-light .award-box .award-list li,
     body.about-light .team-box .name,
@@ -99,21 +97,24 @@
        THE STANDARD — soylent-green band (matches the Truth section
        on the homepage). Tusk text on dark surface — overrides the
        page-level body.about-light abyss-on-tusk lock for this section.
+       Scoped to .about-standard-band so it doesn't bleed onto the
+       Four Pillars section (which keeps the .approach-area-about-page
+       class for its existing card styling).
     ════════════════════════════════════════ */
-    body.about-light .approach-area-about-page {
+    body.about-light .about-standard-band {
       background: var(--jxm-soylent);
     }
-    body.about-light .approach-area-about-page .section-title,
-    body.about-light .approach-area-about-page .section-subtitle,
-    body.about-light .approach-area-about-page .text {
+    body.about-light .about-standard-band .section-title,
+    body.about-light .about-standard-band .section-subtitle,
+    body.about-light .about-standard-band .text {
       color: var(--jxm-tusk) !important;
       -webkit-text-fill-color: var(--jxm-tusk) !important;
       background: none !important;
     }
-    body.about-light .approach-area-about-page .section-subtitle {
+    body.about-light .about-standard-band .section-subtitle {
       color: rgba(243, 241, 236, 0.65) !important;
     }
-    body.about-light .approach-area-about-page .text-wrapper .text {
+    body.about-light .about-standard-band .text-wrapper .text {
       color: rgba(243, 241, 236, 0.85) !important;
     }
 
@@ -396,9 +397,9 @@
         <!-- about area end  -->
 
         <!-- standard area start  -->
-        <section class="approach-area-about-page">
+        <section class="about-standard-band">
           <div class="container large">
-            <div class="approach-area-about-page-inner section-spacing">
+            <div class="about-standard-band-inner section-spacing">
               <div class="section-header fade-anim">
                 <div class="section-title-wrapper">
                   <div class="subtitle-wrapper">
@@ -423,8 +424,74 @@
         </section>
         <!-- standard area end  -->
 
-        <!-- approach area start  -->
-        <!-- thesis area — replaces the four-pillars block -->
+        <!-- four pillars area start  -->
+        <section class="approach-area-about-page">
+          <div class="container large">
+            <div class="approach-area-about-page-inner section-spacing">
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper">
+                    <span class="section-subtitle">The four pillars</span>
+                  </div>
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">Effective. Intentional. Beautiful. Bold.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="approach-wrapper-box">
+                <div class="approach-wrapper fade-anim">
+                  <div class="approach-box">
+                    <h2 class="title">Effective <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
+                    <div class="approach-list">
+                      <ul>
+                        <li>The work has to move a number.</li>
+                        <li>Drive a real result we can point to.</li>
+                        <li>The moment creative stops being accountable to outcomes, it becomes decoration.</li>
+                        <li>Decoration is expensive and forgettable.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="approach-box">
+                    <h2 class="title">Intentional <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
+                    <div class="approach-list">
+                      <ul>
+                        <li>Nothing is accidental.</li>
+                        <li>Not the color, the copy, the channel, the timing.</li>
+                        <li>Every choice is made on purpose.</li>
+                        <li>And we can tell you exactly why.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="approach-box">
+                    <h2 class="title">Beautiful</h2>
+                    <div class="approach-list">
+                      <ul>
+                        <li>Ugly loses. Every time.</li>
+                        <li>Beauty earns the second look.</li>
+                        <li>The second look earns the response.</li>
+                        <li>The math isn't complicated — it's just inconvenient.</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div class="approach-box">
+                    <h2 class="title">Bold</h2>
+                    <div class="approach-list">
+                      <ul>
+                        <li>Safe creative is a myth.</li>
+                        <li>Bold means taking a position. Making a choice.</li>
+                        <li>Putting it out in the world under your name.</li>
+                        <li>Every piece of work that mattered made someone nervous first.</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- four pillars area end  -->
+
+        <!-- thesis area — sits below the four-pillars block -->
         <section class="thesis-area-about-page">
           <div class="container large">
             <div class="thesis-area-about-page-inner section-spacing">
@@ -448,55 +515,6 @@
         </section>
         <!-- thesis area end -->
 
-        <!-- info area start  -->
-        <section class="info-area-page-about">
-          <div class="container large">
-            <div class="info-area-page-about-inner section-spacing-top">
-
-              <div class="section-header fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle">Who we are</span>
-                  </div>
-                  <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">A founder-led practice. Not a vendor.</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="section-content-wrapper fade-anim" style="margin-bottom: 3rem;">
-                <div class="section-content">
-                  <div class="text-wrapper" data-direction="right">
-                    <p class="text">When you hire JXM, you don't get an account team. You get the founders. Jim and Matt are in the room on every engagement — strategy, creative, the calls in between. The team scales the execution. The thinking stays at the top.</p>
-                    <p class="text">That's not a positioning statement. It's how the firm has worked since 2007, and it's why we've kept it small on purpose.</p>
-                  </div>
-                </div>
-              </div>
-              <div class="counter-wrapper-box fade-anim">
-                <div class="counter-wrapper">
-                  <div class="funfact-item">
-                    <p class="text">Years in business</p>
-                    <h3 class="number t-counter">19</h3>
-                  </div>
-                  <div class="funfact-item">
-                    <p class="text">Average client tenure</p>
-                    <h3 class="number">8&ndash;10 yrs</h3>
-                  </div>
-                  <div class="funfact-item">
-                    <!-- DRAFT: Replace with real lifetime media-managed figure -->
-                    <p class="text">Media moved for clients</p>
-                    <h3 class="number">$XXM+</h3>
-                  </div>
-                  <div class="funfact-item">
-                    <!-- DRAFT: Replace with real brand count -->
-                    <p class="text">Brands grown</p>
-                    <h3 class="number">XX+</h3>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- info area end  -->
 
         <!-- client area start  -->
         <div class="client-area-page-about">
