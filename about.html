@@ -596,10 +596,18 @@
     ════════════════════════════════════════ */
     body.about-light .about-standard-band {
       background: var(--jxm-soylent);
-      /* Natural content height (eyebrow + headline + 1 paragraph) plus
-         the .section-spacing 100px equal top/bottom padding leaves the
-         section short enough that the partner-pic strip below always
-         pokes into the visible fold under the marquee hero. */
+      /* Sizes the section so the marquee hero (~400px) + Standard
+         consume 100vh minus ~24px, leaving the partner-pic strip
+         peeking 24-40px above the fold to encourage scroll. */
+      min-height: calc(100vh - 420px);
+      display: flex;
+      align-items: center;
+    }
+    body.about-light .about-standard-band > .container {
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      body.about-light .about-standard-band { min-height: 0; display: block; }
     }
     body.about-light .about-standard-band .section-title,
     body.about-light .about-standard-band .section-subtitle,
