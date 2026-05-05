@@ -284,11 +284,22 @@
     }
 
     /* ════════════════════════════════════════
-       MEDIA AREA ('Work with the founders') — legacy Redox CSS sets
-       the headline to var(--white) (#FFFFFF) and body to #999999. On
-       tusk that paints the title invisible and the body washed out.
-       Force abyss-on-tusk via specificity (0,4,1) > legacy (0,3,1).
+       MEDIA AREA ('Work with the founders') — legacy Redox CSS does
+       three things wrong on a tusk page:
+         1. .media-area-page-about { background-color: var(--bg) }
+         2. .media-area-page-about .section-content { background-color: #1D1C1C }
+         3. .section-title { color: var(--white) }, .text { color: #999999 }
+       The hardcoded #1D1C1C card was painting the headline+body as
+       a near-black block (the 'still black' the user kept seeing).
+       Strip both backgrounds and force abyss text on tusk.
     ════════════════════════════════════════ */
+    body.about-light .media-area-page-about,
+    body.about-light .media-area-page-about .section-content {
+      background-color: transparent !important;
+    }
+    body.about-light .media-area-page-about .section-content {
+      padding: 0 !important;
+    }
     body.about-light .media-area-page-about .section-content .section-title {
       color: var(--jxm-abyss) !important;
       -webkit-text-fill-color: var(--jxm-abyss) !important;
