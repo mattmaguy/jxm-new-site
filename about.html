@@ -596,6 +596,15 @@
     ════════════════════════════════════════ */
     body.about-light .about-standard-band {
       background: var(--jxm-soylent);
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+    }
+    body.about-light .about-standard-band > .container {
+      width: 100%;
+    }
+    @media (max-width: 991px) {
+      body.about-light .about-standard-band { min-height: 0; display: block; }
     }
     body.about-light .about-standard-band .section-title,
     body.about-light .about-standard-band .section-subtitle,
