@@ -262,6 +262,10 @@
     body.about-light .mq-hero {
       background: var(--jxm-soylent);
       color: var(--jxm-tusk);
+      /* Zero the shared 2rem bottom padding so the gap to the Standard
+         content matches the gap from the body to the strip below
+         (Standard uses flex-centered content with equal inner padding). */
+      padding-bottom: 0;
     }
 
     /* ════════════════════════════════════════
