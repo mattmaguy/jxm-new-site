@@ -335,7 +335,7 @@ body.is-mobile-open .v5-mobile-toggle span:nth-child(2) {
   gap: 0.15rem;
   margin-top: 1.5rem;
 }
-.v5-mobile-link {
+.v5-mobile-panel .v5-mobile-link {
   display: flex;
   align-items: baseline;
   gap: 0.4em;
@@ -345,15 +345,15 @@ body.is-mobile-open .v5-mobile-toggle span:nth-child(2) {
   letter-spacing: -0.025em;
   line-height: 1.05;
   text-transform: uppercase;
-  color: var(--jxm-abyss);
+  color: var(--jxm-abyss) !important;
   text-decoration: none;
   padding: 0.45rem 0.6rem;
   border-radius: 4px;
   transition: background 180ms ease-out, color 180ms ease-out;
 }
-.v5-mobile-link:hover,
-.v5-mobile-link:focus-visible,
-.v5-mobile-link:active {
+.v5-mobile-panel .v5-mobile-link:hover,
+.v5-mobile-panel .v5-mobile-link:focus-visible,
+.v5-mobile-panel .v5-mobile-link:active {
   background: var(--jxm-abyss);
   color: var(--jxm-tusk) !important;
   outline: none;
@@ -388,15 +388,15 @@ body.is-mobile-open .v5-mobile-toggle span:nth-child(2) {
   gap: 1.25rem;
   font-size: 0.9375rem;
 }
-.v5-mobile-foot-links a {
-  color: var(--jxm-abyss);
+.v5-mobile-panel .v5-mobile-foot-links a {
+  color: var(--jxm-abyss) !important;
   text-decoration: none;
   border-bottom: 1px solid rgba(34, 31, 50, 0.3);
   padding-bottom: 1px;
   transition: color 180ms ease-out, border-color 180ms ease-out;
 }
-.v5-mobile-foot-links a:hover {
-  color: var(--jxm-kermit);
+.v5-mobile-panel .v5-mobile-foot-links a:hover {
+  color: var(--jxm-kermit) !important;
   border-color: var(--jxm-kermit);
 }
 
