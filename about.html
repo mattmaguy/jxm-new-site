@@ -621,6 +621,13 @@
     }
     body.about-light .about-standard-band .text-wrapper .text {
       color: rgba(243, 241, 236, 0.85) !important;
+      /* Match the .section-title.font-sequelsans-romanbody headline so
+         the eyebrow becomes the only smaller element in the section. */
+      font-family: var(--font_sequelsansromanbody);
+      font-weight: 310;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.07em;
     }
 
     /* Restore the legacy Redox 2-column flow (lost when the section
