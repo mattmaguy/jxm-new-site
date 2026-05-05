@@ -518,6 +518,18 @@
       .v4-trusted-grid { padding: 0 1.25rem; }
     }
 
+    /* Scroll-to-top button on about: flip to tusk bg + abyss arrow.
+       The default V5 abyss/tusk pairing reads heavy on this page's
+       light-dominant lower-half; a tusk pill blends with the page
+       palette while the abyss arrow stays clearly readable. */
+    body.about-light .progress-wrap.active-progress {
+      background-color: var(--jxm-tusk) !important;
+      border: 1px solid rgba(34, 31, 50, 0.18) !important;
+    }
+    body.about-light .progress-wrap.active-progress::after {
+      color: var(--jxm-abyss) !important;
+    }
+
     /* ════════════════════════════════════════
        MEDIA AREA ('Work with the founders') — legacy Redox CSS does
        three things wrong on a tusk page:
