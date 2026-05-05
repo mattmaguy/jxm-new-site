@@ -281,11 +281,13 @@
       overflow-x: auto;
       scroll-snap-type: x mandatory;
       scroll-behavior: smooth;
+      -webkit-overflow-scrolling: touch;
+      overscroll-behavior-x: contain;
       padding: 0.5rem 0 1.5rem;
-      margin: 0 -1rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
+      padding-inline: 1.25rem;
+      margin: 0 -1.25rem;
       scrollbar-width: none;
+      scroll-padding-inline: 1.25rem;
     }
     .cheatcodes-area .cc-rail::-webkit-scrollbar { display: none; }
 
@@ -293,6 +295,7 @@
       flex: 0 0 auto;
       width: clamp(280px, 32vw, 400px);
       scroll-snap-align: start;
+      scroll-snap-stop: always;
       text-decoration: none;
       color: inherit;
       display: flex;
@@ -300,7 +303,8 @@
       gap: 1.25rem;
     }
     @media (max-width: 575px) {
-      .cheatcodes-area .cc-card { width: 78vw; }
+      .cheatcodes-area .cc-card { width: 82vw; }
+      .cheatcodes-area .cc-rail { gap: 1rem; }
     }
 
     .cheatcodes-area .cc-card .cc-thumb {
