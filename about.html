@@ -284,28 +284,6 @@
     }
 
     /* ════════════════════════════════════════
-       STUDIO STATEMENT — replaces the legacy 'Studio' eyebrow + bullets
-       block. One centered editorial paragraph in the headline font.
-    ════════════════════════════════════════ */
-    body.about-light .studio-statement {
-      padding: clamp(4rem, 8vw, 7rem) 0;
-      background: var(--jxm-tusk);
-    }
-    body.about-light .studio-statement-text {
-      font-family: var(--font_sequelsansromanbody);
-      font-weight: 310;
-      letter-spacing: -0.04em;
-      line-height: 1.15;
-      font-size: clamp(1.5rem, 3vw, 2.625rem);
-      color: var(--jxm-abyss) !important;
-      -webkit-text-fill-color: var(--jxm-abyss) !important;
-      text-align: center;
-      max-width: 60rem;
-      margin: 0 auto;
-      padding: 0 1.25rem;
-    }
-
-    /* ════════════════════════════════════════
        MEDIA AREA ('Work with the founders') — legacy Redox CSS does
        three things wrong on a tusk page:
          1. .media-area-page-about { background-color: var(--bg) }
@@ -618,21 +596,6 @@
         <!-- /marquee hero -->
         <!-- page title area end  -->
 
-        <!-- studio-statement — centered editorial paragraph in headline font -->
-        <section class="studio-statement fade-anim">
-          <div class="container large">
-            <p class="studio-statement-text font-sequelsans-romanbody">
-              We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands. There&rsquo;s science to our art, and an art to our science.
-            </p>
-          </div>
-        </section>
-        <!-- /studio-statement -->
-
-        <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
-             the viewport widens. 1440x180 source. -->
-        <div class="about-strip" role="presentation" aria-hidden="true"></div>
-        <!-- /partner-pic strip -->
-
         <!-- standard area start  -->
         <section class="about-standard-band">
           <div class="container large">
@@ -660,6 +623,11 @@
           </div>
         </section>
         <!-- standard area end  -->
+
+        <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
+             the viewport widens. 1440x180 source. -->
+        <div class="about-strip" role="presentation" aria-hidden="true"></div>
+        <!-- /partner-pic strip -->
 
         <!-- thesis area — comes before the four pillars now -->
         <section class="thesis-area-about-page">
