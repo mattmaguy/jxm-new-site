@@ -33,16 +33,16 @@
 
 .mq-hero {
   position: relative;
-  /* padding-top = nav clearance (~7rem) + visible top space (2rem)
-     padding-bottom = visible bottom space (2rem)
-     → equal visible padding above and below the row. */
-  padding: 9rem 0 2rem;
+  /* body.has-v5-page-nav already pads for the fixed nav clearance.
+     Marquee padding here is just visible breathing room above + below
+     the row — keeps the gap consistent across pages. */
+  padding: 2.5rem 0 2rem;
   overflow: hidden;
   display: flex;
   justify-content: center;
 }
 @media (max-width: 1023px) {
-  .mq-hero { padding: 6.5rem 0 1.5rem; }
+  .mq-hero { padding: 2rem 0 1.5rem; }
 }
 
 .mq-hero-row {
@@ -108,9 +108,10 @@
   white-space: nowrap; border: 0;
 }
 
-/* Mobile: same horizontal overflow, smaller words. */
+/* Mobile: same horizontal overflow, smaller words. Padding here is
+   just visible breathing — body padding-top already clears the nav. */
 @media (max-width: 720px) {
-  .mq-hero { padding: 5.5rem 0 1.25rem; }
+  .mq-hero { padding: 1.5rem 0 1rem; }
   .mq-hero-word { font-size: clamp(3.5rem, 18vw, 6rem); }
   .mq-hero-frame { font-size: clamp(3.5rem, 18vw, 6rem); }
 }
