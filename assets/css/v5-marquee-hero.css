@@ -73,15 +73,16 @@
 }
 
 /* 16:9 image placeholder — height bound to the cap-height of the
-   surrounding words (Inter cap-height ≈ 0.72em). Border radius
-   matches the portfolio reel. */
+   surrounding words (Inter cap-height ≈ 0.72em). Width derived
+   explicitly via calc() to dodge the aspect-ratio + width: auto
+   ambiguity on flex items (was rendering ~20:9 in some browsers).
+   Border radius matches the portfolio reel. */
 .mq-hero-frame {
   position: relative;
   flex-shrink: 0;
   font-size: clamp(5rem, 17vw, 13rem);
   height: 0.72em;
-  width: auto;
-  aspect-ratio: 16 / 9;
+  width: calc(0.72em * 16 / 9);
   border-radius: 0.85rem;
   overflow: hidden;
   background: var(--jxm-abyss);
@@ -94,6 +95,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   display: block;
 }
 
