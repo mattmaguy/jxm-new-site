@@ -652,15 +652,25 @@
       margin: 0 0 1rem;
     }
     body.about-light .about-standard-band .text-wrapper .text:last-child { margin-bottom: 0; }
-    /* Lead — opens the section. Heavier weight, full tusk for focus. */
+    /* Lead — opens the section. Heavier weight, full tusk, slightly
+       larger so the hierarchy reads at any scale. */
     body.about-light .about-standard-band .text-wrapper .text--lead {
-      font-weight: 500;
+      font-family: 'Inter', sans-serif !important;
+      font-weight: 700 !important;
+      font-style: normal !important;
+      font-size: clamp(2.25rem, 5vw, 4rem) !important;
+      line-height: 1.05 !important;
+      letter-spacing: -0.04em !important;
       color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
     }
-    /* Coda — closes the section. Italic accent for the science/art line. */
+    /* Coda — closes the section. Italic, smaller, dimmer. */
     body.about-light .about-standard-band .text-wrapper .text--coda {
-      font-style: italic;
-      color: rgba(243, 241, 236, 0.7) !important;
+      font-style: italic !important;
+      font-size: clamp(1.5rem, 3.2vw, 2.5rem) !important;
+      color: rgba(243, 241, 236, 0.65) !important;
+      -webkit-text-fill-color: rgba(243, 241, 236, 0.65) !important;
+      margin-top: 1.5rem !important;
     }
 
     /* Restore the legacy Redox 2-column flow (lost when the section
