@@ -282,23 +282,6 @@
     }
 
     /* ════════════════════════════════════════
-       MOVING GALLERY — crop the team photos to a uniform 4:3 portrait/
-       landscape mix without distortion. Source images are mixed-aspect.
-    ════════════════════════════════════════ */
-    body.about-light .moving-gallery .wrapper-gallery li {
-      flex-shrink: 0;
-    }
-    body.about-light .moving-gallery .wrapper-gallery li img {
-      display: block;
-      width: clamp(240px, 22vw, 360px);
-      aspect-ratio: 4 / 3;
-      height: auto;
-      object-fit: cover;
-      object-position: center;
-      border-radius: 0.5rem;
-    }
-
-    /* ════════════════════════════════════════
        FEATURED IN STRIP — mirrors homepage but flipped for tusk surface.
        Filter is brightness(0) (= solid abyss) instead of brightness(0)
        invert(1) (= solid tusk) since the about page is light-locked.
@@ -624,21 +607,6 @@
                 </div>
               </div>
             </div>
-          </div>
-          <div class="moving-gallery fade-anim">
-            <ul class="wrapper-gallery">
-              <li><img src="assets/imgs/about/team-01.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-02.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-03.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-04.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-05.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-06.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-07.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-08.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-09.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-10.jpg" alt="JXM team" loading="lazy"></li>
-              <li><img src="assets/imgs/about/team-11.jpg" alt="JXM team" loading="lazy"></li>
-            </ul>
           </div>
         </section>
         <!-- about area end  -->
