@@ -87,7 +87,8 @@
   background: var(--jxm-abyss);
   display: block;
 }
-.mq-hero-frame img {
+.mq-hero-frame img,
+.mq-hero-frame video {
   position: absolute;
   inset: 0;
   width: 100%;
