@@ -255,9 +255,19 @@
     }
 
     /* ════════════════════════════════════════
+       MARQUEE HERO COLOR LOCK — match The Standard band (soylent +
+       tusk). Shared v5-marquee-hero.css uses color: inherit on the
+       words, so the cascade flips them tusk on this dark surface.
+    ════════════════════════════════════════ */
+    body.about-light .mq-hero {
+      background: var(--jxm-soylent);
+      color: var(--jxm-tusk);
+    }
+
+    /* ════════════════════════════════════════
        ABOUT STRIP — partnerpic.jpg tiled horizontally as a thin band
-       between the hero and the founder-led intro. 1440×180 source
-       repeats on the X axis so wider viewports just see more copies.
+       between The Standard and the Thesis. 1440×180 source repeats
+       on the X axis so wider viewports just see more copies.
     ════════════════════════════════════════ */
     .about-strip {
       width: 100%;
@@ -864,11 +874,6 @@
         <!-- /marquee hero -->
         <!-- page title area end  -->
 
-        <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
-             the viewport widens. 1440x180 source. -->
-        <div class="about-strip" role="presentation" aria-hidden="true"></div>
-        <!-- /partner-pic strip -->
-
         <!-- standard area start  -->
         <section class="about-standard-band">
           <div class="container large">
@@ -896,6 +901,11 @@
           </div>
         </section>
         <!-- standard area end  -->
+
+        <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
+             the viewport widens. 1440x180 source. -->
+        <div class="about-strip" role="presentation" aria-hidden="true"></div>
+        <!-- /partner-pic strip -->
 
         <!-- thesis area — comes before the four pillars now -->
         <section class="thesis-area-about-page">
