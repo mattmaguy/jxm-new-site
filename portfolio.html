@@ -603,6 +603,36 @@
     </div>
   </header>
   <!-- /V5 page nav -->
+  <!-- V5 mobile hamburger + off-canvas menu -->
+  <button class="v5-mobile-toggle" id="v5MobileToggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="v5MobileMenu">
+    <span></span>
+    <span></span>
+  </button>
+  <div class="v5-mobile-menu" id="v5MobileMenu" aria-hidden="true">
+    <div class="v5-mobile-backdrop" data-close></div>
+    <div class="v5-mobile-panel" role="dialog" aria-modal="true" aria-label="Site navigation">
+      <button class="v5-mobile-close" type="button" data-close aria-label="Close menu">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.25" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+      </button>
+      <nav class="v5-mobile-nav" aria-label="Mobile primary">
+        <a class="v5-mobile-link" href="index.html" data-close-after>Home<span class="v5-mobile-num">01</span></a>
+        <a class="v5-mobile-link" href="portfolio.html" data-close-after>Work<span class="v5-mobile-num">02</span></a>
+        <a class="v5-mobile-link" href="about.html" data-close-after>About<span class="v5-mobile-num">03</span></a>
+        <a class="v5-mobile-link" href="services.html" data-close-after>Services<span class="v5-mobile-num">04</span></a>
+        <a class="v5-mobile-link" href="blog.html" data-close-after>Ideas<span class="v5-mobile-num">05</span></a>
+        <a class="v5-mobile-link" href="contact.html" data-close-after>Book a Consult<span class="v5-mobile-num">06</span></a>
+      </nav>
+      <div class="v5-mobile-foot">
+        <span class="v5-mobile-foot-label">Socials</span>
+        <div class="v5-mobile-foot-links">
+          <a href="https://www.linkedin.com/company/tunetojxm" target="_blank" rel="noopener">LinkedIn</a>
+          <a href="https://clutch.co/profile/jxm" target="_blank" rel="noopener">Clutch</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- /V5 mobile menu -->
+
 
   <div class="has-smooth" id="has_smooth"></div>
   <div id="smooth-wrapper">
@@ -953,6 +983,8 @@
       });
     })();
   </script>
+
+  <script src="assets/js/v5-mobile-nav.js" defer></script>
 
 </body>
 
