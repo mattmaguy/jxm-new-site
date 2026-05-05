@@ -224,9 +224,11 @@ body.has-v5-page-nav {
   body.has-v5-page-nav { padding-top: 110px; }
 }
 /* ≤720px the inline nav collapses to just logo + hamburger toggle —
-   nav height drops to ~75px, so body clearance can shrink too. */
+   nav height drops to ~50px (logo SVG renders at ~14px tall × the
+   wide aspect ratio + 1rem inner padding each side). Match exactly
+   so no body-bg strip shows below the nav. */
 @media (max-width: 720px) {
-  body.has-v5-page-nav { padding-top: 76px; }
+  body.has-v5-page-nav { padding-top: 50px; }
 }
 
 /* ════════════════════════════════════════
