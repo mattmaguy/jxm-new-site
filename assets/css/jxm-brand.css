@@ -688,3 +688,34 @@ body.dark ::selection {
   background: var(--jxm-tusk);
   color: var(--jxm-abyss);
 }
+
+/* ════════════ V5 EYEBROW CONSISTENCY ═════════════════
+   Canonical "kicker before headline" eyebrow treatment — IBM Plex
+   Mono uppercase, 0.18em tracked. Applied to every legacy eyebrow
+   class on V5 pages (those with a -light or -abyss / -dark body
+   modifier) so eyebrows read consistently sitewide.
+   The .v4-pill class stays a separate, distinct "section label"
+   treatment (rounded DM Sans pill) and is not affected here. */
+body[class*="-light"] .section-subtitle,
+body[class*="-light"] .svc-pill,
+body[class*="-light"] .case-eyebrow,
+body[class*="-light"] .cc-eyebrow,
+body[class*="-light"] .nw-eyebrow,
+body[class*="-light"] .show-eyebrow:not(.v4-pill),
+body[class*="-abyss"] .section-subtitle,
+body.case-dark .section-subtitle,
+body.service-details-dark .section-subtitle {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace !important;
+  font-size: 0.75rem !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.18em !important;
+  line-height: 1.25 !important;
+  text-transform: uppercase !important;
+  background: none !important;
+  -webkit-text-fill-color: currentColor !important;
+  width: auto !important;
+  border: 0 !important;
+  padding: 0 !important;
+  border-radius: 0 !important;
+  display: inline-block !important;
+}
