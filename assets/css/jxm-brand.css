@@ -27,6 +27,20 @@
   --jxm-fly:      #BDDEED;
   --jxm-blurple:  #5e4ff5;
 
+  /* ════════════ V5 CANONICAL TYPE SCALE ═════════════
+     Use these tokens for new headlines + section content. Existing
+     inline clamps may be kept where they were tuned for specific
+     designs; new work should reference the tokens for consistency. */
+  --jxm-fs-display-xl:  clamp(7rem, 22vw, 22rem);     /* hero wordmarks (homepage 'growth') */
+  --jxm-fs-display-lg:  clamp(5rem, 17vw, 13rem);     /* marquee-hero row words */
+  --jxm-fs-display-md:  clamp(3.5rem, 11vw, 9.5rem);  /* editorial pull-quote / large CTA */
+  --jxm-fs-headline:    clamp(2rem, 4.4vw, 3.5rem);   /* section h2 (also brand default) */
+  --jxm-fs-subhead:     clamp(1.5rem, 2.4vw, 2rem);   /* card titles / sub-headlines */
+  --jxm-fs-lead:        clamp(1.0625rem, 1.4vw, 1.25rem); /* lead paragraph / pull-out body */
+  --jxm-fs-body:        1rem;                          /* standard body copy */
+  --jxm-fs-meta:        0.875rem;                     /* metadata, captions */
+  --jxm-fs-eyebrow:     0.75rem;                      /* mono-caps kicker (set via .section-subtitle override below) */
+
   /* Dark surfaces */
   --jxm-bg-dark:  #16121f;
   --jxm-bg-deep:  #0a0a0e;
