@@ -596,18 +596,10 @@
     ════════════════════════════════════════ */
     body.about-light .about-standard-band {
       background: var(--jxm-soylent);
-      /* Sized so the partner-pic strip (180px) always pokes into the
-         visible fold below — 110px nav + 180px strip + 30px buffer
-         subtracted from the viewport height. */
-      min-height: calc(100vh - 320px);
-      display: flex;
-      align-items: center;
-    }
-    body.about-light .about-standard-band > .container {
-      width: 100%;
-    }
-    @media (max-width: 991px) {
-      body.about-light .about-standard-band { min-height: 0; display: block; }
+      /* Natural content height (eyebrow + headline + 1 paragraph) plus
+         the .section-spacing 100px equal top/bottom padding leaves the
+         section short enough that the partner-pic strip below always
+         pokes into the visible fold under the marquee hero. */
     }
     body.about-light .about-standard-band .section-title,
     body.about-light .about-standard-band .section-subtitle,
