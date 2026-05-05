@@ -196,6 +196,154 @@
       border-radius: 2px;
     }
 
+    /* Related reading card pointing at thoughts/on-standards.html */
+    .pillar-feature {
+      display: grid;
+      grid-template-columns: minmax(180px, 22rem) 1fr;
+      gap: clamp(1.5rem, 3vw, 3rem);
+      align-items: center;
+      margin-top: 4.5rem;
+      padding: 2rem 0 0;
+      border-top: 1px solid rgba(34, 31, 50, 0.18);
+      text-decoration: none;
+      color: inherit;
+    }
+    @media (max-width: 720px) {
+      .pillar-feature { grid-template-columns: 1fr; gap: 1.5rem; margin-top: 3rem; }
+    }
+    .pillar-feature-thumb {
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      border-radius: 0.75rem;
+      background: rgba(34, 31, 50, 0.06);
+    }
+    .pillar-feature-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 480ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pillar-feature:hover .pillar-feature-thumb img { transform: scale(1.04); }
+
+    .pillar-feature-eyebrow {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(34, 31, 50, 0.65);
+      margin-bottom: 0.75rem;
+    }
+    body.about-light .pillar-feature-title {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: clamp(1.5rem, 2.4vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      margin: 0 0 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .pillar-feature-arrow {
+      flex-shrink: 0;
+      margin-top: 0.5rem;
+      transform: translate(0, 0);
+      transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .pillar-feature-arrow svg { width: 14px; height: 15px; display: block; }
+    .pillar-feature:hover .pillar-feature-arrow { transform: translate(3px, -3px); }
+    body.about-light .pillar-feature-dek {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: rgba(34, 31, 50, 0.78) !important;
+      max-width: 38rem;
+      margin: 0;
+    }
+
+    /* ════════════════════════════════════════
+       MEDIA AREA ('Work with the founders') — legacy Redox CSS sets
+       the headline to var(--white) (#FFFFFF) and body to #999999. On
+       tusk that paints the title invisible and the body washed out.
+       Force abyss-on-tusk via specificity (0,4,1) > legacy (0,3,1).
+    ════════════════════════════════════════ */
+    body.about-light .media-area-page-about .section-content .section-title {
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+    }
+    body.about-light .media-area-page-about .section-content .text {
+      color: rgba(34, 31, 50, 0.8) !important;
+      -webkit-text-fill-color: rgba(34, 31, 50, 0.8) !important;
+    }
+
+    /* ════════════════════════════════════════
+       MOVING GALLERY — crop the team photos to a uniform 4:3 portrait/
+       landscape mix without distortion. Source images are mixed-aspect.
+    ════════════════════════════════════════ */
+    body.about-light .moving-gallery .wrapper-gallery li {
+      flex-shrink: 0;
+    }
+    body.about-light .moving-gallery .wrapper-gallery li img {
+      display: block;
+      width: clamp(240px, 22vw, 360px);
+      aspect-ratio: 4 / 3;
+      height: auto;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 0.5rem;
+    }
+
+    /* ════════════════════════════════════════
+       FEATURED IN STRIP — mirrors homepage but flipped for tusk surface.
+       Filter is brightness(0) (= solid abyss) instead of brightness(0)
+       invert(1) (= solid tusk) since the about page is light-locked.
+    ════════════════════════════════════════ */
+    body.about-light .featured-section {
+      background: var(--jxm-tusk);
+      border-top: 1px solid rgba(34, 31, 50, 0.12);
+      padding: 3rem 1.25rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.75rem;
+    }
+    body.about-light .featured-label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.6875rem;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(34, 31, 50, 0.55) !important;
+      -webkit-text-fill-color: rgba(34, 31, 50, 0.55) !important;
+      margin: 0;
+    }
+    body.about-light .featured-logos {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: 2.5rem 3rem;
+    }
+    body.about-light .featured-logo {
+      width: 160px;
+      height: auto;
+      filter: brightness(0);
+      opacity: 0.55;
+      transition: opacity 0.2s;
+    }
+    body.about-light .featured-logo-link { display: contents; }
+    body.about-light .featured-logo-link:hover .featured-logo { opacity: 0.85; }
+    @media (min-width: 1024px) {
+      body.about-light .featured-section { padding: 3rem 2.5rem; flex-direction: row; justify-content: center; gap: 0 4rem; }
+      body.about-light .featured-label { white-space: nowrap; }
+      body.about-light .featured-logos { flex-wrap: nowrap; gap: 3rem; }
+    }
+
     /* ════════════════════════════════════════
        THE STANDARD — soylent-green band (matches the Truth section
        on the homepage). Tusk text on dark surface — overrides the
@@ -479,21 +627,17 @@
           </div>
           <div class="moving-gallery fade-anim">
             <ul class="wrapper-gallery">
-              <li>
-                <img src="assets/imgs/gallery/image-19.webp" alt="image">
-              </li>
-              <li>
-                <img src="assets/imgs/gallery/image-20.webp" alt="image">
-              </li>
-              <li>
-                <img src="assets/imgs/gallery/image-21.webp" alt="image">
-              </li>
-              <li>
-                <img src="assets/imgs/gallery/image-22.webp" alt="image">
-              </li>
-              <li>
-                <img src="assets/imgs/gallery/image-19.webp" alt="image">
-              </li>
+              <li><img src="assets/imgs/about/team-01.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-02.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-03.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-04.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-05.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-06.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-07.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-08.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-09.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-10.jpg" alt="JXM team" loading="lazy"></li>
+              <li><img src="assets/imgs/about/team-11.jpg" alt="JXM team" loading="lazy"></li>
             </ul>
           </div>
         </section>
@@ -526,6 +670,30 @@
           </div>
         </section>
         <!-- standard area end  -->
+
+        <!-- thesis area — comes before the four pillars now -->
+        <section class="thesis-area-about-page">
+          <div class="container large">
+            <div class="thesis-area-about-page-inner section-spacing">
+              <div class="thesis-grid fade-anim">
+                <div class="thesis-image-col">
+                  <figure class="thesis-image">
+                    <img src="assets/imgs/about/manifest2026.jpg" alt="JXM 2026 manifesto: mission is the promise a brand must keep — marketing must lift, growth must fuel, there is no trade off, there never was, to us. No money, no mission." loading="lazy">
+                  </figure>
+                </div>
+                <div class="thesis-content-col">
+                  <span class="thesis-eyebrow">Thesis</span>
+                  <h2 class="thesis-headline">No money, no mission.</h2>
+                  <div class="thesis-body">
+                    <p>Mission-driven brands are taught to treat marketing like a compromise &mdash; budget taken away from the work that matters. Our thesis is the opposite.</p>
+                    <p>Mission is the promise a brand must keep. Marketing is what lifts it. Growth is what fuels it. There is no trade-off &mdash; there never was &mdash; and to us, the work that grows a mission-driven brand is the same work that protects its mission.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- thesis area end -->
 
         <!-- four pillars area start  -->
         <section class="approach-area-about-page">
@@ -591,34 +759,27 @@
                   </ul>
                 </details>
               </div>
+
+              <!-- Related reading: the on-standards essay -->
+              <a class="pillar-feature fade-anim" href="thoughts/on-standards.html">
+                <div class="pillar-feature-thumb">
+                  <img src="assets/imgs/blog/thoughts/on-standards.jpg" alt="On Standards" loading="lazy">
+                </div>
+                <div class="pillar-feature-content">
+                  <span class="pillar-feature-eyebrow">Keep reading &middot; Essay</span>
+                  <h3 class="pillar-feature-title">
+                    On Standards
+                    <span class="pillar-feature-arrow" aria-hidden="true">
+                      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 13 14" fill="none"><path fill-rule="evenodd" clip-rule="evenodd" d="M8.98834 0.661257C8.91884 0.781628 8.85302 0.903885 8.79094 1.02786C8.47298 1.49122 8.0835 1.90234 7.63629 2.2455C7.07879 2.67328 6.4425 2.98707 5.76373 3.16894C5.08497 3.35082 4.37702 3.39722 3.68033 3.3055C2.98363 3.21377 2.31182 2.98572 1.70325 2.63437L0.869521 4.07843C1.66772 4.53928 2.54888 4.83839 3.46268 4.95869C4.37648 5.079 5.30502 5.01814 6.1953 4.77959C6.36565 4.73394 6.53397 4.68196 6.6999 4.62381L2.03475 12.7041L3.47584 13.5361L8.16052 5.42201C8.19489 5.61171 8.23713 5.80022 8.28719 5.98704C8.52574 6.87732 8.9373 7.71189 9.49839 8.44311C10.0595 9.17433 10.7591 9.78788 11.5573 10.2487L12.391 8.80466C11.7825 8.4533 11.2491 7.98552 10.8213 7.42803C10.3935 6.87053 10.0797 6.23423 9.89783 5.55547C9.71595 4.8767 9.66955 4.16876 9.76128 3.47206C9.83484 2.91326 9.99611 2.37047 10.2384 1.86349C10.3146 1.74781 10.3875 1.62977 10.457 1.50948L10.4323 1.49521L10.4324 1.49499L8.98834 0.661257Z" fill="currentColor"/></svg>
+                    </span>
+                  </h3>
+                  <p class="pillar-feature-dek">An essay on the four standards behind every JXM campaign &mdash; and why we won&rsquo;t compromise on any of them.</p>
+                </div>
+              </a>
             </div>
           </div>
         </section>
         <!-- four pillars area end  -->
-
-        <!-- thesis area — sits below the four-pillars block -->
-        <section class="thesis-area-about-page">
-          <div class="container large">
-            <div class="thesis-area-about-page-inner section-spacing">
-              <div class="thesis-grid fade-anim">
-                <div class="thesis-image-col">
-                  <figure class="thesis-image">
-                    <img src="assets/imgs/about/manifest2026.jpg" alt="JXM 2026 manifesto: mission is the promise a brand must keep — marketing must lift, growth must fuel, there is no trade off, there never was, to us. No money, no mission." loading="lazy">
-                  </figure>
-                </div>
-                <div class="thesis-content-col">
-                  <span class="thesis-eyebrow">Thesis</span>
-                  <h2 class="thesis-headline">No money, no mission.</h2>
-                  <div class="thesis-body">
-                    <p>Mission-driven brands are taught to treat marketing like a compromise &mdash; budget taken away from the work that matters. Our thesis is the opposite.</p>
-                    <p>Mission is the promise a brand must keep. Marketing is what lifts it. Growth is what fuels it. There is no trade-off &mdash; there never was &mdash; and to us, the work that grows a mission-driven brand is the same work that protects its mission.</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-        <!-- thesis area end -->
 
 
         <!-- client area start  -->
@@ -730,7 +891,7 @@
             <div class="media-area-page-about-inner">
               <div class="section-content-wrapper fade-anim">
                 <div class="area-thumb parallax-view">
-                  <img src="assets/imgs/gallery/image-23.webp" alt="image" data-speed="0.8">
+                  <img src="assets/imgs/case-studies/advia.jpg" alt="Advia &middot; Real People" data-speed="0.8">
                 </div>
                 <div class="section-content">
                   <div class="section-title-wrapper">
@@ -757,44 +918,18 @@
         </section>
         <!-- media area end  -->
 
-        <!-- award area start  -->
-        <section class="award-area-page-about">
-          <div class="container large">
-            <div class="award-area-page-about-inner section-spacing">
-              <div class="section-header fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle">Featured in</span>
-                  </div>
-                  <div class="title-wrapper" data-direction="left">
-                    <h2 class="section-title font-sequelsans-romanbody">Our clients have shown up in the places mission-driven brands need to be — and so have we.</h2>
-                  </div>
-                </div>
-              </div>
-              <div class="awards-wrapper-box fade-anim">
-                <!-- DRAFT: replace these placeholder outlet groups with real Featured-In list once Matt confirms permitted outlets -->
-                <div class="awards-wrapper">
-                  <div class="award-box">
-                    <div class="category">Industry press</div>
-                    <ul class="award-list">
-                      <li>The Financial Brand</li>
-                      <li>Worcester Business Journal</li>
-                      <li>America's Credit Unions</li>
-                      <li>CU Leadership</li>
-                    </ul>
-                  </div>
-                  <div class="award-box">
-                    <div class="category">Recognition</div>
-                    <ul class="award-list">
-                      <li>Clutch — Verified Reviews</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-            </div>
+        <!-- featured-in strip — mirrors the homepage treatment -->
+        <section class="featured-section fade-anim">
+          <p class="featured-label">Featured In</p>
+          <div class="featured-logos">
+            <img src="assets/svgs/cu-leadership.svg" alt="CU Leadership" class="featured-logo" width="160" height="40" loading="lazy">
+            <a href="https://www.americascreditunions.org/" target="_blank" rel="noopener" class="featured-logo-link"><img src="assets/svgs/americas-credit-unions.svg" alt="America's Credit Unions" class="featured-logo" width="160" height="40" loading="lazy"></a>
+            <a href="https://wbjournal.com/article/qa-shirley-marketing-firm-seeks-to-delight-clients/" target="_blank" rel="noopener" class="featured-logo-link"><img src="assets/svgs/worcester-bj.svg" alt="Worcester Business Journal" class="featured-logo" width="160" height="40" loading="lazy"></a>
+            <a href="https://clutch.co/profile/jxm" target="_blank" rel="noopener" class="featured-logo-link"><img src="assets/svgs/clutch.svg" alt="Clutch" class="featured-logo" width="160" height="40" loading="lazy"></a>
+            <a href="https://thefinancialbrand.com/news/bank-onboarding/if-you-miscalculate-cpma-you-mismanage-growth-196015" target="_blank" rel="noopener" class="featured-logo-link"><img src="assets/svgs/financial-brand.svg" alt="Financial Brand" class="featured-logo" width="160" height="40" loading="lazy"></a>
           </div>
         </section>
-        <!-- award area end  -->
+        <!-- /featured-in -->
 
         <!-- team area start  -->
         <section class="team-area-about-page">

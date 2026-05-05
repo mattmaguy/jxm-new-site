@@ -20,7 +20,7 @@ COPY (in document order)
   Studio
 
 [H2]  [8w]
-  Founder-led since 2007. The thinking is the product.
+  There's a science to our art, and an art to our science. 
 
 [INFO LIST]  [2w]
   • Strategy
@@ -35,14 +35,13 @@ COPY (in document order)
   • Media
 
 [BODY]  [36w]
-  Jim Pond and Matt Maguy started JXM because they cared too much about the work. Nearly two decades
-  later, that's still the standard — and it's still the reason clients stay eight, ten, twelve years
+  We started JXM because we wanted to help mission-driven brands grow. Nearly two decades
+  later, that's still the standard, and it's still the reason clients stay eight, ten, twelve years
   in.
 
 [BODY]  [34w]
-  Today, JXM is a founder-led growth partner for mission-driven brands. Four partners on the
-  masthead. A small, hand-picked team behind them. The thinking comes from the top of the room. The
-  work goes everywhere.
+  Today, JXM remains a premium founder-led growth partner for mission-driven brands. Four partners on the
+  masthead. A small, hand-picked powerful team behind them. 
 
 [BUTTON]  [2w]
   Explore Services
@@ -51,20 +50,19 @@ COPY (in document order)
   The standard
 
 [H2]  [16w]
-  We didn't set out to build an agency. We set out to do work worth doing.
+  We aren't like most agencies. We don't really see ourselves as an agency at all. 
 
 [BODY]  [30w]
-  Most agencies are built around a pitch. Ours was built around a problem: we cared too much about
-  the work to put our names on anything that didn't deserve them.
+  Most agencies are built around a pitch. JXM was built around a problem: we cared too much about
+  the results to put our names on anything that didn't deserve them.
 
 [BODY]  [31w]
   So we set a standard. Every campaign, every concept, every line of copy has to clear four bars —
   not three, not two. Effective. Intentional. Beautiful. Bold. All four. Every time.
 
 [BODY]  [42w]
-  That's the whole rule. It's why clients who came to us in 2009 are still here. It's why we say no
-  to the work we don't believe in. And it's the only thing on the wall that hasn't changed in
-  nineteen years.
+  That's the whole rule. It's why clients who came to us years ago are still here. It's why we say no
+  to the work we don't believe in. And it will never change. 
 
 [EYEBROW]  [3w]
   The four pillars
@@ -139,12 +137,10 @@ COPY (in document order)
   A founder-led practice. Not a vendor.
 
 [BODY]  [42w]
-  When you hire JXM, you don't get an account team. You get the founders. Jim and Matt are in the
-  room on every engagement — strategy, creative, the calls in between. The team scales the
-  execution. The thinking stays at the top.
+  When you hire JXM, you don't get an account team. You get the founders on strategy, creative, media buying - the calls in between. 
 
 [BODY]  [22w]
-  That's not a positioning statement. It's how the firm has worked since 2007, and it's why we've
+  That's not a positioning statement. It's how our firm has worked since 2007, and it's why we've
   kept it small on purpose.
 
 [COUNTER]  [5w]
