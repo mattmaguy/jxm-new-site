@@ -284,6 +284,239 @@
     }
 
     /* ════════════════════════════════════════
+       UNIVERSAL PILL — section label, inherits section color
+    ════════════════════════════════════════ */
+    .v4-pill {
+      display: inline-block;
+      width: fit-content;
+      align-self: flex-start;
+      justify-self: start;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid currentColor;
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      white-space: nowrap;
+      color: inherit;
+    }
+
+    /* ════════════════════════════════════════
+       SELECTED WORK — list + cursor thumbnail (mirrors homepage)
+    ════════════════════════════════════════ */
+    .show-section {
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      padding: 5rem 0;
+      position: relative;
+      z-index: 1;
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+    .show-inner {
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 0 2.5rem 0 4rem;
+      position: relative;
+    }
+    .show-list,
+    .show-divider { max-width: 44rem; }
+    .show-head {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+      max-width: 44rem;
+    }
+    body.about-light .show-title-h {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      letter-spacing: -0.025em;
+      line-height: 1.05;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      margin: 0;
+    }
+    .show-list { display: flex; flex-direction: column; }
+    .show-divider { height: 1px; background: rgba(34,31,50,0.15); }
+
+    .show-link {
+      display: block;
+      padding: 1.25rem 0.75rem;
+      border-top: 1px solid rgba(34,31,50,0.15);
+      text-decoration: none;
+      color: var(--jxm-abyss);
+      position: relative;
+      transition: background 300ms ease-out;
+    }
+    .show-link:hover { background: rgba(34, 31, 50, 0.04); }
+    .show-link:focus-visible { outline: 2px solid #5a8a6e; outline-offset: -4px; }
+
+    .show-row {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1.25rem;
+    }
+    .show-row-main { flex: 1; min-width: 0; }
+    .show-title {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.125rem;
+      font-weight: 600;
+      letter-spacing: -0.015em;
+      color: var(--jxm-abyss);
+    }
+    .show-title-text { position: relative; display: inline-block; }
+    .show-title-text::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: currentColor;
+      transition: width 300ms ease-out;
+    }
+    .show-link:hover .show-title-text::after { width: 100%; }
+    .show-arrow {
+      color: rgba(34, 31, 50, 0.55);
+      opacity: 0;
+      transform: translate(-6px, 6px);
+      transition: opacity 300ms ease-out, transform 300ms ease-out;
+    }
+    .show-link:hover .show-arrow { opacity: 1; transform: translate(0, 0); }
+    .show-desc {
+      font-size: 0.875rem;
+      color: rgba(34, 31, 50, 0.65);
+      margin: 0.25rem 0 0;
+      line-height: 1.55;
+      transition: color 300ms ease-out;
+    }
+    .show-link:hover .show-desc { color: rgba(34, 31, 50, 0.85); }
+    .show-year {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      color: rgba(34,31,50,0.5);
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+      padding-top: 0.3rem;
+      transition: color 300ms ease-out;
+    }
+    .show-link:hover .show-year { color: rgba(34,31,50,0.8); }
+
+    /* Cursor-following thumbnail */
+    .show-floater {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 280px;
+      height: 180px;
+      border-radius: 12px;
+      overflow: hidden;
+      pointer-events: none;
+      opacity: 0;
+      scale: 0.85;
+      z-index: 10;
+      box-shadow:
+        0 24px 60px rgba(34, 31, 50, 0.18),
+        0 4px 12px rgba(34, 31, 50, 0.10);
+      transition: opacity 280ms ease-out, scale 280ms cubic-bezier(0.4, 0, 0.2, 1);
+      will-change: transform;
+    }
+    .show-floater.is-visible { opacity: 1; scale: 1; }
+    .show-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      scale: 1.1;
+      filter: blur(10px);
+      transition: opacity 500ms ease-out, scale 500ms ease-out, filter 500ms ease-out;
+    }
+    .show-floater[data-active="0"] .show-img[data-i="0"],
+    .show-floater[data-active="1"] .show-img[data-i="1"],
+    .show-floater[data-active="2"] .show-img[data-i="2"],
+    .show-floater[data-active="3"] .show-img[data-i="3"] {
+      opacity: 1;
+      scale: 1;
+      filter: blur(0);
+    }
+    @media (hover: none) {
+      .show-floater { display: none; }
+    }
+    @media (max-width: 600px) {
+      .show-section { padding: 4rem 0; }
+      .show-inner { padding: 0 1.25rem; }
+      .show-eyebrow { margin-bottom: 2rem; }
+      .show-title { font-size: 1rem; }
+      .show-desc { font-size: 0.8125rem; }
+    }
+
+    /* ════════════════════════════════════════
+       PARTNERS — trusted brands grid (mirrors homepage v4-trusted)
+    ════════════════════════════════════════ */
+    .v4-trusted {
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      padding: 5rem 0 5rem;
+      border-top: 1px solid rgba(34, 31, 50, 0.14);
+    }
+    .v4-trusted-head {
+      max-width: 90rem;
+      margin: 0 auto 3rem;
+      padding: 0 2.5rem 0 4rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+    .v4-trusted-grid {
+      max-width: 90rem;
+      margin: 0 auto;
+      padding: 0 2.5rem 0 4rem;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 2.5rem 1.5rem;
+      align-items: center;
+      justify-items: center;
+    }
+    @media (min-width: 560px)  { .v4-trusted-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 820px)  { .v4-trusted-grid { grid-template-columns: repeat(4, 1fr); } }
+    @media (min-width: 1100px) { .v4-trusted-grid { grid-template-columns: repeat(6, 1fr); } }
+
+    .v4-trusted-logo {
+      width: 100%;
+      max-width: 140px;
+      height: 3rem;
+      background-color: var(--jxm-abyss);
+      opacity: 0.65;
+      transition: opacity 200ms ease-out;
+      mask-image: var(--logo);
+      mask-repeat: no-repeat;
+      mask-position: center;
+      mask-size: contain;
+      -webkit-mask-image: var(--logo);
+      -webkit-mask-repeat: no-repeat;
+      -webkit-mask-position: center;
+      -webkit-mask-size: contain;
+    }
+    .v4-trusted-logo:hover { opacity: 1; }
+    .v4-trusted-logo--lg { max-width: 168px; height: 3.6rem; }
+    .v4-trusted-logo--xl { max-width: 175px; height: 3.75rem; }
+    .v4-trusted-logo--pull-left { margin-left: -1rem; }
+    .v4-trusted-grid > :first-child { justify-self: start; }
+    @media (max-width: 720px) {
+      .v4-trusted { padding: 4rem 0; }
+      .v4-trusted-head,
+      .v4-trusted-grid { padding: 0 1.25rem; }
+    }
+
+    /* ════════════════════════════════════════
        MEDIA AREA ('Work with the founders') — legacy Redox CSS does
        three things wrong on a tusk page:
          1. .media-area-page-about { background-color: var(--bg) }
@@ -378,6 +611,35 @@
     }
     body.about-light .about-standard-band .text-wrapper .text {
       color: rgba(243, 241, 236, 0.85) !important;
+    }
+
+    /* Bring back the 2-column eyebrow|headline layout from the
+       legacy .approach-area-about-page rule (lost when this section
+       was renamed to .about-standard-band). Eyebrow sits in column 1,
+       headline + body indent into column 2. */
+    body.about-light .about-standard-band .section-title-wrapper {
+      display: grid;
+      gap: 15px 60px;
+      grid-template-columns: 1fr 3fr;
+      align-items: start;
+    }
+    body.about-light .about-standard-band .section-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 3fr;
+      gap: 15px 60px;
+      margin-top: 2.5rem;
+    }
+    body.about-light .about-standard-band .section-content-wrapper .section-content {
+      grid-column: 2;
+    }
+    @media (max-width: 991px) {
+      body.about-light .about-standard-band .section-title-wrapper,
+      body.about-light .about-standard-band .section-content-wrapper {
+        grid-template-columns: 1fr;
+      }
+      body.about-light .about-standard-band .section-content-wrapper .section-content {
+        grid-column: 1;
+      }
     }
 
     /* ════════════════════════════════════════
@@ -843,38 +1105,99 @@
         </div>
         <!-- client area end  -->
 
-        <!-- media area start  -->
-        <section class="media-area-page-about">
-          <div class="container large">
-            <div class="media-area-page-about-inner">
-              <div class="section-content-wrapper fade-anim">
-                <div class="area-thumb parallax-view">
-                  <img src="assets/imgs/case-studies/advia.jpg" alt="Advia &middot; Real People" data-speed="0.8">
-                </div>
-                <div class="section-content">
-                  <div class="section-title-wrapper">
-                    <div class="title-wrapper">
-                      <h2 class="section-title font-sequelsans-romanbody">Work with the founders. Not an account team.</h2>
-                    </div>
-                  </div>
-                  <div class="text-wrapper">
-                    <p class="text">Jim and Matt are in the room on every engagement. The team scales the work — not the thinking.</p>
-                  </div>
-                  <div class="btn-wrapper">
-                    <a href="contact.html" class="rr-btn">
-                      <span class="btn-wrap">
-                        <span class="text-one">See client stories</span>
-                        <span class="text-two">See client stories</span>
-                      </span>
-                    </a>
-                  </div>
-                </div>
-
-              </div>
+        <!-- selected work — mirrors the homepage Selected Work pattern -->
+        <section class="show-section fade-anim" id="results" aria-label="Selected work">
+          <div class="show-inner">
+            <div class="show-head">
+              <span class="v4-pill show-eyebrow">Selected Work</span>
+              <h2 class="show-title-h">Work we love, for people we love.</h2>
             </div>
+
+            <div class="show-list">
+              <a class="show-link" data-i="0" href="client-stories-advia.html">
+                <div class="show-row">
+                  <div class="show-row-main">
+                    <span class="show-title">
+                      <span class="show-title-text">$70.6M in HELOC volume. One month.</span>
+                      <svg class="show-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </span>
+                    <p class="show-desc">Advia Credit Union &middot; HELOC / Real People</p>
+                  </div>
+                  <span class="show-year">2026</span>
+                </div>
+              </a>
+
+              <a class="show-link" data-i="1" href="client-stories-nwfcu.html">
+                <div class="show-row">
+                  <div class="show-row-main">
+                    <span class="show-title">
+                      <span class="show-title-text">99.5% of viewers watched the whole thing.</span>
+                      <svg class="show-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </span>
+                    <p class="show-desc">Northwest Federal &middot; Brand Bridge &times; Washington Commanders</p>
+                  </div>
+                  <span class="show-year">2025</span>
+                </div>
+              </a>
+
+              <a class="show-link" data-i="2" href="client-stories-harvard.html">
+                <div class="show-row">
+                  <div class="show-row-main">
+                    <span class="show-title">
+                      <span class="show-title-text">Conversions up 460%. We stopped using SEG lists.</span>
+                      <svg class="show-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </span>
+                    <p class="show-desc">Harvard FCU &middot; Harvard FCU Is Here</p>
+                  </div>
+                  <span class="show-year">2026</span>
+                </div>
+              </a>
+
+              <a class="show-link" data-i="3" href="client-stories-capcom.html">
+                <div class="show-row">
+                  <div class="show-row-main">
+                    <span class="show-title">
+                      <span class="show-title-text">A sponsorship with a heartbeat, not a scoreboard line.</span>
+                      <svg class="show-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 17 17 7"/><path d="M7 7h10v10"/></svg>
+                    </span>
+                    <p class="show-desc">CAP COM &middot; A Slam Dunk Partnership &middot; Siena Saints</p>
+                  </div>
+                  <span class="show-year">2023</span>
+                </div>
+              </a>
+            </div>
+            <div class="show-divider" aria-hidden="true"></div>
+          </div>
+
+          <!-- Cursor-following thumbnail -->
+          <div class="show-floater" id="showFloater" aria-hidden="true">
+            <img class="show-img" data-i="0" src="assets/imgs/v4/advia.jpg"   alt="" loading="lazy">
+            <img class="show-img" data-i="1" src="assets/imgs/v4/nwfcu.jpg"   alt="" loading="lazy">
+            <img class="show-img" data-i="2" src="assets/imgs/v4/harvard.jpg" alt="" loading="lazy">
+            <img class="show-img" data-i="3" src="assets/imgs/v4/siena.jpg"   alt="" loading="lazy">
           </div>
         </section>
-        <!-- media area end  -->
+        <!-- /selected work -->
+
+        <!-- partners — trusted brands grid mirroring the homepage -->
+        <section class="v4-trusted fade-anim" aria-label="Partners">
+          <div class="v4-trusted-head">
+            <span class="v4-pill">Partners</span>
+          </div>
+          <div class="v4-trusted-grid">
+            <div class="v4-trusted-logo v4-trusted-logo--lg" style="--logo:url('assets/svgs/advia-credit-union.svg')" role="img" aria-label="Advia Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/ArrowheadLogo.svg')" role="img" aria-label="Arrowhead Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/harvard-fcu.svg')" role="img" aria-label="Harvard FCU"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/ic-credit-union.svg')" role="img" aria-label="IC Credit Union"></div>
+            <div class="v4-trusted-logo v4-trusted-logo--lg v4-trusted-logo--pull-left" style="--logo:url('assets/svgs/northwest-federal-credit-union.svg')" role="img" aria-label="Northwest Federal Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/one-az.svg')" role="img" aria-label="OneAZ Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/premier.svg')" role="img" aria-label="Premier Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/SCULogoTAGLINE_CMYK.svg')" role="img" aria-label="SCU Credit Union"></div>
+            <div class="v4-trusted-logo" style="--logo:url('assets/svgs/union-savings-bank.svg')" role="img" aria-label="Union Savings Bank"></div>
+            <div class="v4-trusted-logo v4-trusted-logo--lg" style="--logo:url('assets/svgs/717-2.svg')" role="img" aria-label="717 Credit Union"></div>
+          </div>
+        </section>
+        <!-- /partners -->
 
         <!-- featured-in strip — mirrors the homepage treatment -->
         <section class="featured-section fade-anim">
@@ -1015,6 +1338,51 @@
   <script src="assets/js/main.js?v=1.0"></script>
 
   <script src="assets/js/v5-marquee-hero.js" defer></script>
+
+  <!-- Selected Work cursor-thumb — mirrors index.html v4InitCursorThumb -->
+  <script>
+    (function() {
+      var section = document.getElementById('results');
+      var floater = document.getElementById('showFloater');
+      if (!section || !floater) return;
+      if (window.matchMedia('(hover: none)').matches) return;
+
+      var links = section.querySelectorAll('.show-link');
+      var targetX = 0, targetY = 0, curX = 0, curY = 0, active = false;
+
+      section.addEventListener('mousemove', function(e) {
+        var rect = section.getBoundingClientRect();
+        targetX = e.clientX - rect.left;
+        targetY = e.clientY - rect.top;
+      });
+
+      Array.prototype.forEach.call(links, function(link, i) {
+        link.addEventListener('mouseenter', function() {
+          floater.dataset.active = link.dataset.i != null ? link.dataset.i : i;
+          floater.classList.add('is-visible');
+          active = true;
+        });
+        link.addEventListener('mouseleave', function() {
+          floater.classList.remove('is-visible');
+          active = false;
+        });
+      });
+
+      function lerp(a, b, t) { return a + (b - a) * t; }
+      function animate() {
+        if (active) {
+          curX = lerp(curX, targetX, 0.15);
+          curY = lerp(curY, targetY, 0.15);
+          floater.style.transform = 'translate3d(' + (curX + 20).toFixed(1) + 'px, ' + (curY - 100).toFixed(1) + 'px, 0)';
+        } else {
+          curX = targetX;
+          curY = targetY;
+        }
+        requestAnimationFrame(animate);
+      }
+      requestAnimationFrame(animate);
+    })();
+  </script>
 
 </body>
 
