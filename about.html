@@ -94,6 +94,75 @@
     body.about-light .award-box {
       border-color: rgba(34, 31, 50, 0.18) !important;
     }
+
+    /* ════════════════════════════════════════
+       THESIS — manifest image + editorial headline + body, side-by-side.
+    ════════════════════════════════════════ */
+    .thesis-area-about-page {
+      background: var(--jxm-tusk);
+    }
+    .thesis-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 6vw, 5rem);
+      align-items: center;
+    }
+    @media (max-width: 900px) {
+      .thesis-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+    }
+
+    .thesis-image {
+      margin: 0;
+    }
+    .thesis-image img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 0.85rem;
+      box-shadow: 0 24px 60px -20px rgba(34, 31, 50, 0.4);
+    }
+
+    .thesis-content-col {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .thesis-eyebrow {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: rgba(34, 31, 50, 0.65);
+      margin-bottom: 1.25rem;
+    }
+
+    body.about-light .thesis-headline {
+      font-family: 'Inter', sans-serif;
+      font-weight: 700;
+      font-style: italic;
+      font-size: clamp(2.25rem, 4.6vw, 3.75rem);
+      line-height: 1.0;
+      letter-spacing: -0.04em;
+      color: var(--jxm-abyss) !important;
+      -webkit-text-fill-color: var(--jxm-abyss) !important;
+      background: none !important;
+      margin: 0 0 1.75rem;
+      max-width: 14ch;
+    }
+
+    .thesis-body {
+      max-width: 36rem;
+    }
+    body.about-light .thesis-body p {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: rgba(34, 31, 50, 0.85) !important;
+      margin: 0 0 1rem;
+    }
+    body.about-light .thesis-body p:last-child { margin-bottom: 0; }
   </style>
 
 </head>
@@ -333,71 +402,29 @@
         <!-- standard area end  -->
 
         <!-- approach area start  -->
-        <section class="approach-area-about-page">
+        <!-- thesis area — replaces the four-pillars block -->
+        <section class="thesis-area-about-page">
           <div class="container large">
-            <div class="approach-area-about-page-inner section-spacing">
-              <div class="section-header fade-anim">
-                <div class="section-title-wrapper">
-                  <div class="subtitle-wrapper">
-                    <span class="section-subtitle">The four pillars</span>
-                  </div>
-                  <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">Effective. Intentional. Beautiful. Bold.</h2>
-                  </div>
+            <div class="thesis-area-about-page-inner section-spacing">
+              <div class="thesis-grid fade-anim">
+                <div class="thesis-image-col">
+                  <figure class="thesis-image">
+                    <img src="assets/imgs/about/manifest2026.jpg" alt="JXM 2026 manifesto: mission is the promise a brand must keep — marketing must lift, growth must fuel, there is no trade off, there never was, to us. No money, no mission." loading="lazy">
+                  </figure>
                 </div>
-              </div>
-              <div class="approach-wrapper-box">
-                <div class="approach-wrapper fade-anim">
-                  <div class="approach-box">
-                    <h2 class="title">Effective <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>The work has to move a number.</li>
-                        <li>Drive a real result we can point to.</li>
-                        <li>The moment creative stops being accountable to outcomes, it becomes decoration.</li>
-                        <li>Decoration is expensive and forgettable.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Intentional <img src="assets/imgs/shape/shape-13.webp" alt="image"></h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Nothing is accidental.</li>
-                        <li>Not the color, the copy, the channel, the timing.</li>
-                        <li>Every choice is made on purpose.</li>
-                        <li>And we can tell you exactly why.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Beautiful</h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Ugly loses. Every time.</li>
-                        <li>Beauty earns the second look.</li>
-                        <li>The second look earns the response.</li>
-                        <li>The math isn't complicated — it's just inconvenient.</li>
-                      </ul>
-                    </div>
-                  </div>
-                  <div class="approach-box">
-                    <h2 class="title">Bold</h2>
-                    <div class="approach-list">
-                      <ul>
-                        <li>Safe creative is a myth.</li>
-                        <li>Bold means taking a position. Making a choice.</li>
-                        <li>Putting it out in the world under your name.</li>
-                        <li>Every piece of work that mattered made someone nervous first.</li>
-                      </ul>
-                    </div>
+                <div class="thesis-content-col">
+                  <span class="thesis-eyebrow">Thesis</span>
+                  <h2 class="thesis-headline">No money, no mission.</h2>
+                  <div class="thesis-body">
+                    <p>Mission-driven brands are taught to treat marketing like a compromise &mdash; budget taken away from the work that matters. Our thesis is the opposite.</p>
+                    <p>Mission is the promise a brand must keep. Marketing is what lifts it. Growth is what fuels it. There is no trade-off &mdash; there never was &mdash; and to us, the work that grows a mission-driven brand is the same work that protects its mission.</p>
                   </div>
                 </div>
               </div>
             </div>
           </div>
         </section>
-        <!-- approach area end  -->
+        <!-- thesis area end -->
 
         <!-- info area start  -->
         <section class="info-area-page-about">
