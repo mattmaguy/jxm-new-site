@@ -1765,7 +1765,9 @@
         $.ajax({
           type: form.attr('method'),
           url: form.attr('action'),
-          data: form.serialize()
+          data: form.serialize(),
+          dataType: 'json',
+          headers: { 'Accept': 'application/json' }
         }).done(function (data) {
           $('.loading-form').hide();
           $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
