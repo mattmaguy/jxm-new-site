@@ -603,6 +603,122 @@
     }
 
     /* ════════════════════════════════════════
+       THE STANDARD — soylent-green band (matches the Truth section
+       on the homepage). Tusk text on dark surface — overrides the
+       page-level body.about-light abyss-on-tusk lock for this section.
+       Scoped to .about-standard-band so it doesn't bleed onto the
+       Four Pillars section (which keeps the .approach-area-about-page
+       class for its existing card styling).
+    ════════════════════════════════════════ */
+    body.about-light .about-standard-band {
+      background: var(--jxm-soylent);
+      /* Sized so marquee hero (~345px) + Standard fit within ~100vh
+         on typical laptop heights (800-900px), leaving the partner-
+         pic strip peeking ~24px above the fold. */
+      min-height: calc(100vh - 420px);
+      display: flex;
+      align-items: center;
+    }
+    body.about-light .about-standard-band > .container {
+      width: 100%;
+    }
+    /* Tighten the section's inherited .section-spacing 100/100 padding
+       since the body copy is now headline-sized — without this the
+       section pushes the strip below the fold on laptop heights. */
+    body.about-light .about-standard-band .about-standard-band-inner.section-spacing {
+      padding-top: 40px;
+      padding-bottom: 40px;
+    }
+    @media (max-width: 1199px) {
+      body.about-light .about-standard-band .about-standard-band-inner.section-spacing {
+        padding-top: 30px;
+        padding-bottom: 30px;
+      }
+    }
+    /* Tighten line-height on both headline and body so the section's
+       natural content height stays within the calc target. */
+    body.about-light .about-standard-band .section-title,
+    body.about-light .about-standard-band .text-wrapper .text {
+      line-height: 1.0;
+    }
+    @media (max-width: 991px) {
+      body.about-light .about-standard-band { min-height: 0; display: block; }
+    }
+    body.about-light .about-standard-band .section-title,
+    body.about-light .about-standard-band .section-subtitle,
+    body.about-light .about-standard-band .text {
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
+      background: none !important;
+    }
+    body.about-light .about-standard-band .section-subtitle {
+      color: rgba(243, 241, 236, 0.65) !important;
+    }
+    body.about-light .about-standard-band .text-wrapper .text {
+      color: rgba(243, 241, 236, 0.85) !important;
+      font-family: var(--font_sequelsansromanbody);
+      font-weight: 310;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.07em;
+      margin: 0 0 1.25rem;
+    }
+    body.about-light .about-standard-band .text-wrapper .text:last-child { margin-bottom: 0; }
+    /* Closing line — heavier weight, full tusk for emphasis. */
+    body.about-light .about-standard-band .text-wrapper .text--emphasis {
+      font-weight: 500 !important;
+      color: var(--jxm-tusk) !important;
+      -webkit-text-fill-color: var(--jxm-tusk) !important;
+    }
+
+    /* Restore the legacy Redox 2-column flow (lost when the section
+       was renamed from .approach-area-about-page → .about-standard-
+       band). Original used '1fr 1235px' with breakpoint shrinks for
+       smaller viewports. Same proportions reproduced here. */
+    body.about-light .about-standard-band .section-title-wrapper {
+      display: grid;
+      gap: 15px 60px;
+      grid-template-columns: 1fr 1235px;
+      align-items: start;
+    }
+    body.about-light .about-standard-band .section-content-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1235px;
+      gap: 15px 60px;
+      margin-top: 2.5rem;
+    }
+    body.about-light .about-standard-band .section-content-wrapper .section-content {
+      grid-column: 2;
+    }
+    @media (max-width: 1919px) {
+      body.about-light .about-standard-band .section-title-wrapper,
+      body.about-light .about-standard-band .section-content-wrapper {
+        grid-template-columns: 1fr 1000px;
+      }
+    }
+    @media (max-width: 1399px) {
+      body.about-light .about-standard-band .section-title-wrapper,
+      body.about-light .about-standard-band .section-content-wrapper {
+        grid-template-columns: 1fr 850px;
+      }
+    }
+    @media (max-width: 1199px) {
+      body.about-light .about-standard-band .section-title-wrapper,
+      body.about-light .about-standard-band .section-content-wrapper {
+        grid-template-columns: 1fr 750px;
+      }
+    }
+    @media (max-width: 991px) {
+      body.about-light .about-standard-band .section-title-wrapper,
+      body.about-light .about-standard-band .section-content-wrapper {
+        grid-template-columns: 1fr;
+      }
+      body.about-light .about-standard-band .section-content-wrapper .section-content {
+        grid-column: 1;
+      }
+    }
+
+    /* ════════════════════════════════════════
        THESIS — manifest image + editorial headline + body, side-by-side.
     ════════════════════════════════════════ */
     .thesis-area-about-page {
@@ -656,21 +772,7 @@
       -webkit-text-fill-color: var(--jxm-abyss) !important;
       background: none !important;
       margin: 0 0 1.75rem;
-      max-width: 18ch;
-    }
-    /* Secondary thesis headline — same family but lighter weight,
-       roman style, smaller, longer measure. Reads as the supporting
-       statement under the primary punchline. */
-    body.about-light .thesis-headline--secondary {
-      font-weight: 400 !important;
-      font-style: normal !important;
-      font-size: clamp(1.375rem, 2.6vw, 2rem) !important;
-      line-height: 1.2 !important;
-      letter-spacing: -0.02em !important;
-      color: rgba(34, 31, 50, 0.78) !important;
-      -webkit-text-fill-color: rgba(34, 31, 50, 0.78) !important;
-      max-width: 30ch;
-      margin: 0 0 1.75rem;
+      max-width: 14ch;
     }
 
     .thesis-body {
@@ -862,6 +964,32 @@
         <!-- /marquee hero -->
         <!-- page title area end  -->
 
+        <!-- standard area start  -->
+        <section class="about-standard-band">
+          <div class="container large">
+            <div class="about-standard-band-inner section-spacing">
+              <div class="section-header fade-anim">
+                <div class="section-title-wrapper">
+                  <div class="subtitle-wrapper">
+                    <span class="section-subtitle">The standard</span>
+                  </div>
+                  <div class="title-wrapper">
+                    <h2 class="section-title font-sequelsans-romanbody">We aren't like most agencies. We don't really see ourselves as an agency at all.</h2>
+                  </div>
+                </div>
+              </div>
+              <div class="section-content-wrapper fade-anim">
+                <div class="section-content">
+                  <div class="text-wrapper" data-direction="right">
+                    <p class="text">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands.</p>
+                    <p class="text text--emphasis">There&rsquo;s science to our art, and an art to our science.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <!-- standard area end  -->
 
         <!-- partner-pic strip — tiles partnerpic.jpg horizontally as
              the viewport widens. 1440x180 source. -->
@@ -879,9 +1007,8 @@
                   </figure>
                 </div>
                 <div class="thesis-content-col">
-                  <span class="thesis-eyebrow">No money, no mission</span>
-                  <h2 class="thesis-headline">We aren&rsquo;t like most agencies. We don&rsquo;t really see ourselves as an agency at all.</h2>
-                  <h2 class="thesis-headline thesis-headline--secondary">We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands.</h2>
+                  <span class="thesis-eyebrow">Thesis</span>
+                  <h2 class="thesis-headline">No money, no mission.</h2>
                   <div class="thesis-body">
                     <p>Mission-driven brands are taught to treat marketing like a compromise &mdash; budget taken away from the work that matters. Our thesis is the opposite.</p>
                     <p>Mission is the promise a brand must keep. Marketing is what lifts it. Growth is what fuels it. There is no trade-off &mdash; there never was &mdash; and to us, the work that grows a mission-driven brand is the same work that protects its mission.</p>
@@ -900,10 +1027,10 @@
               <div class="section-header fade-anim">
                 <div class="section-title-wrapper">
                   <div class="subtitle-wrapper">
-                    <span class="section-subtitle">Modus Operandi</span>
+                    <span class="section-subtitle">The four pillars</span>
                   </div>
                   <div class="title-wrapper">
-                    <h2 class="section-title font-sequelsans-romanbody">There&rsquo;s science to our art, and an art to our science.</h2>
+                    <h2 class="section-title font-sequelsans-romanbody">Effective. Intentional. Beautiful. Bold.</h2>
                   </div>
                 </div>
               </div>
