@@ -1,0 +1,462 @@
+========================================================================
+JXM SITE — MASTER COPY EXPORT
+Generated 2026-05-06
+========================================================================
+
+This document collects every visible copy element on every live page
+of jxm-new-site.com as of 2026-05-06. Page sections are separated by ===.
+Within each page, lines are tagged by element role:
+  [H1] / [H2] / [H3] — headings
+  [P]               — paragraph copy
+  [LI]              — list items
+  [SPAN]            — eyebrows, kickers, labels
+  [A] / [BUTTON]    — links / button labels
+  [QUOTE] / [STRONG] / [EM] — special inline elements
+  [SUMMARY] / [CAPTION]     — accordion / figure captions
+
+Nav, footer, modal overlays, and decorative widgets are excluded
+so the doc focuses on actual page content.
+
+Edit freely; changes can be reconciled back into the HTML pages.
+
+
+========================================================================
+PAGE: Homepage
+FILE: index.html
+URL:  /
+TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Execution
+========================================================================
+
+[P] In '07 we wanted to build an agency for credit unions where growth meant something measurable. Members. Deposits. Loans. Not impressions, views, and clicks.
+[P] So we did.
+
+[SPAN] The Truth
+
+[P] Credit unions don't lose because they can't compete. They lose because their strengths are invisible. Member growth isn't a product problem. It's a visibility problem.
+[P] When the reasons to choose you aren't visible, preference never forms. Growth stalls. No bueno. We fix that.
+
+[SPAN] Services
+
+[H2] How we help your brand grow
+
+[P] Five disciplines, run in sequence. Strategy first, because every dollar after it depends on getting that one right. Brand and creative next, because the thinking has to be visible before it can move anyone. Then media and measurement, because the work doesn't matter until it earns a number. All five live under one roof.
+
+[SPAN] (001)
+
+[H3] Growth Strategy
+
+[P] Where to spend. What to build. What's worth it, what isn't. The decisions that determine whether the rest of the work has a chance.
+
+[SPAN] (002)
+
+[H3] Brand & Positioning
+
+[P] The story the brand tells about itself, and the story the market believes back. We work on both, because if either one drifts, results drift too.
+
+[SPAN] (003)
+
+[H3] Creative & Campaign
+
+[P] Concept, copy, art direction, production. The point isn't to be clever and win awards. The point is to earn a second look from people who weren't aware.
+
+[SPAN] (004)
+
+[H3] Media Planning & Buying
+
+[P] Where the work runs, who sees it, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. The two will never live on different floors here.
+
+[SPAN] (005)
+
+[H3] Performance & Analytics
+
+[P] The number the campaign was supposed to move, and the proof that it did. Custom dashboards, plain-language reporting, no vanity metrics.
+
+[SPAN] Jim & Matt
+
+[H2] Two founders.
+
+[SPAN] On every account.
+
+[P] When you partner with JXM, you work with Jim and Matt — not a junior team in a city you've never been to. Twenty years of pattern recognition, a stubborn conviction that credit unions deserve better marketing than they're getting, and the agency they built to do something about it.
+[P] Featured In
+
+[SPAN] Praise
+
+[P] We love working with JXM on our marketing campaigns. They bring creativity, professionalism, and efficiency to every project. We look forward to our continued collaboration.
+[P] JXM delivered a product that was exactly what we were looking for — and at the same time, was like nothing we could have imagined. They are a creative powerhouse, and the experience working with them was excellent.
+[P] If you're thinking about working with JXM, get ready to be thrilled with the level of service and knowledge they bring to the table. Get ready to feel like you're working with hard-working, collaborative friends who will treat you like gold.
+[P] Your smarts and aggressively pursuing continuous improvement and insights definitely helped us meet and exceed goals. Many innovative strategies and tactics, especially footfall traffic and Amazon video, returned high quality conversions.
+
+[STRONG] Ray Black
+
+[CAPTION] , Chief Marketing & Technology Officer · Advia Credit Union
+
+[STRONG] Joelle Hahn
+
+[CAPTION] , VP Marketing / Creative Director · Northwest Federal Credit Union
+
+[STRONG] Nancy Loftis
+
+[CAPTION] , VP of Marketing · Advia Credit Union
+
+[STRONG] Melissa MacCaull, M.B.A.
+
+[CAPTION] , Director of Marketing · Union Savings Bank
+
+[A] More praise from credit union leaders ↗
+
+[P] Platforms
+[P] + Partners
+
+[H2] Work we love, for people we love.
+
+[SPAN] $70.6M in HELOC volume. One month.
+
+[P] Advia Credit Union · HELOC / Real People
+
+[SPAN] 99.5% of viewers watched the whole thing.
+
+[P] Northwest Federal · Brand Bridge × Washington Commanders
+
+[SPAN] Conversions up 460%. We stopped using SEG lists.
+
+[P] Harvard FCU · Harvard FCU Is Here
+
+[SPAN] A sponsorship with a heartbeat, not a scoreboard line.
+
+[P] CAP COM · A Slam Dunk Partnership · Siena Saints
+
+[SPAN] Partners
+[SPAN] Get in Touch
+
+[P] Reach out. Say hi.
+
+[A] hi@getjxm.com
+
+[P] Book a Consult with Jim & Matt
+
+[SPAN] e.
+[SPAN] s.
+
+[A] LinkedIn
+
+[SPAN] Ideas
+
+[H2] Essays, briefs, and the occasional rant.
+
+[SPAN] Apr 09 · 2026
+[SPAN] On Standards
+[SPAN] 5 min ↗
+[SPAN] Apr 08 · 2026
+[SPAN] Open Account, Get Toaster
+[SPAN] LinkedIn ↗
+[SPAN] Apr 06 · 2026
+[SPAN] Sonar? So What.
+[SPAN] 4 min ↗
+[SPAN] Mar 24 · 2026
+[SPAN] Engineering Consumer Preference in Uncertain Times
+[SPAN] 6 min ↗
+[SPAN] Jul 26 · 2024
+[SPAN] Conquering the Competition with Advanced Targeting Tactics
+[SPAN] 8 min ↗
+[SPAN] Sep 03 · 2024
+[SPAN] Better Options & Menus: Our Approach to Media Planning
+[SPAN] 5 min ↗
+
+[A] Check out more articles →
+
+
+========================================================================
+PAGE: About
+FILE: about.html
+URL:  /about
+TITLE:     Studio · JXM
+META:      Founded in 2007 by Jim Pond and Matt Maguy. JXM is a founder-led growth partner for mission-driven brands. Effective, intentional, beautiful, bold.
+========================================================================
+
+
+
+========================================================================
+PAGE: Services
+FILE: services.html
+URL:  /services
+TITLE:     Services · JXM
+META:      Brand strategy, creative and campaign, media planning and buying, performance and analytics, digital experience. The thinking and the work, under one roof.
+========================================================================
+
+
+
+========================================================================
+PAGE: Work
+FILE: portfolio.html
+URL:  /portfolio
+TITLE:     Work · JXM
+META:      Selected work from JXM. Campaigns and brand work for mission-driven organizations that move real-world numbers.
+========================================================================
+
+
+
+========================================================================
+PAGE: Ideas
+FILE: blog.html
+URL:  /blog
+TITLE:     Ideas · JXM
+META:      Essays, briefs, and the occasional rant from JXM. Founder-written, practitioner-tested, on the work and the thinking behind it.
+========================================================================
+
+
+
+========================================================================
+PAGE: Contact
+FILE: contact.html
+URL:  /contact
+TITLE:     Contact · JXM
+META:      Tell us what you want to grow. JXM is a founder-led growth partner for mission-driven brands. hi@getjxm.com.
+========================================================================
+
+
+
+========================================================================
+PAGE: 404 Page Not Found
+FILE: 404.html
+URL:  /404
+TITLE:     Page Not Found · JXM
+META:      That page doesn't exist. Head back home or jump into the work, services, or contact pages.
+========================================================================
+
+
+
+========================================================================
+PAGE: Credit Unions Landing
+FILE: credit-unions.html
+URL:  /credit-unions
+TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Execution
+========================================================================
+
+[P] In '07 we wanted to build an agency for credit unions where growth meant something measurable. Members. Deposits. Loans. Not impressions, views, and clicks.
+[P] So we did.
+
+[SPAN] The Truth
+
+[P] Credit unions don't lose because they can't compete. They lose because their strengths are invisible. Member growth isn't a product problem. It's a visibility problem.
+[P] When the reasons to choose you aren't visible, preference never forms. Growth stalls. No bueno. We fix that.
+
+[SPAN] Services
+
+[H2] How we help your brand grow
+
+[P] Five disciplines, run in sequence. Strategy first, because every dollar after it depends on getting that one right. Brand and creative next, because the thinking has to be visible before it can move anyone. Then media and measurement, because the work doesn't matter until it earns a number. All five live under one roof.
+
+[SPAN] (001)
+
+[H3] Growth Strategy
+
+[P] Where to spend. What to build. What's worth it, what isn't. The decisions that determine whether the rest of the work has a chance.
+
+[SPAN] (002)
+
+[H3] Brand & Positioning
+
+[P] The story the brand tells about itself, and the story the market believes back. We work on both, because if either one drifts, results drift too.
+
+[SPAN] (003)
+
+[H3] Creative & Campaign
+
+[P] Concept, copy, art direction, production. The point isn't to be clever and win awards. The point is to earn a second look from people who weren't aware.
+
+[SPAN] (004)
+
+[H3] Media Planning & Buying
+
+[P] Where the work runs, who sees it, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. The two will never live on different floors here.
+
+[SPAN] (005)
+
+[H3] Performance & Analytics
+
+[P] The number the campaign was supposed to move, and the proof that it did. Custom dashboards, plain-language reporting, no vanity metrics.
+
+[SPAN] Jim & Matt
+
+[H2] Two founders.
+
+[SPAN] On every account.
+
+[P] When you partner with JXM, you work with Jim and Matt — not a junior team in a city you've never been to. Twenty years of pattern recognition, a stubborn conviction that credit unions deserve better marketing than they're getting, and the agency they built to do something about it.
+[P] Featured In
+
+[SPAN] Praise
+
+[P] We love working with JXM on our marketing campaigns. They bring creativity, professionalism, and efficiency to every project. We look forward to our continued collaboration.
+[P] JXM delivered a product that was exactly what we were looking for — and at the same time, was like nothing we could have imagined. They are a creative powerhouse, and the experience working with them was excellent.
+[P] If you're thinking about working with JXM, get ready to be thrilled with the level of service and knowledge they bring to the table. Get ready to feel like you're working with hard-working, collaborative friends who will treat you like gold.
+[P] Your smarts and aggressively pursuing continuous improvement and insights definitely helped us meet and exceed goals. Many innovative strategies and tactics, especially footfall traffic and Amazon video, returned high quality conversions.
+
+[STRONG] Ray Black
+
+[CAPTION] , Chief Marketing & Technology Officer · Advia Credit Union
+
+[STRONG] Joelle Hahn
+
+[CAPTION] , VP Marketing / Creative Director · Northwest Federal Credit Union
+
+[STRONG] Nancy Loftis
+
+[CAPTION] , VP of Marketing · Advia Credit Union
+
+[STRONG] Melissa MacCaull, M.B.A.
+
+[CAPTION] , Director of Marketing · Union Savings Bank
+
+[A] More praise from credit union leaders ↗
+
+[P] Platforms
+[P] + Partners
+
+[H2] Work we love, for people we love.
+
+[SPAN] $70.6M in HELOC volume. One month.
+
+[P] Advia Credit Union · HELOC / Real People
+
+[SPAN] 99.5% of viewers watched the whole thing.
+
+[P] Northwest Federal · Brand Bridge × Washington Commanders
+
+[SPAN] Conversions up 460%. We stopped using SEG lists.
+
+[P] Harvard FCU · Harvard FCU Is Here
+
+[SPAN] A sponsorship with a heartbeat, not a scoreboard line.
+
+[P] CAP COM · A Slam Dunk Partnership · Siena Saints
+
+[SPAN] Partners
+[SPAN] Get in Touch
+
+[P] Reach out. Say hi.
+
+[A] hi@getjxm.com
+
+[P] Book a Consult with Jim & Matt
+
+[SPAN] e.
+[SPAN] s.
+
+[A] LinkedIn
+
+[SPAN] Ideas
+
+[H2] Essays, briefs, and the occasional rant.
+
+[SPAN] Apr 09 · 2026
+[SPAN] On Standards
+[SPAN] 5 min ↗
+[SPAN] Apr 08 · 2026
+[SPAN] Open Account, Get Toaster
+[SPAN] LinkedIn ↗
+[SPAN] Apr 06 · 2026
+[SPAN] Sonar? So What.
+[SPAN] 4 min ↗
+[SPAN] Mar 24 · 2026
+[SPAN] Engineering Consumer Preference in Uncertain Times
+[SPAN] 6 min ↗
+[SPAN] Jul 26 · 2024
+[SPAN] Conquering the Competition with Advanced Targeting Tactics
+[SPAN] 8 min ↗
+[SPAN] Sep 03 · 2024
+[SPAN] Better Options & Menus: Our Approach to Media Planning
+[SPAN] 5 min ↗
+
+[A] Check out more articles →
+
+
+========================================================================
+PAGE: Service: Growth Strategy
+FILE: service-details-strategy.html
+URL:  /service-details-strategy
+TITLE:     Strategy · JXM
+META:      How we run a growth strategy engagement — process, deliverables, and what good looks like.
+========================================================================
+
+
+
+========================================================================
+PAGE: Service: Brand & Positioning
+FILE: service-details-brand.html
+URL:  /service-details-brand
+TITLE:     Brand · JXM
+META:      How we run brand and positioning work — process, deliverables, and what good looks like.
+========================================================================
+
+
+
+========================================================================
+PAGE: Service: Creative & Campaign
+FILE: service-details-creative.html
+URL:  /service-details-creative
+TITLE:     Creative · JXM
+META:      How we run creative and campaign work — process, deliverables, and what good looks like.
+========================================================================
+
+
+
+========================================================================
+PAGE: Service: Media Planning & Buying
+FILE: service-details-media.html
+URL:  /service-details-media
+TITLE:     Media · JXM
+META:      How we run media planning and buying — process, deliverables, and what good looks like.
+========================================================================
+
+
+
+========================================================================
+PAGE: Service: Performance & Analytics
+FILE: service-details-analytics.html
+URL:  /service-details-analytics
+TITLE:     Analytics · JXM
+META:      How we run performance and analytics work — process, deliverables, and what good looks like.
+========================================================================
+
+
+
+========================================================================
+PAGE: Case: Advia Credit Union
+FILE: client-stories-advia.html
+URL:  /client-stories-advia
+TITLE:     $70.6M in HELOC volume. One month. · Advia · JXM
+META:      How Advia Credit Union drove $70.6M in HELOC volume in a single month — strategy, creative, and the calls in between.
+========================================================================
+
+
+
+========================================================================
+PAGE: Case: Northwest Federal
+FILE: client-stories-nwfcu.html
+URL:  /client-stories-nwfcu
+TITLE:     99.5% OTT completion. The Commanders did the carrying. · Northwest Federal · JXM
+META:      How Northwest Federal Credit Union turned the Washington Commanders partnership into 4.6M impressions and a 99.5% OTT completion rate.
+========================================================================
+
+
+
+========================================================================
+PAGE: Case: Harvard FCU
+FILE: client-stories-harvard.html
+URL:  /client-stories-harvard
+TITLE:     Conversions up 460%. We stopped using SEG lists. · Harvard FCU · JXM
+META:      How Harvard FCU activated census-tract targeting around its expanded charter and lifted conversions by 460%.
+========================================================================
+
+
+
+========================================================================
+PAGE: Case: CAP COM
+FILE: client-stories-capcom.html
+URL:  /client-stories-capcom
+TITLE:     A sponsorship with a heartbeat, not a scoreboard line. · CAP COM · JXM
+META:      How CAP COM turned a Siena Saints sponsorship into a season-long content engine — and a partnership that lived in the community.
+========================================================================
+
