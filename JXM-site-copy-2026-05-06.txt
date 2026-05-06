@@ -3,21 +3,19 @@ JXM SITE — MASTER COPY EXPORT
 Generated 2026-05-06
 ========================================================================
 
-This document collects every visible copy element on every live page
-of jxm-new-site.com as of 2026-05-06. Page sections are separated by ===.
-Within each page, lines are tagged by element role:
-  [H1] / [H2] / [H3] — headings
-  [P]               — paragraph copy
-  [LI]              — list items
-  [SPAN]            — eyebrows, kickers, labels
-  [A] / [BUTTON]    — links / button labels
-  [QUOTE] / [STRONG] / [EM] — special inline elements
-  [SUMMARY] / [CAPTION]     — accordion / figure captions
+Every visible copy element on every live page of jxm-new-site, fresh
+from the deployed HTML. Page sections are separated by ===.
+Element role tags:
+  [H1] / [H2] / [H3] / [H4] — headings
+  [P]                       — paragraph copy
+  [LI]                      — list items
+  [SPAN]                    — eyebrows, kickers, labels
+  [A] / [BUTTON]            — links / button labels
+  [SUMMARY]                 — accordion / details summary
+  [CAPTION] / [QUOTE]       — figure caption / blockquote
+  [STRONG] / [EM]           — emphasis
 
-Nav, footer, modal overlays, and decorative widgets are excluded
-so the doc focuses on actual page content.
-
-Edit freely; changes can be reconciled back into the HTML pages.
+Nav, footer, modal overlays, decorative widgets excluded.
 
 
 ========================================================================
@@ -26,6 +24,9 @@ FILE: index.html
 URL:  /
 TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Execution
 ========================================================================
+
+[SPAN] Credit
+[SPAN] Unions
 
 [P] In '07 we wanted to build an agency for credit unions where growth meant something measurable. Members. Deposits. Loans. Not impressions, views, and clicks.
 [P] So we did.
@@ -107,6 +108,8 @@ TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Executio
 
 [P] Platforms
 [P] + Partners
+
+[SPAN] Selected Work
 
 [H2] Work we love, for people we love.
 
@@ -174,6 +177,109 @@ TITLE:     Studio · JXM
 META:      Founded in 2007 by Jim Pond and Matt Maguy. JXM is a founder-led growth partner for mission-driven brands. Effective, intentional, beautiful, bold.
 ========================================================================
 
+[SPAN] About JXM
+[SPAN] The standard
+
+[P] We started JXM because we wanted to help mission-driven brands grow. Nearly two decades later, JXM remains a premium founder-led growth partner for mission-driven brands.
+
+[SPAN] No money, no mission
+
+[H2] We aren’t like most agencies. We don’t really see ourselves as an agency at all.
+
+[P] Mission-driven brands are taught to treat marketing like a compromise — budget taken away from the work that matters. Our thesis is the opposite.
+[P] Mission is the promise a brand must keep. Marketing is what lifts it. Growth is what fuels it. There is no trade-off — there never was — and to us, the work that grows a mission-driven brand is the same work that protects its mission.
+
+[SPAN] Modus Operandi
+
+[H2] There’s science to our art, and an art to our science.
+
+[SPAN] Effective
+
+[LI] The work has to move a number.
+[LI] Drive a real result we can point to.
+[LI] The moment creative stops being accountable to outcomes, it becomes decoration.
+[LI] Decoration is expensive and forgettable.
+
+[SPAN] Intentional
+
+[LI] Nothing is accidental.
+[LI] Not the color, the copy, the channel, the timing.
+[LI] Every choice is made on purpose.
+[LI] And we can tell you exactly why.
+
+[SPAN] Beautiful
+
+[LI] Ugly loses. Every time.
+[LI] Beauty earns the second look.
+[LI] The second look earns the response.
+[LI] The math isn't complicated — it's just inconvenient.
+
+[SPAN] Bold
+
+[LI] Safe creative is a myth.
+[LI] Bold means taking a position. Making a choice.
+[LI] Putting it out in the world under your name.
+[LI] Every piece of work that mattered made someone nervous first.
+
+[SPAN] Keep reading · Essay
+
+[H3] On Standards
+
+[P] An essay on the four standards behind every JXM campaign — and why we won’t compromise on any of them.
+
+[SPAN] Selected Work
+
+[H2] Work we love, for people we love.
+
+[SPAN] $70.6M in HELOC volume. One month.
+
+[P] Advia Credit Union · HELOC / Real People
+
+[SPAN] 99.5% of viewers watched the whole thing.
+
+[P] Northwest Federal · Brand Bridge × Washington Commanders
+
+[SPAN] Conversions up 460%. We stopped using SEG lists.
+
+[P] Harvard FCU · Harvard FCU Is Here
+
+[SPAN] A sponsorship with a heartbeat, not a scoreboard line.
+
+[P] CAP COM · A Slam Dunk Partnership · Siena Saints
+
+[SPAN] Partners
+
+[P] Featured In
+
+[SPAN] The partners
+
+[H2] Four partners. One studio. The team scales the work — not the thinking.
+
+[P] Jim and Matt run the practice. John and Laurie run the engagements. The team behind them is small on purpose — every person on it earned their seat. That's how a founder-led firm should work, and it's how we've worked since day one.
+
+[H3] Jim Pond
+
+[SPAN] Co-Founder
+
+[P] Co-founded JXM in 2007. Creative authority across two decades of brand work. The voice behind the voice on most of what leaves the studio — and the partner clients lean on when the work has to take a position.
+
+[H3] John Cain
+
+[SPAN] Partner
+
+[P] Runs engagements end-to-end and keeps the standard intact from kickoff through delivery. The reason the work feels the same in month one and month thirty.
+
+[H3] Laurie Busby
+
+[SPAN] Managing Partner
+
+[P] Runs the operating system behind the practice — the planning, the people, the rhythm of how the work moves. The reason the studio scales without compromising the thinking at the top.
+
+[H3] Matt Maguy
+
+[SPAN] Co-Founder
+
+[P] Co-founded JXM in 2007. Twenty years in marketing. Writes Cheat Codes, runs the strategy practice, and gets put in the room when a client needs the call before the campaign.
 
 
 ========================================================================
@@ -184,6 +290,60 @@ TITLE:     Services · JXM
 META:      Brand strategy, creative and campaign, media planning and buying, performance and analytics, digital experience. The thinking and the work, under one roof.
 ========================================================================
 
+[SPAN] What We Do
+[SPAN] Services
+
+[H2] Five disciplines. Run in order. All under one roof.
+
+[P] JXM is a growth partner for mission-driven brands — which means we work upstream before we work downstream. Strategy decides what's worth building. Brand and creative make it visible. Media and analytics prove it moved. Five disciplines, one studio, no vendors in between.
+
+[SPAN] 01
+
+[H3] Growth Strategy
+
+[P] The decisions before the campaign. Where the budget goes. What's worth building. What to fix, what to kill, what to keep. We get hired to make the calls a marketing team shouldn't have to make alone — and to put a real number behind every recommendation.
+
+[SPAN] 02
+
+[H3] Brand & Positioning
+
+[P] The story the brand tells about itself, and the story the market believes back. We work on both. Most brands don't have a positioning problem — they have a
+
+[EM] visibility
+
+[P] problem. The position is fine. Nobody can find it. We fix that.
+
+[SPAN] 03
+
+[H3] Creative & Campaign
+
+[P] Concept, copy, art direction, production. The point isn't to be clever. The point is to be
+
+[EM] seen
+
+[P] — and to earn a second look from people who weren't looking for you. Every campaign that leaves the studio has to clear all four pillars: effective, intentional, beautiful, bold. We don't ship anything that doesn't.
+
+[SPAN] 04
+
+[H3] Media Planning & Buying
+
+[P] Where the work runs, how much we spend, and how we know it's working. We plan with the strategy in hand and buy with the creative in mind. Media and creative live on the same floor here — because the work doesn't matter until somebody sees it, and what they see is shaped by where it ran.
+
+[SPAN] 05
+
+[H3] Performance & Analytics
+
+[P] The number the campaign was supposed to move, and the proof that it did. Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics. No reporting theater. The dashboard tells you what worked, what didn't, and what to do next.
+
+[H2] Not sure where you fit in the five?
+
+[P] Most engagements start with a conversation, not a brief. A short note to
+
+[A] hi@getjxm.com
+
+[P] gets you Jim or Matt — and a real answer about where we'd start.
+
+[SPAN] Start the conversation
 
 
 ========================================================================
@@ -194,6 +354,46 @@ TITLE:     Work · JXM
 META:      Selected work from JXM. Campaigns and brand work for mission-driven organizations that move real-world numbers.
 ========================================================================
 
+[H1] Recent Work
+
+[SPAN] Recent
+[SPAN] Work
+[SPAN] Client stories
+
+[H2] Client Stories. Real Results.
+
+[P] Every JXM engagement starts with a measurement plan and ends with a number we'll point to. These are five of the campaigns we've put our name on most recently — what the brand was facing, what we did, and what happened.
+
+[SPAN] Home Equity / Brand Awareness
+
+[A] $70.6M in HELOC volume. One month.
+
+[SPAN] Advia · Real People
+[SPAN] (2026)
+[SPAN] Sports Partnership / Rewards
+
+[A] 99.5% of viewers watched the whole thing.
+
+[SPAN] Northwest Federal · Brand Bridge
+[SPAN] (2025)
+[SPAN] Omnichannel Lift / Census Targeting
+
+[A] Conversions up 460%. We stopped using SEG lists.
+
+[SPAN] Harvard FCU
+[SPAN] (2026)
+[SPAN] Sponsorship Activation / Fan-Building
+
+[A] A sponsorship with a heartbeat, not a scoreboard line.
+
+[SPAN] CAP COM · Siena Saints
+[SPAN] (2023)
+[SPAN] Book a
+[SPAN] Consult
+
+[H2] This could be us. Let's start
+
+[A] something fresh.
 
 
 ========================================================================
@@ -204,6 +404,74 @@ TITLE:     Ideas · JXM
 META:      Essays, briefs, and the occasional rant from JXM. Founder-written, practitioner-tested, on the work and the thinking behind it.
 ========================================================================
 
+[SPAN] Rants + Fresh Ideas
+[SPAN] Essays & Briefs
+
+[H2] Essays, briefs, and the occasional rant.
+
+[P] Founder-written, practitioner-tested. On the work, the thinking behind it, and the parts of the marketing industry that need a second look.
+
+[H3] On Standards
+[H3] Engineering Consumer Preference in Uncertain Times
+
+[H4] We're anti-persona.
+
+[SPAN] Jun 11 · JXM
+
+[H4] Here We Are Now, Entertain Us
+
+[SPAN] Nov 13 · JXM
+
+[H4] Overcoming Misconceptions About Outsourced Marketing
+
+[SPAN] Oct 2 · JXM
+
+[H4] Forecast Unknown: How Financial Brands Can Find Opportunity in Uncertainty
+
+[SPAN] Sep 16 · JXM
+
+[H4] Better Options & Menus: Our Approach to Media Planning
+
+[SPAN] Sep 3 · JXM
+
+[H4] Guide Your Brand to Treasure with KPIs × KPAs
+
+[SPAN] Aug 20 · JXM
+
+[H4] A Balanced Approach to Cookies and User Privacy?
+
+[SPAN] Jul 24 · JXM
+[SPAN] Cheat Codes
+
+[H2] Marketing lessons from the games we played.
+
+[P] A recurring series. Old game mechanics, modern marketing patterns. One sonar pulse at a time.
+
+[H3] Sonar? So What.
+[H3] Walking on Glass? Ouch.
+[H3] Parallel Worlds, Shared Purpose
+[H3] To a Hammer, Everything Is a Spike
+[H3] How to Destroy the Mother Brain
+[H3] Step Into the Ring
+[H3] The Greatest Cheat Code of All Time
+[H3] Stick the Landing
+[H3] It's Dangerous to Go Alone! Take This.
+[H3] The (Mutant) Power of Teamwork
+[H3] Marketing with No Power-Ups
+[H3] Clear the Lines, Clear the Wins
+[H3] A Brawler's Guide to Marketing
+
+[SPAN] News & Notes
+
+[H2] From the practice.
+
+[P] Press, announcements, and signals worth flagging from the work.
+
+[SPAN] JXM · News
+
+[H3] Conquering the Competition with Advanced Targeting Tactics.
+
+[SPAN] Jul 26, 2024 · Industry brief
 
 
 ========================================================================
@@ -214,6 +482,23 @@ TITLE:     Contact · JXM
 META:      Tell us what you want to grow. JXM is a founder-led growth partner for mission-driven brands. hi@getjxm.com.
 ========================================================================
 
+[SPAN] Reach Out
+[SPAN] Contact
+
+[H2] Tell us what you want to grow.
+
+[P] Get in touch
+[P] The fastest way in is
+
+[A] hi@getjxm.com
+
+[P] We read every note.
+[P] Or fill out the form and we'll route it to Jim or Matt directly. Most replies go out same-day.
+[P] Connect
+
+[A] LinkedIn
+
+[SPAN] Send Message
 
 
 ========================================================================
@@ -224,6 +509,13 @@ TITLE:     Page Not Found · JXM
 META:      That page doesn't exist. Head back home or jump into the work, services, or contact pages.
 ========================================================================
 
+[SPAN] 404
+
+[H2] Wrong turn. Easy fix.
+
+[P] We can't find that page. Head back home, or jump to the work, services, or contact pages from the nav.
+
+[SPAN] Back to home
 
 
 ========================================================================
@@ -232,6 +524,9 @@ FILE: credit-unions.html
 URL:  /credit-unions
 TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Execution
 ========================================================================
+
+[SPAN] Credit
+[SPAN] Unions
 
 [P] In '07 we wanted to build an agency for credit unions where growth meant something measurable. Members. Deposits. Loans. Not impressions, views, and clicks.
 [P] So we did.
@@ -314,6 +609,8 @@ TITLE:     Ready to Get More Members? Get JXM | Credit Union Strategy + Executio
 [P] Platforms
 [P] + Partners
 
+[SPAN] Selected Work
+
 [H2] Work we love, for people we love.
 
 [SPAN] $70.6M in HELOC volume. One month.
@@ -380,6 +677,93 @@ TITLE:     Strategy · JXM
 META:      How we run a growth strategy engagement — process, deliverables, and what good looks like.
 ========================================================================
 
+[SPAN] [SL: 001]
+[SPAN] [Growth Strategy]
+
+[A] [Next]
+
+[H2] Strategy
+[H2] First
+
+[P] We get hired to make the calls a marketing team shouldn't have to make alone. Audit, sizing, sequencing, and a number behind every recommendation. We don't guess. We model, then we move.
+
+[LI] Audit
+[LI] Modeling
+[LI] Channel Strategy
+[LI] Roadmap
+[LI] Decisions
+
+[SPAN] Our growth
+[SPAN] strategy process
+
+[H2] Whether you're early, scaling, or stuck, we work out where budget goes and what the next twelve months should look like.
+
+[SPAN] 04
+[SPAN] 01
+
+[H3] Audit & Diagnostic
+
+[P] We pull every number that matters — funnel, cost, retention, channel mix — and tell you which ones are lying.
+
+[SPAN] 02
+
+[H3] Sizing & Modeling
+
+[P] We model the market, the spend, and the realistic ceiling so the plan you sign rests on math, not hope.
+
+[SPAN] 03
+
+[H3] Channel Strategy
+
+[P] Where the dollars work hardest and where they quietly burn. We rank, weight, and sequence every channel against actual return.
+
+[SPAN] 04
+
+[H3] Roadmap Build
+
+[P] A twelve-month plan with quarterly milestones, named owners, and a clear definition of done. No vague phases. No optimistic timelines.
+
+[H3] Decisions & Tradeoffs
+
+[P] What to fix, what to kill, what to keep. Every recommendation comes with a number, a rationale, and real cost.
+
+[H3] Stakeholder Alignment
+
+[P] We get the room nodding in the same direction. Strategy dies in the gap between teams.
+
+[H3] Measurement Framework
+
+[P] We define the numbers that matter before the work starts, so success isn't argued about later.
+
+[H3] Working Sessions
+
+[P] We run weekly working sessions with your team — not status updates, but real decisions, made together, in the open.
+
+[H2] We replace marketing instinct with a number, a deadline, and a next move.
+
+[H3] 01
+
+[P] Strategy isn't a deck. It's the set of decisions that determine where every dollar lands and what the team chases for the next year.
+
+[H3] 02
+
+[P] Most growth problems aren't strategy problems. They're decision problems. Teams know what to do, they just don't know which one to do first, or which one to cut. We force the order.
+
+[H3] 03
+
+[P] Every engagement starts with a question: what would you do if this were your money? We answer like it is. Then we hand you the model, the math, and the call.
+
+[SPAN] FAQ
+
+[H2] Common questions about how growth strategy works
+
+[BUTTON] How long does strategy work take?
+[BUTTON] Do you do retainer work?
+[BUTTON] What deliverables do we walk away with?
+[BUTTON] Do you work with our existing agencies?
+[BUTTON] What if we already have a strategy?
+[BUTTON] Can you tell us if we should fire someone?
+[BUTTON] How do you charge for strategy?
 
 
 ========================================================================
@@ -390,6 +774,93 @@ TITLE:     Brand · JXM
 META:      How we run brand and positioning work — process, deliverables, and what good looks like.
 ========================================================================
 
+[SPAN] [SL: 002]
+[SPAN] [Brand & Positioning]
+
+[A] [Next]
+
+[H2] Position
+[H2] Clearly
+
+[P] Most brands don't have a positioning problem. They have a visibility problem. The position is fine. Nobody can find it. We fix that, sharpening the story until the market repeats it back.
+
+[LI] Positioning
+[LI] Naming
+[LI] Identity
+[LI] Voice
+[LI] Messaging
+
+[SPAN] Our brand
+[SPAN] positioning process
+
+[H2] We work on the story the brand tells about itself, and the story the market believes back. Both need to match.
+
+[SPAN] 04
+[SPAN] 01
+
+[H3] Audience & Insight
+
+[P] We talk to people who already buy, those who almost did, and those who never will. Real patterns emerge fast.
+
+[SPAN] 02
+
+[H3] Position & Frame
+
+[P] We find the angle nobody else owns, then write it in language a buyer would actually use to describe you.
+
+[SPAN] 03
+
+[H3] Story Architecture
+
+[P] The narrative spine that holds everything else up — homepage, sales deck, pitch, memo. One story, told consistently across surfaces.
+
+[SPAN] 04
+
+[H3] Message Map
+
+[P] One sentence per audience, per moment, per channel. The map keeps the team on-message when the brief inevitably gets messy.
+
+[H3] Visual & Verbal
+
+[P] Identity work that holds up in the wild. Logo, type, voice, palette — built to hand off and stay consistent.
+
+[H3] Naming Work
+
+[P] When the name is wrong, nothing lands. We name products, lines, programs — and defend it.
+
+[H3] Voice Guidelines
+
+[P] How the brand sounds in writing, in pitch, the moment something goes sideways. Documented, not assumed.
+
+[H3] Rollout Plan
+
+[P] Brand work fails in the handoff. We sequence the rollout so the new positioning lands inside and outside the company.
+
+[H2] A brand isn't what you say it is — it's what they remember.
+
+[H3] 01
+
+[P] Positioning is the answer to the only question that matters: when someone needs what you do, do they think of you first or second?
+
+[H3] 02
+
+[P] Most positioning work dies on a slide. Pretty deck, smart language, never used. We build positioning that survives the handoff to sales, to creative, and to the next CMO who walks in.
+
+[H3] 03
+
+[P] We don't sell taglines. We sell the underlying decision — who you're for, what you're against, the single sentence that holds both. Everything else, every campaign and asset, hangs off it.
+
+[SPAN] FAQ
+
+[H2] Common questions about brand and positioning work
+
+[BUTTON] Do we need a full rebrand?
+[BUTTON] How do you measure positioning?
+[BUTTON] What if positioning splits our team internally?
+[BUTTON] Will this also change our visual identity?
+[BUTTON] Do you write the copy for us?
+[BUTTON] How do you handle a brand with multiple audiences?
+[BUTTON] How long does positioning work take?
 
 
 ========================================================================
@@ -400,6 +871,93 @@ TITLE:     Creative · JXM
 META:      How we run creative and campaign work — process, deliverables, and what good looks like.
 ========================================================================
 
+[SPAN] [SL: 003]
+[SPAN] [Creative & Campaign]
+
+[A] [Next]
+
+[H2] Earn
+[H2] Attention
+
+[P] The point isn't to be clever. The point is to be seen — and to earn a second look from people who weren't looking for you. Every campaign clears all four pillars.
+
+[LI] Concept
+[LI] Copy
+[LI] Art Direction
+[LI] Production
+[LI] Launch
+
+[SPAN] Our creative
+[SPAN] campaign process
+
+[H2] Concept, copy, art direction, production. We don't ship anything that isn't effective, intentional, beautiful, and bold. All four pillars. No shortcuts.
+
+[SPAN] 04
+[SPAN] 01
+
+[H3] Brief & Insight
+
+[P] A real brief is a sharpened question. We rewrite yours until the answer is obvious to anyone who reads it.
+
+[SPAN] 02
+
+[H3] Concept & Direction
+
+[P] We bring three concepts, not thirty. Each has a reason to exist, a target, and a defensible point of view.
+
+[SPAN] 03
+
+[H3] Copy Craft
+
+[P] Words that survive the focus group, the legal review, and the room. Nothing in our copy is there by accident.
+
+[SPAN] 04
+
+[H3] Art Direction
+
+[P] Visual decisions made in service of the idea, not in service of the trend. Distinctive, repeatable, and built to scale.
+
+[H3] Production & Craft
+
+[P] We hire the right director, photographer, illustrator, or composer for the job. Production is where great ideas die. Not here.
+
+[H3] Pillar Check
+
+[P] Effective, intentional, beautiful, bold. Every piece gets graded against all four before it leaves the studio.
+
+[H3] Asset System
+
+[P] Every campaign ships with a system — variants, formats, templates — so work scales without dilution.
+
+[H3] Launch Plan
+
+[P] We sequence the rollout — hero piece first, supporting waves next, optimizations after. The campaign builds momentum instead of fading.
+
+[H2] We don't ship anything that doesn't clear all four creative pillars. Full stop.
+
+[H3] 01
+
+[P] Effective gets the result. Intentional means every choice is defensible. Beautiful makes people stop. Bold makes them remember it. The four are not negotiable.
+
+[H3] 02
+
+[P] Most agency creative passes one pillar, maybe two. The rest gets waved through because deadlines. We hold the line. A concept that's effective and beautiful but isn't bold goes back. Every time.
+
+[H3] 03
+
+[P] We earn the second look. The first is bought with media; the second is earned with the work. If your campaign doesn't earn it, the spend was wasted on the impression.
+
+[SPAN] FAQ
+
+[H2] Common questions about creative and campaign work
+
+[BUTTON] How many concepts will we see?
+[BUTTON] What if we hate it?
+[BUTTON] How do you handle production and crew?
+[BUTTON] Who owns the work after we deliver?
+[BUTTON] Do you do both digital and print?
+[BUTTON] How do you measure whether a campaign actually worked?
+[BUTTON] How long does a campaign take?
 
 
 ========================================================================
@@ -410,6 +968,93 @@ TITLE:     Media · JXM
 META:      How we run media planning and buying — process, deliverables, and what good looks like.
 ========================================================================
 
+[SPAN] [SL: 004]
+[SPAN] [Media Planning & Buying]
+
+[A] [Next]
+
+[H2] Buy
+[H2] Better
+
+[P] Where work runs, how much we spend, and how we know it's working. We plan with strategy in hand and buy with creative in mind. Media and creative on the same floor.
+
+[LI] Channel Mix
+[LI] Buying
+[LI] Programmatic
+[LI] OOH
+[LI] Optimization
+
+[SPAN] Our media
+[SPAN] planning process
+
+[H2] The work doesn't matter until somebody sees it, and what they see is shaped by where it runs. Both decisions matter.
+
+[SPAN] 04
+[SPAN] 01
+
+[H3] Audience & Mapping
+
+[P] We map where your audience actually spends real time — not where it's easy to buy, but where attention lives.
+
+[SPAN] 02
+
+[H3] Channel & Mix
+
+[P] Paid social, search, display, OOH, broadcast, podcasts, partnerships. We weight the mix by likely return on spend, not by habit.
+
+[SPAN] 03
+
+[H3] Plan Build
+
+[P] A flighting plan that ladders to the strategy. Budget by quarter, by channel, by audience — visible, defensible, and editable.
+
+[SPAN] 04
+
+[H3] Buy Execution
+
+[P] We negotiate, book, hold partners to the rate card. No black boxes. Every dollar gets traced from spend to placement.
+
+[H3] Creative & Placement
+
+[P] We brief creative to the placement, not the other way around. Format shapes the idea, the idea shapes the buy.
+
+[H3] Optimization Loop
+
+[P] Weekly reads. We move budget toward what's working and pull it from what isn't. Real time.
+
+[H3] Vendor Discipline
+
+[P] We audit the partners you work with. Sometimes they stay. Sometimes they don't. The math decides.
+
+[H3] Reporting Cadence
+
+[P] Weekly read, monthly full review, quarterly strategy check. No vanity dashboards. The numbers we share are the numbers we use.
+
+[H2] Plan with strategy in hand. Buy with creative in mind. Both at once.
+
+[H3] 01
+
+[P] Most agencies separate the two. Strategy team plans, media team buys, and creative gets handed an asset spec at the end. We refuse it.
+
+[H3] 02
+
+[P] A media plan written without the creative in mind ends up buying placements the work can't actually fill. We brief creative and media at the same time, same audience, same target outcome.
+
+[H3] 03
+
+[P] Buying media is buying attention. The number you pay determines what you can afford. The decisions you make determine whether you got attention or just impressions. The two are different entirely.
+
+[SPAN] FAQ
+
+[H2] Common questions about media planning and buying
+
+[BUTTON] What's the minimum spend you handle?
+[BUTTON] Do you take agency commissions?
+[BUTTON] How do you handle attribution and tracking?
+[BUTTON] Will you work with our current buyers?
+[BUTTON] Do you handle programmatic and direct buys?
+[BUTTON] What's the difference between you and a media agency?
+[BUTTON] How do you charge for media?
 
 
 ========================================================================
@@ -420,6 +1065,93 @@ TITLE:     Analytics · JXM
 META:      How we run performance and analytics work — process, deliverables, and what good looks like.
 ========================================================================
 
+[SPAN] [SL: 005]
+[SPAN] [Performance & Analytics]
+
+[A] [Next]
+
+[H2] Prove
+[H2] It
+
+[P] The number the campaign was supposed to move, and the proof it did. Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics. No theater.
+
+[LI] Goals
+[LI] Tracking
+[LI] Dashboards
+[LI] Testing
+[LI] Reporting
+
+[SPAN] Our performance
+[SPAN] analytics process
+
+[H2] The dashboard tells you what worked, what didn't, and what to do next. That's the whole point. Anything else is decoration.
+
+[SPAN] 04
+[SPAN] 01
+
+[H3] Goals & Baseline
+
+[P] Before any campaign launches, we define what success looks like — the number, the threshold, the timeline, and the owner.
+
+[SPAN] 02
+
+[H3] Tracking & Tagging
+
+[P] We audit your tracking setup before trusting the numbers. Most are leaky. We fix the leaks before launch, not after.
+
+[SPAN] 03
+
+[H3] Dashboard Build
+
+[P] Custom dashboards built on your data, not a templated tool. The metrics that matter for your business, in one place.
+
+[SPAN] 04
+
+[H3] Live Reads
+
+[P] We watch performance daily during launch, weekly after that. The dashboard goes live with the campaign, not after it ends.
+
+[H3] Test & Learn
+
+[P] We design tests that produce real answers, not noisy data. Holdouts, geo splits, incrementality reads — built into the plan.
+
+[H3] Insight Memos
+
+[P] Plain-language summaries of what the data actually says. No charts without conclusions. No conclusions without recommendations.
+
+[H3] Recommendation Layer
+
+[P] Every report ends with a what-now. The dashboard isn't done until it tells you what's next.
+
+[H3] Quarterly Review
+
+[P] Every quarter we step back, look at trend lines, and tell you what the data says about the year ahead.
+
+[H2] The dashboard tells you what worked, what didn't, and what to do next.
+
+[H3] 01
+
+[P] Most agency reporting is theater. Pretty charts, big numbers, nothing actionable. We grade ourselves the way you should: did the promised number actually move?
+
+[H3] 02
+
+[P] A measurement plan written before launch is the difference between knowing what worked and arguing about it later. We baseline, define success in clear numbers, and lock the goalposts before spend hits.
+
+[H3] 03
+
+[P] A dashboard isn't a deliverable. It's a tool. The test isn't whether it looks good in a meeting; it's whether your team checks it Monday to make a decision that matters.
+
+[SPAN] FAQ
+
+[H2] Common questions about performance and analytics work
+
+[BUTTON] What metrics do you actually track?
+[BUTTON] Do you build the dashboard?
+[BUTTON] How do you handle messy data sets?
+[BUTTON] What if the campaign isn't actually working?
+[BUTTON] Do you do attribution and incrementality testing?
+[BUTTON] What's the difference between a dashboard and a report?
+[BUTTON] Do you stay on after launch?
 
 
 ========================================================================
@@ -430,6 +1162,62 @@ TITLE:     $70.6M in HELOC volume. One month. · Advia · JXM
 META:      How Advia Credit Union drove $70.6M in HELOC volume in a single month — strategy, creative, and the calls in between.
 ========================================================================
 
+[SPAN] Home Equity / Brand Awareness
+
+[H2] HELOC / Real People
+
+[STRONG] $70.6M in HELOC volume. One month.
+
+[P] — In March 2026, the campaign drove 1,763 new members and reset what growth could look like.
+[P] Applications
+[P] +16.6%
+[P] Loan Requests
+[P] +23%
+[P] Key Actions
+[P] +478%
+[P] Deposit Mo. Rank
+[P] #1 of 2026
+
+[SPAN] Context
+
+[H2] The setup.
+
+[P] Twelve years into the partnership, the HELOC category had gone quiet. Rates looked the same across every competitor. Creative had flattened into category wallpaper. Advia needed to be the brand members actually chose — not the one they compared.
+
+[SPAN] Move
+
+[H3] What we did.
+
+[P] We cast real members instead of talent. We wrote the story around their lives instead of the product. And we pushed the campaign across a media mix built for attention: connected TV, social video, and a landing experience engineered to convert the moment intent arrived.
+
+[SPAN] Result
+
+[H3] What it moved.
+
+[P] March 2026 became Advia's strongest deposit month of the year. CD balances nearly doubled to $174.5M. HELOC scaled from near-zero to 666 applications and $70.6M in requested loan volume in a single month.
+[P] The landing page delivered a 478% surge in key events — proof that the right media mix, reaching the right audience at the right moment, still outperforms rate alone.
+[P] New members in March
+
+[H3] 1,763
+
+[P] Loan volume increase
+
+[H3] 23%
+
+[P] Sessions
+
+[H3] 360,500
+
+[P] In-branch visits
+
+[H3] 1,145
+
+[SPAN] Channels
+[SPAN] Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · TikTok · YouTube · Amazon Prime
+[SPAN] Previous
+[SPAN] A Slam Dunk Partnership · CAP COM
+[SPAN] Next
+[SPAN] Brand Bridge × Holiday Rewards · Northwest Federal
 
 
 ========================================================================
@@ -440,6 +1228,62 @@ TITLE:     99.5% OTT completion. The Commanders did the carrying. · Northwest F
 META:      How Northwest Federal Credit Union turned the Washington Commanders partnership into 4.6M impressions and a 99.5% OTT completion rate.
 ========================================================================
 
+[SPAN] Sports Partnership / Rewards
+
+[H2] Brand Bridge & Holiday Rewards
+
+[STRONG] 99.5% of viewers watched the whole thing.
+
+[P] — The Commanders partnership did the carrying — 4.6M impressions, 99.5% OTT completion, and early lift for the Where Trust Matters platform to come.
+[P] Impressions
+[P] 4.6M
+[P] OTT Completion
+[P] 99.5%
+[P] New Users
+[P] 10×
+[P] CTR
+[P] 1.10%
+
+[SPAN] Context
+
+[H2] The setup.
+
+[P] Sports sponsorships are expensive noise if the creative doesn't carry them. NWFCU had the Washington Commanders partnership already in place — the challenge was making it translate into real brand value heading into 2025.
+
+[SPAN] Move
+
+[H3] What we did.
+
+[P] We paired brand storytelling with the Now Plus Rewards Card and built the work to seed momentum for the upcoming Where Trust Matters platform. Stadium geofencing and OTT did the scale. The creative did the carrying.
+
+[SPAN] Result
+
+[H3] What it moved.
+
+[P] The campaign generated 4.6M impressions, 1.1M video views, and a 99.5% OTT completion rate. Membership page traffic tripled. New users reached 29K. Total site users rose 13% month-over-month.
+[P] Holiday Rewards produced 1,993 KPAs, Meta ads earned a 1.10% CTR, and December closed with 1,317 applications and $11.7M funded.
+[P] Impressions
+
+[H3] 4.6M
+
+[P] OTT VCR
+
+[H3] 99.5%
+
+[P] New users
+
+[H3] 29K
+
+[P] Funded
+
+[H3] $11.7M
+
+[SPAN] Channels
+[SPAN] Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · Stadium Geofencing
+[SPAN] Previous
+[SPAN] HELOC / Real People · Advia
+[SPAN] Next
+[SPAN] Harvard FCU Is Here
 
 
 ========================================================================
@@ -450,6 +1294,62 @@ TITLE:     Conversions up 460%. We stopped using SEG lists. · Harvard FCU · JX
 META:      How Harvard FCU activated census-tract targeting around its expanded charter and lifted conversions by 460%.
 ========================================================================
 
+[SPAN] Omnichannel Lift / Census Targeting
+
+[H2] Harvard FCU Is Here
+
+[STRONG] Conversions up 460%. We stopped using SEG lists.
+
+[P] — After the 2024 rebrand and charter expansion, the old SEG lists couldn't reach the new footprint. So we stopped using them.
+[P] Sessions
+[P] 1.1M
+[P] Conversions
+[P] 79K
+[P] CTR
+[P] 0.47%
+[P] Pageviews
+[P] +50%
+
+[SPAN] Context
+
+[H2] The setup.
+
+[P] Harvard FCU had just blown up its field of membership. Legacy SEG lists weren't going to reach the new prospects. The rebrand needed the media to catch up to the scale of the charter change.
+
+[SPAN] Move
+
+[H3] What we did.
+
+[P] We activated census-tract–based targeting and built the HERE and Alumni Card campaigns around the new footprint. Scale and precision at the same time — instead of trading one for the other.
+
+[SPAN] Result
+
+[H3] What it moved.
+
+[P] Site traffic surged 34% YoY to more than 1.1M sessions. Pageviews climbed 50%. Key Events jumped over 460% — from 14,000 to nearly 79,000 conversions.
+[P] Campaigns delivered 10.2M impressions, 48,000+ clicks, and a combined 0.47% CTR — more than four times the industry benchmark.
+[P] Site traffic YoY
+
+[H3] 34%
+
+[P] Conversion lift
+
+[H3] 460%
+
+[P] Impressions
+
+[H3] 10.2M
+
+[P] CTR vs. industry
+
+[H3] 4×
+
+[SPAN] Channels
+[SPAN] Hulu · Disney+ · Meta · Display · Retargeting · Peacock · OTT · Census Targeting
+[SPAN] Previous
+[SPAN] Brand Bridge × Holiday Rewards · Northwest Federal
+[SPAN] Next
+[SPAN] A Slam Dunk Partnership · CAP COM
 
 
 ========================================================================
@@ -460,3 +1360,58 @@ TITLE:     A sponsorship with a heartbeat, not a scoreboard line. · CAP COM · 
 META:      How CAP COM turned a Siena Saints sponsorship into a season-long content engine — and a partnership that lived in the community.
 ========================================================================
 
+[SPAN] Sponsorship Activation / Fan-Building
+
+[H2] A Slam Dunk Partnership
+
+[STRONG] A sponsorship with a heartbeat, not a scoreboard line.
+
+[P] — The Siena Saints sponsorship was supposed to show up in the community — not just on a scoreboard. We gave it a heartbeat.
+[P] All-Access
+[P] Team & Venue
+[P] Engine
+[P] Video Content
+[P] Targeting
+[P] Arena Geofence
+[P] Storyline
+[P] Season-long
+
+[SPAN] Context
+
+[H2] The setup.
+
+[P] Sponsorship dollars only matter if they show up in the community. CAP COM had committed to sponsoring the Siena Saints — a Division I basketball team in Albany — and the real challenge was making every dollar translate into brand value instead of a line on the jumbotron.
+
+[SPAN] Move
+
+[H3] What we did.
+
+[P] We secured an all-access pass to the team. We captured the raw energy of the games and the behind-the-scenes moments fans never see. And we built a dynamic video content engine that folded CAP COM into every storyline of the season.
+
+[SPAN] Result
+
+[H3] What it moved.
+
+[P] The sponsorship became the community's story, not a line item in the budget. Arena-targeted retargeting kept the brand present from tipoff through the final buzzer. The creative gave the partnership a heartbeat that a logo on a scoreboard never could.
+[P] Team & venue
+
+[H3] All-access
+
+[P] Content engine
+
+[H3] Video
+
+[P] Geofencing
+
+[H3] Arena
+
+[P] Engagement focus
+
+[H3] Fans
+
+[SPAN] Channels
+[SPAN] Hulu · Meta · Display · Retargeting · OTT · YouTube · Mobile Tracking · Arena Targeting
+[SPAN] Previous
+[SPAN] Harvard FCU Is Here
+[SPAN] Next
+[SPAN] HELOC / Real People · Advia
