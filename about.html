@@ -761,18 +761,21 @@
       margin-bottom: 1.25rem;
     }
 
+    /* Match the rest of the page's section-title pattern: sequelsans
+       roman at weight 310, clamp 2-3.5rem, line-height 1.05, the
+       letter-spacing -0.07em set by .font-sequelsans-romanbody. */
     body.about-light .thesis-headline {
-      font-family: 'Inter', sans-serif;
-      font-weight: 700;
-      font-style: italic;
-      font-size: clamp(2.25rem, 4.6vw, 3.75rem);
-      line-height: 1.0;
-      letter-spacing: -0.04em;
+      font-family: var(--font_sequelsansromanbody);
+      font-weight: 310;
+      font-style: normal;
+      font-size: clamp(2rem, 4.4vw, 3.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.07em;
       color: var(--jxm-abyss) !important;
       -webkit-text-fill-color: var(--jxm-abyss) !important;
       background: none !important;
       margin: 0 0 1.75rem;
-      max-width: 14ch;
+      max-width: 22ch;
     }
 
     .thesis-body {
