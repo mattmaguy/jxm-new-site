@@ -2284,7 +2284,7 @@
     .v6-headline {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       font-weight: 300;
-      font-size: clamp(2.75rem, 9vw, 8.5rem);
+      font-size: clamp(2.25rem, 7.2vw, 6.75rem);
       line-height: 1.05;
       letter-spacing: -0.015em;
       color: var(--jxm-tusk);
@@ -2306,7 +2306,7 @@
     }
     .v6-line-2 {
       justify-content: flex-start;
-      padding-left: clamp(2rem, 9vw, 8rem);
+      padding-left: clamp(1.5rem, 6vw, 5.5rem);
     }
     .v6-line-3 {
       display: grid;
@@ -2317,11 +2317,14 @@
       border-bottom: none;
     }
 
-    .v6-word { display: inline-block; line-height: 1; }
+    .v6-word {
+      display: inline-block;
+      line-height: 1;
+      white-space: nowrap;
+    }
     .v6-word--right {
       justify-self: end;
       text-align: right;
-      white-space: nowrap;
     }
 
     /* Star/sun node sits inline with the headline x-height */
