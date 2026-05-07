@@ -55,7 +55,7 @@
 
 /* Quick mode for in-session navigation: skip the dwell, faster wash */
 .v5-intro--quick .v5-intro-wash {
-  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 520ms cubic-bezier(0.22, 1, 0.36, 1);
 }
 .v5-intro--quick .v5-intro-logo {
   display: none;

@@ -57,7 +57,7 @@
       setTimeout(() => {
         intro.classList.add('v5-intro--gone');
         markDone();
-      }, 420);
+      }, 520);
     });
     return;
   }
