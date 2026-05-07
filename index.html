@@ -2435,8 +2435,63 @@
       letter-spacing: -0.01em;
     }
 
-    /* Reveal: integrate v6-hero-block into the v4-row reveal cadence */
-    body.is-loaded .v4-hero-inner > .v6-hero-block { transition-delay: 220ms; }
+    /* ── Reveal: stagger headline lines, node, body, CTA ──
+       Block itself stays at full opacity so the inner elements drive the
+       reveal instead of fading in lockstep. */
+    .v4-hero-inner > .v6-hero-block {
+      opacity: 1;
+      transform: none;
+      transition: none;
+    }
+
+    /* Desktop: each headline line + line-3 children fade up individually */
+    .v6-line,
+    .v6-meta,
+    .v6-cta,
+    .v6-word--right {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    body.is-loaded .v6-line,
+    body.is-loaded .v6-meta,
+    body.is-loaded .v6-cta,
+    body.is-loaded .v6-word--right {
+      opacity: 1;
+      transform: none;
+    }
+    body.is-loaded .v6-line-1     { transition-delay: 220ms; }
+    body.is-loaded .v6-line-2     { transition-delay: 360ms; }
+    body.is-loaded .v6-meta       { transition-delay: 500ms; }
+    body.is-loaded .v6-cta        { transition-delay: 600ms; }
+    body.is-loaded .v6-word--right{ transition-delay: 700ms; }
+    /* The grid row itself doesn't need its own fade — its children handle it */
+    .v6-line-3 { opacity: 1; transform: none; transition: none; }
+
+    /* Mobile: node, each headline line, body, CTA stagger in */
+    .v6-mobile-node,
+    .v6-mobile-line,
+    .v6-mobile-meta,
+    .v6-mobile-cta {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity 720ms cubic-bezier(0.22, 1, 0.36, 1),
+                  transform 720ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    body.is-loaded .v6-mobile-node,
+    body.is-loaded .v6-mobile-line,
+    body.is-loaded .v6-mobile-meta,
+    body.is-loaded .v6-mobile-cta {
+      opacity: 1;
+      transform: none;
+    }
+    body.is-loaded .v6-mobile-node                  { transition-delay: 220ms; }
+    body.is-loaded .v6-mobile-line:nth-child(1)     { transition-delay: 320ms; }
+    body.is-loaded .v6-mobile-line:nth-child(2)     { transition-delay: 400ms; }
+    body.is-loaded .v6-mobile-line:nth-child(3)     { transition-delay: 480ms; }
+    body.is-loaded .v6-mobile-meta                  { transition-delay: 580ms; }
+    body.is-loaded .v6-mobile-cta                   { transition-delay: 680ms; }
 
     /* ── Mobile-only flowing layout ── */
     .v6-hero-mobile { display: none; }
@@ -2510,7 +2565,9 @@
     }
 
     @media (prefers-reduced-motion: reduce) {
-      .v4-hero-inner > .v6-hero-block {
+      .v4-hero-inner > .v6-hero-block,
+      .v6-line, .v6-meta, .v6-cta, .v6-word--right,
+      .v6-mobile-node, .v6-mobile-line, .v6-mobile-meta, .v6-mobile-cta {
         opacity: 1 !important;
         transform: none !important;
         transition: none !important;
