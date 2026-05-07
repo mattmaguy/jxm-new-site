@@ -2284,7 +2284,16 @@
       /* 4rem bottom padding = ~64px gap between the CTA row and the
          marquee that follows. */
       padding: 1.5rem 0 4rem;
+      /* Flex column so .v4-hero-inner can stretch to fill the hero's
+         min-height. Otherwise inner's `height: 100%` resolves to auto
+         against an `height: auto` parent, and the v6-hero-block's
+         flex-end alignment has nothing to anchor against. */
+      display: flex;
+      flex-direction: column;
     }
+    /* Inner stretches to fill the hero's min-height under the new flex
+       layout — replaces the legacy `height: 100%` resolution path. */
+    .v4-hero > .v4-hero-inner { flex: 1; }
     /* Recolor v4 nav + corner so they read on abyss */
     .v4-hero .v4-corner-left { color: rgba(243, 241, 236, 0.45); }
     .v4-hero .v4-logo { color: var(--jxm-tusk); }
