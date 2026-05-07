@@ -2283,7 +2283,7 @@
     /* Headline — Inter Light, three lines stacked, hairlines between */
     .v6-headline {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      font-weight: 300;
+      font-weight: 500;
       font-size: clamp(2.25rem, 7.2vw, 6.75rem);
       line-height: 1.05;
       letter-spacing: -0.015em;
@@ -2340,11 +2340,13 @@
       fill: var(--jxm-tusk);
     }
 
-    /* Bottom-row meta copy — body copy, left column */
+    /* Bottom-row meta copy — body copy in left column. Width capped so it
+       wraps the way the design has it (2 lines + bold "We fix that." line). */
     .v6-meta {
       justify-self: start;
       align-self: end;
-      max-width: 22rem;
+      width: 100%;
+      max-width: 16rem;
       padding-bottom: 1.25rem;
       font-family: 'Inter', sans-serif;
       font-weight: 400;
@@ -2352,6 +2354,9 @@
       line-height: 1.45;
       letter-spacing: 0;
       color: rgba(243, 241, 236, 0.85);
+      white-space: normal;
+      overflow-wrap: break-word;
+      word-break: normal;
     }
     .v6-meta strong {
       display: block;
@@ -2389,6 +2394,15 @@
       border-color: var(--jxm-tusk);
     }
     .v6-cta-label { display: inline-block; line-height: 1; }
+
+    /* Large variant — ~50% bigger than the default v6-cta. Use for hero/CTA
+       moments where the button needs to carry more visual weight. */
+    .v6-cta--lg {
+      padding: 1.4rem 3.75rem;
+      font-size: 1.4rem;
+      letter-spacing: -0.01em;
+      border-width: 1.5px;
+    }
 
     /* Reveal: integrate v6-hero-block into the v4-row reveal cadence */
     body.is-loaded .v4-hero-inner > .v6-hero-block { transition-delay: 220ms; }
