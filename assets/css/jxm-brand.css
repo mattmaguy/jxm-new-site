@@ -542,7 +542,7 @@ body.dark .works-wrapper-4 .work-box .meta .date {
   align-items: center;
   gap: 0.5rem;
   padding: 0.6rem 1.1rem;
-  background: #fff;
+  background: #f3f1ec;
   color: #09090b;
   border-radius: 999px;
   font-family: 'DM Sans', sans-serif;
@@ -621,7 +621,7 @@ body.dark .works-wrapper-4 .work-box .meta .date {
   border-radius: 999px;
   background: rgba(255,255,255,0.08);
   border: 1px solid rgba(255,255,255,0.15);
-  color: #fff;
+  color: #f3f1ec;
   cursor: pointer;
   display: flex;
   align-items: center;
