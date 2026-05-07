@@ -2297,17 +2297,17 @@
       display: flex;
       align-items: center;
       padding: 0.4em 0;
-      border-bottom: 1px solid rgba(243, 241, 236, 0.32);
-    }
-    .v6-line:first-child {
-      border-top: 1px solid rgba(243, 241, 236, 0.32);
+      border-bottom: 2px solid rgba(243, 241, 236, 0.5);
     }
 
     .v6-line-1 {
       justify-content: space-between;
       gap: clamp(1.5rem, 5vw, 3.5rem);
     }
-    .v6-line-2 { justify-content: flex-start; }
+    .v6-line-2 {
+      justify-content: flex-start;
+      padding-left: clamp(2rem, 9vw, 8rem);
+    }
     .v6-line-3 {
       display: grid;
       grid-template-columns: 1fr auto 1fr;
@@ -2318,7 +2318,11 @@
     }
 
     .v6-word { display: inline-block; line-height: 1; }
-    .v6-word--right { justify-self: end; text-align: right; }
+    .v6-word--right {
+      justify-self: end;
+      text-align: right;
+      white-space: nowrap;
+    }
 
     /* Star/sun node sits inline with the headline x-height */
     .v6-node {
