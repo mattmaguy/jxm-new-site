@@ -2281,7 +2281,9 @@
       color: var(--jxm-tusk);
       height: auto;
       min-height: calc(100vh - 6.25rem);
-      padding: 1.5rem 0 2.5rem;
+      /* 4rem bottom padding = ~64px gap between the CTA row and the
+         marquee that follows. */
+      padding: 1.5rem 0 4rem;
     }
     /* Recolor v4 nav + corner so they read on abyss */
     .v4-hero .v4-corner-left { color: rgba(243, 241, 236, 0.45); }
@@ -2293,13 +2295,14 @@
     .v4-hero .v4-link--cta { color: var(--jxm-kermit); }
     .v4-hero .v4-link--cta .v4-link-circle { stroke: var(--jxm-kermit); }
 
-    /* Hero block — fills available space inside the column */
+    /* Hero block — fills available space, content pinned to the bottom
+       so the CTA row sits ~64px above the marquee (driven by .v4-hero's
+       bottom padding). */
     .v6-hero-block {
       flex: 1;
       display: flex;
       flex-direction: column;
-      justify-content: center;
-      margin-top: 3rem; /* 48px clearance below top nav */
+      justify-content: flex-end;
     }
 
     /* Headline — Inter Light, three lines stacked, hairlines between */
