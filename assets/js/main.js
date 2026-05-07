@@ -61,15 +61,7 @@
   var windowOn = $(window);
   let mm = gsap.matchMedia();
 
-  // Preloader
-  $(document).ready(function () {
-    $('#container').addClass('loaded');
-    if ($('#container').hasClass('loaded')) {
-      $('#preloader').delay(1000).queue(function () {
-        $(this).remove();
-      });
-    }
-  });
+  // (Preloader removed — see v5-intro-overlay.js for the unified intro overlay)
 
   $("[data-background]").each(function () {
     $(this).css(
