@@ -157,6 +157,138 @@
       border-color: rgba(243, 241, 236, 0.18) !important;
     }
   </style>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.getjxm.com/service-details-analytics#service",
+      "name": "Performance & Analytics",
+      "description": "Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics.",
+      "url": "https://www.getjxm.com/service-details-analytics",
+      "provider": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "serviceType": "Marketing analytics and performance measurement",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.getjxm.com/service-details-analytics#webpage",
+      "url": "https://www.getjxm.com/service-details-analytics",
+      "name": "Performance & Analytics | JXM",
+      "description": "Every JXM engagement starts with a measurement plan and ends with a custom dashboard. No vanity metrics.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.getjxm.com/service-details-analytics#service"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/service-details-analytics#breadcrumb"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/service-details-analytics#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.getjxm.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Performance & Analytics"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.getjxm.com/service-details-analytics#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What metrics do you actually track?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Whatever the campaign is supposed to move. Sometimes leads, sometimes brand search, sometimes attributed revenue, sometimes share of voice. We pick three to five real metrics, baseline them, and report against those — not against everything we can measure. Reporting on too much is the same as nothing. We pick what counts."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you build the dashboard?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. We build it on top of whatever your team already uses — Looker, Tableau, Sheets, Power BI, Mixpanel, whatever's there. We don't push you to a new tool unless yours can't do the job. The dashboard is fully yours. We document, train, and leave it running so your team owns it."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle messy data sets?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "First we tell you what's missing or unreliable — and what that means for the conclusions you can draw. Then we propose the cheapest fix that solves it. Sometimes a tracking patch, sometimes a backfill, sometimes a workaround. We don't pretend data is clean when it isn't. Caveats stay in the report."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What if the campaign isn't actually working?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We tell you, fast. The dashboard makes it visible the same week, not the next quarter. Then we figure out why — bad creative, wrong audience, broken funnel, off-target offer. We bring a diagnosis and a recommendation, not just the bad news. Sometimes push harder. Sometimes pull spend. Either way, you'll know."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you do attribution and incrementality testing?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Attribution gives you the platform's view. Incrementality tells you whether the spend caused the lift. Both matter. We design holdouts and geo splits where possible, run conversion lift studies where they aren't, and report both numbers side by side. The truth is somewhere between platform-reported attribution and a true incrementality read."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between a dashboard and a report?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A report is a snapshot you read once. A dashboard is a tool you check every Monday. Reports get filed. Dashboards get used. We build dashboards because the goal isn't to summarize — it's to tell your team what to do next. Reports come out of the dashboard when leadership needs them."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you stay on after launch?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Often, yes. The first ninety days are when the data starts to mean something. We can stay through the first cycle on a measurement retainer, build the muscle around the dashboard, and hand it cleanly to your team. After that, most clients run it themselves. We're available when a fresh read helps."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 

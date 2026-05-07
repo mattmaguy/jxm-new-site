@@ -103,6 +103,62 @@
     }
   </style>
 
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "ContactPage",
+      "@id": "https://www.getjxm.com/contact#webpage",
+      "url": "https://www.getjxm.com/contact",
+      "name": "Contact JXM | Tell us what you want to grow",
+      "description": "Tell us what you want to grow. Email hi@getjxm.com or fill out the form.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "about": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/contact#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "ContactPoint",
+        "telephone": "+1-978-424-4500",
+        "email": "hi@getjxm.com",
+        "contactType": "customer service",
+        "areaServed": "US",
+        "availableLanguage": "English",
+        "url": "https://www.getjxm.com/contact"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/contact#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Contact"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody contact-abyss has-v5-page-nav">

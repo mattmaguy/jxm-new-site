@@ -847,6 +847,74 @@
     }
     .progress-wrap:hover { transform: translateY(-1px); }
   </style>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.getjxm.com/credit-unions#service",
+      "name": "Credit Union Marketing",
+      "description": "Strategy, brand, creative, media, and analytics built specifically for credit unions of every size.",
+      "url": "https://www.getjxm.com/credit-unions",
+      "provider": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "serviceType": "Marketing for credit unions",
+      "audience": {
+        "@type": "Audience",
+        "audienceType": "Credit unions"
+      },
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.getjxm.com/credit-unions#webpage",
+      "url": "https://www.getjxm.com/credit-unions",
+      "name": "Credit Union Marketing | Strategy + Execution — JXM",
+      "description": "Founded in 2007 to help credit unions grow.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.getjxm.com/credit-unions#service"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/credit-unions#breadcrumb"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/credit-unions#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Credit Unions"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
   <style>
     /* ════════════════════════════════════════

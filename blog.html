@@ -571,6 +571,64 @@
     /* Essays grid sits at the top now (after page title); minor breather only */
     body.blog-light .blog-area-2 { padding-top: 2rem; }
   </style>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "Blog",
+      "@id": "https://www.getjxm.com/blog#blog",
+      "url": "https://www.getjxm.com/blog",
+      "name": "JXM Ideas",
+      "description": "Founder-written, practitioner-tested. On the work and the thinking behind it.",
+      "publisher": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "inLanguage": "en-US"
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.getjxm.com/blog#webpage",
+      "url": "https://www.getjxm.com/blog",
+      "name": "Ideas | Essays, briefs, and the occasional rant — JXM",
+      "description": "Founder-written, practitioner-tested.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.getjxm.com/blog#blog"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/blog#breadcrumb"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/blog#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Ideas"
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody blog-light has-v5-page-nav">

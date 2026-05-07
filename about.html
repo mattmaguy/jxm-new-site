@@ -817,6 +817,96 @@
     body.about-light .thesis-body p:last-child { margin-bottom: 0; }
   </style>
 
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "AboutPage",
+      "@id": "https://www.getjxm.com/about#webpage",
+      "url": "https://www.getjxm.com/about",
+      "name": "About JXM | Founder-led growth for mission-driven brands",
+      "description": "Founded in 2007 by Jim Pond and Matt Maguy. JXM is a founder-led growth partner for mission-driven brands.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "about": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "mainEntity": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/about#breadcrumb"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/about#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "About"
+        }
+      ]
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.getjxm.com/about#jim-pond",
+      "name": "Jim Pond",
+      "jobTitle": "Co-Founder | Business + Operations",
+      "worksFor": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "image": "https://www.getjxm.com/assets/imgs/team/jim-pond.jpg"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.getjxm.com/about#john-cain",
+      "name": "John Cain",
+      "jobTitle": "Partner | Financial Director",
+      "worksFor": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "image": "https://www.getjxm.com/assets/imgs/team/john-cain.jpg"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.getjxm.com/about#laurie-busby",
+      "name": "Laurie Busby",
+      "jobTitle": "Managing Partner | Media + Performance",
+      "worksFor": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "image": "https://www.getjxm.com/assets/imgs/team/laurie-busby.jpg"
+    },
+    {
+      "@type": "Person",
+      "@id": "https://www.getjxm.com/about#matt-maguy",
+      "name": "Matt Maguy",
+      "jobTitle": "Co-Founder | Creative + Growth",
+      "worksFor": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "image": "https://www.getjxm.com/assets/imgs/team/matt-maguy.jpg"
+    }
+  ]
+}
+  </script>
 </head>
 
 <body class="body-wrapper body-page-inner font-heading-sequelsans-romanbody about-light has-v5-page-nav">

@@ -157,6 +157,138 @@
       border-color: rgba(243, 241, 236, 0.18) !important;
     }
   </style>
+
+  <!-- JSON-LD structured data -->
+  <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://www.getjxm.com/#organization"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://www.getjxm.com/service-details-media#service",
+      "name": "Media Planning & Buying",
+      "description": "Where work runs, how much we spend, and how we know it's working. Plan with strategy, buy with creative.",
+      "url": "https://www.getjxm.com/service-details-media",
+      "provider": {
+        "@id": "https://www.getjxm.com/#organization"
+      },
+      "serviceType": "Media planning and buying",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "United States"
+        }
+      ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://www.getjxm.com/service-details-media#webpage",
+      "url": "https://www.getjxm.com/service-details-media",
+      "name": "Media Planning & Buying | JXM",
+      "description": "Where work runs, how much we spend, and how we know it's working. Plan with strategy, buy with creative.",
+      "isPartOf": {
+        "@id": "https://www.getjxm.com/#website"
+      },
+      "mainEntity": {
+        "@id": "https://www.getjxm.com/service-details-media#service"
+      },
+      "inLanguage": "en-US",
+      "breadcrumb": {
+        "@id": "https://www.getjxm.com/service-details-media#breadcrumb"
+      }
+    },
+    {
+      "@id": "https://www.getjxm.com/service-details-media#breadcrumb",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://www.getjxm.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Services",
+          "item": "https://www.getjxm.com/services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Media Planning & Buying"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://www.getjxm.com/service-details-media#faq",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What's the minimum spend you handle?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We don't have a hard minimum, but media planning only earns its keep above a certain threshold. Below roughly five hundred thousand a year, the planning fee outweighs the optimization upside. Above that, we're worth it. Below, we'll tell you honestly that you're better off keeping the buy in-house and we'll help."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you take agency commissions?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "No. We charge a flat planning and management fee, and we pass through media costs at cost. No hidden margin, no kickbacks, no rebates we keep quiet about. You see what we paid and what we charged for managing it. The incentive is to spend your money well, not to spend more."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you handle attribution and tracking?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Carefully, with skepticism. Last-click attribution lies. Multi-touch helps but isn't truth. We use a combination of platform reporting, media-mix modeling, and incrementality testing — and we tell you which numbers to trust and which to take with a grain of salt. Attribution is informed estimate, not certainty. We treat it that way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Will you work with our current buyers?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes, often. We don't always need to replace your existing buyers — sometimes we plan, they execute, and the partnership works. Other times the setup is the problem and we recommend changes. We tell you which applies after the diagnostic. The point is the right answer, not protecting our scope of work."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Do you handle programmatic and direct buys?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Both, when the audience justifies it. Programmatic for scale and reach. Direct for premium environments and editorial alignment. We bias toward direct when the campaign needs the context, programmatic when it needs the volume. Most plans use both — weighted by where attention is highest quality and lowest cost for the audience."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What's the difference between you and a media agency?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Most media agencies are buying machines. They optimize for spend efficiency because that's how they're paid. We optimize for outcomes — leads, attention, brand search, whatever the campaign is actually meant to move. The buy is a means, not the metric. We'll lower spend if it makes sense. A buying-machine rarely will."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How do you charge for media?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Flat planning fee plus a flat management fee on the media spend. Both quoted up front, both visible. We don't take a percentage of media as our fee — that incentivizes us to recommend bigger budgets, the wrong incentive. The number on the SOW is what you pay. Media is just media."
+          }
+        }
+      ]
+    }
+  ]
+}
+  </script>
 </head>
 
 
