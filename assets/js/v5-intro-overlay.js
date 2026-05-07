@@ -58,7 +58,7 @@
         intro.classList.add('v5-intro--gone');
         markDone();
       }, 520);
-    }, 110);
+    }, 500);
     return;
   }
 
