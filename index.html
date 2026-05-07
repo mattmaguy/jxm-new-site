@@ -1084,6 +1084,11 @@
   </div>
 
   <style>
+    /* Index hero is abyss now, so the intro wash should land on abyss
+       (not the shared tusk default) to avoid a tusk-to-abyss flash on
+       reveal. Scoped here so other V5 pages keep their tusk wash. */
+    .v5-intro-wash { background: var(--jxm-abyss); }
+
     /* Hero rows start hidden; reveal when body gets .is-loaded
        (set by v5-intro-overlay.js when the overlay clears). */
     .v4-hero-inner > .v4-row {
