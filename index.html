@@ -1557,7 +1557,7 @@
       text-decoration: none;
       grid-column: 1 / span 2;
     }
-    .v4-logo svg { width: 53px; height: auto; fill: var(--jxm-abyss); display: block; }
+    .v4-logo svg { width: 69px; height: auto; fill: var(--jxm-abyss); display: block; }
 
     .v4-nav {
       grid-column: 8 / -1;
@@ -2057,7 +2057,7 @@
       /* Collapse 12-col grid to single column on mobile */
       .v4-row { grid-template-columns: 1fr; row-gap: 1.5rem; }
       .v4-logo { grid-column: 1; }
-      .v4-logo svg { width: 46px; }
+      .v4-logo svg { width: 60px; }
       /* Hide both hero nav AND floating nav on mobile — hamburger replaces them */
       .v4-nav,
       .v4-floating-nav { display: none !important; }
@@ -2437,7 +2437,10 @@
     .v6-hero-mobile { display: none; }
 
     @media (max-width: 1023px) {
-      .v4-hero { min-height: calc(100vh - 5rem); }
+      /* Reserve ~7rem so the marquee + a strip of the video peek above the
+         fold on mobile, matching the desktop "growth → marquee → video"
+         reveal cadence. */
+      .v4-hero { min-height: calc(100vh - 7rem); }
       .v6-headline { display: none; }
       .v6-hero-mobile {
         display: flex;
