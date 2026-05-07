@@ -1300,21 +1300,37 @@
         </nav>
       </div>
 
-      <!-- Row 2: manifesto -->
-      <div class="v4-row v4-manifesto-row">
-        <div class="v4-manifesto">
-          <span class="v4-tag">Mission-Driven<br>Brands</span>
-          <span class="v4-rule" aria-hidden="true"></span>
-          <div class="v4-manifesto-body">
-            <p class="v4-pitch">In '07 we wanted to build an agency for mission-driven brands where growth meant something measurable. Customers. Revenue. Loyalty. Not impressions, views, and clicks.</p>
-            <p class="v4-coda">So we did.</p>
-          </div>
-        </div>
-      </div>
+      <!-- Row 2-4: V6 editorial hero — three lines separated by hairlines.
+           Reads as: "Inspiring people to find, choose & trust your brand." -->
+      <div class="v4-row v6-hero-block">
+        <h1 class="v6-headline" aria-label="Inspiring people to find, choose and trust your brand.">
 
-      <!-- Row 3: display wordmark, pushed to bottom -->
-      <div class="v4-row v4-display-row">
-        <div class="v4-display" aria-hidden="true">growth</div>
+          <span class="v6-line v6-line-1">
+            <span class="v6-word">Inspiring</span>
+            <span class="v6-node" aria-hidden="true">
+              <img src="assets/svgs/index-node.svg" alt="" width="56" height="56">
+            </span>
+            <span class="v6-word">People To</span>
+          </span>
+
+          <span class="v6-line v6-line-2">
+            <span class="v6-word">Find, Choose &amp; Trust</span>
+          </span>
+
+          <span class="v6-line v6-line-3">
+            <span class="v6-meta">
+              For mission-driven brands, growth is a visibility problem. <strong>We fix that.</strong>
+            </span>
+            <a href="contact.html" class="v6-cta rr-btn">
+              <span class="btn-wrap">
+                <span class="text-one">Get JXM</span>
+                <span class="text-two">Get JXM</span>
+              </span>
+            </a>
+            <span class="v6-word v6-word--right">Your Brand</span>
+          </span>
+
+        </h1>
       </div>
     </div>
   </header>
@@ -2233,6 +2249,145 @@
       .v4-cursor { display: none; }
       .v4-video-frame { transition: none; }
       .v4-modal, .v4-modal-panel { transition: none !important; }
+    }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       V6 INDEX HERO — abyss bg, tusk ink, three-line editorial headline.
+       Replaces the v4 manifesto + display-wordmark composition.
+       ════════════════════════════════════════════════════════════════════════ */
+    .v4-hero {
+      background: var(--jxm-abyss);
+      color: var(--jxm-tusk);
+      height: auto;
+      min-height: calc(100vh - 6.25rem);
+      padding: 1.5rem 0 2.5rem;
+    }
+    /* Recolor v4 nav + corner so they read on abyss */
+    .v4-hero .v4-corner-left { color: rgba(243, 241, 236, 0.45); }
+    .v4-hero .v4-logo { color: var(--jxm-tusk); }
+    .v4-hero .v4-logo svg { fill: currentColor; }
+    .v4-hero .v4-link { color: var(--jxm-tusk); }
+    .v4-hero .v4-link-strike,
+    .v4-hero .v4-link-circle { stroke: var(--jxm-tusk); }
+    .v4-hero .v4-link--cta { color: var(--jxm-kermit); }
+    .v4-hero .v4-link--cta .v4-link-circle { stroke: var(--jxm-kermit); }
+
+    /* Hero block — fills available space inside the column */
+    .v6-hero-block {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      margin-top: 2.5rem;
+    }
+
+    /* Headline — Inter Light, three lines stacked, hairlines between */
+    .v6-headline {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 300;
+      font-size: clamp(2.75rem, 9vw, 8.5rem);
+      line-height: 1.05;
+      letter-spacing: -0.015em;
+      color: var(--jxm-tusk);
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .v6-line {
+      display: flex;
+      align-items: center;
+      padding: 0.4em 0;
+      border-bottom: 1px solid rgba(243, 241, 236, 0.32);
+    }
+    .v6-line:first-child {
+      border-top: 1px solid rgba(243, 241, 236, 0.32);
+    }
+
+    .v6-line-1 {
+      justify-content: space-between;
+      gap: clamp(1.5rem, 5vw, 3.5rem);
+    }
+    .v6-line-2 { justify-content: flex-start; }
+    .v6-line-3 {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      align-items: end;
+      gap: clamp(1.5rem, 4vw, 2.5rem);
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+
+    .v6-word { display: inline-block; line-height: 1; }
+    .v6-word--right { justify-self: end; text-align: right; }
+
+    /* Star/sun node sits inline with the headline x-height */
+    .v6-node {
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+    .v6-node img {
+      width: clamp(1.75rem, 4vw, 3.75rem);
+      height: auto;
+      display: block;
+    }
+
+    /* Bottom-row meta copy — body copy, left column */
+    .v6-meta {
+      justify-self: start;
+      align-self: end;
+      max-width: 22rem;
+      padding-bottom: 1.25rem;
+      font-family: 'Inter', sans-serif;
+      font-weight: 400;
+      font-size: clamp(0.875rem, 1vw, 1rem);
+      line-height: 1.45;
+      letter-spacing: 0;
+      color: rgba(243, 241, 236, 0.85);
+    }
+    .v6-meta strong {
+      display: block;
+      margin-top: 0.15em;
+      font-weight: 700;
+      color: var(--jxm-tusk);
+    }
+
+    /* CTA — center column, bottom-aligned, uses site rr-btn rounded outline.
+       The rr-btn already has a rounded form; we just position it. */
+    .v6-cta {
+      justify-self: center;
+      align-self: end;
+      margin-bottom: 1.25rem;
+    }
+
+    /* Reveal: integrate v6-hero-block into the v4-row reveal cadence */
+    body.is-loaded .v4-hero-inner > .v6-hero-block { transition-delay: 220ms; }
+
+    @media (max-width: 1023px) {
+      .v4-hero { min-height: calc(100vh - 5rem); }
+      .v6-headline { font-size: clamp(2.25rem, 10vw, 5.5rem); }
+      .v6-line-3 {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        align-items: start;
+        padding-top: 1rem;
+      }
+      .v6-meta { padding-bottom: 0; max-width: none; }
+      .v6-cta { justify-self: start; margin-bottom: 0; }
+      .v6-word--right { justify-self: start; text-align: left; }
+    }
+    @media (max-width: 720px) {
+      .v6-line-1 { flex-wrap: wrap; gap: 0.6rem; }
+      .v6-headline { font-size: clamp(2rem, 11vw, 4.5rem); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .v4-hero-inner > .v6-hero-block {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
     }
   </style>
 
