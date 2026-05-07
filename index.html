@@ -5652,29 +5652,45 @@
       });
     })();
 
-    /* ── V4: floating nav appears on scroll-UP after hero exits ── */
+    /* ── V4: floating nav appears on scroll-UP after hero exits ──
+       Hysteresis-based reveal: accumulates delta in the current direction
+       and only flips state past TOGGLE_THRESHOLD. Prevents trackpad
+       momentum jitter from shaking the bar on direction-flip frames. */
     (function() {
       var nav = document.getElementById('floatingNav');
       var hero = document.querySelector('.v4-hero');
       if (!nav || !hero) return;
 
+      var TOGGLE_THRESHOLD = 24; // px of sustained motion before toggling
       var lastY = window.scrollY;
+      var accum = 0;
       var ticking = false;
 
       function update() {
         var y = window.scrollY;
         var heroBottom = hero.offsetTop + hero.offsetHeight;
-        var scrollingUp = y < lastY;
+        var dy = y - lastY;
 
-        // Hide while inside hero
         if (y < heroBottom - 80) {
+          // Inside hero — always hidden, reset accumulator
           nav.classList.remove('is-visible');
-        } else if (scrollingUp && (lastY - y) > 4) {
-          // Reveal on upward scroll past a small threshold
-          nav.classList.add('is-visible');
-        } else if (!scrollingUp && (y - lastY) > 4) {
-          // Hide on downward scroll
-          nav.classList.remove('is-visible');
+          accum = 0;
+        } else {
+          // Reset accumulator on direction flip so a deliberate change
+          // doesn't have to fight stale momentum in the opposite direction.
+          if ((dy > 0 && accum < 0) || (dy < 0 && accum > 0)) {
+            accum = dy;
+          } else {
+            accum += dy;
+          }
+
+          if (accum < -TOGGLE_THRESHOLD) {
+            nav.classList.add('is-visible');
+            accum = -TOGGLE_THRESHOLD; // clamp so we don't have to unwind a huge debt
+          } else if (accum > TOGGLE_THRESHOLD) {
+            nav.classList.remove('is-visible');
+            accum = TOGGLE_THRESHOLD;
+          }
         }
 
         lastY = y;
