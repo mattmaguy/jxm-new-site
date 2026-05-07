@@ -49,16 +49,16 @@
     return;
   }
 
-  // ── Quick mode: in-session navigation, no dwell ──
+  // ── Quick mode: in-session navigation, brief photo dwell + fast wash ──
   if (seen) {
     intro.classList.add('v5-intro--quick');
-    requestAnimationFrame(() => {
+    setTimeout(() => {
       intro.classList.add('v5-intro--washing');
       setTimeout(() => {
         intro.classList.add('v5-intro--gone');
         markDone();
       }, 520);
-    });
+    }, 110);
     return;
   }
 
