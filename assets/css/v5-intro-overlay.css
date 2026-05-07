@@ -14,16 +14,14 @@
   background-color: var(--jxm-abyss);
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   pointer-events: none;
   visibility: visible;
   opacity: 1;
 }
-
-/* Background image is set via inline style by JS from data-intro-image.
-   This rule is the fallback if JS hasn't run yet. */
-.v5-intro {
-  background-image: var(--intro-image, none);
-}
+/* The page-specific photo is set inline on the .v5-intro element via
+   style="background-image: url('...')" so it loads at HTML parse time
+   and doesn't wait for JS — keeps the photo from flashing in late. */
 
 /* Subtle vignette to make the logo read on any photo */
 .v5-intro::before {

@@ -18,10 +18,11 @@
   if (!intro) return;
   const body = document.body;
 
-  // Apply per-page background image
+  // Apply per-page background image (in case the inline style wasn't set
+  // by the build, or for runtime overrides via JS).
   const customImage = intro.getAttribute('data-intro-image');
-  if (customImage) {
-    intro.style.setProperty('--intro-image', `url('${customImage}')`);
+  if (customImage && !intro.style.backgroundImage) {
+    intro.style.backgroundImage = `url('${customImage}')`;
   }
 
   body.classList.add('is-loading');
