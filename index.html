@@ -6422,16 +6422,9 @@
         },
       });
 
-      // Hero pin: marquee + sections below slide up over the V4 editorial hero
-      ScrollTrigger.create({
-        trigger: '.v4-hero',
-        start: 'top top',
-        end: 'bottom top',
-        pin: true,
-        pinSpacing: false,
-        anticipatePin: 1,
-        pinType: 'transform',
-      });
+      // (Hero pin removed — the V6 hero has no "growth" wordmark for the
+      //  marquee to slide over, and pinType:'transform' caused trackpad
+      //  inertia jitter on scroll-up.)
     })();
   </script>
 
