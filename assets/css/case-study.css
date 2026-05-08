@@ -109,9 +109,10 @@ body.case-dark .cs-logo {
   margin-top: 0.75rem;
 }
 body.case-dark .cs-logo--inverted {
-  /* squarespace-cdn SVGs ship as #202020 (dark gray) — invert flips them
-     close to tusk; the slight color drift is acceptable for a logo mark. */
-  filter: invert(1) brightness(1.05);
+  /* squarespace-cdn SVGs ship as #202020 (dark gray). brightness(0)
+     flattens any source variation, then the tuned invert+sepia chain
+     lands close to JXM tusk (#f3f1ec) instead of cool gray. */
+  filter: brightness(0) saturate(100%) invert(94%) sepia(7%) saturate(283%) hue-rotate(338deg) brightness(106%) contrast(92%);
 }
 body.case-dark .cs-logo--compact {
   /* square / heavy-border marks (capcom) overpower wide wordmarks at 240px */
