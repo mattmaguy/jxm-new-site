@@ -458,16 +458,21 @@
     }
     #cpma-calculator * { box-sizing: border-box; }
 
-    /* The "device" body — a few shades darker than tusk so it pops off the
-       page bg, with a top-edge highlight + ground shadow for the device feel. */
+    /* The "device" body — darker than tusk, with plastic-grain texture
+       and a top-bias ambient highlight. The grain comes from an inline
+       SVG fractalNoise (no extra HTTP request) blended via soft-light
+       so it freckles both directions for that ABS-plastic feel. */
     #cpma-calculator .cpma-card {
       position: relative;
       max-width: 880px;
       margin: 0 auto;
       padding: 3rem 2.75rem;
-      /* Fallback for browsers without color-mix; modern browsers use the mix. */
       background: #e7e4db;
-      background: color-mix(in oklab, var(--jxm-tusk) 90%, var(--jxm-abyss) 10%);
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.55'/></svg>"),
+        radial-gradient(ellipse 110% 65% at 50% 0%, rgba(255, 255, 255, 0.10), transparent 70%),
+        color-mix(in oklab, var(--jxm-tusk) 90%, var(--jxm-abyss) 10%);
+      background-blend-mode: soft-light, normal, normal;
       border-radius: 22px;
       box-shadow:
         0 1px 0 rgba(255, 255, 255, 0.55) inset,
@@ -475,15 +480,19 @@
         0 1px 2px rgba(34, 31, 50, 0.05),
         0 28px 56px -20px rgba(34, 31, 50, 0.18);
     }
-    /* Inner picture-frame — tusk interior inset into the darker outer
-       panel, with a 1px top highlight on the inner bezel lip. Reads as
-       a tusk "screen face" set into the device body. pointer-events:
-       none keeps form inputs clickable above this layer. */
+    /* Inner picture-frame — tusk "screen face" inset into the darker
+       body, same plastic grain at slightly lower opacity. The inset
+       box-shadow paints a 1px top highlight on the inner bezel lip.
+       pointer-events: none so form inputs stay clickable above. */
     #cpma-calculator .cpma-card::before {
       content: '';
       position: absolute;
       inset: 1.5rem;
-      background: var(--jxm-tusk);
+      background:
+        url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.92' numOctaves='2' stitchTiles='stitch'/></filter><rect width='180' height='180' filter='url(%23n)' opacity='0.45'/></svg>"),
+        radial-gradient(ellipse 110% 65% at 50% 0%, rgba(255, 255, 255, 0.08), transparent 70%),
+        var(--jxm-tusk);
+      background-blend-mode: soft-light, normal, normal;
       border: 1px solid var(--cpma-frame);
       border-radius: 14px;
       pointer-events: none;
