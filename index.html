@@ -2277,7 +2277,14 @@
        Replaces the v4 manifesto + display-wordmark composition.
        ════════════════════════════════════════════════════════════════════════ */
     .v4-hero {
+      /* French King Bridge image faintly behind a near-opaque abyss
+         overlay. Layer order: overlay gradient on top, then the image,
+         then the abyss fallback for any uncovered area. */
       background: var(--jxm-abyss);
+      background:
+        linear-gradient(rgba(34, 31, 50, 0.88), rgba(34, 31, 50, 0.88)),
+        url('assets/imgs/hero/index-bg.webp') center / cover no-repeat;
+      background-color: var(--jxm-abyss);
       color: var(--jxm-tusk);
       height: auto;
       min-height: calc(100vh - 6.25rem);
