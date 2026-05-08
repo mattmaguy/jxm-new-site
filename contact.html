@@ -158,22 +158,7 @@
       border-color: var(--jxm-kermit);
     }
 
-    /* Scroll-to-top — the global body[class*="-abyss"] override in
-       jxm-brand.css should catch contact-abyss but isn't sticking;
-       force abyss bg + tusk arrow with explicit specificity. */
-    .contact-abyss .progress-wrap.active-progress {
-      mix-blend-mode: normal !important;
-      background-color: var(--jxm-abyss) !important;
-      border: 1px solid rgba(243, 241, 236, 0.18) !important;
-    }
-    .contact-abyss .progress-wrap.active-progress::after {
-      color: var(--jxm-tusk) !important;
-    }
-    .contact-abyss .progress-wrap svg path {
-      stroke: var(--jxm-tusk) !important;
-    }
-
-    /* Custom form-submit success state — replaces the form on success.
+/* Custom form-submit success state — replaces the form on success.
        Drop an animated GIF (or static image) into .contact-success-media
        to add visual flourish. Centered abyss-on-tusk panel for contrast
        against the contact-abyss page bg. */
