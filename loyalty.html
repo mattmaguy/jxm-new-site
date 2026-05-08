@@ -61,11 +61,25 @@
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
     }
-    /* Belt-and-suspenders nav clearance — match the .has-v5-page-nav values
-       so the marquee never gets clipped by the fixed top nav. */
-    body.landing-light { padding-top: 95px; }
-    @media (max-width: 1023px) { body.landing-light { padding-top: 110px; } }
-    @media (max-width: 720px)  { body.landing-light { padding-top: 50px; } }
+    /* Nav clearance — push the marquee down via margin-top so it doesn't
+       depend on the body padding-top from v5-nav-stacked.css cascading
+       through. Mirrors the values in v5-nav-stacked.css. */
+    body.landing-light .mq-hero { margin-top: 95px; }
+    @media (max-width: 1023px) { body.landing-light .mq-hero { margin-top: 110px; } }
+    @media (max-width: 720px)  { body.landing-light .mq-hero { margin-top: 50px; } }
+
+    /* Scroll-to-top — force abyss bg + tusk arrow on landing pages. */
+    body.landing-light .progress-wrap.active-progress {
+      mix-blend-mode: normal !important;
+      background-color: var(--jxm-abyss) !important;
+      border: 1px solid rgba(243, 241, 236, 0.18) !important;
+    }
+    body.landing-light .progress-wrap.active-progress::after {
+      color: var(--jxm-tusk) !important;
+    }
+    body.landing-light .progress-wrap svg path {
+      stroke: var(--jxm-tusk) !important;
+    }
 
     /* ── Byline strip — author + date + optional cite link ── */
     .landing-byline {
