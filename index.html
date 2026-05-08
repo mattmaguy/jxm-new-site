@@ -2527,11 +2527,20 @@
          fold on mobile, matching the desktop "growth → marquee → video"
          reveal cadence. */
       .v4-hero { min-height: calc(100vh - 7rem); }
+      /* Guarantee minimum breathing room between the JXM logo (v4-top, at
+         top via space-between) and the hero block below — without this,
+         short viewports collapse the empty space and the node ends up
+         squashed against the logo. flex `gap` enforces a minimum even
+         when justify-content would otherwise spread to less. */
+      .v4-hero > .v4-hero-inner { gap: 4rem; }
       .v6-headline { display: none; }
+      /* Single source of vertical rhythm: flex gap. Per-child margins
+         below are zeroed so spacing stays even between node, headline,
+         meta paragraph, and CTA. */
       .v6-hero-mobile {
         display: flex;
         flex-direction: column;
-        gap: 1.5rem;
+        gap: 2rem;
         align-items: flex-start;
       }
     }
@@ -2539,7 +2548,6 @@
     .v6-mobile-node {
       align-self: flex-start;
       display: block;
-      margin-bottom: 0.5rem;
     }
     .v6-mobile-node svg {
       width: 2.75rem;
@@ -2577,17 +2585,17 @@
       line-height: 1.5;
       color: rgba(243, 241, 236, 0.9);
       max-width: 32rem;
-      margin: 1rem 0 0;
+      margin: 0;
     }
     .v6-mobile-meta strong {
       display: block;
-      margin-top: 0.3em;
+      margin-top: 0.5em;
       font-weight: 700;
       color: var(--jxm-tusk);
     }
     .v6-mobile-cta {
       align-self: flex-start;
-      margin-top: 1rem;
+      margin: 0;
     }
 
     @media (prefers-reduced-motion: reduce) {
