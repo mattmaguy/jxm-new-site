@@ -195,6 +195,9 @@ body.service-details-dark .site-footer .footer-copy {
   padding: 1rem 2.5rem;
   background: var(--jxm-tusk);
   color: var(--jxm-abyss);
+  /* 1.5px tusk border stays visible when bg flips to abyss on hover,
+     so the button doesn't disappear into the dark band. */
+  border: 1.5px solid var(--jxm-tusk);
   border-radius: 999px;
   font-family: 'Inter', sans-serif;
   font-weight: 500;
@@ -205,8 +208,8 @@ body.service-details-dark .site-footer .footer-copy {
 }
 .footer-cta-button:hover,
 .footer-cta-button:focus-visible {
-  background: var(--jxm-kermit);
-  color: var(--jxm-abyss);
+  background: var(--jxm-abyss);
+  color: var(--jxm-tusk);
   transform: translateY(-2px);
 }
 
