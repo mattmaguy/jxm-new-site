@@ -104,6 +104,111 @@
     .contact-abyss .mq-hero-frame {
       background: rgba(243, 241, 236, 0.08);
     }
+
+    /* Submit button — the default rr-btn is abyss bg + white text, but
+       on the contact-abyss page it loses contrast against the abyss
+       page bg. Flip to a tusk button with abyss text + kermit hover. */
+    .contact-abyss .submit-btn .rr-btn {
+      background-color: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      border-color: var(--jxm-tusk);
+    }
+    .contact-abyss .submit-btn .rr-btn .btn-wrap .text-one,
+    .contact-abyss .submit-btn .rr-btn .btn-wrap .text-two {
+      color: var(--jxm-abyss) !important;
+    }
+    .contact-abyss .submit-btn .rr-btn::before {
+      background-color: var(--jxm-kermit);
+    }
+    .contact-abyss .submit-btn .rr-btn:hover,
+    .contact-abyss .submit-btn .rr-btn:focus {
+      border-color: var(--jxm-kermit);
+    }
+
+    /* Scroll-to-top — the global body[class*="-abyss"] override in
+       jxm-brand.css should catch contact-abyss but isn't sticking;
+       force abyss bg + tusk arrow with explicit specificity. */
+    .contact-abyss .progress-wrap.active-progress {
+      mix-blend-mode: normal !important;
+      background-color: var(--jxm-abyss) !important;
+      border: 1px solid rgba(243, 241, 236, 0.18) !important;
+    }
+    .contact-abyss .progress-wrap.active-progress::after {
+      color: var(--jxm-tusk) !important;
+    }
+    .contact-abyss .progress-wrap svg path {
+      stroke: var(--jxm-tusk) !important;
+    }
+
+    /* Custom form-submit success state — replaces the form on success.
+       Drop an animated GIF (or static image) into .contact-success-media
+       to add visual flourish. Centered abyss-on-tusk panel for contrast
+       against the contact-abyss page bg. */
+    .contact-success {
+      display: none;
+      max-width: 36rem;
+      margin: 1rem auto 0;
+      padding: 3rem 2.5rem;
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      border-radius: 16px;
+      text-align: left;
+    }
+    .contact-success.is-visible { display: block; }
+    .contact-success-media {
+      margin: 0 0 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+    }
+    .contact-success-media img {
+      max-width: 100%;
+      width: auto;
+      height: auto;
+      max-height: 240px;
+      border-radius: 8px;
+      display: block;
+    }
+    .contact-success-eyebrow {
+      display: inline-block;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: rgba(34, 31, 50, 0.55);
+      margin: 0 0 0.65rem;
+    }
+    .contact-success-title {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--jxm-abyss);
+      margin: 0 0 1rem;
+    }
+    .contact-success-body {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.0625rem;
+      line-height: 1.6;
+      color: rgba(34, 31, 50, 0.82);
+      margin: 0 0 1.75rem;
+    }
+    .contact-success-actions {
+      display: flex;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+    .contact-success .rr-btn {
+      background-color: var(--jxm-abyss);
+      color: var(--jxm-tusk);
+      border-color: var(--jxm-abyss);
+    }
+    .contact-success .rr-btn .btn-wrap .text-one,
+    .contact-success .rr-btn .btn-wrap .text-two {
+      color: var(--jxm-tusk) !important;
+    }
   </style>
 
 
@@ -447,6 +552,31 @@
                     </div>
                     <div id="response-message"></div>
                   </form>
+
+                  <!-- Custom success state — shown by main.js when the
+                       form submits successfully. Drop a gif/image into
+                       .contact-success-media to swap the placeholder
+                       icon (e.g. <img src="assets/imgs/contact/success.gif" alt="">). -->
+                  <aside class="contact-success" id="contactSuccess" role="status" aria-live="polite">
+                    <div class="contact-success-media">
+                      <!-- Replace this block with an <img> when you have the gif/image ready -->
+                      <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="M9 12l2 2 4-4"></path>
+                      </svg>
+                    </div>
+                    <span class="contact-success-eyebrow">Message received</span>
+                    <h2 class="contact-success-title">Thanks — we'll be in touch.</h2>
+                    <p class="contact-success-body">Jim or Matt will reply within one business day. Most conversations start before the inbox even sees a brief, so don't be surprised if your phone rings.</p>
+                    <div class="contact-success-actions">
+                      <a href="index.html" class="rr-btn">
+                        <span class="btn-wrap">
+                          <span class="text-one">Back to home</span>
+                          <span class="text-two">Back to home</span>
+                        </span>
+                      </a>
+                    </div>
+                  </aside>
                 </div>
               </div>
             </div>

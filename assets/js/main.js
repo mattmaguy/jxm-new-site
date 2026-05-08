@@ -1762,8 +1762,20 @@
           headers: { 'Accept': 'application/json' }
         }).done(function (data) {
           $('.loading-form').hide();
-          $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
           form[0].reset();
+          // If contact.html provides a custom .contact-success card,
+          // swap the form for it. Otherwise fall back to the inline
+          // text response.
+          var $success = $('#contactSuccess');
+          if ($success.length) {
+            form.hide();
+            $success.addClass('is-visible');
+            // Scroll the success card into view in case the form was tall.
+            var top = $success.offset().top - 120;
+            $('html, body').animate({ scrollTop: top }, 400);
+          } else {
+            $('#response-message').html('<p class="success-message">Your message has been sent successfully.</p>');
+          }
         }).fail(function () {
           $('.loading-form').hide();
           $('#response-message').html('<p class="error-message">Something went wrong. Please try again later.</p>');
