@@ -215,22 +215,21 @@
 
 
 /* ── Page-level adjustment: clear the fixed nav so first content
-   isn't hidden behind it. The 3-column stacked layout puts up to
-   three links per column at ~24-26px each + 0.4rem gaps + 1.25rem
-   inner padding × 2 — nav lands closer to ~120-125px desktop. The
-   previous 95px clipped the top of every marquee. ── */
-body.has-v5-page-nav {
-  padding-top: 130px;
-}
-@media (max-width: 1023px) {
-  body.has-v5-page-nav { padding-top: 130px; }
-}
-/* ≤720px the inline nav collapses to just logo + hamburger toggle —
-   nav height drops to ~50px (logo SVG renders at ~14px tall × the
-   wide aspect ratio + 1rem inner padding each side). Match exactly
-   so no body-bg strip shows below the nav. */
+   isn't hidden behind it. The padding lives on #smooth-content
+   (not body) because ScrollSmoother takes content out of body
+   flow on desktop — body padding is ignored in that mode. The
+   #smooth-content wrapper is always in layout flow within
+   ScrollSmoother's scroll context, so padding on it is honored.
+   Body padding-top is kept as a fallback for any V5 page that
+   somehow renders without smooth-content (404 fallback, etc.). */
+body.has-v5-page-nav { padding-top: 130px; }
+body.has-v5-page-nav #smooth-content { padding-top: 130px; }
 @media (max-width: 720px) {
+  /* Mobile: ScrollSmoother isn't initialized, nav collapses to
+     just logo + hamburger (~50px). Body padding is the canonical
+     clearance here; smooth-content padding stays in sync. */
   body.has-v5-page-nav { padding-top: 50px; }
+  body.has-v5-page-nav #smooth-content { padding-top: 0; }
 }
 
 /* ════════════════════════════════════════
