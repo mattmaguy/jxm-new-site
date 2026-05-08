@@ -735,10 +735,18 @@ body.service-details-dark .section-subtitle {
 }
 
 /* ════════════ SCROLL-TO-TOP — kill legacy blend-mode + flip pill per surface ═══════
-   style.css:2134 sets `mix-blend-mode: exclusion` on .progress-wrap.
-   active-progress, which makes the button see-through against body
-   copy. Pill colors must flip per footer surface so the pill itself
-   stays visible:
+   style.css:2114-2202 ships a 4-layer scroll-to-top with brittle defaults:
+     1. .progress-wrap.active-progress { background-color: var(--black); mix-blend-mode: exclusion }
+     2. SVG <path>           fill: var(--white)  ← fills the entire pill, covering bg
+     3. ::after (arrow)       color: var(--primary)  ← icon color
+     4. JS sets the path's stroke (animated by scroll) to var(--black-6)
+   Layers 1 + 2 fight: the path's white fill paints over the pill background,
+   so just changing background-color does nothing — the user sees a white
+   pill with a faint arrow regardless. We must override BOTH the path fill
+   AND the background-color, plus the ::after color and the path stroke,
+   so the whole pill is one solid surface with a contrasting arrow.
+
+   Pill colors flip per footer surface so the pill itself stays visible:
      - Light-footer pages (default + *-light bodies): abyss pill + tusk arrow
      - Dark-footer pages  (body.dark, *-abyss, case-dark, service-details-dark):
        tusk pill + abyss arrow
@@ -746,15 +754,23 @@ body.service-details-dark .section-subtitle {
    about.html keeps its own per-page override (a soft tusk pill on its
    tusk footer) for the editorial "ghost" feel — handled inline there.
 */
+
+/* ── Light-footer pages → ABYSS pill + TUSK arrow ── */
 body[class*="-light"] .progress-wrap.active-progress {
   mix-blend-mode: normal !important;
   background-color: var(--jxm-abyss) !important;
   border: 1px solid rgba(243, 241, 236, 0.18);
 }
+body[class*="-light"] .progress-wrap svg path,
+body[class*="-light"] .progress-wrap svg.progress-circle path {
+  fill: var(--jxm-abyss) !important;       /* fill matches pill so the SVG ring doesn't paint over */
+  stroke: var(--jxm-tusk) !important;      /* animated scroll stroke contrasts the pill */
+}
 body[class*="-light"] .progress-wrap.active-progress::after {
   color: var(--jxm-tusk) !important;
 }
 
+/* ── Dark-footer pages → TUSK pill + ABYSS arrow ── */
 body.dark .progress-wrap.active-progress,
 body[class*="-abyss"] .progress-wrap.active-progress,
 body.case-dark .progress-wrap.active-progress,
@@ -763,15 +779,20 @@ body.service-details-dark .progress-wrap.active-progress {
   background-color: var(--jxm-tusk) !important;
   border: 1px solid rgba(34, 31, 50, 0.18);
 }
+body.dark .progress-wrap svg path,
+body.dark .progress-wrap svg.progress-circle path,
+body[class*="-abyss"] .progress-wrap svg path,
+body[class*="-abyss"] .progress-wrap svg.progress-circle path,
+body.case-dark .progress-wrap svg path,
+body.case-dark .progress-wrap svg.progress-circle path,
+body.service-details-dark .progress-wrap svg path,
+body.service-details-dark .progress-wrap svg.progress-circle path {
+  fill: var(--jxm-tusk) !important;        /* fill matches pill */
+  stroke: var(--jxm-abyss) !important;     /* progress stroke contrasts */
+}
 body.dark .progress-wrap.active-progress::after,
 body[class*="-abyss"] .progress-wrap.active-progress::after,
 body.case-dark .progress-wrap.active-progress::after,
 body.service-details-dark .progress-wrap.active-progress::after {
   color: var(--jxm-abyss) !important;
-}
-body.dark .progress-wrap svg path,
-body[class*="-abyss"] .progress-wrap svg path,
-body.case-dark .progress-wrap svg path,
-body.service-details-dark .progress-wrap svg path {
-  stroke: var(--jxm-abyss) !important;
 }
