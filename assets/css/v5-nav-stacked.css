@@ -215,13 +215,15 @@
 
 
 /* ── Page-level adjustment: clear the fixed nav so first content
-   isn't hidden behind it. The 3-column stacked layout makes the nav
-   taller (~85px desktop / ~110px mobile when wrapped). ── */
+   isn't hidden behind it. The 3-column stacked layout puts up to
+   three links per column at ~24-26px each + 0.4rem gaps + 1.25rem
+   inner padding × 2 — nav lands closer to ~120-125px desktop. The
+   previous 95px clipped the top of every marquee. ── */
 body.has-v5-page-nav {
-  padding-top: 95px;
+  padding-top: 130px;
 }
 @media (max-width: 1023px) {
-  body.has-v5-page-nav { padding-top: 110px; }
+  body.has-v5-page-nav { padding-top: 130px; }
 }
 /* ≤720px the inline nav collapses to just logo + hamburger toggle —
    nav height drops to ~50px (logo SVG renders at ~14px tall × the

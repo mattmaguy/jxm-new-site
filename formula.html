@@ -61,12 +61,9 @@
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
     }
-    /* Nav clearance — body padding-top wasn't sticking on landing pages,
-       so push the marquee down via margin-top on the section itself.
-       Mirrors the values in v5-nav-stacked.css for has-v5-page-nav. */
-    body.landing-light .mq-hero { margin-top: 95px; }
-    @media (max-width: 1023px) { body.landing-light .mq-hero { margin-top: 110px; } }
-    @media (max-width: 720px)  { body.landing-light .mq-hero { margin-top: 50px; } }
+    /* Nav clearance comes from body.has-v5-page-nav padding-top
+       (set globally in v5-nav-stacked.css). No per-page overrides
+       needed now that the value matches the actual nav height. */
 
     /* Scroll-to-top — force abyss bg + tusk arrow on landing pages.
        The global body[class*="-light"] override in jxm-brand.css should
