@@ -179,7 +179,12 @@ body.service-details-dark .site-footer .footer-copy {
   color: rgba(243, 241, 236, 0.7);
   margin: 0;
 }
-.footer-cta-headline {
+/* Compound selectors below (.footer-cta .…) so they beat sitewide
+   rules: body[class*="body-"] h2 { color: var(--primary) } in
+   jxm-brand.css forces abyss on every h2, and per-page rules like
+   .contact-abyss a { color: var(--jxm-tusk) } would otherwise pull
+   the button text. Specificity 0,2,0+ wins both. */
+.footer-cta .footer-cta-headline {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   font-weight: 500;
   font-size: clamp(2rem, 4.4vw, 3.5rem);
@@ -188,7 +193,7 @@ body.service-details-dark .site-footer .footer-copy {
   color: var(--jxm-tusk);
   margin: 0;
 }
-.footer-cta-button {
+.footer-cta .footer-cta-button {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
@@ -206,8 +211,8 @@ body.service-details-dark .site-footer .footer-copy {
   text-decoration: none;
   transition: background 160ms ease, color 160ms ease, transform 200ms ease;
 }
-.footer-cta-button:hover,
-.footer-cta-button:focus-visible {
+.footer-cta .footer-cta-button:hover,
+.footer-cta .footer-cta-button:focus-visible {
   background: var(--jxm-abyss);
   color: var(--jxm-tusk);
   transform: translateY(-2px);
