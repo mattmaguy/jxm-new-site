@@ -475,20 +475,26 @@
         0 1px 2px rgba(34, 31, 50, 0.05),
         0 28px 56px -20px rgba(34, 31, 50, 0.18);
     }
-    /* Inner picture-frame — 24px in from the body edge.
-       The inset box-shadow paints a 1px highlight along the top of the
-       interior, simulating light catching the inner bezel lip of an
-       inset device face. */
+    /* Inner picture-frame — tusk interior inset into the darker outer
+       panel, with a 1px top highlight on the inner bezel lip. Reads as
+       a tusk "screen face" set into the device body. pointer-events:
+       none keeps form inputs clickable above this layer. */
     #cpma-calculator .cpma-card::before {
       content: '';
       position: absolute;
       inset: 1.5rem;
+      background: var(--jxm-tusk);
       border: 1px solid var(--cpma-frame);
       border-radius: 14px;
       pointer-events: none;
       box-shadow:
         inset 0 1px 0 rgba(255, 255, 255, 0.7),
         inset 0 -1px 0 rgba(34, 31, 50, 0.04);
+    }
+    /* Lift the form content above the ::before tusk fill */
+    #cpma-calculator .cpma-card > * {
+      position: relative;
+      z-index: 1;
     }
 
     /* Two-column row for spend + accounts; period takes a full row above */
