@@ -615,33 +615,89 @@
 
       </main>
 
-      <!-- V5 site footer -->
+      <!-- V6 site footer — robust 4-column layout w/ brand + social + legal -->
       <footer class="site-footer">
         <div class="footer-inner">
-          <div class="footer-top">
-            <a href="index.html" class="footer-brand" aria-label="JXM, home">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" style="width:72px;height:auto;display:block;" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
-            </a>
-          </div>
-          <div class="footer-bottom">
-            <nav class="footer-main-links" aria-label="Footer navigation">
-              <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="portfolio.html">Work</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="services.html">Services</a></li>
-                <li><a href="blog.html">Ideas</a></li>
-                <li><a href="privacy-policy.html">Privacy</a></li>
-                <li><a href="contact.html" class="footer-cta-link">Let's Talk →</a></li>
+
+          <div class="footer-main">
+
+            <!-- Brand block: logo + tagline + socials -->
+            <div class="footer-brand-block">
+              <a href="index.html" class="footer-brand" aria-label="JXM, home">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 311.43 102.75" aria-hidden="true"><path d="M102.77,11.38v39.99c0,27.94-22.54,50.66-50.25,50.66-.08,0-.17,0-.25,0-.18,0-.35,0-.53,0C23.93,102.04,1.08,79.29.71,51.28c-.02-1.55.24-3.11.86-4.54,1.76-4.04,5.62-6.44,9.73-6.44h30.64V11.38c0-5.9,4.74-10.68,10.59-10.68h39.66c5.85,0,10.59,4.78,10.59,10.68ZM204.82,6.04c-1.9-3.3-5.41-5.33-9.2-5.33h-77.52c-3.8,0-7.31,2.03-9.2,5.33-1.9,3.3-1.9,7.36,0,10.66l19.59,34.02-19.59,34.02c-1.9,3.3-1.9,7.36,0,10.66,1.9,3.3,5.41,5.33,9.2,5.33h77.52c4.7,0,8.96-3.11,10.27-7.88.76-2.78.28-5.76-1.16-8.27l-19.5-33.86,19.59-34.02c1.9-3.3,1.9-7.36,0-10.66ZM304.16,1.78c-3.97-1.65-8.54-.74-11.57,2.31l-31.88,31.93-31.88-31.93c-3.04-3.04-7.61-3.95-11.57-2.31-3.97,1.65-6.56,5.53-6.56,9.83v78.9c0,5.87,4.76,10.64,10.62,10.64h78.77c5.87,0,10.62-4.76,10.62-10.64V11.6c0-4.3-2.59-8.18-6.56-9.83Z"/></svg>
+              </a>
+              <p class="footer-tagline">Founder-led growth for mission-driven brands. Strategy and creative that moves real-world numbers — since 2007.</p>
+              <ul class="footer-social" aria-label="JXM on social">
+                <li><a href="https://www.linkedin.com/company/tunetojxm" target="_blank" rel="noopener">LinkedIn</a></li>
+                <li><a href="https://clutch.co/profile/jxm" target="_blank" rel="noopener">Clutch</a></li>
               </ul>
-            </nav>
-            <div class="footer-copy">
-              <div style="white-space: nowrap;">© MMXXVI JXM | James and Matthew, LTD | All rights reserved.</div>
             </div>
+
+            <!-- 4-column link grid -->
+            <nav class="footer-cols" aria-label="Footer navigation">
+
+              <div class="footer-col">
+                <h2 class="footer-col-title">Services</h2>
+                <ul>
+                  <li><a href="service-details-strategy.html">Growth Strategy</a></li>
+                  <li><a href="service-details-brand.html">Brand &amp; Positioning</a></li>
+                  <li><a href="service-details-creative.html">Campaign Execution</a></li>
+                  <li><a href="service-details-media.html">Media Planning</a></li>
+                  <li><a href="service-details-analytics.html">Performance &amp; Analytics</a></li>
+                  <li><a href="services.html">All services</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <h2 class="footer-col-title">Work</h2>
+                <ul>
+                  <li><a href="client-stories-advia.html">Advia</a></li>
+                  <li><a href="client-stories-capcom.html">CAP COM</a></li>
+                  <li><a href="client-stories-harvard.html">Harvard FCU</a></li>
+                  <li><a href="client-stories-nwfcu.html">Northwest Federal</a></li>
+                  <li><a href="portfolio.html">All work</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <h2 class="footer-col-title">Ideas</h2>
+                <ul>
+                  <li><a href="blog.html">Blog &amp; Cheat Codes</a></li>
+                  <li><a href="thoughts/on-standards.html">On Standards</a></li>
+                  <li><a href="thoughts/anti-persona.html">Anti-Persona</a></li>
+                  <li><a href="formula.html">The Formula</a></li>
+                  <li><a href="loyalty.html">Loyalty</a></li>
+                </ul>
+              </div>
+
+              <div class="footer-col">
+                <h2 class="footer-col-title">Company</h2>
+                <ul>
+                  <li><a href="about.html">About</a></li>
+                  <li><a href="contact.html">Contact</a></li>
+                  <li><a href="credit-union-growth.html">For Credit Unions</a></li>
+                  <li><a href="mailto:hi@getjxm.com">hi@getjxm.com</a></li>
+                  <li><a href="tel:+19784244500">(978) 424-4500</a></li>
+                </ul>
+              </div>
+
+            </nav>
+
           </div>
+
+          <!-- Bottom legal row -->
+          <div class="footer-legal">
+            <ul class="footer-legal-links">
+              <li><a href="privacy-policy.html">Privacy</a></li>
+              <li><a href="#" class="cky-banner-element">Cookie preferences</a></li>
+            </ul>
+            <p class="footer-contact-mini">1274 Osgood St, Suite 200 · North Andover, MA 01845</p>
+            <p class="footer-copy">© MMXXVI JXM | James and Matthew, LTD</p>
+          </div>
+
         </div>
       </footer>
-      <!-- /V5 site footer -->
+      <!-- /V6 site footer -->
 
     </div>
   </div>

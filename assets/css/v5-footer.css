@@ -8,6 +8,11 @@
      | body.service-details-dark → abyss surface, tusk text  (dark pages)
 
    Brand SVG uses currentColor so it inherits the right contrast.
+
+   Two layouts coexist during migration:
+   - LEGACY  .footer-top + .footer-bottom         (1-row links)
+   - V6      .footer-main + .footer-legal         (4-col grid + legal row)
+   Pages are migrated to the V6 markup as we touch them.
 ════════════════════════════════════════ */
 
 .site-footer {
@@ -25,11 +30,13 @@ body.service-details-dark .site-footer {
 }
 
 .site-footer .footer-inner {
-  max-width: 72rem;
+  max-width: 90rem;
   margin: 0 auto;
 }
 
-/* Top row: brand */
+/* ──────────────────────────────────────────
+   LEGACY layout — keep until every page is on V6
+────────────────────────────────────────── */
 .site-footer .footer-top {
   display: flex;
   align-items: center;
@@ -45,7 +52,6 @@ body.service-details-dark .site-footer {
 }
 .site-footer .footer-brand svg { fill: currentColor; }
 
-/* Bottom grid: nav + copyright */
 .site-footer .footer-bottom {
   border-top: 1px solid rgba(34, 31, 50, 0.10);
   margin-top: 2rem;
@@ -100,8 +106,6 @@ body.contact-abyss .site-footer .footer-copy,
 body.service-details-dark .site-footer .footer-copy {
   color: rgba(243, 241, 236, 0.55);
 }
-
-/* Desktop layout */
 @media (min-width: 1024px) {
   .site-footer { padding: 4.5rem 2.5rem 2.5rem; }
   .site-footer .footer-bottom {
@@ -119,4 +123,218 @@ body.service-details-dark .site-footer .footer-copy {
     grid-row: 1 / 3;
     align-self: center;
   }
+}
+
+
+/* ════════════════════════════════════════
+   V6 LAYOUT — robust 4-column footer + legal row.
+   Markup pattern:
+     .site-footer
+       .footer-inner
+         .footer-main           ← brand block + columns grid
+           .footer-brand-block
+             .footer-brand        (logo svg)
+             .footer-tagline
+             .footer-social
+           .footer-cols
+             .footer-col          (×4: Services, Work, Ideas, Company)
+               .footer-col-title
+               ul > li > a
+         .footer-legal          ← privacy/cookies + copyright
+           .footer-legal-links
+           .footer-contact-mini
+           .footer-copy
+   ════════════════════════════════════════ */
+
+.site-footer .footer-main {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 1024px) {
+  .site-footer { padding: 5rem 2.5rem 2rem; }
+  .site-footer .footer-main {
+    grid-template-columns: minmax(20rem, 1fr) minmax(0, 2fr);
+    gap: 4rem;
+    padding-bottom: 4rem;
+  }
+}
+
+/* ── Brand block (left column on desktop) ── */
+.site-footer .footer-brand-block {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  align-items: flex-start;
+  max-width: 22rem;
+}
+.site-footer .footer-brand-block .footer-brand svg {
+  width: 96px;
+  height: auto;
+  display: block;
+  fill: currentColor;
+}
+.site-footer .footer-tagline {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: rgba(34, 31, 50, 0.72);
+  margin: 0;
+  max-width: 22rem;
+}
+body.dark .site-footer .footer-tagline,
+body.contact-abyss .site-footer .footer-tagline,
+body.service-details-dark .site-footer .footer-tagline {
+  color: rgba(243, 241, 236, 0.72);
+}
+
+.site-footer .footer-social {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  gap: 1.25rem;
+}
+.site-footer .footer-social a {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(34, 31, 50, 0.7);
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+.site-footer .footer-social a:hover { color: var(--jxm-abyss); }
+body.dark .site-footer .footer-social a,
+body.contact-abyss .site-footer .footer-social a,
+body.service-details-dark .site-footer .footer-social a {
+  color: rgba(243, 241, 236, 0.7);
+}
+body.dark .site-footer .footer-social a:hover,
+body.contact-abyss .site-footer .footer-social a:hover,
+body.service-details-dark .site-footer .footer-social a:hover {
+  color: var(--jxm-tusk);
+}
+
+/* ── Link columns (right side on desktop) ── */
+.site-footer .footer-cols {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2.5rem 1.5rem;
+}
+@media (min-width: 720px) {
+  .site-footer .footer-cols {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+.site-footer .footer-col-title {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(34, 31, 50, 0.55);
+  margin: 0 0 1rem;
+}
+body.dark .site-footer .footer-col-title,
+body.contact-abyss .site-footer .footer-col-title,
+body.service-details-dark .site-footer .footer-col-title {
+  color: rgba(243, 241, 236, 0.55);
+}
+
+.site-footer .footer-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+.site-footer .footer-col a {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-size: 0.9375rem;
+  font-weight: 400;
+  color: var(--jxm-abyss);
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+.site-footer .footer-col a:hover { color: var(--jxm-kermit); }
+body.dark .site-footer .footer-col a,
+body.contact-abyss .site-footer .footer-col a,
+body.service-details-dark .site-footer .footer-col a {
+  color: var(--jxm-tusk);
+}
+body.dark .site-footer .footer-col a:hover,
+body.contact-abyss .site-footer .footer-col a:hover,
+body.service-details-dark .site-footer .footer-col a:hover {
+  color: var(--jxm-kermit);
+}
+
+/* ── Legal row (bottom) ── */
+.site-footer .footer-legal {
+  border-top: 1px solid rgba(34, 31, 50, 0.10);
+  padding-top: 1.5rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  align-items: center;
+}
+body.dark .site-footer .footer-legal,
+body.contact-abyss .site-footer .footer-legal,
+body.service-details-dark .site-footer .footer-legal {
+  border-top-color: rgba(243, 241, 236, 0.10);
+}
+@media (min-width: 720px) {
+  .site-footer .footer-legal {
+    grid-template-columns: auto 1fr auto;
+    gap: 1.5rem;
+  }
+}
+
+.site-footer .footer-legal-links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+}
+.site-footer .footer-legal-links a {
+  font-size: 0.8125rem;
+  font-weight: 400;
+  color: rgba(34, 31, 50, 0.55);
+  text-decoration: none;
+  transition: color 160ms ease-out;
+}
+.site-footer .footer-legal-links a:hover { color: var(--jxm-abyss); }
+body.dark .site-footer .footer-legal-links a,
+body.contact-abyss .site-footer .footer-legal-links a,
+body.service-details-dark .site-footer .footer-legal-links a {
+  color: rgba(243, 241, 236, 0.55);
+}
+body.dark .site-footer .footer-legal-links a:hover,
+body.contact-abyss .site-footer .footer-legal-links a:hover,
+body.service-details-dark .site-footer .footer-legal-links a:hover {
+  color: var(--jxm-tusk);
+}
+
+.site-footer .footer-contact-mini {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.8125rem;
+  color: rgba(34, 31, 50, 0.55);
+  margin: 0;
+}
+body.dark .site-footer .footer-contact-mini,
+body.contact-abyss .site-footer .footer-contact-mini,
+body.service-details-dark .site-footer .footer-contact-mini {
+  color: rgba(243, 241, 236, 0.55);
+}
+
+@media (min-width: 720px) {
+  .site-footer .footer-contact-mini { text-align: center; }
+  .site-footer .footer-legal .footer-copy { text-align: right; white-space: normal; }
 }
