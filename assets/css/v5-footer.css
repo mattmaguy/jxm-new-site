@@ -136,6 +136,10 @@ body.service-details-dark .site-footer .footer-copy {
   display: grid;
   place-items: center;
   text-align: center;
+  /* Top margin breathes the band away from the section above it.
+     Margin (not padding) so on light-bg pages the gap fills with the
+     page color, not the band's abyss. */
+  margin-top: clamp(4rem, 8vw, 6rem);
   padding: clamp(4rem, 8vw, 7rem) 1.5rem;
   min-height: 360px;
   background: var(--jxm-abyss);
