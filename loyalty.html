@@ -416,6 +416,279 @@
         padding-left: 1.1rem;
       }
     }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       FOG INDEX — JXM-themed reskin of the legacy mirror widget.
+       Dark abyss island on the tusk page bg (visual moment that suits the
+       "fog" metaphor). Kermit/blurple gradient is already on-brand.
+       ════════════════════════════════════════════════════════════════════════ */
+    #fog-index {
+      --fogi-fg: var(--jxm-tusk);
+      --fogi-muted: rgba(243, 241, 236, 0.72);
+      --fogi-soft: rgba(243, 241, 236, 0.55);
+      --fogi-border: rgba(243, 241, 236, 0.14);
+      --fogi-green: var(--jxm-kermit);
+      --fogi-blurple: var(--jxm-blurple);
+
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--fogi-fg);
+      background:
+        radial-gradient(1200px 600px at 20% 0%, rgba(94, 79, 245, 0.18), transparent 60%),
+        radial-gradient(900px 500px at 80% 20%, rgba(73, 227, 133, 0.14), transparent 55%),
+        var(--jxm-abyss);
+      border: 1px solid var(--fogi-border);
+      border-radius: 18px;
+      padding: 18px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+    #fog-index * { box-sizing: border-box; }
+
+    /* Top status strip */
+    #fog-index .fogi-top {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 14px;
+      border: 1px solid var(--fogi-border);
+      border-radius: 14px;
+      background: rgba(0, 0, 0, 0.35);
+    }
+    #fog-index .fogi-tophead {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    #fog-index .fogi-status {
+      display: flex;
+      gap: 10px;
+      align-items: center;
+      flex: 0 0 auto;
+    }
+    #fog-index .fogi-label {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: -0.01em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    #fog-index .fogi-pill {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--fogi-border);
+      background: rgba(255, 255, 255, 0.04);
+      white-space: nowrap;
+    }
+    #fog-index .fogi-desc {
+      font-size: 13px;
+      color: var(--fogi-muted);
+      margin: 0;
+    }
+
+    /* Slider */
+    #fog-index input[type="range"] {
+      width: 100%;
+      appearance: none;
+      height: 10px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--fogi-green), var(--fogi-blurple));
+      border: 1px solid rgba(255, 255, 255, 0.18);
+    }
+    #fog-index input[type="range"]::-webkit-slider-thumb {
+      appearance: none;
+      width: 22px;
+      height: 22px;
+      border-radius: 50%;
+      background: var(--fogi-fg);
+      border: 2px solid rgba(0, 0, 0, 0.6);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.5);
+    }
+    #fog-index .fogi-scale {
+      display: flex;
+      justify-content: space-between;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 10px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--fogi-soft);
+      margin-top: 6px;
+    }
+
+    /* Bottom — story + mirror grid */
+    #fog-index .fogi-bottom {
+      margin-top: 14px;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 18px;
+      align-items: start;
+    }
+    @media (max-width: 768px) {
+      #fog-index .fogi-bottom { grid-template-columns: 1fr; }
+    }
+
+    /* Story panel */
+    #fog-index .fogi-story {
+      border: 1px solid var(--fogi-border);
+      border-radius: 14px;
+      padding: 16px;
+      background: rgba(0, 0, 0, 0.22);
+      position: relative;
+      overflow: hidden;
+    }
+    #fog-index .fogi-story::before {
+      content: '';
+      position: absolute; inset: -2px;
+      background:
+        radial-gradient(700px 220px at 10% 0%, rgba(94, 79, 245, 0.16), transparent 55%),
+        radial-gradient(700px 220px at 90% 30%, rgba(73, 227, 133, 0.12), transparent 60%);
+      pointer-events: none;
+    }
+    #fog-index .fogi-story-inner { position: relative; z-index: 1; }
+    #fog-index .fogi-story-step {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fogi-soft);
+      margin-bottom: 10px;
+    }
+    #fog-index .fogi-story-dot {
+      width: 9px; height: 9px;
+      border-radius: 50%;
+      background: var(--fogi-green);
+      box-shadow: 0 0 0 4px rgba(73, 227, 133, 0.18);
+    }
+    #fog-index .fogi-story h4 {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.125rem, 1.6vw, 1.375rem);
+      letter-spacing: -0.015em;
+      line-height: 1.2;
+      margin: 0 0 0.65rem;
+      color: var(--fogi-fg);
+    }
+    #fog-index .fogi-story p {
+      margin: 0 0 0.65rem;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+      color: var(--fogi-muted);
+    }
+    #fog-index .fogi-story p:last-child { margin-bottom: 0; }
+    #fog-index .fogi-story ul {
+      margin: 0.4rem 0 0.65rem 1.1rem;
+      padding: 0;
+      color: var(--fogi-muted);
+    }
+    #fog-index .fogi-story li {
+      margin: 0.3rem 0;
+      font-size: 0.9375rem;
+      line-height: 1.55;
+    }
+    #fog-index .fogi-story strong.fogi-accent { color: var(--fogi-green); font-weight: 600; }
+
+    /* Mirror panel */
+    #fog-index .fogi-mirror {
+      border: 1px solid var(--fogi-border);
+      border-radius: 18px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.35);
+      display: flex;
+      flex-direction: column;
+      min-height: 420px;
+    }
+    @media (max-width: 768px) {
+      #fog-index .fogi-mirror { min-height: 360px; }
+    }
+    #fog-index .fogi-mirror-head {
+      padding: 12px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--fogi-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #fog-index .fogi-dot {
+      width: 10px; height: 10px;
+      border-radius: 50%;
+      background: var(--fogi-green);
+      box-shadow: 0 0 0 4px rgba(73, 227, 133, 0.18);
+    }
+    #fog-index .fogi-mirror-body {
+      flex: 1;
+      display: grid;
+      place-items: center;
+      padding: 18px;
+    }
+    #fog-index .fogi-reflection {
+      width: min(360px, 92%);
+      aspect-ratio: 3 / 4;
+      border-radius: 22px;
+      overflow: hidden;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: #000;
+      position: relative;
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      --fogi-sat: 1;
+      filter: saturate(var(--fogi-sat));
+    }
+    #fog-index .fogi-past-layer {
+      position: absolute; inset: 0;
+      background-size: cover;
+      background-position: center;
+      transition: opacity 0.22s ease;
+      will-change: opacity;
+    }
+    #fog-index .fogi-past-a { opacity: 1; }
+    #fog-index .fogi-past-b { opacity: 0; }
+    #fog-index .fogi-glass {
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(120% 90% at 20% 10%, rgba(94, 79, 245, 0.25), transparent 50%),
+        repeating-linear-gradient(0deg, rgba(255, 255, 255, 0.05) 0 1px, transparent 1px 6px);
+      mix-blend-mode: screen;
+      pointer-events: none;
+      opacity: 0.35;
+    }
+    #fog-index .fogi-hint {
+      padding: 12px;
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 11px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--fogi-soft);
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    /* Mobile: mirror moves above the story for visibility while sliding */
+    @media (max-width: 768px) {
+      #fog-index .fogi-bottom { display: contents; }
+      #fog-index .fogi-top { order: 1; }
+      #fog-index .fogi-mirror { order: 0; min-height: unset; width: 100%; margin: 0; }
+      #fog-index .fogi-story { order: 2; }
+      #fog-index .fogi-reflection {
+        width: 100%;
+        max-width: none;
+        aspect-ratio: 3 / 2;
+        max-height: 55vh;
+      }
+      #fog-index .fogi-past-layer { background-position: 50% 20%; }
+    }
   </style>
 
   <!-- JSON-LD structured data -->
@@ -681,8 +954,54 @@
               <h2 class="landing-tool-title">Where on the spectrum is your member?</h2>
               <p class="landing-tool-sub">A visual walk through the six stages of a member relationship — and what each stage needs from you to clear the fog.</p>
             </header>
-            <div class="landing-tool-shell" data-tool-slot>
-              <p class="landing-tool-placeholder">[ TOOL DROPS IN HERE ]</p>
+            <div id="fog-index" role="application" aria-label="Fog Index — six stages of a member relationship">
+              <!-- Top status strip — slider + current stage label/pill -->
+              <div class="fogi-top">
+                <div class="fogi-tophead">
+                  <div class="fogi-status">
+                    <div class="fogi-label">
+                      <span id="fogiName">Clear</span>
+                      <span class="fogi-pill" id="fogiTag">In sync</span>
+                    </div>
+                  </div>
+                </div>
+                <p class="fogi-desc" id="fogiDesc">This relationship still matches their life.</p>
+                <input type="range" min="0" max="4" step="1" value="0" id="fogiSlider" aria-label="Fog Index stage">
+                <div class="fogi-scale" aria-hidden="true">
+                  <span>Clear</span><span>Drift</span><span>Outdated</span><span>Frozen</span><span>Complacent</span>
+                </div>
+              </div>
+
+              <!-- Bottom: story panel + mirror -->
+              <div class="fogi-bottom">
+                <div class="fogi-story" aria-live="polite">
+                  <div class="fogi-story-inner">
+                    <div class="fogi-story-step">
+                      <span class="fogi-story-dot" id="fogiStoryDot"></span>
+                      <span id="fogiStoryStep">Everything feels fine</span>
+                    </div>
+                    <h4 id="fogiStoryH4">A decision is made</h4>
+                    <div class="fogi-story-content" id="fogiStoryContent">
+                      <p>Loading…</p>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="fogi-mirror">
+                  <div class="fogi-mirror-head">
+                    <span>Inertia = fog</span>
+                    <span class="fogi-dot" id="fogiDot"></span>
+                  </div>
+                  <div class="fogi-mirror-body">
+                    <div class="fogi-reflection" id="fogiMirror">
+                      <div class="fogi-past-layer fogi-past-a" id="fogiPastA"></div>
+                      <div class="fogi-past-layer fogi-past-b" id="fogiPastB"></div>
+                      <div class="fogi-glass"></div>
+                    </div>
+                  </div>
+                  <div class="fogi-hint" id="fogiHint">Everything still fits.</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -817,11 +1136,173 @@
   <script src="assets/js/v5-intro-overlay.js" defer></script>
   <script src="assets/js/v5-mobile-nav.js" defer></script>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       PER-PAGE TOOL JS — drop tool script tag(s) here on individual pages.
-       Example:
-         <script src="assets/js/landing-cpma-calculator.js" defer></script>
-       ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- Fog Index — inline so it stays self-contained with the markup. -->
+  <script>
+    (function () {
+      const imagesByStep = [
+        'https://github.com/mattmaguy/loyalty/blob/main/Magic_mirror_1.jpeg?raw=true',
+        'https://github.com/mattmaguy/loyalty/blob/main/Magic_mirror_2.jpeg?raw=true',
+        'https://github.com/mattmaguy/loyalty/blob/main/Magic_mirror_3.jpeg?raw=true',
+        'https://github.com/mattmaguy/loyalty/blob/main/Magic_mirror_4.jpeg?raw=true',
+        'https://github.com/mattmaguy/loyalty/blob/main/Magic_mirror_5.jpeg?raw=true'
+      ];
+
+      const KERMIT = '#49e385';
+      const BLURPLE = '#5e4ff5';
+      const TUSK = '#f3f1ec';
+
+      const levels = [
+        {
+          name: 'Clear', tag: 'In sync',
+          desc: 'This relationship still matches their life.',
+          sat: 1.05, dot: KERMIT,
+          hint: 'Everything still fits.',
+          stepLabel: 'Everything feels fine',
+          storyH4: 'A decision is made',
+          storyHTML: `
+            <p>For many people, the decision of where to bank isn't really a decision at all. It happens early and quietly &mdash; sometimes made by a parent or guardian, sometimes by convenience alone. At that age, the relationship feels solid because there's nothing to compare it to. The account works. The card clears. The app opens. From their perspective, the institution is doing a great job simply by being there.</p>
+            <p>For credit unions, this prospect can feel like the holy grail: a member gained early, with the promise of long-term loyalty. But these relationships are starting younger and younger, in a digital world where habits form fast and rarely get questioned. Reaching this audience isn't about rates or features. It's about relevance before comparison ever begins.</p>
+            <p><strong class="fogi-accent">Three ways to reach them:</strong></p>
+            <ul>
+              <li>Show up where they already are with short-form, social-first video that feels native, not promotional.</li>
+              <li>Focus on education and context, helping them understand why financial choices matter.</li>
+              <li>Create digital experiences that feel human and timely, not templated.</li>
+            </ul>
+            <p>And if building that kind of connection feels out of reach, JXM is ready to take the reins.</p>
+          `
+        },
+        {
+          name: 'Drift', tag: 'Settling in',
+          desc: 'Familiar feels like &ldquo;good enough.&rdquo;',
+          sat: 1.02, dot: KERMIT,
+          hint: "Nothing's wrong, so nothing changes.",
+          stepLabel: 'Comfort becomes the default',
+          storyH4: 'Convenience becomes loyalty',
+          storyHTML: `
+            <p>Time passes. A paycheck starts landing. A debit card becomes muscle memory. Maybe they add a savings account, maybe they don't. Either way, the relationship keeps growing by simple repetition. The bank or credit union isn't being evaluated &mdash; it's being used. That's the quiet power of early relationships. They don't have to win. They just have to remain present.</p>
+            <p>This is where &ldquo;loyalty&rdquo; can be misleading. Most people are not staying because they chose to. They are staying because switching never becomes urgent. The experience feels fine, so it never gets questioned, and the opportunity to improve quietly slips by.</p>
+            <p><strong class="fogi-accent">What credit unions can do here:</strong></p>
+            <ul>
+              <li>Use retargeting and sequential messaging to stay present through life moments, not just promotions.</li>
+              <li>Build simple, mobile-first content that teaches one useful money skill at a time.</li>
+              <li>Create low-friction &ldquo;checkup&rdquo; campaigns that invite members to review what they have, without pressure.</li>
+            </ul>
+            <p>This is the stage where JXM can help you create the pause before complacency hardens into habit.</p>
+          `
+        },
+        {
+          name: 'Outdated', tag: 'Mismatch',
+          desc: "Life upgrades. The relationship doesn't.",
+          sat: 0.98, dot: BLURPLE,
+          hint: 'The reflection lags behind the person.',
+          stepLabel: 'Needs evolve quietly',
+          storyH4: 'The account stays the same',
+          storyHTML: `
+            <p>Life changes in ways that do not announce themselves with sirens. A new job. A move. A partner. A first apartment that turns into a first home. Their financial needs become more complex, but their banking setup often stays exactly as it was on day one. Not because they chose that, but because no one ever asked them to look again.</p>
+            <p>This is where value starts leaking. Fees go unnoticed. Savings tools remain unused. Better lending options exist, but they never enter the picture. The relationship is still &ldquo;fine,&rdquo; but fine is a low bar when the goal is financial progress.</p>
+            <p><strong class="fogi-accent">What credit unions can do here:</strong></p>
+            <ul>
+              <li>Run life-stage creative that mirrors real transitions and invites self-identification.</li>
+              <li>Use connected TV and paid social to deliver simple &ldquo;you might be missing this&rdquo; moments.</li>
+              <li>Offer interactive, personalized pathways that match people to the next best product or tool.</li>
+            </ul>
+            <p>JXM can help you design the messaging and media system that makes this mismatch visible without making it feel accusatory.</p>
+          `
+        },
+        {
+          name: 'Dense', tag: 'Entrenched',
+          desc: 'Habit is doing the driving now.',
+          sat: 0.94, dot: BLURPLE,
+          hint: "They're not comparing. They're coasting.",
+          stepLabel: 'Autopilot takes over',
+          storyH4: 'The relationship grows by accumulation',
+          storyHTML: `
+            <p>By now, the relationship has more pieces. A credit card. A loan. Maybe even a mortgage. Each addition reinforces the same conclusion: switching would be a hassle. The deeper the roots, the harder it feels to move &mdash; even if the experience has stopped delivering meaningful value.</p>
+            <p>This is the comfortably-numb stage. They are not unhappy. They are not shopping. They are simply enduring a &ldquo;good enough&rdquo; setup that quietly costs them opportunity, clarity, and momentum.</p>
+            <p><strong class="fogi-accent">What credit unions can do here:</strong></p>
+            <ul>
+              <li>Use cross-channel messaging to create a calm interruption, not a hard sell.</li>
+              <li>Lead with questions that reframe the default, then follow with simple proof.</li>
+              <li>Build conversion paths that reward small steps, not all-at-once switching.</li>
+            </ul>
+            <p>This is where JXM can help you orchestrate the sequence so clarity comes first and action feels safe.</p>
+          `
+        },
+        {
+          name: 'Zero', tag: 'Invisible',
+          desc: 'Less value. Less visibility. Same routine.',
+          sat: 0.90, dot: TUSK,
+          hint: "They stopped noticing what they're missing.",
+          stepLabel: 'Comfortably numb',
+          storyH4: 'The fog becomes the environment',
+          storyHTML: `
+            <p>At this point, the relationship is not being experienced &mdash; it's being assumed. The institution fades into the background of life, like a utility. They still pay bills. They still swipe. Everything still works. But the relationship is no longer actively serving them, and they are no longer expecting it to.</p>
+            <p>They are not choosing less value on purpose. They are simply living inside a routine that has dulled their expectations over time. Opportunity costs pile up quietly. Better tools exist. Better advice exists. Better alignment exists. They just never break the surface.</p>
+            <p><strong class="fogi-accent">What credit unions can do here:</strong></p>
+            <ul>
+              <li>Create an unmistakable pause with bold, human creative that earns attention without alarm.</li>
+              <li>Make the next step frictionless with simple audits, calculators, and guided &ldquo;checkups.&rdquo;</li>
+              <li>Use storytelling that restores agency, then back it with proof and easy action.</li>
+            </ul>
+            <p>If your team needs a partner to cut through the numbness with strategy, media, and creative that work together, JXM can take the reins.</p>
+          `
+        }
+      ];
+
+      const slider = document.getElementById('fogiSlider');
+      if (!slider) return;
+
+      const mirror = document.getElementById('fogiMirror');
+      const pastA = document.getElementById('fogiPastA');
+      const pastB = document.getElementById('fogiPastB');
+      const nameEl = document.getElementById('fogiName');
+      const tagEl = document.getElementById('fogiTag');
+      const descEl = document.getElementById('fogiDesc');
+      const dotEl = document.getElementById('fogiDot');
+      const hintEl = document.getElementById('fogiHint');
+      const storyStepEl = document.getElementById('fogiStoryStep');
+      const storyDotEl = document.getElementById('fogiStoryDot');
+      const storyH4El = document.getElementById('fogiStoryH4');
+      const storyContentEl = document.getElementById('fogiStoryContent');
+
+      let showingA = true;
+      let currentStep = -1;
+
+      function setBackground(step) {
+        if (step === currentStep) return;
+        currentStep = step;
+        const url = imagesByStep[step] || imagesByStep[0];
+        const incoming = showingA ? pastB : pastA;
+        const outgoing = showingA ? pastA : pastB;
+        incoming.style.backgroundImage = 'url("' + url + '")';
+        incoming.style.opacity = '1';
+        outgoing.style.opacity = '0';
+        showingA = !showingA;
+      }
+
+      function setLevel(i) {
+        const L = levels[i];
+        if (!L) return;
+        nameEl.textContent = L.name;
+        tagEl.textContent = L.tag;
+        descEl.innerHTML = L.desc;
+        dotEl.style.background = L.dot;
+        mirror.style.setProperty('--fogi-sat', L.sat || 1);
+        hintEl.textContent = L.hint || '';
+        storyStepEl.textContent = L.stepLabel || ('Step ' + (i + 1) + ' of 5');
+        storyDotEl.style.background = L.dot;
+        storyH4El.textContent = L.storyH4 || '';
+        storyContentEl.innerHTML = L.storyHTML || '';
+        setBackground(i);
+      }
+
+      // Init
+      pastA.style.backgroundImage = 'url("' + imagesByStep[0] + '")';
+      pastB.style.backgroundImage = 'url("' + imagesByStep[0] + '")';
+      slider.addEventListener('input', function (e) { setLevel(+e.target.value); });
+      setLevel(0);
+    })();
+  </script>
 
 </body>
 

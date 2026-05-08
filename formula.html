@@ -416,6 +416,135 @@
         padding-left: 1.1rem;
       }
     }
+
+    /* ════════════════════════════════════════════════════════════════════════
+       CPMA CALCULATOR — JXM-themed reskin of the legacy Squarespace widget.
+       Light tusk card on the page bg, abyss type, kermit accent on focus and
+       primary-button hover. Inputs sit on a soft tusk-tinted surface.
+       ════════════════════════════════════════════════════════════════════════ */
+    #cpma-calculator {
+      --cpma-card-bg: var(--jxm-tusk);
+      --cpma-card-fg: var(--jxm-abyss);
+      --cpma-muted: rgba(34, 31, 50, 0.6);
+      --cpma-border: rgba(34, 31, 50, 0.18);
+      --cpma-input-bg: #ffffff;
+      --cpma-input-border: rgba(34, 31, 50, 0.25);
+      --cpma-accent: var(--jxm-kermit);
+      --cpma-alert: var(--jxm-nemo);
+      font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+      color: var(--cpma-card-fg);
+    }
+    #cpma-calculator * { box-sizing: border-box; }
+    #cpma-calculator .cpma-card {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 2rem;
+      border-radius: 16px;
+      background: var(--cpma-card-bg);
+      color: var(--cpma-card-fg);
+      border: 1px solid var(--cpma-border);
+    }
+    #cpma-calculator .cpma-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      #cpma-calculator .cpma-grid { grid-template-columns: 1fr 1fr; }
+      #cpma-calculator .cpma-field--full { grid-column: 1 / -1; }
+    }
+    #cpma-calculator .cpma-field {
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+    }
+    #cpma-calculator label {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--cpma-muted);
+    }
+    #cpma-calculator input {
+      width: 100%;
+      padding: 0.85rem 1rem;
+      border-radius: 10px;
+      border: 1px solid var(--cpma-input-border);
+      background: var(--cpma-input-bg);
+      color: var(--cpma-card-fg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 160ms ease, box-shadow 160ms ease;
+    }
+    #cpma-calculator input::placeholder { color: rgba(34, 31, 50, 0.4); }
+    #cpma-calculator input:focus {
+      border-color: var(--cpma-accent);
+      box-shadow: 0 0 0 3px rgba(73, 227, 133, 0.25);
+    }
+    #cpma-calculator .cpma-actions {
+      display: flex;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+      margin-top: 1.25rem;
+    }
+    #cpma-calculator button {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      letter-spacing: 0.01em;
+      border: 1px solid var(--cpma-card-fg);
+      background: var(--cpma-card-fg);
+      color: var(--cpma-card-bg);
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: background 160ms ease, color 160ms ease, border-color 160ms ease, transform 100ms ease;
+    }
+    #cpma-calculator button:hover {
+      background: var(--cpma-accent);
+      color: var(--cpma-card-fg);
+      border-color: var(--cpma-accent);
+    }
+    #cpma-calculator button:active { transform: translateY(1px); }
+    #cpma-calculator .cpma-secondary {
+      background: transparent;
+      color: var(--cpma-card-fg);
+      border-color: var(--cpma-card-fg);
+    }
+    #cpma-calculator .cpma-output {
+      margin-top: 1.5rem;
+      padding: 1.25rem 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--cpma-border);
+      background: rgba(34, 31, 50, 0.04);
+    }
+    #cpma-calculator .cpma-result-label {
+      font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--cpma-muted);
+      margin: 0 0 0.4rem;
+    }
+    #cpma-calculator .cpma-result {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: clamp(1.5rem, 2.6vw, 2rem);
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--cpma-card-fg);
+    }
+    #cpma-calculator .cpma-alert {
+      display: none;
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border: 1px solid var(--cpma-alert);
+      border-radius: 8px;
+      background: rgba(255, 100, 100, 0.08);
+      color: var(--cpma-card-fg);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.9375rem;
+    }
   </style>
 
   <!-- JSON-LD structured data -->
@@ -682,8 +811,34 @@
               <h2 class="landing-tool-title">Calculate your CPMA.</h2>
               <p class="landing-tool-sub">Plug in your spend and account totals for any time frame. The tool returns your CPMA and lets you reset, copy, or email the result.</p>
             </header>
-            <div class="landing-tool-shell" data-tool-slot>
-              <p class="landing-tool-placeholder">[ TOOL DROPS IN HERE ]</p>
+            <div id="cpma-calculator" role="application" aria-label="CPMA calculator">
+              <div class="cpma-card">
+                <div class="cpma-grid">
+                  <div class="cpma-field cpma-field--full">
+                    <label for="cpma-period">Time frame (optional)</label>
+                    <input id="cpma-period" placeholder="e.g., Q3 2025 or Jan–Mar">
+                  </div>
+                  <div class="cpma-field">
+                    <label for="cpma-spend">Total marketing + advertising spend (USD)</label>
+                    <input id="cpma-spend" placeholder="$500,000">
+                  </div>
+                  <div class="cpma-field">
+                    <label for="cpma-accounts">New accounts opened</label>
+                    <input id="cpma-accounts" placeholder="2,100">
+                  </div>
+                </div>
+                <div class="cpma-actions">
+                  <button id="cpma-calc" type="button">Calculate</button>
+                  <button id="cpma-reset" type="button" class="cpma-secondary">Reset</button>
+                  <button id="cpma-copy" type="button" class="cpma-secondary">Copy</button>
+                  <button id="cpma-email" type="button" class="cpma-secondary">Email result</button>
+                </div>
+                <div id="cpma-alert" class="cpma-alert" role="alert">Please enter valid values.</div>
+                <div class="cpma-output">
+                  <p class="cpma-result-label">CPMA</p>
+                  <div class="cpma-result" id="cpma-result">—</div>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -818,11 +973,81 @@
   <script src="assets/js/v5-intro-overlay.js" defer></script>
   <script src="assets/js/v5-mobile-nav.js" defer></script>
 
-  <!-- ═══════════════════════════════════════════════════════════════════════
-       PER-PAGE TOOL JS — drop tool script tag(s) here on individual pages.
-       Example:
-         <script src="assets/js/landing-cpma-calculator.js" defer></script>
-       ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- CPMA calculator — inline so it stays self-contained with the markup. -->
+  <script>
+    (function () {
+      const spendEl = document.getElementById('cpma-spend');
+      const accountsEl = document.getElementById('cpma-accounts');
+      const periodEl = document.getElementById('cpma-period');
+      const resultEl = document.getElementById('cpma-result');
+      const alertEl = document.getElementById('cpma-alert');
+      if (!spendEl || !accountsEl || !resultEl) return;
+
+      function parseNumber(v) { return Number((v || '').replace(/[^0-9.\-]/g, '')); }
+      function formatUSD(v) {
+        return new Intl.NumberFormat(undefined, {
+          style: 'currency', currency: 'USD', maximumFractionDigits: 2
+        }).format(v);
+      }
+
+      function calculate() {
+        alertEl.style.display = 'none';
+        const spend = parseNumber(spendEl.value);
+        const accounts = parseNumber(accountsEl.value);
+        if (!isFinite(spend) || spend <= 0 || !isFinite(accounts) || accounts <= 0) {
+          alertEl.style.display = 'block';
+          resultEl.textContent = '—';
+          return;
+        }
+        const cpma = spend / accounts;
+        const period = (periodEl.value || '').trim();
+        resultEl.textContent = formatUSD(cpma) + (period ? ' per new account (' + period + ')' : ' per new account');
+      }
+
+      function reset() {
+        spendEl.value = '';
+        accountsEl.value = '';
+        periodEl.value = '';
+        resultEl.textContent = '—';
+        alertEl.style.display = 'none';
+      }
+
+      function copy() {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(resultEl.textContent);
+        }
+      }
+
+      function emailResult() {
+        const spend = parseNumber(spendEl.value);
+        const accounts = parseNumber(accountsEl.value);
+        if (!isFinite(spend) || spend <= 0 || !isFinite(accounts) || accounts <= 0) {
+          alertEl.style.display = 'block';
+          return;
+        }
+        const cpma = spend / accounts;
+        const period = (periodEl.value || '').trim();
+        const subject = 'Our CPMA Result: ' + (period || '') + ' | CPMA ' + formatUSD(cpma) + '/acct | Spend ' + formatUSD(spend) + ' | New ' + accounts.toLocaleString();
+        const lines = [
+          'Here is the CPMA you calculated:',
+          '',
+          'CPMA' + (period ? ' — ' + period : '') + ': ' + formatUSD(cpma) + ' per new account',
+          'Spend: ' + formatUSD(spend),
+          'New accounts: ' + accounts.toLocaleString(),
+          period ? 'Period: ' + period : '',
+          '',
+          'From: ' + window.location.href
+        ];
+        const body = encodeURIComponent(lines.filter(Boolean).join('\n'));
+        window.location.href = 'mailto:?subject=' + encodeURIComponent(subject) + '&body=' + body;
+      }
+
+      document.getElementById('cpma-calc').onclick = calculate;
+      document.getElementById('cpma-reset').onclick = reset;
+      document.getElementById('cpma-copy').onclick = copy;
+      document.getElementById('cpma-email').onclick = emailResult;
+    })();
+  </script>
 
 </body>
 
