@@ -61,6 +61,11 @@
       background: var(--jxm-tusk) !important;
       color: var(--jxm-abyss) !important;
     }
+    /* Belt-and-suspenders nav clearance — match the .has-v5-page-nav values
+       so the marquee never gets clipped by the fixed top nav. */
+    body.landing-light { padding-top: 95px; }
+    @media (max-width: 1023px) { body.landing-light { padding-top: 110px; } }
+    @media (max-width: 720px)  { body.landing-light { padding-top: 50px; } }
 
     /* ── Byline strip — author + date + optional cite link ── */
     .landing-byline {
