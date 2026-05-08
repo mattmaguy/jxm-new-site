@@ -127,7 +127,88 @@ body.service-details-dark .site-footer .footer-copy {
 
 
 /* ════════════════════════════════════════
-   V6 LAYOUT — robust 4-column footer + legal row.
+   V6 PRE-FOOTER CTA BAND — photographic backdrop, centered headline +
+   button. Lives as a sibling <section class="footer-cta"> placed
+   immediately before the <footer>.
+   ════════════════════════════════════════ */
+.footer-cta {
+  position: relative;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: clamp(4rem, 8vw, 7rem) 1.5rem;
+  min-height: 360px;
+  background: var(--jxm-abyss);
+  color: var(--jxm-tusk);
+  overflow: hidden;
+}
+.footer-cta-bg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.4;
+  z-index: 0;
+}
+.footer-cta-overlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(34, 31, 50, 0.55) 0%, rgba(34, 31, 50, 0.85) 100%);
+  pointer-events: none;
+}
+.footer-cta-inner {
+  position: relative;
+  z-index: 2;
+  max-width: 52rem;
+  display: grid;
+  gap: 2rem;
+  justify-items: center;
+}
+.footer-cta-eyebrow {
+  font-family: 'IBM Plex Mono', ui-monospace, Menlo, monospace;
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(243, 241, 236, 0.7);
+  margin: 0;
+}
+.footer-cta-headline {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 500;
+  font-size: clamp(2rem, 4.4vw, 3.5rem);
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--jxm-tusk);
+  margin: 0;
+}
+.footer-cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 1rem 2.5rem;
+  background: var(--jxm-tusk);
+  color: var(--jxm-abyss);
+  border-radius: 999px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: -0.005em;
+  text-decoration: none;
+  transition: background 160ms ease, color 160ms ease, transform 200ms ease;
+}
+.footer-cta-button:hover,
+.footer-cta-button:focus-visible {
+  background: var(--jxm-kermit);
+  color: var(--jxm-abyss);
+  transform: translateY(-2px);
+}
+
+
+/* ════════════════════════════════════════
+   V6 LAYOUT — 3-column footer + brand block + legal row.
    Markup pattern:
      .site-footer
        .footer-inner
@@ -137,12 +218,11 @@ body.service-details-dark .site-footer .footer-copy {
              .footer-tagline
              .footer-social
            .footer-cols
-             .footer-col          (×4: Services, Work, Ideas, Company)
+             .footer-col          (×3: GET JXM, Solutions, Company)
                .footer-col-title
-               ul > li > a
-         .footer-legal          ← privacy/cookies + copyright
+               ul > li > a   |   ul > li > [icon + text]
+         .footer-legal          ← privacy + copyright
            .footer-legal-links
-           .footer-contact-mini
            .footer-copy
    ════════════════════════════════════════ */
 
@@ -221,13 +301,13 @@ body.service-details-dark .site-footer .footer-social a:hover {
 /* ── Link columns (right side on desktop) ── */
 .site-footer .footer-cols {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem 1.5rem;
+  grid-template-columns: 1fr;
+  gap: 2.5rem;
 }
 @media (min-width: 720px) {
   .site-footer .footer-cols {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 1.5rem;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
   }
 }
 
@@ -274,6 +354,49 @@ body.service-details-dark .site-footer .footer-col a:hover {
   color: var(--jxm-kermit);
 }
 
+/* ── Icon contact list (Company column) ── */
+.site-footer .footer-contact-list li {
+  display: grid;
+  grid-template-columns: 1.25rem 1fr;
+  gap: 0.85rem;
+  align-items: start;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.5;
+  color: var(--jxm-abyss);
+}
+body.dark .site-footer .footer-contact-list li,
+body.contact-abyss .site-footer .footer-contact-list li,
+body.service-details-dark .site-footer .footer-contact-list li {
+  color: var(--jxm-tusk);
+}
+.site-footer .footer-contact-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.25rem;
+  height: 1.25rem;
+  margin-top: 0.1rem;
+  color: rgba(34, 31, 50, 0.55);
+}
+body.dark .site-footer .footer-contact-icon,
+body.contact-abyss .site-footer .footer-contact-icon,
+body.service-details-dark .site-footer .footer-contact-icon {
+  color: rgba(243, 241, 236, 0.55);
+}
+.site-footer .footer-contact-icon svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+  stroke: currentColor;
+}
+.site-footer .footer-contact-list a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 160ms ease-out;
+}
+.site-footer .footer-contact-list a:hover { color: var(--jxm-kermit); }
+
 /* ── Legal row (bottom) ── */
 .site-footer .footer-legal {
   border-top: 1px solid rgba(34, 31, 50, 0.10);
@@ -290,7 +413,8 @@ body.service-details-dark .site-footer .footer-legal {
 }
 @media (min-width: 720px) {
   .site-footer .footer-legal {
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto auto;
+    justify-content: space-between;
     gap: 1.5rem;
   }
 }
@@ -322,19 +446,6 @@ body.service-details-dark .site-footer .footer-legal-links a:hover {
   color: var(--jxm-tusk);
 }
 
-.site-footer .footer-contact-mini {
-  font-family: 'DM Sans', sans-serif;
-  font-size: 0.8125rem;
-  color: rgba(34, 31, 50, 0.55);
-  margin: 0;
-}
-body.dark .site-footer .footer-contact-mini,
-body.contact-abyss .site-footer .footer-contact-mini,
-body.service-details-dark .site-footer .footer-contact-mini {
-  color: rgba(243, 241, 236, 0.55);
-}
-
 @media (min-width: 720px) {
-  .site-footer .footer-contact-mini { text-align: center; }
   .site-footer .footer-legal .footer-copy { text-align: right; white-space: normal; }
 }
