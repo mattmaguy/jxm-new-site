@@ -19,7 +19,12 @@
   background: var(--jxm-tusk);
   color: var(--jxm-abyss);
   border-top: 1px solid rgba(34, 31, 50, 0.10);
-  padding: 3.5rem 1.25rem 2rem;
+  /* Horizontal padding moves to .footer-inner (below) so the footer
+     content lines up with the top nav's max-width:90rem container.
+     Otherwise the footer's outer padding pushed content edge-to-edge
+     of the inner box while the nav's inner padding sits inside the
+     90rem box — a ~40px misalignment on viewports wider than 90rem. */
+  padding: 3.5rem 0 2rem;
 }
 body.dark .site-footer,
 body.contact-abyss .site-footer,
@@ -32,6 +37,14 @@ body.service-details-dark .site-footer {
 .site-footer .footer-inner {
   max-width: 90rem;
   margin: 0 auto;
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+@media (min-width: 1024px) {
+  .site-footer .footer-inner {
+    padding-left: 2.5rem;
+    padding-right: 2.5rem;
+  }
 }
 
 /* ──────────────────────────────────────────
@@ -107,7 +120,7 @@ body.service-details-dark .site-footer .footer-copy {
   color: rgba(243, 241, 236, 0.55);
 }
 @media (min-width: 1024px) {
-  .site-footer { padding: 4.5rem 2.5rem 2.5rem; }
+  .site-footer { padding: 4.5rem 0 2.5rem; }
   .site-footer .footer-bottom {
     grid-template-columns: 3fr 7fr;
     grid-template-rows: auto auto;
@@ -245,7 +258,7 @@ body.service-details-dark .site-footer .footer-copy {
   padding-bottom: 3rem;
 }
 @media (min-width: 1024px) {
-  .site-footer { padding: 5rem 2.5rem 2rem; }
+  .site-footer { padding: 5rem 0 2rem; }
   .site-footer .footer-main {
     grid-template-columns: minmax(20rem, 1fr) minmax(0, 2fr);
     gap: 4rem;
