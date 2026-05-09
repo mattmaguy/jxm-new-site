@@ -19,9 +19,10 @@
   visibility: visible;
   opacity: 1;
 }
-/* The page-specific photo is set inline on the .v5-intro element via
-   style="background-image: url('...')" so it loads at HTML parse time
-   and doesn't wait for JS — keeps the photo from flashing in late. */
+/* Photo is picked at random from the 13-image pool in
+   /assets/imgs/intro/ by v5-intro-overlay.js and set on the .v5-intro
+   element after HTML parse. The abyss background-color above is the
+   fallback shown for the ~10-30ms before the defer'd JS runs. */
 
 /* Subtle vignette to make the logo read on any photo */
 .v5-intro::before {
