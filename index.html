@@ -1404,13 +1404,16 @@
 
 
   <!-- ═══════ FIXED BACKGROUND VIDEO — sits behind hero + visibility ═══════ -->
-  <!-- Video stage: iframe lives in-flow, scrolls with the page. Click to open modal. -->
+  <!-- Video stage: iframe lives in-flow, scrolls with the page. Click to open modal.
+       loading="lazy" defers the ~8MB Vimeo stream until the stage is near the
+       viewport — the section sits below the marquee so it's off-screen on first
+       paint anyway. Cuts ~8MB from initial network payload, saves Speed Index. -->
   <div class="v4-video-stage" id="v4Stage" role="button" tabindex="0" aria-label="Open full video">
     <iframe
       src="https://player.vimeo.com/video/1183815657?autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
       frameborder="0"
       allow="autoplay; fullscreen; picture-in-picture"
-      loading="eager"
+      loading="lazy"
       title="JXM Creative Reel — silent background loop"
     ></iframe>
   </div>
