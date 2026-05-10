@@ -3173,7 +3173,7 @@
 
         <span class="v4-pill" style="margin-bottom:1.5rem;">Jim &amp; Matt</span>
 
-        <h2 class="founders-title">Two founders,<br><span class="founders-grad">rolling up their sleeves.</span></h2>
+        <h2 class="founders-title">Two Founders<br><span class="founders-grad">Fully Engaged</span></h2>
 
         <p class="founders-desc">When you partner with JXM, you work with Jim and Matt first. Not a junior team in a city you've never been to. You get a collective fifty years of pattern recognition, asymmetrical thinking, and a stubborn conviction that mission-driven brands deserve better marketing than they're getting.</p>
 
@@ -3211,6 +3211,11 @@
             </div>
           </div>
         </div>
+
+        <a href="about.html" class="founders-cta">
+          <span>Learn More</span>
+          <svg class="founders-cta-arrow" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/><path d="m12 5 7 7-7 7"/></svg>
+        </a>
 
       </div>
 
@@ -3336,6 +3341,38 @@
       border-color: rgba(73,227,133,0.45);
       color: var(--jxm-kermit);
     }
+
+    /* Learn More CTA — pill outlined to match the founder-li-btn hover
+       treatment, kermit accent on hover, arrow nudges right. */
+    .founders-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-top: 2rem;
+      padding: 0.85rem 1.5rem;
+      background: transparent;
+      color: var(--t1);
+      border: 1px solid var(--bd3);
+      border-radius: 999px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      text-decoration: none;
+      transition: background 200ms ease-out, border-color 200ms ease-out, color 200ms ease-out;
+    }
+    .founders-cta:hover {
+      background: rgba(73, 227, 133, 0.12);
+      border-color: rgba(73, 227, 133, 0.45);
+      color: var(--jxm-kermit);
+    }
+    .founders-cta-arrow {
+      transition: transform 200ms ease-out;
+    }
+    .founders-cta:hover .founders-cta-arrow {
+      transform: translateX(2px);
+    }
+
     @media (max-width: 720px) {
       .founders-container { padding: 0 1.25rem; }
     }
