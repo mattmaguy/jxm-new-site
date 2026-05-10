@@ -3563,7 +3563,9 @@
       font-weight: 700;
       letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: var(--t4);
+      /* --t4 (#52525b on dark) only hits ~2.4:1 on abyss — fails AA.
+         --t5 (#a1a1aa) lands at ~5.5:1, subtle but readable. */
+      color: var(--t5);
       white-space: nowrap;
       flex-shrink: 0;
       line-height: 1.6;
