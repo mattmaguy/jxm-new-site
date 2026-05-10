@@ -1404,22 +1404,21 @@
 
 
   <!-- ═══════ FIXED BACKGROUND VIDEO — sits behind hero + visibility ═══════ -->
-  <!-- Video stage: iframe lives in-flow, scrolls with the page. Click to open modal
-       (which loads the full-length reel, video ID 1183815657).
-       Background loop here uses a short clip (ID 1190936504, hash 9afe0d55a1) so
-       the streamed payload is a few MB instead of the full 2.5-min reel. The
-       full version still plays on click via the modal handler below.
-       loading="lazy" defers the iframe entirely until the stage is near the
-       viewport — the section sits below the marquee so it's off-screen on first
-       paint anyway. -->
+  <!-- Self-hosted WebM background loop (16s, 1280×720, VP9, no audio,
+       ~3.7MB). Click to open modal which loads the full 2.5-min reel
+       from Vimeo (ID 1183815657). Native <video> renders the first
+       frame instantly when scrolled to — no Vimeo player JS, no
+       cross-origin iframe overhead. preload="metadata" keeps the
+       browser from downloading bytes until the video enters viewport. -->
   <div class="v4-video-stage" id="v4Stage" role="button" tabindex="0" aria-label="Open full video">
-    <iframe
-      src="https://player.vimeo.com/video/1190936504?h=9afe0d55a1&autoplay=1&muted=1&loop=1&controls=0&background=1&dnt=1&app_id=58479"
-      frameborder="0"
-      allow="autoplay; fullscreen; picture-in-picture"
-      loading="lazy"
-      title="JXM Creative Reel — silent background loop"
-    ></iframe>
+    <video
+      class="v4-video-stage-bg"
+      autoplay loop muted playsinline
+      preload="metadata"
+      aria-label="JXM creative reel — silent background loop"
+    >
+      <source src="assets/videos/hero-loop.webm" type="video/webm">
+    </video>
   </div>
 
   <div class="v4-cursor" id="v4Cursor" aria-hidden="true">
@@ -1787,15 +1786,14 @@
       overflow: hidden;
       z-index: 1;
     }
+    .v4-video-stage video,
     .v4-video-stage iframe {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      width: max(100%, 177.78vh);
-      height: max(56.25vw, 100%);
-      min-width: 100%;
-      min-height: 100%;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       border: 0;
       pointer-events: none;
       display: block;
