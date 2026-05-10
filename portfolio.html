@@ -381,24 +381,30 @@
     }
 
     /* Investigate cursor — follows the pointer when hovering one of the
-       4 client-story work-boxes. SVG image is treated like the v4-cursor
-       chip (scale-spring on enter, fade-out on leave). */
+       4 client-story work-boxes. Mirrors the index .v4-cursor "Play Video"
+       pill so the hover treatment is consistent across pages. */
     .pf-investigate-cursor {
       position: fixed;
-      top: 0; left: 0;
+      top: 0;
+      left: 0;
       z-index: 1100;
       pointer-events: none;
-      width: clamp(96px, 11vw, 140px);
-      height: clamp(96px, 11vw, 140px);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.6rem 1.1rem;
+      background: var(--jxm-tusk);
+      color: var(--jxm-abyss);
+      border-radius: 999px;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      box-shadow: 0 8px 28px rgba(34, 31, 50, 0.35);
       opacity: 0;
       transform: translate(-50%, -50%) scale(0.7);
       transition: opacity 160ms ease-out, transform 280ms cubic-bezier(0.34, 1.56, 0.64, 1);
-      filter: drop-shadow(0 12px 28px rgba(34, 31, 50, 0.32));
-    }
-    .pf-investigate-cursor img {
-      width: 100%;
-      height: 100%;
-      display: block;
     }
     .pf-investigate-cursor.is-visible {
       opacity: 1;
@@ -1041,9 +1047,11 @@
     Play Reel
   </div>
 
-  <!-- Investigate cursor — follows the pointer over the 4 work-boxes -->
+  <!-- Investigate cursor — follows the pointer over the 4 work-boxes.
+       Same "Play Video" pill style as index .v4-cursor for consistency. -->
   <div class="pf-investigate-cursor" id="pfInvestigateCursor" aria-hidden="true">
-    <img src="assets/svgs/investigate.svg" alt="">
+    <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5,3 19,12 5,21"/></svg>
+    Play Video
   </div>
 
   <!-- Reel modal -->
