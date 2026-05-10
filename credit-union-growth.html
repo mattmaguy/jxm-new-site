@@ -2967,17 +2967,21 @@
       color: var(--jxm-kermit);
     }
 
-    /* Learn More CTA — pill outlined to match the founder-li-btn hover
-       treatment, kermit accent on hover, arrow nudges right. */
+    /* Learn More CTA — outlined pill, sized to content (align-self stops
+       the parent flex column from stretching it edge-to-edge). 2px tusk
+       border at ~35% opacity reads clearly on the soylent surface;
+       hover shifts to the kermit accent (matches founder-li-btn). */
     .founders-cta {
       display: inline-flex;
+      align-self: flex-start;
+      width: fit-content;
       align-items: center;
       gap: 0.5rem;
       margin-top: 2rem;
       padding: 0.85rem 1.5rem;
       background: transparent;
       color: var(--t1);
-      border: 1px solid var(--bd3);
+      border: 2px solid rgba(243, 241, 236, 0.35);
       border-radius: 999px;
       font-family: 'Inter', sans-serif;
       font-size: 0.875rem;
@@ -2988,7 +2992,7 @@
     }
     .founders-cta:hover {
       background: rgba(73, 227, 133, 0.12);
-      border-color: rgba(73, 227, 133, 0.45);
+      border-color: var(--jxm-kermit);
       color: var(--jxm-kermit);
     }
     .founders-cta-arrow {
